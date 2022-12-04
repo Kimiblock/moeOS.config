@@ -1,0 +1,7 @@
+NAME="K moeOS"
+PRETTY_NAME="Kimiblock moeOS"
+HOME_URL="https://kimiblock.top:8888/"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+VERSION_ID="Blurry Glass"
+VERSION="22.10"
+VERSION_CODENAME="blur"
