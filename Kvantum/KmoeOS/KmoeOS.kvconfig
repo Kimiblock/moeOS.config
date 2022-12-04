@@ -1,6 +1,6 @@
 [%General]
 author=Kimiblock Moe
-comment=A light theme with translucency similar to the style of macOS Mojave
+comment=A K moeOS Light Theme
 x11drag=all
 alt_mnemonic=true
 left_tabs=false
@@ -86,8 +86,8 @@ light.color=#ffffff
 mid.light.color=#eeeeee
 dark.color=#bbbbbb
 mid.color=#dddddd
-highlight.color=#e93a9a
-inactive.highlight.color=#ff3fa9
+highlight.color=#ff7cdc
+inactive.highlight.color=#ff99e4
 text.color=#333333
 inactive.text.color=#666666
 window.text.color=#333333
