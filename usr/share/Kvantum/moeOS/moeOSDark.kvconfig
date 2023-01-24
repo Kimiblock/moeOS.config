@@ -2,7 +2,7 @@
 author=Kimiblock Moe
 comment=A K moeOS Dark Theme
 x11drag=all
-alt_mnemonic=true
+alt_mnemonic=false
 left_tabs=false
 attach_active_tab=false
 embedded_tabs=true
@@ -71,8 +71,8 @@ saturation=1.00
 scrollable_menu=true
 shadowless_popup=false
 drag_from_buttons=false
-menu_blur_radius=3
-tooltip_blur_radius=3
+menu_blur_radius=2
+tooltip_blur_radius=2
 
 [GeneralColors]
 window.color=#302f2e
@@ -103,7 +103,7 @@ link.visited.color=#9b59b6
 
 [Hacks]
 transparent_ktitle_label=true
-transparent_dolphin_view=false
+transparent_dolphin_view=true
 transparent_pcmanfm_sidepane=true
 blur_translucent=true
 transparent_menutitle=true

@@ -121,12 +121,12 @@ djvulibre
 dkms
 dmidecode
 dmraid
-dns-over-https
 dnsmasq
 dnssec-anchors
 docbook-xml
 docbook-xsl
 dolphin
+dolphin-plugins
 dosfstools
 double-conversion
 drkonqi
@@ -1438,4 +1438,7 @@ zulu-jre-fx-bin
 zvbi
 zxing-cpp
 zziplib
-icalingua++-electron-git
+icalingua++
+kwin-decoration-sierra-breeze-enhanced-git
+unzip-natspec
+p7zip-natspec
