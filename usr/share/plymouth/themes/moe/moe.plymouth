@@ -1,0 +1,65 @@
+[Plymouth Theme]
+Name[zh_CN]=moe
+Name=moe
+Description=Kimiblock moeOS theme
+ModuleName=two-step
+
+[two-step]
+Font=Cantarell 20
+TitleFont=Cantarell 32
+ImageDir=/usr/share/plymouth/themes/spinner
+DialogHorizontalAlignment=.5
+DialogVerticalAlignment=.382
+TitleHorizontalAlignment=.5
+TitleVerticalAlignment=.382
+HorizontalAlignment=.5
+VerticalAlignment=.7
+WatermarkHorizontalAlignment=.5
+WatermarkVerticalAlignment=.96
+Transition=merge-fade
+TransitionDuration=0.7
+BackgroundStartColor=0x000000
+BackgroundEndColor=0x000000
+ProgressBarBackgroundColor=0x606060
+ProgressBarForegroundColor=0xab3175
+DialogClearsFirmwareBackground=true
+MessageBelowAnimation=true
+
+[boot-up]
+UseEndAnimation=true
+UseProgressBar=true
+UseFirmwareBackground=true
+Transition=merge-fade
+TransitionDuration=.7
+
+[shutdown]
+UseEndAnimation=true
+Transition=merge-fade
+TransitionDuration=.5
+
+[reboot]
+UseEndAnimation=true
+UseFirmwareBackground=true
+UseProgressBar=true
+TransitionDuration=.7
+
+[updates]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Installing Updates...
+SubTitle=Do not turn off your computer
+
+[system-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Upgrading System...
+SubTitle=Do not turn off your computer
+
+[firmware-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Upgrading Firmware...
+SubTitle=Do not turn off your computer
