@@ -1,21 +1,21 @@
 [Plymouth Theme]
 Name[zh_CN]=moe
 Name=moe
-Description=Kimiblock moeOS theme
+Description=Kimiblock moeOS Boot Splash
 ModuleName=two-step
 
 [two-step]
 Font=Cantarell 20
 TitleFont=Cantarell 32
-ImageDir=/usr/share/plymouth/themes/spinner
+ImageDir=/usr/share/plymouth/themes/moe
 DialogHorizontalAlignment=.5
-DialogVerticalAlignment=.382
+DialogVerticalAlignment=.75
 TitleHorizontalAlignment=.5
 TitleVerticalAlignment=.382
 HorizontalAlignment=.5
 VerticalAlignment=.7
 WatermarkHorizontalAlignment=.5
-WatermarkVerticalAlignment=.96
+WatermarkVerticalAlignment=.382
 Transition=merge-fade
 TransitionDuration=0.7
 BackgroundStartColor=0x000000
@@ -47,6 +47,7 @@ TransitionDuration=.7
 SuppressMessages=true
 ProgressBarShowPercentComplete=true
 UseProgressBar=true
+UseFirmwareBackground=false
 Title=Installing Updates...
 SubTitle=Do not turn off your computer
 
@@ -56,6 +57,7 @@ ProgressBarShowPercentComplete=true
 UseProgressBar=true
 Title=Upgrading System...
 SubTitle=Do not turn off your computer
+UseFirmwareBackground=false
 
 [firmware-upgrade]
 SuppressMessages=true
@@ -63,3 +65,4 @@ ProgressBarShowPercentComplete=true
 UseProgressBar=true
 Title=Upgrading Firmware...
 SubTitle=Do not turn off your computer
+UseFirmwareBackground=false
