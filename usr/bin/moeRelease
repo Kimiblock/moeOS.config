@@ -5,3 +5,5 @@ function replace(){
     ln -sf /usr/share/moeOS-Docs/os-release /usr/lib/os-release
     ln -sf /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
 }
+
+replace
