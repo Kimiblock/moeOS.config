@@ -7,4 +7,31 @@ function replace(){
     ln -sf /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
 }
 
+function _info() {
+	if [ -f /usr/bin/pamac ]; then
+		echo "  ==> [Info]: $@"
+	else
+		all_off="$(tput sgr0)"
+		bold="${all_off}$(tput bold)"
+		blue="${bold}$(tput setaf 4)"
+		yellow="${bold}$(tput setaf 3)"
+		printf "${blue}==>${yellow} [Info]:${bold} $1${all_off}\n"
+    fi
+}
+
+function vaapi(){
+    if [[ `lspci | grep VGA` =~ Intel ]]; then
+        _info "Installing intel-media-driver"
+        export _drv=intel-media-driver
+    elif [[ `lspci | grep VGA` =~ "Advanced Micro Devices" ]]; then
+        export _drv=libva-mesa-driver
+    fi
+}
+
 replace
+vaapi
+if [ `whoami` = root ]; then
+    pacman -Syu ${_drv} --noconfirm --needed 1>/dev/null
+else
+    sudo pacman -Syu ${_drv} --noconfirm --needed 1>/dev/null
+fi
