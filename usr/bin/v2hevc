@@ -1,9 +1,9 @@
 #!/bin/bash
 function transcode(){
     if [[ $@ =~ v ]]; then
-        ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128  -i "$1" -vf 'format=nv12,hwupload' -c:v hevc_vaapi -b:v 5M "$2"
+        ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -i "$1" -vf 'format=nv12,hwupload' -c:v hevc_vaapi -b:v 5M "$2"
     else
-        ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128  -i "$1" -vf 'format=nv12,hwupload' -c:v hevc_vaapi -b:v 5M "$2" -y -loglevel fatal -nostats
+        ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -i "$1" -vf 'format=nv12,hwupload' -c:v hevc_vaapi -b:v 5M "$2" -y -loglevel fatal -nostats
     fi
 }
 
