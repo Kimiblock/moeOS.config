@@ -20,9 +20,3 @@ function _info() {
 }
 
 replace
-
-if [ `whoami` = root ]; then
-    pacman -Syu ${_drv} --noconfirm --needed 1>/dev/null
-else
-    sudo pacman -Syu ${_drv} --noconfirm --needed 1>/dev/null
-fi
