@@ -1,0 +1,1 @@
+sysctl.vm.swappiness=100 rd.luks.options=timeout=60s,tries=1 quiet bgrt_disable splash vt.global_cursor_default=0 nmi_watchdog=0 rd.luks.options=discard,no_read_workquene,no_write_workquene loglevel=3 systemd.show_status=auto rd.udev.log_level=3 rootflags=subvol=@ rootfstype=btrfs nowatchdog pcie_aspm=force i915.enable_guc=3 i915.enable_fbc=1 intel_pstate=no_hwp
