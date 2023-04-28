@@ -1,6 +1,6 @@
 [%General]
-author=Vince Liuice, based on KvAdapta by Tsu Jan
-comment=An uncomplicated theme inspired by the Materia GTK theme
+author=Kimiblock Moe, modified from Kvlibadwaita
+comment=moeOS Theme
 x11drag=menubar_and_primary_toolbar
 alt_mnemonic=true
 left_tabs=false
@@ -59,7 +59,7 @@ tooltip_delay=-1
 tree_branch_line=true
 no_window_pattern=false
 opaque=virtualbox
-reduce_window_opacity=30
+reduce_window_opacity=20
 respect_DE=true
 scrollable_menu=true
 submenu_delay=150
@@ -104,7 +104,7 @@ blur_translucent=true
 transparent_menutitle=true
 respect_darkness=true
 kcapacitybar_as_progressbar=true
-force_size_grip=false
+force_size_grip=true
 iconless_pushbutton=true
 iconless_menu=false
 disabled_icon_opacity=100
