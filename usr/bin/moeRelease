@@ -19,17 +19,8 @@ function _info() {
     fi
 }
 
-function vaapi(){
-    if [[ `lspci | grep VGA` =~ Intel ]]; then
-        _info "Installing intel-media-driver"
-        export _drv=intel-media-driver
-    elif [[ `lspci | grep VGA` =~ "Advanced Micro Devices" ]]; then
-        export _drv=libva-mesa-driver
-    fi
-}
-
 replace
-vaapi
+
 if [ `whoami` = root ]; then
     pacman -Syu ${_drv} --noconfirm --needed 1>/dev/null
 else
