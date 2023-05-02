@@ -5,6 +5,10 @@ function replace(){
     ln -sf /usr/share/moeOS-Docs/os-release /usr/lib/os-release
     ln -sf /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
     ln -sf /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
+    for unit in tlp iio-sensor-proxy bluetooth sddm NetworkManager; do
+		systemctl enable ${unit}
+	done
+	plymouth-set-default-theme moe
 }
 
 function _info() {
