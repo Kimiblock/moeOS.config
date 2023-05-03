@@ -5,6 +5,7 @@ function replace(){
     ln -sf /usr/share/moeOS-Docs/os-release /usr/lib/os-release
     ln -sf /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
     ln -sf /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
+    ln -sf /usr/share/moeOS-Docs/Packagekit.conf /etc/Packagekit.conf
     for unit in tlp bluetooth sddm NetworkManager; do
 		systemctl enable ${unit}
 	done
