@@ -6,7 +6,7 @@ function replace(){
     ln -sf /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
     ln -sf /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
     ln -sf /usr/share/moeOS-Docs/Packagekit.conf /etc/PackageKit/PackageKit.conf
-    for unit in tlp bluetooth sddm NetworkManager; do
+    for unit in power-profiles-daemon bluetooth sddm NetworkManager; do
 		systemctl enable ${unit}
 	done
 	plymouth-set-default-theme moe
