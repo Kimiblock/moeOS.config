@@ -6,12 +6,12 @@ function replace(){
     ln -sf /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
     ln -sf /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
     ln -sf /usr/share/moeOS-Docs/Packagekit.conf /etc/PackageKit/PackageKit.conf
-    for unit in power-profiles-daemon bluetooth sddm NetworkManager; do
+    for unit in power-profiles-daemon bluetooth NetworkManager; do
 		systemctl enable ${unit}
-	done
-	plymouth-set-default-theme moe
-	mkdir -p /home/*/.config/fontconfig
-	ln -sf /etc/fonts/conf.d/1-moeos.conf /home/*/.config/fontconfig/fonts.conf
+    done
+    plymouth-set-default-theme moe
+    mkdir -p /home/*/.config/fontconfig
+    ln -sf /etc/fonts/conf.d/1-moeos.conf /home/*/.config/fontconfig/fonts.conf
 }
 
 function _info() {
