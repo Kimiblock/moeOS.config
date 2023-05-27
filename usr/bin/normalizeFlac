@@ -1,0 +1,4 @@
+#!/bin/bash
+for formats in mp3 flac; do
+	ffmpeg-normalize *.${formats} -t -14 -lrt 11 -tp -1 -ext flac -c:a flac -of normalized/
+done
