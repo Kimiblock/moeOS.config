@@ -10,7 +10,7 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
 Restart=on-abort
 WorkingDirectory=/etc/moeOS-clash-meta
 ExecStart=/usr/bin/clash-meta -d ./
-ExecPreStart=moeOS-clash-meta-pre %i
+ExecStartPre=moeOS-clash-meta-pre %i
 
 [Install]
 WantedBy=multi-user.target
