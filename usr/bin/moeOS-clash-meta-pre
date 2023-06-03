@@ -1,0 +1,9 @@
+#!/bin/bash
+curl "$@" -o /etc/moeOS-clash-meta/config.yaml
+echo '''tun:
+  enable: true
+  stack: system
+  dns-hijack:
+  - any:53
+  auto-route: true
+  auto-detect-interface: true''' >>/etc/moeOS-clash-meta/config.yaml
