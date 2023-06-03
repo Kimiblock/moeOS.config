@@ -2,7 +2,7 @@
 curl `cat /etc/moeOS-clash-meta/subscribe.conf` -o /etc/moeOS-clash-meta/config.yaml
 echo '''tun:
   enable: true
-  stack: system
+  stack: gvisor
   dns-hijack:
   - any:53
   auto-route: true
