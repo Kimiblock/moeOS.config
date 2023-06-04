@@ -1,13 +1,15 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
-After=network.target NetworkManager.service systemd-networkd.service iwd.service
+After=network-online.target
 
 [Service]
-Type=exec
+Type=simple
 User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
 Restart=always
+RestartSec=1s
+OOMPolicy=continue
 WorkingDirectory=/etc/moeOS-clash-meta
 ExecStartPre=/usr/bin/moeOS-clash-meta-pre
 ExecStart=/usr/bin/clash-meta -d /etc/moeOS-clash-meta
