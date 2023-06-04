@@ -11,7 +11,7 @@ Restart=always
 RestartSec=1s
 OOMPolicy=continue
 WorkingDirectory=/etc/moeOS-clash-meta
-ExecStartPre=/usr/bin/moeOS-clash-meta-pre %i
+ExecStartPre=/usr/bin/moeOS-clash-meta-pre
 ExecStart=/usr/bin/clash-meta -d /etc/moeOS-clash-meta
 
 [Install]

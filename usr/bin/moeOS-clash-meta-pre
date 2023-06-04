@@ -38,6 +38,7 @@ function info() {
 }
 
 function main(){
+	flags="$@"
 	download
 	if [[ $(yq '.tun.enable' /etc/moeOS-clash-meta/config.yaml) = null ]]; then
 		addMissingTun
@@ -48,6 +49,12 @@ function main(){
 		info "Config check completed."
 	else
 		info "Config check completed."
+	fi
+	if [[ ${flags} =~ redir-host ]]; then
+		yq -i '.dns.enhanced-mode' = 'redir-host' /etc/moeOS-clash-meta/config.yaml
+	fi
+	if [[ ${flags} =~ fake-ip ]]; then
+		yq -i '.dns.enhanced-mode' = 'redir-host' /etc/moeOS-clash-meta/config.yaml
 	fi
 }
 
