@@ -1,5 +1,5 @@
 # moeOS.Config
-Arch Linux Gnome Wayland only, use at your own risk.
+Arch Linux w/ Gnome Wayland only, use at your own risk.
 
 # Installation
 ```
