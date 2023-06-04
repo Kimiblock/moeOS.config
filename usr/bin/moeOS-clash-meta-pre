@@ -29,7 +29,7 @@ function addMissingTun(){
 
 function enableTunInplace(){
 	info 'Updating the yaml file, inplace'
-	execute yq -i '.tun.enable' = 'true' /etc/moeOS-clash-meta/config.yaml
+	execute yq -i '.tun.enable = "true"' /etc/moeOS-clash-meta/config.yaml
 	echo done.
 }
 
@@ -51,11 +51,13 @@ function main(){
 		info "Config check completed."
 	fi
 	if [[ ${flags} =~ redir-host ]]; then
-		yq -i '.dns.enhanced-mode' = 'redir-host' /etc/moeOS-clash-meta/config.yaml
+		info 'Setting enhanced mode to redir-host...'
+		yq -i '.dns.enhanced-mode = "redir-host"' /etc/moeOS-clash-meta/config.yaml
 	fi
 	if [[ ${flags} =~ fake-ip ]]; then
-		yq -i '.dns.enhanced-mode' = 'redir-host' /etc/moeOS-clash-meta/config.yaml
+		info 'Setting enhanced mode to fake-ip...'
+		yq -i '.dns.enhanced-mode = "fake-ip"' /etc/moeOS-clash-meta/config.yaml
 	fi
 }
 
-main
+main "$@"
