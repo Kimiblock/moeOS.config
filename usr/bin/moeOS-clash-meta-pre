@@ -40,7 +40,7 @@ function info(){
 function mergeConfig(){
 	if [[ $(cat /etc/moeOS-clash-meta/merge.yaml) ]]; then
 		info 'Merging configuration...'
-		execute yq ea '. as $item ireduce ({}; . * $item )' /etc/moeOS-clash-meta/{config.yaml,merge.yaml} >/etc/moeOS-clash-meta/config.yaml
+		yq ea '. as $item ireduce ({}; . * $item )' /etc/moeOS-clash-meta/{config.yaml,merge.yaml} >/etc/moeOS-clash-meta/config.yaml
 	else
 		info 'Skipping merge'
 	fi
