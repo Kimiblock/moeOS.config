@@ -51,7 +51,6 @@ function mergeConfig(){
 function main(){
 	flags="$@"
 	download
-	mergeConfig
 	if [[ $(yq '.tun.enable' /etc/moeOS-clash-meta/config.yaml) = null ]]; then
 		addMissingTun
 		info "Config check completed."
@@ -70,6 +69,7 @@ function main(){
 		info 'Setting enhanced mode to fake-ip...'
 		yq -i '.dns.enhanced-mode = "fake-ip"' /etc/moeOS-clash-meta/config.yaml
 	fi
+	mergeConfig
 }
 
 main "$@"
