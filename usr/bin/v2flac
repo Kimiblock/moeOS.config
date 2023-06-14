@@ -1,11 +1,20 @@
 #!/bin/bash
 function transcode(){
-	if [[ $@ =~ v ]]; then
-		echo Executing ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -i "$1" "$2"
-		ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -i "$1" "$2"
+	if [[ $@ =~ '-v' ]]; then
+		echo Executing ffmpeg -hwaccel vaapi -hwaccel_device ${vaapiDevice} -i "$1" "$2"
+		ffmpeg -hwaccel vaapi -hwaccel_device ${vaapiDevice} -i "$1" "$2"
 	else
-		ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -i "$1" "$2" -y -loglevel fatal -nostats
+		ffmpeg -hwaccel vaapi -hwaccel_device ${vaapiDevice} -i "$1" "$2" -y -loglevel fatal -nostats
 	fi
+}
+
+function defineDevice(){
+	if [[ $(glxinfo -B | grep 'OpenGL vendor string:') =~ 'AMD' ]]; then
+		vaapiDevice='/dev/dri/renderD129'
+	else
+		vaapiDevice='/dev/dri/renderD128'
+	fi
+	echo Using ${vaapiDevice} for hardware acceleration
 }
 
 function renameOutput(){
@@ -40,6 +49,7 @@ function renameOutput(){
 }
 
 function main(){
+	defineDevice
 	renameOutput "$1"
 	if [[ $@ =~ '-v' ]]; then
 		echo "[Debug] Verbose is on"

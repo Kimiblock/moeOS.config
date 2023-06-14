@@ -1,50 +1,60 @@
 #!/bin/bash
 function transcode(){
-    if [[ $@ =~ v ]]; then
-        ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128  -i "$1" -vf 'format=nv12,hwupload' -c:v h264_vaapi -b:v 5M "$2"
-    else
-        ffmpeg -hwaccel vaapi -hwaccel_device /dev/dri/renderD128  -i "$1" -vf 'format=nv12,hwupload' -c:v h264_vaapi -b:v 5M "$2" -y -loglevel fatal -nostats
-    fi
+	if [[ $@ =~ '-v' ]]; then
+		ffmpeg -hwaccel vaapi -hwaccel_device ${vaapiDevice} -i "$1" -vf 'format=nv12,hwupload' -c:v h264_vaapi -b:v 5M "$2"
+	else
+		ffmpeg -hwaccel vaapi -hwaccel_device ${vaapiDevice} -i "$1" -vf 'format=nv12,hwupload' -c:v h264_vaapi -b:v 5M "$2" -y -loglevel fatal -nostats
+	fi
+}
+
+function defineDevice(){
+	if [[ $(glxinfo -B | grep 'OpenGL vendor string:') =~ 'AMD' ]]; then
+		vaapiDevice='/dev/dri/renderD129'
+	else
+		vaapiDevice='/dev/dri/renderD128'
+	fi
+	echo Using ${vaapiDevice} for hardware acceleration
 }
 
 function renameOutput(){
-    if [[ "$1" =~ '.mp4' ]]; then
-        output="$1".mp4
-        echo "[Info] Output is ${output}"
-        return 0
-    fi
-    length=`echo -n "$1" | wc -c`
-    for ext in mkv av1; do
-        if [[ "$1" =~ ${ext} ]]; then
-            echo "[Info] File extension detected: ${ext}"
-            cutNumber=4
-            cutArg=`expr ${length} - ${cutNumber}`
-            output="`echo -n "$1" | cut -c -"${cutArg}"`.mp4"
-            echo "[Info] Output is ${output}"
-            return 0
-        fi
-    done
-    for ext in webm; do
-        if [[ "$1" =~ ${ext} ]]; then
-            echo "[Info] File extension detected: ${ext}"
-            cutNumber=5
-            cutArg=`expr ${length} - ${cutNumber}`
-            output="`echo -n "$1" | cut -c -"${cutArg}"`.mp4"
-            echo "[Info] Output is ${output}"
-            return 0
-        fi
-    done
+	if [[ "$1" =~ '.mp4' ]]; then
+		output="$1".mp4
+		echo "[Info] Output is ${output}"
+		return 0
+	fi
+	length=`echo -n "$1" | wc -c`
+	for ext in mkv av1; do
+		if [[ "$1" =~ ${ext} ]]; then
+			echo "[Info] File extension detected: ${ext}"
+			cutNumber=4
+			cutArg=`expr ${length} - ${cutNumber}`
+			output="`echo -n "$1" | cut -c -"${cutArg}"`.mp4"
+			echo "[Info] Output is ${output}"
+			return 0
+		fi
+	done
+	for ext in webm; do
+		if [[ "$1" =~ ${ext} ]]; then
+			echo "[Info] File extension detected: ${ext}"
+			cutNumber=5
+			cutArg=`expr ${length} - ${cutNumber}`
+			output="`echo -n "$1" | cut -c -"${cutArg}"`.mp4"
+			echo "[Info] Output is ${output}"
+			return 0
+		fi
+	done
 }
 
 function main(){
-    renameOutput "$1"
-    if [[ $@ =~ '-v' ]]; then
-        echo "[Debug] Verbose is on"
-        sleep 1s
-        transcode "$1" "${output}" -v
-    else
-        transcode "$1" "${output}"
-    fi
+	defineDevice
+	renameOutput "$1"
+	if [[ $@ =~ '-v' ]]; then
+		echo "[Debug] Verbose is on"
+		sleep 1s
+		transcode "$1" "${output}" -v
+	else
+		transcode "$1" "${output}"
+	fi
 }
 
 main "$@"
