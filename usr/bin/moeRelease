@@ -10,8 +10,8 @@ function replace(){
 		systemctl enable ${unit}
     done
     plymouth-set-default-theme moe
-    mkdir -p /home/*/.config/fontconfig
-    ln -sf /etc/fonts/conf.d/1-moeos.conf /home/*/.config/fontconfig/fonts.conf
+    #mkdir -p /home/*/.config/fontconfig
+    #ln -sf /etc/fonts/conf.d/1-moeos.conf /home/*/.config/fontconfig/fonts.conf
 }
 
 function _info() {
