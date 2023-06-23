@@ -8,10 +8,18 @@ function transcode(){
 }
 
 function defineDevice(){
-	if [[ $(glxinfo -B | grep 'OpenGL vendor string:') =~ 'AMD' ]]; then
-		vaapiDevice='/dev/dri/renderD129'
+	echo 'Attempting to locate Hardware Acceleration device, you can override with ${_vaDevice}.'
+	if [[ $(lspci -k) =~ amdgpu ]] && [[ $(lspci -k) =~ nouveau ]]; then
+		if [[ $(lspci -k) =~ nvidia ]] && [[ $(lspci -k) =~ nouveau ]]; then
+			vaapiDevice='/dev/dri/renderD128'
+		else
+			vaapiDevice='/dev/dri/renderD129'
+		fi
 	else
 		vaapiDevice='/dev/dri/renderD128'
+	fi
+	if [[ ${_vaDevice} ]]; then
+		vaapiDevice=${_vaDevice}
 	fi
 	echo Using ${vaapiDevice} for hardware acceleration
 }
