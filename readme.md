@@ -1,7 +1,9 @@
 # moeOS.Config
+
 Arch Linux w/ Plasma Wayland only, use at your own risk.
 
 # Installation
+
 ```
 cd ~
 git clone https://github.com/Kimiblock/moeOS-Package.git
@@ -38,3 +40,9 @@ Contains the following configurations and customizations:
 - A default fontconfig file. Preferred fonts are Inter fonts, Noto fonts.
 
 - Networkmanager connectivity test pointed to `blog.kimiblock.top`
+
+- Colors:
+  
+  - Bright: Accent: `#ed65e2`; Background: `#ed65e2`
+  
+  - Dark: Accent: `#ed65e2`; Background: `#da7de3`
