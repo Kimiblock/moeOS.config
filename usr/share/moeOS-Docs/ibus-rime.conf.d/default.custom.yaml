@@ -1,0 +1,13 @@
+patch:
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Shift_L: noop
+    Shift_R: noop
+    Control_L: noop
+    Control_R: noop
+    
+    "translator/enable_sentence": true
+    "translator/encode_commit_history": true
+    "translator/enable_encoder": true
+    "translator/enable_user_dict": true

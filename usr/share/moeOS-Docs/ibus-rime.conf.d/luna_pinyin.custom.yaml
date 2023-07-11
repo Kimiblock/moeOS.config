@@ -1,0 +1,8 @@
+patch:
+    translator/dictionary: luna
+    translator/enable_completion: true
+    translator/enable_encoder: true
+    translator/enable_user_dict: true
+    translator/enable_sentence: true
+    translator/enable_encoder: true
+    translator/encode_commit_history: true
