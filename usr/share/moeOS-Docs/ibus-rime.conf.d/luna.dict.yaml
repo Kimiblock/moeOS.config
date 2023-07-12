@@ -5,5 +5,5 @@ use_preset_vocabulary: true
 import_tables:
     - /usr/share/rime-data/moegirl
     - /usr/share/rime-data/zhwiki
-    - /usr/share/rime-data/terra_pinyin
     - /usr/share/rime-data/luna_pinyin
+    - /usr/share/rime-data/terra_pinyin
