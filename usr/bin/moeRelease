@@ -1,17 +1,16 @@
 #!/bin/bash
 
 function replace(){
-    ln -sf /usr/share/moeOS-Docs/os-release /etc/os-release
-    ln -sf /usr/share/moeOS-Docs/os-release /usr/lib/os-release
-    ln -sf /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
-    ln -sf /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-    ln -sf /usr/share/moeOS-Docs/Packagekit.conf /etc/PackageKit/PackageKit.conf
-    for unit in power-profiles-daemon bluetooth NetworkManager; do
+    cp /usr/share/moeOS-Docs/os-release /etc/os-release
+    cp /usr/share/moeOS-Docs/os-release /usr/lib/os-release
+    cp /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
+    cp /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
+    cp /usr/share/moeOS-Docs/Packagekit.conf /etc/PackageKit/PackageKit.conf
+    cp /usr/share/moeOS-Docs/librewolf.d/librewolf.cfg /usr/lib/librewolf/librewolf.cfg
+    for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd; do
 		systemctl enable ${unit}
     done
     plymouth-set-default-theme moe
-    #mkdir -p /home/*/.config/fontconfig
-    #ln -sf /etc/fonts/conf.d/1-moeos.conf /home/*/.config/fontconfig/fonts.conf
 }
 
 function _info() {
