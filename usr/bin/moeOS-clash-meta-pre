@@ -69,6 +69,10 @@ function main(){
 		info 'Setting enhanced mode to fake-ip...'
 		yq -i '.dns.enhanced-mode = "fake-ip"' /etc/moeOS-clash-meta/config.yaml
 	fi
+	if [[ ${flags} =~ load-balance ]]; then
+		info "Enabling load balancing mode..."
+		sed -i "s/type: url-test/type: load-balance/" /etc/moeOS-clash-meta/config.yaml
+	fi
 	mergeConfig
 }
 
