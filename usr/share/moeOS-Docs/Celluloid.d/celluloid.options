@@ -1,0 +1,3 @@
+gpu-hwdec-interop=no
+hwdec=vaapi
+af=loudnorm=I=-21
