@@ -1,15 +1,15 @@
 #!/bin/bash
 
-function replace(){
-    cp /usr/share/moeOS-Docs/os-release /etc/os-release
-    cp /usr/share/moeOS-Docs/os-release /usr/lib/os-release
-    cp /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-    cp /usr/share/moeOS-Docs/Packagekit.conf /etc/PackageKit/PackageKit.conf
-    cp /usr/share/moeOS-Docs/librewolf.d/librewolf.cfg /usr/lib/librewolf/librewolf.cfg
-    for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd; do
+function main(){
+	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
+	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
+	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
+	replace "/usr/share/moeOS-Docs/Packagekit.conf" "/etc/PackageKit/PackageKit.conf"
+	replace /usr/share/moeOS-Docs/librewolf.d/librewolf.cfg /usr/lib/librewolf/librewolf.cfg
+	for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd; do
 		systemctl enable ${unit}
-    done
-    plymouth-set-default-theme moe
+	done
+	plymouth-set-default-theme moe
 }
 
 function _info() {
@@ -21,7 +21,13 @@ function _info() {
 		blue="${bold}$(tput setaf 4)"
 		yellow="${bold}$(tput setaf 3)"
 		printf "${blue}==>${yellow} [Info]:${bold} $1${all_off}\n"
-    fi
+	fi
 }
 
-replace
+function replace(){
+	if [[ $(diff $1 $2) ]]; then
+		cp $1 $2
+	fi
+}
+
+main "$@"
