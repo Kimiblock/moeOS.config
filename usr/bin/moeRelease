@@ -3,7 +3,6 @@
 function replace(){
     cp /usr/share/moeOS-Docs/os-release /etc/os-release
     cp /usr/share/moeOS-Docs/os-release /usr/lib/os-release
-    cp /usr/share/moeOS-Docs/lsb-release /etc/lsb-release
     cp /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
     cp /usr/share/moeOS-Docs/Packagekit.conf /etc/PackageKit/PackageKit.conf
     cp /usr/share/moeOS-Docs/librewolf.d/librewolf.cfg /usr/lib/librewolf/librewolf.cfg
