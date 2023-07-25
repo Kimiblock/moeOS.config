@@ -1,0 +1,15 @@
+patch:
+    translator/dictionary: pinyin_simp
+    translator/enable_completion: true
+    translator/enable_encoder: true
+    translator/enable_user_dict: true
+    translator/enable_sentence: true
+    translator/enable_encoder: true
+    translator/encode_commit_history: true
+    key_correction:
+        __append:
+            - derive/([aeiou])ng$/$1gn/        # dagn => dang
+            - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
+            - derive/ong$/on/                  # zhonguo => zhong guo
+            - derive/ao$/oa/                   # hoa => hao
+            - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
