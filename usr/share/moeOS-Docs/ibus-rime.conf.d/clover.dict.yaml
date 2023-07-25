@@ -4,5 +4,19 @@ sort: by_weight
 use_preset_vocabulary: true
 import_tables:
     - /usr/share/rime-data/moegirl
-    - /usr/share/rime-data/clover
+    #- /usr/share/rime-data/clover
     - /usr/share/rime-data/zhwiki
+    - /usr/share/rime-data/clover.base
+    - /usr/share/rime-data/clover.phrase
+    - /usr/share/rime-data/THUOCL_animal
+    - /usr/share/rime-data/THUOCL_caijing
+    - /usr/share/rime-data/THUOCL_car
+    - /usr/share/rime-data/THUOCL_chengyu
+    - /usr/share/rime-data/THUOCL_diming
+    - /usr/share/rime-data/THUOCL_food
+    - /usr/share/rime-data/THUOCL_IT
+    - /usr/share/rime-data/THUOCL_law
+    - /usr/share/rime-data/THUOCL_lishimingren
+    - /usr/share/rime-data/THUOCL_medical
+    - /usr/share/rime-data/THUOCL_poem
+    - /usr/share/rime-data/sogou_new_words
