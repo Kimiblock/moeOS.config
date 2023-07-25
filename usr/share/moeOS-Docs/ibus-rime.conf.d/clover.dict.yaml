@@ -1,8 +1,8 @@
-name: pinyin_simp
+name: clover
 version: "0.1"
 sort: by_weight
 use_preset_vocabulary: true
 import_tables:
     - /usr/share/rime-data/moegirl
-    - /usr/share/rime-data/pinyin_simp
+    - /usr/share/rime-data/clover
     - /usr/share/rime-data/zhwiki

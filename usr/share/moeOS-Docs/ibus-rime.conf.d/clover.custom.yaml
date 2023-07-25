@@ -1,5 +1,5 @@
 patch:
-    translator/dictionary: pinyin_simp
+    translator/dictionary: clover
     translator/enable_completion: true
     translator/enable_encoder: true
     translator/enable_user_dict: true

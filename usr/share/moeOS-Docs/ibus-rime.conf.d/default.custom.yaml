@@ -1,6 +1,6 @@
 patch:
   schema_list:
-    - schema: pinyin_simp
+    - schema: clover
   ascii_composer/good_old_caps_lock: true
   ascii_composer/switch_key:
     Caps_Lock: noop
