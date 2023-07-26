@@ -4,7 +4,6 @@ sort: by_weight
 use_preset_vocabulary: true
 import_tables:
     - /usr/share/rime-data/moegirl
-    #- /usr/share/rime-data/clover
     - /usr/share/rime-data/zhwiki
     - /usr/share/rime-data/clover.base
     - /usr/share/rime-data/clover.phrase

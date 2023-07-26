@@ -13,8 +13,24 @@ patch:
       - derive/ong$/on/          # zhonguo => zhong guo
       - derive/ao$/oa/           # hoa => hao
       - derive/([iu])a(o|ng?)$/a$1$2/  # tain => tian
+  schema:
+    name: 拼音
   
   switches:
   - name: ascii_punct
     states: [ 。，, ．， ]
     reset: 1
+
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Caps_Lock: noop
+      Shift_L: noop
+      Shift_R: noop
+      Control_L: noop
+      Control_R: noop
+    
+    "translator/enable_sentence": true
+    "translator/encode_commit_history": true
+    "translator/enable_encoder": true
+    "translator/enable_user_dict": true
