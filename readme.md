@@ -10,7 +10,7 @@ Arch Linux w/ Gnome Wayland only, use at your own risk.
 cd ~
 git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
-makepkg -si
+paru -Ui #or, alternatively makepkg -si
 ```
 
 # Ingredients
