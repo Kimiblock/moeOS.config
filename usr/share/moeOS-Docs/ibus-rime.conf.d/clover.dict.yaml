@@ -1,12 +1,9 @@
 name: clover
 version: "0.1"
-sort: by_weight
+sort: original
 use_preset_vocabulary: true
 import_tables:
-    - /usr/share/rime-data/minecraft_pinyin
-    - /usr/share/rime-data/moegirl
     - /usr/share/rime-data/zhwiki
-    - /usr/share/rime-data/clover.base
     - /usr/share/rime-data/clover.phrase
     - /usr/share/rime-data/THUOCL_animal
     - /usr/share/rime-data/THUOCL_chengyu
@@ -16,3 +13,6 @@ import_tables:
     - /usr/share/rime-data/THUOCL_lishimingren
     - /usr/share/rime-data/THUOCL_medical
     - /usr/share/rime-data/sogou_new_words
+    - /usr/share/rime-data/minecraft_pinyin
+    - /usr/share/rime-data/moegirl
+    - /usr/share/rime-data/clover.base
