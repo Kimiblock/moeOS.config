@@ -1,6 +1,6 @@
 name: clover
 version: "0.1"
-sort: original
+sort: by_weight
 use_preset_vocabulary: true
 import_tables:
     - /usr/share/rime-data/zhwiki
