@@ -11,5 +11,5 @@ Target = usr/lib/librewolf/librewolf.cfg
 [Action]
 When = PostTransaction
 Exec = /usr/bin/moeRelease
-Depends = moeOS
+Depends = moeOS-git
 Description = Configuring moeOS
