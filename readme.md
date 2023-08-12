@@ -50,3 +50,16 @@ Contains the following configurations and customizations:
   - Bright: Accent: `#ed65e2`; Background: `#ed65e2`
   
   - Dark: Accent: `#ed65e2`; Background: `#da7de3`
+
+# Rime configuration
+## ibus
+
+```
+ln -fs /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
+```
+
+## Fcitx
+
+```
+ln -fs /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
+```
