@@ -6,7 +6,7 @@
 # 方案说明
 schema:
   schema_id: moe_pinyin
-  name: 拼音
+  name: "拼音 (moeOS)"
   version: "0.1"
   author:
     - Dvel
