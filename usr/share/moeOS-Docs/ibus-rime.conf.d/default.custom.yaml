@@ -1,6 +1,6 @@
 patch:
   schema_list:
-    - schema: clover
+    - schema: moe_pinyin
   ascii_composer:
     good_old_caps_lock: true
     switch_key:
