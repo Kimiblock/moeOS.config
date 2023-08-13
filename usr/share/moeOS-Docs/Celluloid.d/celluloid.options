@@ -5,3 +5,4 @@ vo=gpu-next
 tone-mapping=auto
 tone-mapping-mode=auto
 #ao=pipewire
+load-osd-console=no
