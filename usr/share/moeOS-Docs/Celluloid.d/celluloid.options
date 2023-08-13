@@ -1,8 +1,10 @@
 gpu-hwdec-interop=vaapi
 hwdec=vaapi
-af=loudnorm=I=-21
 vo=gpu-next
 tone-mapping=auto
 tone-mapping-mode=auto
-#ao=pipewire
+ao=pipewire
 load-osd-console=no
+scale=spline36
+af=lavfi=[dynaudnorm=g=45]
+
