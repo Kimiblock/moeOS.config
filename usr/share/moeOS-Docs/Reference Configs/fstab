@@ -1,0 +1,11 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+UUID=1459-D887					/efi			vfat	rw,relatime,fmask=0022,dmask=0222,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+UUID=fc3899ea-2277-4f53-8d0f-c2ae711bf859	/			btrfs	rw,noatime,nodiscard,compress=zstd,ssd,space_cache=v2,subvol=@	0 0
+UUID=fc3899ea-2277-4f53-8d0f-c2ae711bf859	/home			btrfs	rw,noatime,nodiscard,compress=zstd,ssd,space_cache=v2,subvol=@home	0 0
+
+UUID=9fedc5f4-54f3-4d4c-82f2-5562e49a9ada	none			swap	defaults,nofail	0 0
