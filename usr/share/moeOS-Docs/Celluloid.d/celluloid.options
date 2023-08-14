@@ -6,5 +6,4 @@ tone-mapping-mode=auto
 ao=pipewire
 load-osd-console=no
 scale=spline36
-af=lavfi=[dynaudnorm=g=45]
-
+af=lavfi=[loudnorm=i=-23:tp=-3]
