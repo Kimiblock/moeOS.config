@@ -6,6 +6,6 @@ tone-mapping-mode=auto
 ao=pipewire
 load-osd-console=no
 scale=spline36
-af=lavfi=[loudnorm=i=-23:tp=-3]
+af=dynaudnorm=g=45:p=0.5:m=1:s=0
 gpu-api=vulkan
 hwdec-codecs=all
