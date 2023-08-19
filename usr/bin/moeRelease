@@ -10,6 +10,7 @@ function main(){
 		systemctl enable ${unit}
 	done
 	plymouth-set-default-theme moe
+	moeFlatpak
 }
 
 function _info() {
