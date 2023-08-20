@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 ---
-name: rime_ice
-version: "2023-07-27"
+name: moe_pinyin
+version: "2023-08-20"
 import_tables:
   - minecraft_pinyin
   - moegirl
