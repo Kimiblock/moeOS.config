@@ -21,15 +21,13 @@ Contains the following configurations and customizations:
 
 - moeOS Plymouth boot splash theme.
 
-- Default `sbupdate` Secure Boot configurations, an `mkinitcpio` preset, cmdline example, `sleep.conf`, `Packagekit.conf`.
+- Default `sbupdate` Secure Boot configurations, an `mkinitcpio` preset, cmdline / fstab example, `sleep.conf`, `Packagekit.conf`.
 
 - `lsb-release` and `os-release` replacement.
 
 - A hook to replace files automatically.
 
-- a moeOS icon and splash image
-
-- Apple PingFang fonts.
+- A moeOS icon and splash image
 
 - A kvantum theme looks like libadwaita applications with blur and transparent enabled.
 
