@@ -4,7 +4,7 @@
 
 ![Logo](https://raw.githubusercontent.com/Kimiblock/moeOS.config/master/usr/share/icons/hicolor/scalable/apps/moeos.svg)
 
-Arch Linux w/ KDE Wayland only, use at your own risk.
+Arch Linux w/ Gnome Wayland only, use at your own risk.
 
 # Installation
 
@@ -27,9 +27,11 @@ Contains the following configurations and customizations:
 
 - A hook to replace files automatically.
 
-- A moeOS icon and splash image
+- a moeOS icon and splash image
 
-- A Kvantum theme looks like libadwaita applications with blur and transparent enabled.
+- Apple PingFang fonts.
+
+- A kvantum theme looks like libadwaita applications with blur and transparent enabled.
 
 - Some handy scripts eg. `v2hevc` `v2avc` `oggaudio` to transcode video footages and audio files quickly using VA-API.
 
