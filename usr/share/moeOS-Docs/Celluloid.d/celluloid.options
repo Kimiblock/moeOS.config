@@ -9,10 +9,10 @@ scale			=	oversample
 dscale			=	mitchell
 af			=	dynaudnorm=g=45:p=0.5:m=1:s=0
 hwdec-codecs		=	all
-idle			=	no
 volume-max		=	100
 sub-auto		=	fuzzy
 vd-lavc-dr		=	yes
 replaygain		=	album
+gpu-api			=	vulkan
 native-keyrepeat
 deband
