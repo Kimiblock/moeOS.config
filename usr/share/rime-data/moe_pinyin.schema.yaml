@@ -10,6 +10,8 @@ schema:
   version: "0.1"
   author:
     - Kimiblock
+  dependencies:
+    - melt_eng
   description: |
     拼音
     https://github.com/Kimiblock/moeOS.config/tree/master/usr/share/moeOS-Docs/ibus-rime.conf.d
@@ -39,7 +41,7 @@ switches:
     reset: 0
   - name: emoji
     states: [ 💀, 😄 ]
-    reset: 1
+    reset: 0
   - name: full_shape
     states: [ 半角, 全角 ]
     reset: 0
@@ -77,6 +79,7 @@ engine:
     - lua_translator@date_translator      # 时间、日期、星期
     - lua_translator@unicode              # Unicode
     - lua_translator@number_translator    # 数字、金额大写
+    - table_translator@melt_eng
   filters:
     - simplifier@emoji                    # Emoji
     - simplifier@traditionalize           # 简繁切换
@@ -95,6 +98,13 @@ translator:
     - xform/([nl])v/$1v/         # 显示为 nv lv
     - xform/([nl])ue/$1ve/       # 显示为 nve lve
 
+melt_eng:
+  dictionary: melt_eng
+  enable_sentence: true
+  enable_user_dict: true
+  initial_quality: 1.1     # 初始权重
+  comment_format:          # 自定义提示码
+    - xform/.*//           # 清空提示码
 
 # Emoji
 emoji:
