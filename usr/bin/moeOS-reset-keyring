@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function warning (){
+	echo "[Warning] Are you sure to reset pacman keyring?"
+	echo "Press ENTER to continue"
+	read
+}
+
+function resetKeyring() {
+	echo "See https://t.me/archlinuxcn_group/2901187"
+	runAsRoot "gpgconf --kill all && rm -rf /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate"
+}
+
+function runAsRoot(){
+	if [[ $(whoami) = root ]]; then
+		bash -c "$@"
+	elif [[ -f /usr/bin/pkexec ]]; then
+		pkexec /usr/bin/bash -c "$@"
+	else
+		sudo "$@"
+	fi
+}
+
+function main(){
+	warning
+	resetKeyring
+}
+
+main
