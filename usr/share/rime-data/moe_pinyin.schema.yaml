@@ -9,7 +9,7 @@ schema:
   name: "拼音 (moeOS)"
   version: "0.1"
   author:
-    - Kimiblock
+    - "Kimiblock"
   dependencies:
     - melt_eng
   description: |
@@ -30,9 +30,6 @@ switcher:
 # states: 方案选单显示的名称。可以注释掉，仍可以通过快捷键切换。
 # reset: 默认状态。 注释掉后，切换窗口时不会重置到默认状态。
 switches:
-  - name: ascii_mode
-    states: [ 中  ]
-    reset: 0
   - name: ascii_punct
     states: [ ¥, $ ]
     reset: 1
@@ -59,7 +56,6 @@ switches:
 engine:
   processors:
     - lua_processor@select_character      # 以词定字
-    #- ascii_composer
     - recognizer
     - key_binder
     - speller
