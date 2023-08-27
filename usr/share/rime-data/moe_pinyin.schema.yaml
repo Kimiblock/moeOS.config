@@ -46,20 +46,20 @@ switches:
     states: [ 半角, 全角 ]
     reset: 0
 
-ascii_composer:
-  good_old_caps_lock: true  # true | false
-  switch_key:
-    Caps_Lock: noop      # commit_code | commit_text | clear
-    Shift_L: noop  # commit_code | commit_text | inline_ascii | clear | noop
-    Shift_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
-    Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
-    Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop
+#ascii_composer:
+#  good_old_caps_lock: true  # true | false
+#  switch_key:
+#    Caps_Lock: noop      # commit_code | commit_text | clear
+#    Shift_L: noop  # commit_code | commit_text | inline_ascii | clear | noop
+#    Shift_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
+#    Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
+#    Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop
 
 # 输入引擎
 engine:
   processors:
     - lua_processor@select_character      # 以词定字
-    - ascii_composer
+    #- ascii_composer
     - recognizer
     - key_binder
     - speller
