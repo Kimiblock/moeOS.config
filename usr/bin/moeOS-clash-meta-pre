@@ -71,7 +71,7 @@ function main(){
 	fi
 	if [[ ${flags} =~ load-balance ]]; then
 		info "Enabling load balancing mode..."
-		sed -i "s/type: url-test/type: load-balance/" /etc/moeOS-clash-meta/config.yaml
+		sed -i "s/url-test/load-balance/" /etc/moeOS-clash-meta/config.yaml
 	fi
 	mergeConfig
 }
