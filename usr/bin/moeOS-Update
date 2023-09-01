@@ -1,5 +1,6 @@
 #! /bin/bash
 function update(){
+	paru
 	currentDir=$(pwd)
 	mkdir "${updateDir}"
 	cd "${updateDir}"
