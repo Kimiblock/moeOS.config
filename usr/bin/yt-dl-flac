@@ -18,7 +18,7 @@ function _info() {
 		blue="${bold}$(tput setaf 4)"
 		yellow="${bold}$(tput setaf 3)"
 		printf "${blue}==>${yellow} [Info]:${bold} $1${all_off}\n"
-    fi
+	fi
 }
 
 main "$@"
