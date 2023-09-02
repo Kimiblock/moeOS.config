@@ -1,0 +1,37 @@
+#!/bin/bash
+function _info() {
+	if [ -f /usr/bin/pamac ]; then
+		echo "  ==> [Info]: $@"
+	else
+		all_off="$(tput sgr0)"
+		bold="${all_off}$(tput bold)"
+		blue="${bold}$(tput setaf 4)"
+		yellow="${bold}$(tput setaf 3)"
+		printf "${blue}==>${yellow} [Info]:${bold} $1${all_off}\n"
+	fi
+}
+
+function gnomeTheme(){
+	_info "Installing LibreWolf theme..."
+	for profile in $(ls "$HOME/.librewolf" | grep "default-release"); do
+		_info "Working on ${profile}"
+		cd "$HOME/.librewolf/${profile}"
+		mkdir chrome
+		cd chrome
+		ln -s /usr/lib/firefox-gnome-theme firefox-gnome-theme
+		[[ -s userChrome.css ]] || echo >> userChrome.css
+		[[ -s userContent.css ]] || echo >> userContent.css
+		sed -i '1s/^/@import "firefox-gnome-theme\/userChrome.css";\n/' userChrome.css
+		sed -i '1s/^/@import "firefox-gnome-theme\/userContent.css";\n/' userContent.css
+		cd ..
+		ln -fs chrome/firefox-gnome-theme/configuration/user.js user.js
+	done
+}
+
+function main(){
+	pathNow="$(pwd)"
+	gnomeTheme
+	cd "${pathNow}"
+}
+
+main
