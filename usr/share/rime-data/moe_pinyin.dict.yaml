@@ -5,7 +5,8 @@
 name: moe_pinyin
 version: "2023-08-27"
 sort: by_weight
-use_preset_vocabulary: true
+#use_preset_vocabulary: true
+vocabulary: moe-essay
 
 import_tables:
   - minecraft_pinyin
