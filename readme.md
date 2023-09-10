@@ -69,3 +69,6 @@ For Celluloid, please import it in the App.
 
 # Switchable Graphics
 With `moeOS`, you must install Software natively (Not Flatpak) and execute `prime-run` wrapper script to offload applications on your discreate graphics card.
+
+# Flatpak Fonts
+Run the following command: `mkdir -p ~/.config/fontconfig && cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf`
