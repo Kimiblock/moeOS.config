@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=moeOS Setup
 Exec=/usr/bin/moeOS-setup-user
-Terminal=false
-StartupNotify=false
-Icon=moeos
+Type=Application
+OnlyShowIn=GNOME;
