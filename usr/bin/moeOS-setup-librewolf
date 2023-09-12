@@ -14,17 +14,21 @@ function _info() {
 function gnomeTheme(){
 	_info "Installing LibreWolf theme..."
 	for profile in $(ls "$HOME/.librewolf" | grep "default-release"); do
-		_info "Working on ${profile}"
-		cd "$HOME/.librewolf/${profile}"
-		mkdir chrome
-		cd chrome
-		ln -s /usr/lib/firefox-gnome-theme firefox-gnome-theme
-		[[ -s userChrome.css ]] || echo >> userChrome.css
-		[[ -s userContent.css ]] || echo >> userContent.css
-		sed -i '1s/^/@import "firefox-gnome-theme\/userChrome.css";\n/' userChrome.css
-		sed -i '1s/^/@import "firefox-gnome-theme\/userContent.css";\n/' userContent.css
-		cd ..
-		ln -fs chrome/firefox-gnome-theme/configuration/user.js user.js
+		if [ ! -f ./chrome/firefox-gnome-theme ]; then
+			_info "Working on ${profile}"
+			cd "$HOME/.librewolf/${profile}"
+			mkdir chrome
+			cd chrome
+			ln -s /usr/lib/firefox-gnome-theme firefox-gnome-theme
+			[[ -s userChrome.css ]] || echo >> userChrome.css
+			[[ -s userContent.css ]] || echo >> userContent.css
+			sed -i '1s/^/@import "firefox-gnome-theme\/userChrome.css";\n/' userChrome.css
+			sed -i '1s/^/@import "firefox-gnome-theme\/userContent.css";\n/' userContent.css
+			cd ..
+			ln -fs chrome/firefox-gnome-theme/configuration/user.js user.js
+		else
+			_info "Profile ${profile} skipped"
+		fi
 	done
 }
 

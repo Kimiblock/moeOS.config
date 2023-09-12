@@ -8,7 +8,6 @@ function _notify(){
 function main(){
 	checkExist
 	_notify "Setting up moeOS"
-	moeOS-setup-librewolf
 	rime
 	checkExist set
 }
@@ -16,8 +15,12 @@ function main(){
 function rime(){
 	mkdir -p ~/.config/ibus/rime
 	mkdir -p ~/.local/share/fcitx5/rime
-	ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
-	ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
+	if [[ ! -f ~/.config/ibus/rime/default.custom.yaml ]]; then
+		ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
+	fi
+	if [[ ! -f ~/.local/share/fcitx5/rime/default.custom.yaml ]]; then
+		ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
+	fi
 }
 
 function checkExist(){
@@ -28,9 +31,14 @@ function checkExist(){
 	if [ "${_moeOS_Setup}" = 1 ]; then
 		_notify "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
+		moeOS-setup-librewolf
 		exit 0
 	fi
 	if [[ "$@" =~ set ]]; then
-		echo "1" >"${XDG_CONFIG_HOME}/moeOS/state"
+		mkdir -p "${XDG_CONFIG_HOME}/moeOS"
+		touch "${XDG_CONFIG_HOME}/moeOS/state"
+		_notify "moeOS has been set up"
 	fi
 }
+
+main
