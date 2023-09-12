@@ -1,0 +1,3 @@
+[io/github/celluloid-player/celluloid]
+mpv-config-enable=true
+mpv-config-file='file:///usr/share/moeOS-Docs/Celluloid.d/celluloid.options'
