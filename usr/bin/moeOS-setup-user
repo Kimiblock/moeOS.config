@@ -16,6 +16,11 @@ function enableSnotify(){
 	systemctl --user enable --now snotify
 }
 
+function setupFont(){
+	mkdir -p ~/.config/fontconfig
+	cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf
+}
+
 function rime(){
 	mkdir -p ~/.config/ibus/rime
 	mkdir -p ~/.local/share/fcitx5/rime
@@ -39,6 +44,7 @@ function checkExist(){
 	if [ "${_moeOS_Setup}" = 1 ]; then
 		_notify "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
+		setupFont
 		moeOS-setup-librewolf
 		exit 0
 	fi
