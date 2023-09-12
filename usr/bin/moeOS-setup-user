@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function _notify(){
+	notify-send -i moeos -u normal -t 5 -a moeOS "moeOS Setup" "$1"
+	sleep 2
+}
+
+function main(){
+	checkExist
+	_notify "Setting up moeOS"
+	moeOS-setup-librewolf
+	rime
+	checkExist set
+}
+
+function rime(){
+	mkdir -p ~/.config/ibus/rime
+	mkdir -p ~/.local/share/fcitx5/rime
+	ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
+	ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
+}
+
+function checkExist(){
+	if [ ! "${XDG_CONFIG_HOME}" ]; then
+		export XDG_CONFIG_HOME="${HOME}/.config"
+	fi
+
+	if [ "${_moeOS_Setup}" = 1 ]; then
+		_notify "_moeOS_Setup detected!"
+	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
+		exit 0
+	fi
+	if [[ "$@" =~ set ]]; then
+		echo "1" >"${XDG_CONFIG_HOME}/moeOS/state"
+	fi
+}
