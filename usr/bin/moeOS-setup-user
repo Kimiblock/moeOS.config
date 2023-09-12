@@ -12,6 +12,10 @@ function main(){
 	checkExist set
 }
 
+function enableSnotify(){
+	systemctl --user enable --now snotify
+}
+
 function rime(){
 	mkdir -p ~/.config/ibus/rime
 	mkdir -p ~/.local/share/fcitx5/rime
@@ -21,6 +25,10 @@ function rime(){
 	if [[ ! -f ~/.local/share/fcitx5/rime/default.custom.yaml ]]; then
 		ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
 	fi
+}
+
+function moeOS-setup-librewolf(){
+	bash -c "/usr/lib/moeOS/moeOS-setup-librewolf"
 }
 
 function checkExist(){
