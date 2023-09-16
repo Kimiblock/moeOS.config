@@ -4,7 +4,7 @@
 
 ![Logo](https://raw.githubusercontent.com/Kimiblock/moeOS.config/master/usr/share/icons/hicolor/scalable/apps/moeos.svg)
 
-Arch Linux w/ Gnome Wayland only, use at your own risk.
+Arch Linux w/ KDE Wayland only, use at your own risk.
 
 # Installation
 
