@@ -4,7 +4,6 @@ function main(){
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-	replace "/usr/share/moeOS-Docs/Packagekit.conf" "/etc/PackageKit/PackageKit.conf"
 	replace /usr/share/moeOS-Docs/librewolf.d/librewolf.cfg /usr/lib/librewolf/librewolf.cfg
 	for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd; do
 		systemctl enable ${unit}
