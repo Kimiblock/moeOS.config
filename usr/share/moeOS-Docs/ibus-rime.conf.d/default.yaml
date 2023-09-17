@@ -1,3 +1,2 @@
-patch:
-  schema_list:
-    - schema: moe_pinyin
+schema_list:
+  - schema: moe_pinyin
