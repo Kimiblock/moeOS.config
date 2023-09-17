@@ -21,17 +21,6 @@ function setupFont(){
 	cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf
 }
 
-function rime(){
-	mkdir -p ~/.config/ibus/rime
-	mkdir -p ~/.local/share/fcitx5/rime
-	if [[ ! -f ~/.config/ibus/rime/default.custom.yaml ]]; then
-		ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
-	fi
-	if [[ ! -f ~/.local/share/fcitx5/rime/default.custom.yaml ]]; then
-		ln -s /usr/share/moeOS-Docs/ibus-rime.conf.d/default.custom.yaml ~/.local/share/fcitx5/rime/default.custom.yaml
-	fi
-}
-
 function moeOS-setup-librewolf(){
 	bash -c "/usr/lib/moeOS/moeOS-setup-librewolf"
 }
