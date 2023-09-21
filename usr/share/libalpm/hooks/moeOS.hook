@@ -2,14 +2,14 @@
 Operation = Install
 Operation = Upgrade
 Type = Path
-Target = etc/os-release
-Target = usr/lib/os-release
-Target = etc/tlp.conf
-Target = etc/Packagekit.conf
-Target = usr/lib/librewolf/librewolf.cfg
+Target = usr/share/xsessions/gnome-xorg.desktop
+Target = usr/share/xsessions/gnome-classic-xorg.desktop
+Target = usr/share/xsessions/gnome-classic.desktop
+Target = usr/share/wayland-sessions/gnome-classic.desktop
+Target = usr/share/wayland-sessions/gnome-classic-wayland.desktop
 
 [Action]
 When = PostTransaction
-Exec = /usr/bin/moeRelease
+Exec = /usr/lib/moeOS/moeOS-Disable-X
 Depends = moeOS-git
-Description = Configuring moeOS
+Description = Configuring GNOME Sessions
