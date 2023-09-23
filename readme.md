@@ -1,6 +1,6 @@
 # moeOS.Config
 
-An automatically configured Arch Linux configuration. Simple and Efficient
+An automatically generated package to configure Arch Linux. Simple and easy to use.
 
 ---
 
