@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function main(){
+	pathPre=$(pwd)
+	mkdir transcoded
+	cycleTotal=$(ls . | wc -l)
+	cycle=1
+	while [[ cycleTotal -gt $(expr ${cycle} - 1) ]]; do
+		transcodeSingle "$(ls . | head -n ${cycle} | tail -n 1)"
+		cycle=$(expr ${cycle} + 1)
+	done
+}
+
+function transcodeSingle(){
+	random=${RANDOM}
+	ffmpeg -i "$1" -af dynaudnorm=g=45:p=0.5:m=1:s=0 ./transcoded/"$1.opus"
+}
+
+
+main
