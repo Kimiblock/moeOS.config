@@ -1,0 +1,15 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/share/xsessions/gnome-xorg.desktop
+Target = usr/share/xsessions/gnome-classic-xorg.desktop
+Target = usr/share/xsessions/gnome-classic.desktop
+Target = usr/share/wayland-sessions/gnome-classic.desktop
+Target = usr/share/wayland-sessions/gnome-classic-wayland.desktop
+
+[Action]
+When = PostTransaction
+Exec = /usr/lib/moeOS/moeOS-Disable-X
+Depends = moeOS-git
+Description = Configuring GNOME Sessions
