@@ -12,8 +12,11 @@ function main(){
 }
 
 function transcodeSingle(){
+	if [[ -d "$1" ]]; then
+		return 0
+	fi
 	random=${RANDOM}
-	ffmpeg -hide_banner -loglevel error -i "$1" -af dynaudnorm=g=45:p=0.5:m=1:s=0 ./transcoded/"$1.opus"
+	ffmpeg -hide_banner -loglevel error -i "$1" -i metadata.json -map_metadata:s:a 0:g -af dynaudnorm=g=45:p=0.5:m=1:s=0 ./transcoded/"$1.opus"
 }
 
 
