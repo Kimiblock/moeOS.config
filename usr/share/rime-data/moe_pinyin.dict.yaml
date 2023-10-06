@@ -6,7 +6,6 @@ name: moe_pinyin
 version: "2023-10-06"
 sort: original
 vocabulary: essay-zh-hans
-vocabulary: moe-essay
 
 import_tables:
   - minecraft_pinyin

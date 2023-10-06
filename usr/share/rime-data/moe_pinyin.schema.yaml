@@ -44,6 +44,7 @@ switches:
     reset: 0
 
 vocabulary: essay-zh-hans
+__include: grammar:/hans
 
 #ascii_composer:
 #  good_old_caps_lock: true  # true | false
@@ -57,7 +58,7 @@ vocabulary: essay-zh-hans
 # 输入引擎
 engine:
   processors:
-    - lua_processor@select_character      # 以词定字
+    #- lua_processor@select_character      # 以词定字
     - recognizer
     - key_binder
     - speller
