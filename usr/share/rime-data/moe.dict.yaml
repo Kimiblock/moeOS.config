@@ -1,0 +1,17 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# moeOS Preset Dictionary
+#
+# Created by Kimiblock
+#
+
+---
+name: moe
+version: "0.1"
+sort: by_weight
+...
+
+c	草	100
+sheshidu	°C	100
+xin	新	100
