@@ -43,7 +43,7 @@ switches:
     states: [ 半角, 全角 ]
     reset: 0
 
-_include: grammar:/hans
+__include: grammar:/hans
 
 #ascii_composer:
 #  good_old_caps_lock: true  # true | false
