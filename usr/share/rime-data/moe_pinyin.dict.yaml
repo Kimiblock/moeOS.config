@@ -10,6 +10,7 @@ vocabulary: moe-essay
 
 import_tables:
   - minecraft_pinyin
+  - moe
   - moegirl
   - cn_dicts/8105     # 字表
   - cn_dicts/base     # 基础词库
@@ -20,6 +21,3 @@ import_tables:
 
 ...
 
-c	草	999
-sheshidu	°C
-xin	新	100
