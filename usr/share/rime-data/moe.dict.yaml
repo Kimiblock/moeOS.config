@@ -12,6 +12,6 @@ version: "0.1"
 sort: by_weight
 ...
 
-c	草	100
-sheshidu	°C	100
-xin	新	100
+草	c	100
+°C	sheshidu	100
+新	xin	100
