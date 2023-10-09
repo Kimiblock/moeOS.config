@@ -15,7 +15,6 @@ schema:
   description: |
     拼音
     https://github.com/Kimiblock/moeOS.config/tree/master/usr/share/moeOS-Docs/ibus-rime.conf.d
-  dependencies:
 
 menu:
   page_size: 8  # 候选词个数
