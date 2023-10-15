@@ -4,7 +4,7 @@
 ---
 name: moe_pinyin
 version: "2023-10-06"
-sort: original
+sort: by_weight
 vocabulary: essay-zh-hans
 
 import_tables:
