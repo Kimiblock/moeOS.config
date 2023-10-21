@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/bin/bash
 
 function main(){
 	for file in $(ls /usr/share/moeOS-Docs/xdg); do
