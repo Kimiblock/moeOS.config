@@ -1,8 +1,8 @@
 [Action]
 When = PostTransaction
-Exec = /usr/lib/moeOS-apply-xdg
+Exec = /usr/lib/moeOS/moeOS-apply-xdg
 Depends = moeOS-git
-Description = Configuring moeOS
+Description = Configuring XDG configs
 
 [Trigger]
 Operation = Install
