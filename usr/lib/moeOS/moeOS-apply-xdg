@@ -1,0 +1,13 @@
+#/usr/bin/env bash
+
+function main(){
+	for file in $(ls /usr/share/moeOS-Docs/xdg); do
+		replace "/usr/share/moeOS-Docs/xdg/${file}" "/etc/xdg/${file}"
+	done
+}
+
+function replace(){
+	if [[ $(diff $1 $2) ]]; then
+		cp $1 $2
+	fi
+}

@@ -1,0 +1,11 @@
+[Action]
+When = PostTransaction
+Exec = /usr/lib/moeOS-apply-xdg
+Depends = moeOS-git
+Description = Configuring moeOS
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = etc/xdg/*
