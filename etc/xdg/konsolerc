@@ -1,7 +1,0 @@
-[KonsoleWindow]
-ShowWindowTitleOnTitleBar=true
-
-[MainWindow]
-MenuBar=Enabled
-RestorePositionForNextInstance=false
-ToolBarsMovable=Disabled
