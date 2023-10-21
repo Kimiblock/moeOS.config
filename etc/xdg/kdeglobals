@@ -135,10 +135,6 @@ ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
-[DirSelect Dialog]
-DirSelectDialog Size=855,578
-History Items[$e]=file:$HOME/Downloads/butterfly-blurred,file:$HOME/Downloads/butterfly-blurred,file:$HOME/Downloads/butterfly-blurred,file:$HOME/Downloads/butterfly-blurred,file:$HOME/Downloads
-
 [General]
 AccentColor=233,58,154
 BrowserApplication=librewolf.desktop
@@ -184,15 +180,10 @@ Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
-Speedbar Width=169
 View Style=DetailTree
 
 [KScreen]
-ScreenScaleFactors=eDP-1=1;DP-3=1;
 XwaylandClientsScale=false
-
-[PreviewSettings]
-MaximumRemoteSize=0
 
 [WM]
 activeBackground=227,229,231
