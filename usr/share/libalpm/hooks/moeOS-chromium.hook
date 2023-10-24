@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/bin/chromium
+Target = usr/share/applications/chromium.desktop
+
+[Action]
+When = PostTransaction
+Exec = /usr/lib/moeOS/patch-chromium
+Depends = chromium
+Description = Wrapping Chromium
