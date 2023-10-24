@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Icon=web-browser
+Name=Browser
+Name[en]=Browser
+Name[en_US]=Browser
+Name[en_US.UTF-8]=Browser
+Comment=Browse the web (moeOS patched ungoogled-chromium)
+Comment[en]=Browse the web (moeOS patched ungoogled-chromium)
+Comment[en_US]=Browse the web (moeOS patched ungoogled-chromium)
+Comment[en_US.UTF-8]=Browse the web (moeOS patched ungoogled-chromium)
+Exec=/usr/lib/moeOS/chromium %U
+Hidden=false
+NoDisplay=false
+StartupNotify=true
+Terminal=false
+
