@@ -16,8 +16,6 @@ schema:
     拼音
     https://github.com/Kimiblock/moeOS.config/tree/master/usr/share/moeOS-Docs/ibus-rime.conf.d
 
-#import_preset: other
-
 menu:
   page_size: 8  # 候选词个数
 
@@ -44,22 +42,22 @@ switches:
     states: [ 半角, 全角 ]
     reset: 0
 
-vocabulary: essay-zh-hans
-#__include: grammar:/hans
+grammar:
+  language: zh-hans-t-essay-bgc
 
 ascii_composer:
   good_old_caps_lock: true  # true | false
   switch_key:
     Caps_Lock: noop      # commit_code | commit_text | clear
-    Shift_L: noop  # commit_code | commit_text | inline_ascii | clear | noop
-    Shift_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
+    Shift_L: inline_ascii  # commit_code | commit_text | inline_ascii | clear | noop
+    Shift_R: inline_ascii         # commit_code | commit_text | inline_ascii | clear | noop
     Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
     Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop
 
 # 输入引擎
 engine:
   processors:
-    #- lua_processor@select_character      # 以词定字
+    - lua_processor@select_character      # 以词定字
     - recognizer
     - key_binder
     - speller
@@ -83,7 +81,7 @@ engine:
   filters:
     - simplifier@emoji                    # Emoji
     - simplifier@traditionalize           # 简繁切换
-    #- uniquifier                          # 去重
+    - uniquifier                          # 去重
 
 # 主翻译器，拼音
 translator:
@@ -126,7 +124,7 @@ emoji:
 
 # 处理符合特定规则的输入码，如网址、反查
 recognizer:
-  #import_preset: default  # 从 default.yaml 继承通用的
+  import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
     punct: "^v([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_v.yaml 的 symbols，用 'v' 替换 '/'
     reverse_lookup: "^u[a-z]+$"       # 响应两分拼字的反查
