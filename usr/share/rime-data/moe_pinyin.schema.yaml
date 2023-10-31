@@ -17,7 +17,7 @@ schema:
     https://github.com/Kimiblock/moeOS.config/tree/master/usr/share/moeOS-Docs/ibus-rime.conf.d
 
 menu:
-  page_size: 8  # 候选词个数
+  page_size: 6  # 候选词个数
 
 switcher:
   caption: 方案选单
@@ -43,7 +43,7 @@ switches:
     reset: 0
 
 grammar:
-  language: zh-hans-t-essay-bgc
+  language: zh-hans-t-essay-bgw
 
 ascii_composer:
   good_old_caps_lock: true  # true | false
@@ -85,6 +85,9 @@ engine:
 
 # 主翻译器，拼音
 translator:
+  contextual_suggestions: true
+  max_homophones: 7
+  max_homographs: 7
   dictionary: moe_pinyin
   spelling_hints: 8              # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
   always_show_comments: false
