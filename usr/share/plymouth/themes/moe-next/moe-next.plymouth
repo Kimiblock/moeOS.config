@@ -7,7 +7,7 @@ ModuleName=two-step
 [two-step]
 Font=Inter Medium, 20
 TitleFont=Inter Medium, 28
-#ImageDir=/usr/share/plymouth/themes/moe-next
+ImageDir=/usr/share/plymouth/themes/moe-next
 DialogHorizontalAlignment=.5
 DialogVerticalAlignment=.75
 TitleHorizontalAlignment=.5
