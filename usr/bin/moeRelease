@@ -9,7 +9,7 @@ function main(){
 	for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd; do
 		systemctl enable ${unit}
 	done
-	plymouth-set-default-theme moe
+	plymouth-set-default-theme moe-next
 }
 
 function _info() {
