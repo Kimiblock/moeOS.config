@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name[zh_CN]=moe
+Name=moe
+Description=moeOS Boot Splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/moe-ng
+ScriptFile=/usr/share/plymouth/themes/moe-ng/moe-ng.script
