@@ -1,0 +1,68 @@
+[Plymouth Theme]
+Name[zh_CN]=moe
+Name=moe
+Description=moeOS Boot Splash
+ModuleName=two-step
+
+[two-step]
+Font=Inter Medium, 20
+TitleFont=Inter Medium, 28
+#ImageDir=/usr/share/plymouth/themes/moe-next
+DialogHorizontalAlignment=.5
+DialogVerticalAlignment=.75
+TitleHorizontalAlignment=.5
+TitleVerticalAlignment=.5
+HorizontalAlignment=.5
+VerticalAlignment=.7
+WatermarkHorizontalAlignment=.5
+WatermarkVerticalAlignment=.5
+Transition=merge-fade
+TransitionDuration=0.7
+BackgroundStartColor=0x000000
+BackgroundEndColor=0x000000
+ProgressBarBackgroundColor=0x606060
+ProgressBarForegroundColor=0xab3175
+DialogClearsFirmwareBackground=true
+MessageBelowAnimation=true
+
+[boot-up]
+UseEndAnimation=true
+UseProgressBar=false
+UseFirmwareBackground=true
+Transition=merge-fade
+TransitionDuration=.7
+
+[shutdown]
+UseEndAnimation=true
+Transition=merge-fade
+TransitionDuration=.5
+
+[reboot]
+UseEndAnimation=true
+UseFirmwareBackground=true
+UseProgressBar=false
+TransitionDuration=.7
+
+[updates]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+UseFirmwareBackground=false
+Title=Installing Updates...
+SubTitle=Do not turn off your computer
+
+[system-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Upgrading System...
+SubTitle=Do not turn off your computer
+UseFirmwareBackground=false
+
+[firmware-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Upgrading Firmware...
+SubTitle=Do not turn off your computer
+UseFirmwareBackground=false
