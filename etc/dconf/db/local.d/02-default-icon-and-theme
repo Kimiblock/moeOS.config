@@ -6,4 +6,6 @@ font-name='Sans 12'
 document-font-name='Sans 12'
 font-hinting='medium'
 font-antialiasing='rgba'
-
+cursor-theme='material_dark_cursors'
+clock-show-weekday=true
+monospace-font-name='Monospace 12'
