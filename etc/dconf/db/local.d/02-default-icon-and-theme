@@ -10,3 +10,4 @@ cursor-theme='material_dark_cursors'
 clock-show-weekday=true
 monospace-font-name='Monospace 12'
 clock-format='12h'
+clock-show-weekday=true
