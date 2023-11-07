@@ -12,7 +12,7 @@ hwdec-codecs		=	all
 volume-max		=	100
 #sub-auto		=	fuzzy
 #vd-lavc-dr		=	yes
-#replaygain		=	album
+replaygain		=	album
 gpu-api			=	vulkan
 native-keyrepeat
 deband
