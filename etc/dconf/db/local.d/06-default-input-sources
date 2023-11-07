@@ -1,0 +1,3 @@
+[org/gnome/desktop/input-sources]
+mru-sources=[('xkb', 'us'), ('ibus', 'rime')]
+sources=[('xkb', 'us'), ('ibus', 'rime')]
