@@ -1,5 +1,6 @@
 [Default Applications]
 application/javascript=org.kde.kate.desktop;
+application/yaml=org.kde.kate.desktop;
 application/mbox=org.kde.kmail2.desktop;
 application/msexcel=libreoffice-calc.desktop;
 application/mspowerpoint=libreoffice-impress.desktop;
@@ -8,6 +9,7 @@ application/ogg=mpv.desktop;
 application/pdf=org.kde.okular.desktop;
 application/postscript=org.kde.okular.desktop;
 application/ram=mpv.desktop;
+audio/x-opus+ogg=mpv.desktop;
 application/rdf+xml=librewolf.desktop;
 application/rss+xml=librewolf.desktop;
 application/sdp=mpv.desktop;
