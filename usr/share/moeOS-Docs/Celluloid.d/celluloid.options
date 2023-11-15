@@ -1,4 +1,4 @@
-#gpu-hwdec-interop	=	vaapi
+gpu-hwdec-interop	=	vaapi
 hwdec			=	vulkan,vaapi
 vo			=	gpu-next
 tone-mapping		=	auto
