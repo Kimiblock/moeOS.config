@@ -1,5 +1,9 @@
 #!/bin/bash
 function transcode(){
+	if [[ $(ls /dev) =~ nvidia-uvm ]]; then
+		ffmpeg -loglevel fatal -nostats -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i "$1" -c:a copy -c:v h264_nvenc "$2"
+		return 0
+	fi
 	if [[ $@ =~ '-v' ]]; then
 		ffmpeg -hwaccel vaapi -hwaccel_device ${vaapiDevice} -i "$1" -vf 'format=nv12,hwupload' -c:v h264_vaapi -b:v 5M "$2"
 	else
@@ -54,8 +58,8 @@ function renameOutput(){
 }
 
 function main(){
-	defineDevice
 	renameOutput "$1"
+	defineDevice
 	if [[ $@ =~ '-v' ]]; then
 		echo "[Debug] Verbose is on"
 		sleep 1s
