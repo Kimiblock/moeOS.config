@@ -1,0 +1,13 @@
+[Unit]
+Description=moeOS Throttle Stopper
+After=multi-user.target
+
+[Service]
+Type=oneshot
+User=root
+OOMPolicy=continue
+WorkingDirectory=/tmp
+ExecStart=/usr/lib/moeOS/throttle-stop
+
+[Install]
+WantedBy=multi-user.target
