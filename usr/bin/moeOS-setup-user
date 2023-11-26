@@ -6,6 +6,7 @@ function _notify(){
 }
 
 function main(){
+	ln -s /etc/gtk-4.0/ /home/kimiblockmoe/.config
 	checkExist
 	_notify "Setting up moeOS"
 	rime
