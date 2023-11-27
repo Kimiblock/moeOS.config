@@ -24,4 +24,4 @@ bwrap \
           --bind "$XDG_RUNTIME_DIR/bus" "$XDG_RUNTIME_DIR/bus" \
           --tmpfs /tmp \
           --bind "$HOME" "$HOME" \
-          env GTK_IM_MODULE=ibus /usr/bin/chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-vulkan --ignore-gpu-blocklist --enable-zero-copy --chrome-webui-refresh-2023 --chrome-refresh-2023 --enable-features=VaapiVideoDecoder --enable-features=VaapiIgnoreDriverChecks "$@"
+          env GTK_IM_MODULE=ibus /usr/bin/chromium --gtk-version=4 --ozone-platform-hint=auto --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder "$@"
