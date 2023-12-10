@@ -1,0 +1,11 @@
+[Action]
+When = PostTransaction
+Exec = /usr/bin/accache -q --remove -k1
+Depends = moeOS-git
+Description = Cleaning Package Caches
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
