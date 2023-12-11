@@ -1,6 +1,6 @@
 [Action]
 When = PostTransaction
-Exec = /usr/bin/accache -q --remove -k1
+Exec = /usr/bin/paccache -q --remove -k1
 Depends = moeOS-git
 Description = Cleaning Package Caches
 
