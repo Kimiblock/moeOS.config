@@ -6,7 +6,7 @@ function _notify(){
 }
 
 function main(){
-	ln -s /etc/gtk-4.0/ /home/kimiblockmoe/.config
+	cp /etc/gtk-4.0/ /home/kimiblockmoe/.config
 	checkExist
 	_notify "Setting up moeOS"
 	rime
@@ -23,7 +23,7 @@ function setupFont(){
 }
 
 function moeOS-setup-librewolf(){
-	bash -c "/usr/lib/moeOS/moeOS-setup-librewolf"
+	bash "/usr/lib/moeOS/moeOS-setup-librewolf"
 }
 
 function checkExist(){
