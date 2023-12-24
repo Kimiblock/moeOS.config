@@ -3,12 +3,9 @@ mru-sources=[('xkb', 'us'), ('ibus', 'rime')]
 sources=[('xkb', 'us'), ('ibus', 'rime')]
 per-window=true
 
-[desktop/ibus/general/hotkey]
-triggers=[]
-
 [desktop/ibus/panel]
 custom-font='Sans 12'
 use-custom-font=true
 
 [org/gnome/desktop/wm/keybindings]
-switch-input-source=['<Control>space']
+switch-input-source=['<Control>space','<Super>space']
