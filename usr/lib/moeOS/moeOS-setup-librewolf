@@ -13,7 +13,7 @@ function _info() {
 
 function gnomeTheme(){
 	_info "Installing LibreWolf theme..."
-	for profile in $(ls "$HOME/.librewolf" | grep "default-release"); do
+	for profile in $(ls "$HOME/.librewolf" | grep -v '.ini'); do
 		if [ ! -f ./chrome/firefox-gnome-theme ]; then
 			_info "Working on ${profile}"
 			cd "$HOME/.librewolf/${profile}"

@@ -6,10 +6,10 @@ function _notify(){
 }
 
 function main(){
-	cp -r /etc/gtk-4.0/ "${HOME}/.config"
+	cp -r /etc/gtk-{4,3}.0 "${HOME}/.config"
 	checkExist
 	_notify "Setting up moeOS"
-	rime
+	enableSnotify
 	checkExist set
 }
 
