@@ -8,6 +8,7 @@ User=root
 OOMPolicy=continue
 WorkingDirectory=/tmp
 ExecStart=/usr/lib/moeOS/throttle-stop
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
