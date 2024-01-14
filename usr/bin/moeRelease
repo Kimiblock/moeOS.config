@@ -6,7 +6,7 @@ function main(){
 	replace  "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
 	replace /usr/share/moeOS-Docs/librewolf.d/librewolf.cfg /usr/lib/librewolf/librewolf.cfg
-	for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald; do
+	for unit in nvidia-powerd power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald; do
 		systemctl enable ${unit}
 	done
 	plymouth-set-default-theme moe-next
