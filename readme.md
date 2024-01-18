@@ -14,7 +14,7 @@ An automatically generated package to configure Arch Linux. Simple and easy to u
 
 # Installation
 
-Add the following lines to paru:
+Add the following lines to /etc/paru.conf:
 
 ```
 [moeOS-git]
