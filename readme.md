@@ -14,11 +14,17 @@ An automatically generated package to configure Arch Linux. Simple and easy to u
 
 # Installation
 
+Add the following lines to paru:
+
 ```
-cd ~
-git clone https://github.com/Kimiblock/moeOS-Package.git
-cd moeOS-Package
-paru -Ui
+[moeOS-git]
+Url = https://github.com/Kimiblock/moeOS-Package.git
+```
+
+Then install the package:
+
+```
+paru -S moeOS-git
 ```
 
 # Ingredients
