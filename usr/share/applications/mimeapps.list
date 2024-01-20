@@ -1,8 +1,8 @@
 [Default Applications]
-x-scheme-handler/http=librewolf.desktop
-text/html=librewolf.desktop
-application/xhtml+xml=librewolf.desktop
-x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/http=firefox.desktop
+text/html=firefox.desktop
+application/xhtml+xml=firefox.desktop
+x-scheme-handler/https=firefox.desktop
 x-scheme-handler/mailto=org.gnome.Geary.desktop
 text/calendar=org.gnome.Calendar.desktop
 audio/x-vorbis+ogg=io.bassi.Amberol.desktop
@@ -124,3 +124,10 @@ inode/directory=org.gnome.Nautilus.desktop
 
 application/pdf=org.gnome.Evince.desktop
 application/vnd.rar=org.gnome.Nautilus.desktop
+
+application/epub+zip=org.kde.okular.desktop;
+application/x-shellscript=org.gnome.Builder.desktop
+application/json=org.gnome.Builder.desktop
+text/vnd.trolltech.linguist=org.gnome.Builder.desktop
+text/x-csrc=org.gnome.Builder.desktop
+application/x-compressed-tar=org.gnome.Nautilus.desktop

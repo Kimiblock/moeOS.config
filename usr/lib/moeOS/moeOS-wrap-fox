@@ -1,11 +1,4 @@
 #!/bin/bash
-
-echo '#!/bin/sh' >/usr/bin/librewolf
-
-echo 'bwrap --dev-bind / / --bind /usr/share/fonts/noto-cjk/NotoSansCJK-Medium.ttc /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc --bind /usr/share/fonts/inter/Inter-Medium.ttf /usr/share/fonts/inter/Inter-Regular.ttf --bind /usr/share/fonts/TTF/RobotoMono-Medium.ttf /usr/share/fonts/TTF/RobotoMono-Regular.ttf /usr/lib/librewolf/librewolf "$@"' >>/usr/bin/librewolf
-
-sed -i "s|Exec=/usr/lib/librewolf/librewolf|Exec=/usr/bin/librewolf|" /usr/share/applications/librewolf.desktop
-
 echo '#!/bin/sh' >/usr/bin/firefox
 
 echo 'bwrap --dev-bind / / --bind /usr/share/fonts/noto-cjk/NotoSansCJK-Medium.ttc /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc --bind /usr/share/fonts/inter/Inter-Medium.ttf /usr/share/fonts/inter/Inter-Regular.ttf --bind /usr/share/fonts/TTF/RobotoMono-Medium.ttf /usr/share/fonts/TTF/RobotoMono-Regular.ttf /usr/lib/firefox/firefox "$@"' >>/usr/bin/firefox

@@ -34,7 +34,7 @@ Contains the following configurations and customizations:
 - moeOS Plymouth splash theme.
 - Default `sbctl` Secure Boot configuation.
 - Example configuraions which can't be generated. (Located in `/usr/share/moeOS-Docs/Reference Configs`)
-- LibreWolf configuration, Simply useable.
+- Firefox configuration, no annoyance.
 - OS branding replacement.
 - Pacman hooks to replace files automatically.
 - A libadwaita-like Kvantum theme for Qt applications.

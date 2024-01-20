@@ -12,11 +12,11 @@ function _info() {
 }
 
 function gnomeTheme(){
-	_info "Installing LibreWolf theme..."
-	for profile in $(ls "$HOME/.librewolf" | grep -v '.ini'); do
+	_info "Installing Firefox theme..."
+	for profile in $(ls "$HOME/.mozilla/firefox" | grep -v '.ini'); do
 		if [ ! -f ./chrome/firefox-gnome-theme ]; then
 			_info "Working on ${profile}"
-			cd "$HOME/.librewolf/${profile}"
+			cd "$HOME/.mozilla/firefox/${profile}"
 			mkdir chrome
 			cd chrome
 			ln -s /usr/lib/firefox-gnome-theme firefox-gnome-theme

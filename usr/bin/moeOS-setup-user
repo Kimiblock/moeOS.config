@@ -22,8 +22,8 @@ function setupFont(){
 	cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf
 }
 
-function moeOS-setup-librewolf(){
-	bash "/usr/lib/moeOS/moeOS-setup-librewolf"
+function moeOS-setup-firefox(){
+	bash "/usr/lib/moeOS/moeOS-setup-firefox"
 }
 
 function checkExist(){
@@ -35,7 +35,7 @@ function checkExist(){
 		_notify "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
 		setupFont
-		moeOS-setup-librewolf
+		moeOS-setup-firefox
 		exit 0
 	fi
 	if [[ "$@" =~ set ]]; then

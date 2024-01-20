@@ -137,7 +137,7 @@ ForegroundVisited=155,89,182
 
 [General]
 AccentColor=233,58,154
-BrowserApplication=librewolf.desktop
+BrowserApplication=firefox.desktop
 ColorScheme=BreezeLight
 ColorSchemeHash=2ef8a9f7238e072ca91b0eb590f49ded650c76bd
 LastUsedCustomAccentColor=233,58,154
