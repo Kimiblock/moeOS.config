@@ -1,1 +1,0 @@
-ibus-rime.conf.d
