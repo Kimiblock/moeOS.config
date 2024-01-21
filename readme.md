@@ -4,7 +4,12 @@ An automatically generated package to configure Arch Linux. Simple and easy to u
 
 ---
 
-![Logo](https://raw.githubusercontent.com/Kimiblock/moeOS.config/master/usr/share/icons/hicolor/scalable/apps/moeos.svg)
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/Kimiblock/moeOS.config/master/usr/share/icons/hicolor/scalable/apps/moeos.svg" alt="moeOS" width="128" />
+  <br>
+  moeOS
+  <br>
+</h1>
 
 # Pre-reqirements
 - Arch Linux with GNOME Wayland only.
