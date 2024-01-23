@@ -1,0 +1,10 @@
+[org/gnome/settings-daemon/plugins/power]
+idle-brightness=60
+power-button-action='none'
+sleep-inactive-battery-timeout=600
+
+[org/gnome/desktop/screensaver]
+lock-delay=3
+
+[org/gnome/desktop/session]
+idle-delay=540
