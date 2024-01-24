@@ -1,0 +1,5 @@
+#!/bin/bash
+
+kill -STOP $(pgrep YuanShen.exe)
+sleep 150
+kill -CONT $(pgrep YuanShen.exe)
