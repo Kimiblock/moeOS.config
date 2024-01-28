@@ -6,7 +6,6 @@ function _notify(){
 }
 
 function main(){
-	zenity --progress --no-cancel --auto-close --text "Setting up moeOS" --timeout=10 --pulsate &
 	cp -r /etc/gtk-{4,3}.0 "${HOME}/.config"
 	checkExist
 	_notify "Setting up moeOS"
@@ -33,7 +32,7 @@ function checkExist(){
 	fi
 
 	if [ "${_moeOS_Setup}" = 1 ]; then
-		echo "_moeOS_Setup detected!"
+		_notify "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
 		setupFont
 		moeOS-setup-firefox

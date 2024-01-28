@@ -1,8 +1,12 @@
 gpu-hwdec-interop	=	vaapi
-hwdec			=	vaapi,vulkan,auto
+hwdec			=	vulkan,vaapi
+vo			=	gpu-next
 tone-mapping		=	auto
 tone-mapping-mode	=	auto
+ao			=	pipewire
 load-osd-console	=	no
+#scale			=	oversample
+#dscale			=	mitchell
 af			=	dynaudnorm=g=45:p=0.5:m=1:s=0
 hwdec-codecs		=	all
 volume-max		=	100
@@ -14,3 +18,4 @@ native-keyrepeat
 keep-open		=	yes
 vd-lavc-film-grain	=	gpu
 embeddedfonts		=	no
+
