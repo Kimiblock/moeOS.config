@@ -32,7 +32,7 @@ function checkExist(){
 	fi
 
 	if [ "${_moeOS_Setup}" = 1 ]; then
-		_notify "_moeOS_Setup detected!"
+		echo "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
 		setupFont
 		moeOS-setup-firefox
