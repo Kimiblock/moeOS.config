@@ -1,6 +1,3 @@
-[$Version]
-update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,icons_remove_effects.upd:IconsRemoveEffects,kwin.upd:animation-speed,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
-
 [ColorEffects:Disabled]
 ChangeSelectionColor=
 Color=56,56,56
@@ -142,26 +139,25 @@ ColorScheme=BreezeLight
 ColorSchemeHash=2ef8a9f7238e072ca91b0eb590f49ded650c76bd
 LastUsedCustomAccentColor=233,58,154
 Name=Breeze Light
-XftHintStyle=hintslight
+XftHintStyle=hintmedium
 XftSubPixel=rgb
 fixed=Roboto Mono [GOOG],11,-1,5,57,0,0,0,0,0,Medium
 font=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
 menuFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
 shadeSortColumn=true
-smallestReadableFont=Inter Medium,10,-1,5,57,0,0,0,0,0,Regular
+smallestReadableFont=Inter Medium,11,-1,5,57,0,0,0,0,0,Regular
 toolBarFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
 widgetStyle=Breeze
 
 [Icons]
-Theme=Tela-circle-pink
+Theme=Tela-circle-pink-light
 
 [KDE]
-AnimationDurationFactor=2
+AnimationDurationFactor=1.414213562373095
 ColorScheme=BreezeLight
 ShowDeleteCommand=false
 SingleClick=false
 contrast=4
-widgetStyle=Lightly
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -175,12 +171,11 @@ Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
-Show hidden files=false
+Show hidden files=true
 Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
-View Style=DetailTree
 
 [KScreen]
 XwaylandClientsScale=false

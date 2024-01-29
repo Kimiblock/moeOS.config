@@ -1,0 +1,9 @@
+[ContextMenu]
+ShowAddToPlaces=false
+ShowCopyToOtherSplitView=false
+ShowDuplicateHere=false
+ShowMoveToOtherSplitView=false
+ShowOpenInNewTab=false
+ShowOpenInNewWindow=false
+ShowSortBy=false
+ShowViewMode=false

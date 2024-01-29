@@ -1,13 +1,13 @@
-[$Version]
-update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
-
 [General]
+autoSaveImage=true
 clipboardGroup=PostScreenshotCopyImage
-onLaunchAction=DoNotTakeScreenshot
+onLaunchAction=UseLastUsedCapturemode
+rememberLastRectangularRegion=Never
+useLightMaskColour=true
 
 [GuiConfig]
-captureDelay=2
-captureMode=4
+captureDelay=1
+captureMode=0
 
 [Save]
 compressionQuality=96
