@@ -1,7 +1,0 @@
-[Common]
-OutlineCloseButton=true
-ShadowSize=ShadowSmall
-
-[Style]
-MenuOpacity=80
-TabBarDrawCenteredTabs=true
