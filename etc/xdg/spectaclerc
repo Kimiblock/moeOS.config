@@ -1,0 +1,14 @@
+[General]
+autoSaveImage=true
+clipboardGroup=PostScreenshotCopyImage
+onLaunchAction=UseLastUsedCapturemode
+rememberLastRectangularRegion=Never
+useLightMaskColour=true
+
+[GuiConfig]
+captureDelay=1
+captureMode=0
+
+[Save]
+compressionQuality=96
+defaultSaveImageFormat=WEBP
