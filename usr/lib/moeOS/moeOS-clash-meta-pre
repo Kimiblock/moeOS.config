@@ -1,7 +1,7 @@
 #!/bin/bash
 function download(){
 	info "Downloading subscribe file..."
-	execute curl `cat /etc/moeOS-clash-meta/subscribe.conf` -o /etc/moeOS-clash-meta/config.yaml
+	execute curl "${url}" -o /var/tmp/config.yaml
 }
 
 function execute(){
@@ -23,13 +23,13 @@ function addMissingTun(){
   dns-hijack:
   - any:53
   auto-route: true
-  auto-detect-interface: true''' >>/etc/moeOS-clash-meta/config.yaml
+  auto-detect-interface: true''' >>/var/tmp/config.yaml
   echo "Done."
 }
 
 function enableTunInplace(){
 	info 'Updating the yaml file...'
-	execute yq -i '.tun.enable = "true"' /etc/moeOS-clash-meta/config.yaml
+	execute yq -i '.tun.enable = "true"' /var/tmp/config.yaml
 	echo done.
 }
 
@@ -38,10 +38,10 @@ function info(){
 }
 
 function mergeConfig(){
-	if [[ $(cat /etc/moeOS-clash-meta/merge.yaml) ]]; then
+	if [[ $(cat /var/tmp/merge.yaml) ]]; then
 		info 'Merging configuration...'
-		yq ea '. as $item ireduce ({}; . * $item )' /etc/moeOS-clash-meta/{config.yaml,merge.yaml} >/etc/moeOS-clash-meta/config.yaml.new
-		mv /etc/moeOS-clash-meta/config.yaml.new /etc/moeOS-clash-meta/config.yaml
+		yq ea '. as $item ireduce ({}; . * $item )' /var/tmp/{config.yaml,merge.yaml} >/var/tmp/config.yaml.new
+		mv /var/tmp/config.yaml.new /var/tmp/config.yaml
 	else
 		info 'Skipping merge'
 	fi
@@ -49,12 +49,13 @@ function mergeConfig(){
 }
 
 function main(){
+	rm /var/tmp/* -r
 	flags="$@"
 	download
-	if [[ $(yq '.tun.enable' /etc/moeOS-clash-meta/config.yaml) = null ]]; then
+	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = null ]]; then
 		addMissingTun
 		info "Config check completed."
-	elif [[ $(yq '.tun.enable' /etc/moeOS-clash-meta/config.yaml) = 'false' ]]; then
+	elif [[ $(yq '.tun.enable' /var/tmp/config.yaml) = 'false' ]]; then
 		info "TUN is disabled"
 		enableTunInplace
 		info "Config check completed."
@@ -63,15 +64,15 @@ function main(){
 	fi
 	if [[ ${flags} =~ redir-host ]]; then
 		info 'Setting enhanced mode to redir-host...'
-		yq -i '.dns.enhanced-mode = "redir-host"' /etc/moeOS-clash-meta/config.yaml
+		yq -i '.dns.enhanced-mode = "redir-host"' /var/tmp/config.yaml
 	fi
 	if [[ ${flags} =~ fake-ip ]]; then
 		info 'Setting enhanced mode to fake-ip...'
-		yq -i '.dns.enhanced-mode = "fake-ip"' /etc/moeOS-clash-meta/config.yaml
+		yq -i '.dns.enhanced-mode = "fake-ip"' /var/tmp/config.yaml
 	fi
 	if [[ ${flags} =~ load-balance ]]; then
 		info "Enabling load balancing mode..."
-		sed -i "s/url-test/load-balance/" /etc/moeOS-clash-meta/config.yaml
+		sed -i "s/url-test/load-balance/" /var/tmp/config.yaml
 	fi
 	mergeConfig
 }

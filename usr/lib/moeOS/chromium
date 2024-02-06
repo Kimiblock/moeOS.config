@@ -15,13 +15,7 @@ bwrap \
 	--proc /proc \
 	--ro-bind /sys/dev/char /sys/dev/char \
 	--ro-bind /sys/devices /sys/devices \
-	--ro-bind /run/dbus /run/dbus \
-	--dir "$XDG_RUNTIME_DIR" \
-	--chmod 0700 "$XDG_RUNTIME_DIR" \
-	--bind "$XDG_RUNTIME_DIR/wayland-0" "$XDG_RUNTIME_DIR/wayland-0" \
-	--bind "$XDG_RUNTIME_DIR/pipewire-0" "$XDG_RUNTIME_DIR/pipewire-0" \
-	--bind "$XDG_RUNTIME_DIR/pulse" "$XDG_RUNTIME_DIR/pulse" \
-	--bind "$XDG_RUNTIME_DIR/bus" "$XDG_RUNTIME_DIR/bus" \
+	--bind /run /run \
 	--tmpfs /tmp \
 	--bind "$HOME" "$HOME" \
-	/usr/bin/chromium --enable-wayland-ime --disable-features=WaylandFractionalScaleV1 --ozone-platform-hint=auto --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder "$@"
+	/usr/bin/chromium --enable-zero-copy  --enable-wayland-ime --disable-features=WaylandFractionalScaleV1 --ozone-platform-hint=auto --enable-features=VaapiVideoDecodeLinuxGL --use-gl=angle --use-angle=gl --canvas-oop-rasterization "$@"
