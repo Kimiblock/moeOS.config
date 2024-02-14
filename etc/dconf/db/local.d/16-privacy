@@ -1,0 +1,7 @@
+[org/gnome/desktop/privacy]
+remove-old-temp-files=true
+remove-old-trash-files=true
+old-files-age=30
+
+[org/gnome/system/location]
+enabled=true
