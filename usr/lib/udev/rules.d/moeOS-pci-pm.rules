@@ -1,1 +1,5 @@
+# Blacklist for stupid 9560 WiFi
+SUBSYSTEM=="pci", ATTR{vendor}=="0x8086", ATTR{device}=="0x51f0", ATTR{power/control}="on", GOTO="pci_pm_end"
+
 SUBSYSTEM=="pci", ATTR{power/control}="auto"
+LABEL="pci_pm_end"
