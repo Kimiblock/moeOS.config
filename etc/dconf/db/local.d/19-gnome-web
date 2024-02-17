@@ -1,0 +1,6 @@
+[org/gnome/epiphany/web]
+ask-on-download=true
+enable-safe-browsing=false
+enable-webextensions=true
+min-font-size=11
+use-gnome-fonts=true
