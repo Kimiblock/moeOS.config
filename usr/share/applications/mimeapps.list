@@ -8,6 +8,7 @@ text/calendar=org.gnome.Calendar.desktop
 audio/x-vorbis+ogg=io.bassi.Amberol.desktop
 audio/wav=io.bassi.Amberol.desktop
 audio/webm=com.github.neithern.g4music.desktop
+audio/ogg=com.github.rafostar.Clapper.desktop
 audio/x-aac=io.bassi.Amberol.desktop
 audio/x-aiff=io.bassi.Amberol.desktop
 audio/x-ape=io.bassi.Amberol.desktop
@@ -127,7 +128,10 @@ application/vnd.rar=org.gnome.Nautilus.desktop
 
 application/epub+zip=org.kde.okular.desktop;
 application/x-shellscript=org.gnome.Builder.desktop
+application/x-7z-compressed=org.gnome.Nautilus.desktop
 application/json=org.gnome.Builder.desktop
+application/xml=org.gnome.Builder.desktop
 text/vnd.trolltech.linguist=org.gnome.Builder.desktop
 text/x-csrc=org.gnome.Builder.desktop
 application/x-compressed-tar=org.gnome.Nautilus.desktop
+
