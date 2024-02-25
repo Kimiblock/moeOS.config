@@ -5,22 +5,13 @@ function main(){
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace  "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-	for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald; do
-		systemctl enable ${unit}
+	for unit in power-profiles-daemon bluetooth NetworkManager nvidia-powerd systemd-oomd moeOS-throttle-stopper thermald; do
+		if [[ -f "/usr/lib/systemd/system/${unit}".service ]]; then
+			echo "Enabling ${unit}"
+			systemctl enable --now "${unit}"
+		fi
 	done
 	plymouth-set-default-theme moe-next
-}
-
-function _info() {
-	if [ -f /usr/bin/pamac ]; then
-		echo "  ==> [Info]: $@"
-	else
-		all_off="$(tput sgr0)"
-		bold="${all_off}$(tput bold)"
-		blue="${bold}$(tput setaf 4)"
-		yellow="${bold}$(tput setaf 3)"
-		printf "${blue}==>${yellow} [Info]:${bold} $1${all_off}\n"
-	fi
 }
 
 function replace(){
