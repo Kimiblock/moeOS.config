@@ -50,6 +50,7 @@ function mergeConfig(){
 
 function main(){
 	rm /var/tmp/* -r
+	cp /usr/share/v2ray/geosite.dat /var/tmp/
 	flags="$@"
 	download
 	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = null ]]; then
