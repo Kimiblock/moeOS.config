@@ -5,8 +5,11 @@ function main(){
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace  "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-	for unit in power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald; do
-		systemctl enable ${unit}
+	for unit in nvidia-powerd linux-modules-cleanup uptimed power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald; do
+		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
+			echo "Enabling ${unit}"
+			systemctl enable ${unit}
+		fi
 	done
 	plymouth-set-default-theme moe-next
 }
