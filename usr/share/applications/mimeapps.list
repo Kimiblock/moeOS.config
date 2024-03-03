@@ -1,8 +1,8 @@
 [Default Applications]
-x-scheme-handler/http=firefox.desktop
-text/html=firefox.desktop
-application/xhtml+xml=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=moeOS-web.desktop
+text/html=moeOS-web.desktop
+application/xhtml+xml=moeOS-web.desktop
+x-scheme-handler/https=moeOS-web.desktop
 x-scheme-handler/mailto=org.gnome.Geary.desktop
 text/calendar=org.gnome.Calendar.desktop
 audio/x-vorbis+ogg=io.bassi.Amberol.desktop
@@ -134,4 +134,7 @@ application/xml=org.gnome.Builder.desktop
 text/vnd.trolltech.linguist=org.gnome.Builder.desktop
 text/x-csrc=org.gnome.Builder.desktop
 application/x-compressed-tar=org.gnome.Nautilus.desktop
+application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop
 
+[Added Associations]
+application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop;
