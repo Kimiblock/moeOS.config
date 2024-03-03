@@ -1,6 +1,5 @@
 #!/bin/bash
 bwrap \
-
           --symlink usr/lib /lib \
           --symlink usr/lib64 /lib64 \
           --symlink usr/bin /bin \
