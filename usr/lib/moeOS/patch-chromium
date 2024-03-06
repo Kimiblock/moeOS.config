@@ -1,2 +1,2 @@
 #!/bin/bash
-cp /usr/share/applications/moeOS-web.desktop /usr/share/applications/chromium.desktop
+rm /usr/share/applications/chromium.desktop
