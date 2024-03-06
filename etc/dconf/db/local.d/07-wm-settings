@@ -3,4 +3,4 @@ button-layout='close:appmenu'
 
 [org/gnome/desktop/wm/keybindings]
 switch-input-source=['XF86Keyboard']
-switch-input-source-backward=[]
+switch-input-source-backward=['XF86Keyboard']
