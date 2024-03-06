@@ -16,7 +16,7 @@ bwrap \
 	--chmod 0700 "$XDG_RUNTIME_DIR" \
 	--tmpfs /tmp \
 	--bind "$HOME" "$HOME" \
-	env GTK_IM_MODULE=ibus \
+	env GTK_IM_MODULE=fcitx \
 		/usr/bin/chromium \
 			--gtk-version=4 \
 			--ozone-platform-hint=auto \
