@@ -20,6 +20,7 @@ DeactivateKeys=
 
 [Hotkey/TriggerKeys]
 0=Control+space
+1=Super+space
 
 [Hotkey/PrevPage]
 0=Up
@@ -68,5 +69,5 @@ AllowInputMethodForPassword=False
 # Show preedit text when typing password
 ShowPreeditForPassword=False
 # Interval of saving user data in minutes
-AutoSavePeriod=30
+AutoSavePeriod=60
 
