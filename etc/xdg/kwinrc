@@ -2,18 +2,21 @@
 update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup,kwin.upd:replace-cascaded-zerocornered
 
 [Effect-blur]
-BlurStrength=8
+BlurStrength=5
 NoiseStrength=0
 
 [Input]
 TabletMode=off
+
+[NightColor]
+NightTemperature=6400
 
 [Plugins]
 blurEnabled=true
 contrastEnabled=false
 
 [Wayland]
-InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
+InputMethod[$e]=/usr/share/applications/fcitx5-wayland-launcher.desktop
 VirtualKeyboardEnabled=true
 
 [Windows]

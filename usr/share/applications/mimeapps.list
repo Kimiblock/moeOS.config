@@ -1,10 +1,11 @@
 [Default Applications]
 x-scheme-handler/mailto=org.kde.kmail2.desktop
-x-scheme-handler/http=firefox.desktop
-text/html=firefox.desktop
-application/xhtml+xml=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=chromium.desktop
+text/html=chromium.desktop
+application/xhtml+xml=chromium.desktop
+x-scheme-handler/https=chromium.desktop
 audio/x-vorbis+ogg=mpv.desktop
+audio/x-oggflac=mpv.desktop;
 audio/wav=mpv.desktop
 audio/webm=mpv.desktop
 audio/x-aac=mpv.desktop
@@ -47,6 +48,7 @@ audio/x-vorbis=mpv.desktop
 audio/x-xm=mpv.desktop
 audio/x-mpegurl=mpv.desktop
 audio/x-scpls=mpv.desktop
+audio/ogg=mpv.desktop;
 video/x-ogm+ogg=mpv.desktop
 video/3gp=mpv.desktop
 video/3gpp=mpv.desktop
@@ -122,6 +124,7 @@ inode/directory=org.kde.dolphin.desktop
 
 application/pdf=org.kde.okular.desktop
 application/vnd.rar=org.kde.ark.desktop
+application/x-matroska=mpv.desktop;
 
 application/epub+zip=org.kde.okular.desktop;
 application/x-shellscript=org.kde.kate.desktop
@@ -129,3 +132,12 @@ application/json=org.kde.kate.desktop
 text/vnd.trolltech.linguist=org.kde.kate.desktop
 text/x-csrc=org.kde.kate.desktop
 application/x-compressed-tar=org.kde.ark.desktop
+application/x-desktop=org.kde.kate.desktop;
+
+[Added Associations]
+application/x-desktop=org.kde.kate.desktop;
+application/x-matroska=mpv.desktop;
+audio/ogg=mpv.desktop;
+audio/x-oggflac=mpv.desktop;
+x-scheme-handler/http=chromium.desktop;chromium.desktop;org.gnome.Epiphany.desktop;
+x-scheme-handler/https=chromium.desktop;chromium.desktop;org.gnome.Epiphany.desktop;

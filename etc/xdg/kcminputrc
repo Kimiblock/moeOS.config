@@ -1,11 +1,10 @@
 [Libinput][1133][16471][Logitech B330/M330/M331]
-NaturalScroll=true
+PointerAcceleration=0.400
+PointerAccelerationProfile=1
 
-[Libinput][2321][21128][PNP0C50:00 0911:5288 Touchpad]
-ClickMethod=2
+[Libinput][1133][50504][Logitech USB Receiver Mouse]
 NaturalScroll=true
-ScrollFactor=0.75
-TapToClick=true
+PointerAccelerationProfile=1
 
 [Mouse]
-cursorTheme=Breeze_Snow
+cursorTheme=Adwaita
