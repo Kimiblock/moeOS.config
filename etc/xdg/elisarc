@@ -2,7 +2,7 @@
 RootPath[$e]=$HOME/Music
 
 [PlayerSettings]
-ShowSystemTrayIcon=false
+ShowSystemTrayIcon=true
 
 [UiSettings]
 ColorScheme=
