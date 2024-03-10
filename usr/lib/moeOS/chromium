@@ -13,13 +13,12 @@ bwrap \
 	--ro-bind /sys/dev/char /sys/dev/char \
 	--ro-bind /sys/devices /sys/devices \
 	--bind "$XDG_RUNTIME_DIR" "$XDG_RUNTIME_DIR" \
-	--bind /run /run \
 	--chmod 0700 "$XDG_RUNTIME_DIR" \
-	--bind /tmp /tmp \
-	--bind /var /var \
+	--tmpfs /tmp \
 	--bind "$HOME" "$HOME" \
-	/usr/bin/chromium \
-		--ozone-platform-hint=auto \
-		--enable-wayland-ime \
-		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder \
-		"$@"
+	env GTK_IM_MODULE=fcitx \
+		/usr/bin/chromium \
+			--gtk-version=4 \
+			--ozone-platform-hint=auto \
+			--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder \
+			"$@"
