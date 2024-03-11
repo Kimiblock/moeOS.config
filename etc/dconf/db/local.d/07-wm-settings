@@ -2,5 +2,4 @@
 button-layout='close:appmenu'
 
 [org/gnome/desktop/wm/keybindings]
-switch-input-source=['XF86Keyboard']
-switch-input-source-backward=['XF86Keyboard']
+switch-input-source=['<Super>space', 'XF86Keyboard', '<Control>space']
