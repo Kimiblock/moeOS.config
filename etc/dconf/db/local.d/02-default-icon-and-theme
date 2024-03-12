@@ -2,7 +2,7 @@
 icon-theme='Tela-circle-pink'
 color-scheme='prefer-light'
 gtk-theme='adw-gtk3'
-font-name='Inter Medium 12'
+font-name='Sans 12'
 document-font-name='Sans 12'
 font-hinting='medium'
 font-antialiasing='rgba'
