@@ -38,7 +38,7 @@ function info(){
 }
 
 function mergeConfig(){
-	if [[ $(cat /etc/moeOS-clash-meta/merge.yaml) ]]; then
+	if [[ -f /etc/moeOS-clash-meta/merge.yaml ]] && [[ $(/etc/moeOS-clash-meta/merge.yaml) =~ ' ' ]]; then
 		info 'Merging configuration...'
 		yq ea '. as $item ireduce ({}; . * $item )' /var/tmp/config.yaml /etc/moeOS-clash-meta/merge.yaml >/var/tmp/config.yaml.new
 		mv /var/tmp/config.yaml.new /var/tmp/config.yaml
@@ -49,8 +49,8 @@ function mergeConfig(){
 }
 
 function main(){
-	rm /var/tmp/* -r
-	cp /usr/share/v2ray/geosite.dat /var/tmp/
+	cp /usr/share/v2ray/geosite.dat /var/tmp/geosite.dat
+	cp /etc/clash/Country.mmdb /var/tmp
 	flags="$@"
 	download
 	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = null ]]; then
@@ -76,6 +76,7 @@ function main(){
 		sed -i "s/url-test/load-balance/" /var/tmp/config.yaml
 	fi
 	mergeConfig
+	echo "[Info] Config has been modified"
 }
 
 main "$@"

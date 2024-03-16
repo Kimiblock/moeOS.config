@@ -11,7 +11,7 @@ Restart=on-failure
 RestartSec=10s
 OOMPolicy=stop
 WorkingDirectory=/var/tmp
-ExecStartPre=bash -c 'bash /usr/lib/moeOS/moeOS-clash-meta-pre && cp /etc/clash/Country.mmdb /var/tmp'
+ExecStartPre=bash /usr/lib/moeOS/moeOS-clash-meta-pre
 ExecStart=/usr/bin/clash-meta -d /var/tmp
 EnvironmentFile=/etc/moeOS-clash-meta/env.conf
 
