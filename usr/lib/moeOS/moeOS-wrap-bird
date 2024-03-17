@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -f /usr/bin/thunderbird ]; then
+	exit 0
+fi
+sed -i \
+	"s|Exec=thunderbird|Exec=thunderbird-bwrap|g" \
+	/usr/share/applications/org.mozilla.Thunderbird.desktop
