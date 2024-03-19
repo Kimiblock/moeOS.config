@@ -13,7 +13,7 @@ function main(){
 		fi
 	done
 	plymouth-set-default-theme moe-next
-	sed -i 's|COMPRESSZST=(zstd -c -z -q -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
+	sed -i 's|COMPRESSZST=(zstd -c -T0 --ultra -20 -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
 	/usr/lib/moeOS/moeOS-wrap-bird
 	/usr/lib/moeOS/moeOS-wrap-fox
 }
