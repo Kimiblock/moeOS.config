@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/share/moeOS-Docs/makepkg.conf
+Target = etc/makepkg.conf
+
+[Action]
+When = PostTransaction
+Exec = /usr/bin/cp '/usr/share/moeOS-Docs/makepkg.conf' '/etc/makepkg.conf'
+Depends = moeOS-git
+Description = Replacing makepkg.conf
