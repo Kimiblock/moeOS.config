@@ -15,21 +15,9 @@ function execute(){
 	fi
 }
 
-function addMissingTun(){
-	info "Enabling TUN..."
-	echo '''tun:
-  enable: true
-  stack: gvisor
-  dns-hijack:
-  - any:53
-  auto-route: true
-  auto-detect-interface: true''' >>/var/tmp/config.yaml
-  echo "Done."
-}
-
 function enableTunInplace(){
 	info 'Updating the yaml file...'
-	execute yq -i '.tun.enable = "true"' /var/tmp/config.yaml
+	execute yq -i '.tun.enable = true' /var/tmp/config.yaml
 	echo done.
 }
 
@@ -53,10 +41,7 @@ function main(){
 	cp /etc/clash/Country.mmdb /var/tmp
 	flags="$@"
 	download
-	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = null ]]; then
-		addMissingTun
-		info "Config check completed."
-	elif [[ $(yq '.tun.enable' /var/tmp/config.yaml) = 'false' ]]; then
+	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = 'false' ]]; then
 		info "TUN is disabled"
 		enableTunInplace
 		info "Config check completed."
