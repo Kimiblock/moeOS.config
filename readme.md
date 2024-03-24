@@ -46,15 +46,13 @@ Url = https://github.com/Kimiblock/moeOS-Package.git
 Url = https://github.com/Kimiblock/moeOS-Package.git
 [moe-desktop-meta]
 Url = https://github.com/Kimiblock/moeOS-Package.git
-[moe-mpv-modern]
-Url = https://github.com/Kimiblock/moeOS-Package.git
 ```
 
 Then install the package:
 
 ```
 paru -Syu --pkgbuilds
-paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta" "moe-mpv-modern"
+paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta"
 ```
 
 # Ingredients
