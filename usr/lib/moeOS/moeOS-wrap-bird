@@ -3,6 +3,10 @@
 if [ ! -f /usr/bin/thunderbird ]; then
 	exit 0
 fi
-sed -i \
-	"s|Exec=thunderbird|Exec=thunderbird-bwrap|g" \
-	/usr/share/applications/org.mozilla.Thunderbird.desktop
+if [ $(cat /usr/share/applications/org.mozilla.Thunderbird.desktop) =~ 'thunderbird-bwrap' ]; then
+	exit 0
+else
+	sed -i \
+		"s|Exec=thunderbird|Exec=thunderbird-bwrap|g" \
+		/usr/share/applications/org.mozilla.Thunderbird.desktop
+fi
