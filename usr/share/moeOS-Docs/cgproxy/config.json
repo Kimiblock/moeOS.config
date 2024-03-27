@@ -1,0 +1,16 @@
+{
+    "port": 65529,
+    "program_noproxy": [],
+    "program_proxy": [],
+    "cgroup_noproxy": ["/moeOS.slice/moeOS-noproxy.slice"],
+    "cgroup_proxy": ["/"],
+    "enable_gateway": false,
+    "enable_dns": true,
+    "enable_udp": true,
+    "enable_tcp": true,
+    "enable_ipv4": true,
+    "enable_ipv6": true,
+    "table": 10007,
+    "fwmark": 39283
+}
+

@@ -41,20 +41,15 @@ function main(){
 	cp /etc/clash/Country.mmdb /var/tmp
 	flags="$@"
 	download
-	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = 'false' ]]; then
+	if [[ $(yq '.tun.enable' /var/tmp/config.yaml) = 'false' ]] && [[ ${flags} =~ no-tproxy ]]; then
 		info "TUN is disabled"
 		enableTunInplace
 		info "Config check completed."
 	else
+		info "Using tproxy..."
+		execute yq -i '.tun.enable = false' /var/tmp/config.yaml
+		execute yq -i '.tproxy-port = 65529' /var/tmp/config.yaml
 		info "Config check completed."
-	fi
-	if [[ ${flags} =~ redir-host ]]; then
-		info 'Setting enhanced mode to redir-host...'
-		yq -i '.dns.enhanced-mode = "redir-host"' /var/tmp/config.yaml
-	fi
-	if [[ ${flags} =~ fake-ip ]]; then
-		info 'Setting enhanced mode to fake-ip...'
-		yq -i '.dns.enhanced-mode = "fake-ip"' /var/tmp/config.yaml
 	fi
 	if [[ ${flags} =~ load-balance ]]; then
 		info "Enabling load balancing mode..."

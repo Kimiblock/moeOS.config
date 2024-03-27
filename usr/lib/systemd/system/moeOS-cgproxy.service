@@ -1,0 +1,11 @@
+[Unit]
+Description=cgproxy service
+After=moeOS-clash-meta-auto.service
+Wants=moeOS-clash-meta-auto.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cgproxyd --execsnoop
+
+[Install]
+WantedBy=multi-user.target

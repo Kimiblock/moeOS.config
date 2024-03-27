@@ -1,8 +1,12 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
-After=network-online.target
+After=network.target
+Before=moeOS-cgproxy.service
+Wants=moeOS-cgproxy.service
 
 [Service]
+Slice=moeOS-noproxy.slice
+
 Type=simple
 DynamicUser=yes
 CapabilityBoundingSet=CAP_NET_ADMIN
