@@ -1,11 +1,52 @@
 [Unit]
 Description=cgproxy service
-After=moeOS-clash-meta-auto.service
-Wants=moeOS-clash-meta-auto.service
+Requisite=moeOS-clash-meta-auto.service
+Conflicts=cgproxy.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/cgproxyd --execsnoop
+TimeoutStopSec=5
+#DynamicUser=yes
+ExecStartPre=mkdir -p /tmp/run
+ExecStart=/usr/bin/cgproxyd
+CacheDirectory=moeOS-cgproxy
+CapabilityBoundingSet=CAP_BPF CAP_NET_ADMIN CAP_NET_RAW CAP_SYS_ADMIN
+LockPersonality=yes
+PrivateMounts=yes
+SystemCallArchitectures=native
+MemoryDenyWriteExecute=yes
+RestrictNamespaces=yes
+RestrictSUIDSGID=yes
+ProtectKernelTunables=yes
+RestrictRealtime=yes
+PrivateTmp=yes
+ProtectClock=yes
+ProtectKernelLogs=yes
+ProtectHostname=yes
+ProtectKernelModules=yes
+ProtectProc=invisible
+ProcSubset=pid
+ProtectHome=yes
+ProtectSystem=strict
+PrivateDevices=yes
+NoNewPrivileges=yes
+
+KillMode=mixed
+
+SystemCallFilter=~@clock
+SystemCallFilter=~@cpu-emulation
+SystemCallFilter=~@debug
+SystemCallFilter=~@module
+#SystemCallFilter=~@mount
+SystemCallFilter=~@obsolete
+SystemCallFilter=~@raw-io
+SystemCallFilter=~@reboot
+SystemCallFilter=~@swap
+
+RestrictAddressFamilies=~AF_PACKET
+RestrictAddressFamilies=~AF_INET AF_INET6
+
+UMask=077
 
 [Install]
 WantedBy=multi-user.target

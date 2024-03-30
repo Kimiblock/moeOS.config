@@ -1,13 +1,10 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
 After=network.target
-Before=moeOS-cgproxy.service
 Wants=moeOS-cgproxy.service
 
 [Service]
 Slice=moeOS-noproxy.slice
-
-#User=clash-meta
 
 ExecStartPre=bash /usr/lib/moeOS/moeOS-clash-meta-pre
 ExecStart=/usr/bin/clash-meta -d /var/tmp
