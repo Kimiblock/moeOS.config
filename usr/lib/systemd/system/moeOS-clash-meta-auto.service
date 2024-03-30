@@ -7,7 +7,7 @@ Wants=moeOS-cgproxy.service
 Slice=moeOS-noproxy.slice
 
 ExecStartPre=bash /usr/lib/moeOS/moeOS-clash-meta-pre
-ExecStart=/usr/bin/clash-meta -d /var/tmp
+ExecStart=fakeroot /usr/bin/clash-meta -d /var/tmp
 EnvironmentFile=/etc/moeOS-clash-meta/env.conf
 
 TimeoutStartSec=120
@@ -18,11 +18,11 @@ OOMPolicy=kill
 RestartSec=10s
 OOMScoreAdjust=50
 
-#DynamicUser=yes
+DynamicUser=yes
 WorkingDirectory=/var/tmp
 
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=
+CapabilityBoundingSet=CAP_BPF CAP_NET_ADMIN CAP_NET_RAW CAP_SYS_ADMIN
+AmbientCapabilities=CAP_BPF CAP_NET_ADMIN CAP_NET_RAW CAP_SYS_ADMIN
 
 DevicePolicy=closed
 
