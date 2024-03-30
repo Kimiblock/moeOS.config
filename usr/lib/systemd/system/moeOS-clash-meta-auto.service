@@ -21,8 +21,8 @@ OOMScoreAdjust=50
 DynamicUser=yes
 WorkingDirectory=/var/tmp
 
-CapabilityBoundingSet=CAP_BPF CAP_NET_ADMIN CAP_SYS_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_BPF CAP_NET_ADMIN CAP_SYS_ADMIN CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_NET_RAW
+AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_NET_RAW
 
 DevicePolicy=closed
 
