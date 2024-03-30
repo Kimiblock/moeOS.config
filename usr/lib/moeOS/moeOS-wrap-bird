@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ ! -f /usr/bin/thunderbird ]; then
+if [[ ! -f /usr/bin/thunderbird ]]; then
 	exit 0
 fi
-if [ $(cat /usr/share/applications/org.mozilla.Thunderbird.desktop) =~ 'thunderbird-bwrap' ]; then
+if [[ $(cat /usr/share/applications/org.mozilla.Thunderbird.desktop) =~ 'thunderbird-bwrap' ]]; then
 	exit 0
 else
 	sed -i \
