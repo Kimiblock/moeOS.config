@@ -58,3 +58,4 @@ UMask=077
 
 [Install]
 WantedBy=multi-user.target
+RequiredBy=moeOS-cgproxy.service

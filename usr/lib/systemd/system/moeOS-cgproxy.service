@@ -7,10 +7,8 @@ Conflicts=cgproxy.service
 Type=simple
 TimeoutStopSec=5
 #DynamicUser=yes
-ExecStartPre=mkdir -p /tmp/run
 ExecStart=/usr/bin/cgproxyd
-CacheDirectory=moeOS-cgproxy
-CapabilityBoundingSet=CAP_BPF CAP_NET_ADMIN CAP_NET_RAW CAP_SYS_ADMIN
+CapabilityBoundingSet=CAP_BPF CAP_NET_ADMIN CAP_NET_RAW CAP_SYS_ADMIN CAP_DAC_OVERRIDE
 LockPersonality=yes
 PrivateMounts=yes
 SystemCallArchitectures=native
@@ -31,6 +29,8 @@ ProtectSystem=strict
 PrivateDevices=yes
 NoNewPrivileges=yes
 
+ReadWritePaths=/var/run
+
 KillMode=mixed
 
 SystemCallFilter=~@clock
@@ -47,6 +47,3 @@ RestrictAddressFamilies=~AF_PACKET
 RestrictAddressFamilies=~AF_INET AF_INET6
 
 UMask=077
-
-[Install]
-WantedBy=multi-user.target

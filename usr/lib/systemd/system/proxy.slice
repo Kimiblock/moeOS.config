@@ -1,3 +1,0 @@
-[Unit]
-Description=moeOS Proxy Slice
-Before=slices.target
