@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Element
+Exec=/usr/lib/moeOS/chromium --profile-directory=Default --app-id=top-kimiblock-im
+Icon=element
+StartupWMClass=crx_top-kimiblock-im
