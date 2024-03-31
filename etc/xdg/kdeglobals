@@ -139,7 +139,6 @@ ColorScheme=BreezeLight
 ColorSchemeHash=2ef8a9f7238e072ca91b0eb590f49ded650c76bd
 LastUsedCustomAccentColor=233,58,154
 Name=Breeze Light
-XftHintStyle=hintmedium
 XftSubPixel=rgb
 fixed=Roboto Mono [GOOG],11,-1,5,57,0,0,0,0,0,Medium
 font=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
