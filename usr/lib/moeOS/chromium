@@ -21,4 +21,4 @@ bwrap \
 			--gtk-version=4 \
 			--ozone-platform-hint=auto \
 			--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder \
-			"$@"
+			$@
