@@ -15,6 +15,7 @@ function main(){
 	sed -i 's|COMPRESSZST=(zstd -c -T0 --ultra -20 -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
 	/usr/lib/moeOS/moeOS-wrap-bird
 	/usr/lib/moeOS/moeOS-wrap-fox
+	/usr/lib/moeOS/patch-loupe
 	/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 }
 
