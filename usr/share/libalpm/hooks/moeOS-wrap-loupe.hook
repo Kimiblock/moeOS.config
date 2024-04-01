@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/bin/loupe
+
+[Action]
+When = PostTransaction
+Exec = /usr/lib/moeOS/patch-loupe
+Depends = moeOS-git
+Description = Wrapping Loupe
