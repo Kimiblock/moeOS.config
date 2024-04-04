@@ -139,6 +139,12 @@ application/java-archive=org.gnome.FileRoller.desktop
 application/gzip=org.gnome.Nautilus.desktop
 clash-nyanpasu=clash-nyanpasu-handler.desktop
 application/x-xz-compressed-tar=org.gnome.Nautilus.desktop
+x-scheme-handler/geo=org.gnome.Maps.desktop
+application/vnd.geo+json=org.gnome.Maps.desktop
+x-scheme-handler/maps=org.gnome.Maps.desktop
+application/vnd.google-earth.kml+xml=org.gnome.Maps.desktop
+application/gpx+xml=org.gnome.Maps.desktop
+application/fits=org.gnome.Maps.desktop
 
 [Added Associations]
 application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop;
