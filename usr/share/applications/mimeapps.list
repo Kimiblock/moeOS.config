@@ -135,6 +135,14 @@ text/vnd.trolltech.linguist=org.gnome.Builder.desktop
 text/x-csrc=org.gnome.Builder.desktop
 application/x-compressed-tar=org.gnome.Nautilus.desktop
 application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop
+application/java-archive=org.gnome.FileRoller.desktop
+application/gzip=org.gnome.Nautilus.desktop
+clash-nyanpasu=clash-nyanpasu-handler.desktop
+application/x-xz-compressed-tar=org.gnome.Nautilus.desktop
 
 [Added Associations]
 application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop;
+application/x-xz-compressed-tar=org.gnome.Nautilus.desktop;
+application/gzip=org.gnome.Nautilus.desktop;
+application/octet-stream=org.gnome.TextEditor.desktop;
+application/java-archive=org.gnome.FileRoller.desktop;
