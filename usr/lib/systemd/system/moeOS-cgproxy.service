@@ -1,6 +1,7 @@
 [Unit]
-Description=cgproxy service
-Requisite=moeOS-clash-meta-auto.service
+Description=moeOS cgproxy service
+BindsTo=moeOS-clash-meta-auto.service
+After=moeOS-clash-meta-auto.service
 Conflicts=cgproxy.service
 
 [Service]
