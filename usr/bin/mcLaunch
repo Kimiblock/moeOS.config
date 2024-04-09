@@ -3,15 +3,6 @@
 busName=net.minecraft
 busDir="${XDG_RUNTIME_DIR}/app/${busName}"
 
-function moeDect() {
-	if [[ -f /usr/share/moeOS-Docs/os-release ]]; then
-		osRel="/usr/share/moeOS-Docs/os-release"
-	else
-		osRel="/usr/lib/os-release"
-	fi
-
-}
-
 function sourceXDG() {
 	if [[ ! ${XDG_CONFIG_HOME} ]]; then
 		source "${HOME}"/.config/user-dirs.dirs
@@ -35,14 +26,15 @@ function createWrapIfNotExist() {
 function execApp() {
 	mkdir -p /tmp/${busName}
 	touch /tmp/${busName}/.flatpak-info
+	#while [ ! -S "${busDir}/bus" ]; do
+	#	sleep 0.5s
+	#done
 	echo "Launching App"
 	bwrap \
+		--die-with-parent \
 		--cap-drop ALL \
-		--dev /dev \
-		--dev-bind /dev/dri /dev/dri \
-		--dev-bind /dev/shm /dev/shm \
-		--ro-bind /sys/dev/char /sys/dev/char \
-		--ro-bind /sys/devices /sys/devices \
+		--dev-bind /dev /dev \
+		--bind /sys /sys \
 		--proc /proc \
 		--tmpfs /tmp \
 		--bind /usr /usr \
@@ -51,10 +43,8 @@ function execApp() {
 		--symlink usr/lib64 /lib64 \
 		--symlink usr/bin /bin \
 		--symlink usr/bin /sbin \
-		--ro-bind /usr/bin/true /usr/bin/lsblk \
-		--bind "${busDir}/bus" "${XDG_RUNTIME_DIR}/bus" \
-		--ro-bind "${XDG_RUNTIME_DIR}/pulse" \
-			"${XDG_RUNTIME_DIR}/pulse" \
+		--ro-bind-try "${XDG_RUNTIME_DIR}" \
+			"${XDG_RUNTIME_DIR}" \
 		--ro-bind-try "${XAUTHORITY}" "${XAUTHORITY}" \
 		--unshare-all \
 		--share-net \
@@ -62,16 +52,12 @@ function execApp() {
 			"${XDG_CONFIG_HOME}"/user-dirs.dirs \
 		--ro-bind-try "${XDG_CONFIG_HOME}"/fontconfig \
 			"${XDG_CONFIG_HOME}"/fontconfig \
+		--ro-bind-try "${XDG_CONFIG_HOME}"/gtk-4.0 \
+			"${XDG_CONFIG_HOME}"/gtk-4.0 \
 		--ro-bind-try "${XDG_CONFIG_HOME}"/mimeapps.list \
 			"${XDG_CONFIG_HOME}"/mimeapps.list \
-		--ro-bind-try "/tmp/${busName}/.flatpak-info" \
-			"${XDG_RUNTIME_DIR}/.flatpak-info" \
-		--ro-bind-try "/tmp/${busName}/.flatpak-info" \
-			/.flatpak-info \
 		--bind-try "${XDG_DATA_HOME}/PrismLauncher" \
 			"${XDG_DATA_HOME}/PrismLauncher" \
-		--ro-bind-try "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}" \
-			"${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}" \
 		-- \
 		$@
 }
@@ -92,22 +78,21 @@ function dbusProxy() {
 			"${XDG_RUNTIME_DIR}/.flatpak-info" \
 		--die-with-parent \
 		-- \
-		env -i xdg-dbus-proxy \
+		xdg-dbus-proxy \
 			"${DBUS_SESSION_BUS_ADDRESS}" \
 			"${busDir}/bus" \
 			--log \
 			--call=org.freedesktop.portal.Desktop=*=* \
-			--talk=org.gnome.Shell.Screenshot \
-			--talk=org.freedesktop.portal.Screenshot \
-			--broadcast=org.freedesktop.portal.*=@/org/freedesktop/portal/*
+			--broadcast=org.freedesktop.portal.*=@/org/freedesktop/portal/* \
+			--talk=org.freedesktop.DBus.Properties \
+			--talk=org.gtk.Settings \
+			--talk=org.freedesktop.portal.desktop
 }
 
 function launch() {
-	moeDect
 	execApp $@
 }
 
-dbusProxy &
-sleep 0.5s
 sourceXDG
+#dbusProxy &
 launch $@
