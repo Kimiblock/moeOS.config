@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p avify_output
+mkdir -p avify_tmp
+cp *.png *.webp *.jxl *.jpg *.jpeg *.heif *.PNG avify_tmp
+pathPre="$(pwd)"
+cd avify_tmp
+
+parallel --bar convert {} {.}.avif ::: *
+mv *.avif ../avify_output
