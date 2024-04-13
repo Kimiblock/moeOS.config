@@ -13,8 +13,8 @@ OOMPolicy=kill
 CapabilityBoundingSet=
 AmbientCapabilities=
 
-ProtectSystem=strict
-ProtectHome=read-only
+#ProtectSystem=strict
+#ProtectHome=read-only
 PrivateTmp=yes
 PrivateDevices=yes
 ProtectHostname=yes
