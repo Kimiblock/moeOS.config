@@ -1,0 +1,3 @@
+disable app-org.gnome.Software@autostart.service
+enable snotify.service
+enable moeOS-autoColor.service

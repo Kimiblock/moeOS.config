@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /usr/bin/moeOS-setup-user
+
+while true; do
+	lightMode
+	sleep 3600s
+done
