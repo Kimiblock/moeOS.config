@@ -36,16 +36,6 @@ KeyringMode=private
 ProtectProc=invisible
 ProcSubset=pid
 
-SystemCallFilter=~@reboot
-SystemCallFilter=~@raw-io
-SystemCallFilter=~@privileged
-SystemCallFilter=~@mount
-SystemCallFilter=~@module
-SystemCallFilter=~@debug
-SystemCallFilter=~@cpu-emulation
-SystemCallFilter=~@obsolete
-SystemCallFilter=~@resources
-#RestrictAddressFamilies=none
 RestrictAddressFamilies=AF_UNIX
 IPAddressAllow=localhost
 PrivateUsers=yes
