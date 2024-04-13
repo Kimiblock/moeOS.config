@@ -1,6 +1,40 @@
 #!/bin/bash
 
-source /usr/bin/moeOS-setup-user
+if [ ! "${XDG_CONFIG_HOME}" ]; then
+	export XDG_CONFIG_HOME="${HOME}/.config"
+fi
+
+function lightMode() {
+	if [ ! -f ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig ]; then
+		echo "[General]" >${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+		echo "theme=moeOS" >>${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+	fi
+	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+	kvTheme=$(cat ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig | grep 'theme=')
+	if [[ ${scheme} =~ default ]]; then
+		gsettings set org.gnome.desktop.interface color-scheme \'prefer-light\'
+	fi
+	
+	if [[ ${scheme} =~ prefer-dark ]]; then
+		if [[ ${kvTheme} =~ moeOS-Dark ]]; then
+			unset kvTheme
+		elif [[ ${kvTheme} =~ moeOS ]]; then
+			sed -i 's|theme=moeOS|theme=moeOS-Dark|g' ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+		else
+			echo "Kvantum theme not altered"
+		fi
+		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
+	elif [[ ${scheme} =~ prefer-light ]]; then
+		if [[ ${kvTheme} =~ moeOS-Dark ]]; then
+			sed -i 's|theme=moeOS-Dark|theme=moeOS|g' ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+		else
+			echo "Kvantum theme not altered"
+		fi
+		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
+		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
+	fi
+}
 
 while true; do
 	lightMode
