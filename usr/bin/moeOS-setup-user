@@ -10,10 +10,10 @@ function main(){
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	cp -r /etc/gtk-{4,3}.0 "${HOME}/.config"
+	enableService
 	lightMode
 	checkExist
 	_notify "Setting up moeOS"
-	enableService
 	checkExist set
 }
 
