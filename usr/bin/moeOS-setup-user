@@ -6,7 +6,11 @@ function _notify(){
 }
 
 function main(){
+	if [ ! "${XDG_CONFIG_HOME}" ]; then
+		export XDG_CONFIG_HOME="${HOME}/.config"
+	fi
 	cp -r /etc/gtk-{4,3}.0 "${HOME}/.config"
+	lightMode
 	checkExist
 	_notify "Setting up moeOS"
 	enableSnotify
@@ -23,14 +27,38 @@ function setupFont(){
 }
 
 function moeOS-setup-firefox(){
-	bash "/usr/lib/moeOS/moeOS-setup-firefox"
+	bash "/usr/lib/moeOS/moeOS-setup-firefox" 1>/dev/null 2>/dev/null
+}
+
+function lightMode() {
+	if [ ! -f ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig ]; then
+		echo "[General]" >${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+		echo "theme=moeOS" >>${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+	fi
+	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+	if [[ ${scheme} =~ default ]]; then
+		gsettings set org.gnome.desktop.interface color-scheme \'prefer-light\'
+	elif [[ ${scheme} =~ prefer-dark ]]; then
+		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+		kvTheme=$(cat ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig | grep 'theme=')
+		if [[ ${kvTheme} =~ moeOS-Dark ]]; then
+			unset kvTheme
+		elif [[ ${kvTheme} =~ moeOS ]]; then
+			sed -i 's|theme=moeOS|theme=moeOS-Dark|g' ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+		else
+			echo "Kvantum theme not overrided"
+		fi
+	elif [[ ${scheme} =~ prefer-light ]]; then
+		if [[ ${kvTheme} =~ moeOS-Dark ]]; then
+			sed -i 's|theme=moeOS-Dark|theme=moeOS|g' ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
+		else
+			echo "Kvantum theme not overrided"
+		fi
+		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
+	fi
 }
 
 function checkExist(){
-	if [ ! "${XDG_CONFIG_HOME}" ]; then
-		export XDG_CONFIG_HOME="${HOME}/.config"
-	fi
-
 	if [ "${_moeOS_Setup}" = 1 ]; then
 		echo "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
