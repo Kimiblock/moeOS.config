@@ -36,12 +36,12 @@ function lightMode() {
 		echo "theme=moeOS" >>${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig
 	fi
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+	kvTheme=$(cat ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig | grep 'theme=')
 	if [[ ${scheme} =~ default ]]; then
 		gsettings set org.gnome.desktop.interface color-scheme \'prefer-light\'
 	fi
 	
 	if [[ ${scheme} =~ prefer-dark ]]; then
-		kvTheme=$(cat ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig | grep 'theme=')
 		if [[ ${kvTheme} =~ moeOS-Dark ]]; then
 			unset kvTheme
 		elif [[ ${kvTheme} =~ moeOS ]]; then
