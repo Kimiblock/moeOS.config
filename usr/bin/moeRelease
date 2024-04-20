@@ -1,16 +1,17 @@
 #!/bin/bash
 
-function main(){
+function main() {
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace  "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
+	replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-	for unit in nvidia-powerd linux-modules-cleanup uptimed power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald; do
+	for unit in nvidia-powerd linux-modules-cleanup uptimed power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald avahi-daemon cups systemd-resolved; do
 		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
-			echo "Enabling ${unit}"
 			systemctl enable ${unit}
 		fi
 	done
+	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
 	sed -i 's|COMPRESSZST=(zstd -c -T0 --ultra -20 -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
 	/usr/lib/moeOS/moeOS-wrap-bird
@@ -18,7 +19,7 @@ function main(){
 	/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 }
 
-function replace(){
+function replace() {
 	if [[ $(diff $1 $2) ]]; then
 		cp $1 $2
 	fi
