@@ -3,9 +3,11 @@ Description=moeOS Auto Color Daemon
 After=dbus.service
 
 [Service]
+ExecStartPre=sleep 15s
 ExecStart=/usr/lib/moeOS/autoColor
 Restart=always
-RestartSec=1s
+RestartSec=10s
+RestartSteps=5s
 MemoryHigh=4M
 MemoryMax=5M
 OOMPolicy=kill
