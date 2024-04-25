@@ -12,10 +12,6 @@ function main() {
 		fi
 	done
 	#ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-	if [[ $(cat /etc/resolv.conf) = $(cat /run/systemd/resolve/stub-resolv.conf) ]]; then
-		rm /etc/resolv.conf
-		echo "nameserver 223.5.5.5" >/etc/resolv.conf
-	fi
 	plymouth-set-default-theme moe-next
 	sed -i 's|COMPRESSZST=(zstd -c -T0 --ultra -20 -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
 	/usr/lib/moeOS/moeOS-wrap-bird
