@@ -1,6 +1,6 @@
 # moeOS.Config
 
-An automatically generated package to configure Arch Linux. Simple and easy to use. Provides better NVIDIA Optimus configuration.
+An automatically generated package to configure Arch Linux. Simple and easy to use. Provides better switchable graphics and printing configuration.
 
 ---
 
@@ -51,8 +51,8 @@ Url = https://github.com/Kimiblock/moeOS-Package.git
 Then install the package:
 
 ```
-paru -Syu --pkgbuilds
-paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta"
+paru -Sy --pkgbuilds
+paru -Syu "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta"
 ```
 
 # Ingredients
@@ -61,6 +61,7 @@ Contains the following configurations and customizations:
 
 - moeOS Plymouth splash theme.
 - Default `sbctl` Secure Boot configuation.
+- Printing that just works with IPP Everywhere and AirPrint printers. Wired and wireless printers are supported. Older printer drivers are included, if there is any open source driver for it.
 - Example configuraions which can't be generated. (Located in `/usr/share/moeOS-Docs/Reference Configs`)
 - Firefox configuration, no annoyance.
 - OS branding replacement.
