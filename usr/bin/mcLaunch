@@ -48,6 +48,8 @@ function execApp() {
 		--ro-bind-try "${XAUTHORITY}" "${XAUTHORITY}" \
 		--unshare-all \
 		--share-net \
+		--ro-bind-try /run/systemd/resolve/stub-resolv.conf \
+			/run/systemd/resolve/stub-resolv.conf \
 		--ro-bind-try "${XDG_CONFIG_HOME}"/user-dirs.dirs \
 			"${XDG_CONFIG_HOME}"/user-dirs.dirs \
 		--ro-bind-try "${XDG_CONFIG_HOME}"/fontconfig \
