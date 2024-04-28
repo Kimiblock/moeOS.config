@@ -18,6 +18,6 @@ bwrap \
 	--setenv GTK_IM_MODULE ibus \
 	/usr/bin/chromium \
 		--gtk-version=4 \
-		--ozone-platform-hint=auto \
+		--ozone-platform=wayland \
 		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder \
 		$@
