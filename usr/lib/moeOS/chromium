@@ -19,5 +19,5 @@ bwrap \
 	/usr/bin/chromium \
 		--gtk-version=4 \
 		--ozone-platform=wayland \
-		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder \
+		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
 		$@
