@@ -70,16 +70,15 @@ Contains the following configurations and customizations:
 - Some handy scripts (eg. `v2hevc` `v2avc` `oggaudio`) to transcode video footages and audio files quickly using VA-API.
 - Powersave settings.
 - Better switchable graphics handling.
+- Hacks to revert recent shitty changes of GTK.
 - Default MPV / Celluloid config files.
     * Hardware Acceleration
-    * GPU Next video output
+    * GPU Next video output (dmabuf-wayland blocked by [mpv #13668](https://github.com/mpv-player/mpv/issues/13668))
     * Better scaling
     * Volume normalization
     * Vulkan GPU API
 
-- A default fontconfig file.
-
-- Networkmanager connectivity test pointed to `blog.kimiblock.top`
+- Default font configuration.
 
 - Colors:
   
