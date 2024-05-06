@@ -2,13 +2,13 @@
 icon-theme='Tela-circle-pink-light'
 color-scheme='prefer-light'
 gtk-theme='adw-gtk3'
-font-name='sans-serif'
-document-font-name='sans-serif'
+font-name='sans-serif 12'
+document-font-name='sans-serif 12'
 font-hinting='slight'
 font-antialiasing='rgba'
 cursor-theme='Adwaita'
 clock-show-weekday=true
-monospace-font-name='monospace'
+monospace-font-name='monospace 12'
 clock-format='12h'
 clock-show-weekday=true
 
