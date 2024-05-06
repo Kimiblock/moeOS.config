@@ -2,13 +2,13 @@
 icon-theme='Tela-circle-pink-light'
 color-scheme='prefer-light'
 gtk-theme='adw-gtk3'
-font-name='Inter Display Medium 12'
-document-font-name='Inter Display Medium 12'
+font-name='sans-serif'
+document-font-name='sans-serif'
 font-hinting='slight'
 font-antialiasing='rgba'
 cursor-theme='Adwaita'
 clock-show-weekday=true
-monospace-font-name='Roboto Mono Medium 12'
+monospace-font-name='monospace'
 clock-format='12h'
 clock-show-weekday=true
 
