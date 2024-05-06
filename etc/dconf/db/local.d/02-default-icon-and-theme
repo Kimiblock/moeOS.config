@@ -3,17 +3,17 @@ icon-theme='Tela-circle-pink-light'
 color-scheme='prefer-light'
 gtk-theme='adw-gtk3'
 font-name='Sans 12'
-document-font-name='Sans 12'
+document-font-name='Inter Display Medium 12'
 font-hinting='slight'
 font-antialiasing='rgba'
 cursor-theme='Adwaita'
 clock-show-weekday=true
-monospace-font-name='Monospace 12'
+monospace-font-name='Inter Display Medium 12'
 clock-format='12h'
 clock-show-weekday=true
 
 [org/gnome/shell]
-favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'chromium.desktop', 'io.github.mrvladus.List.desktop', 'com.github.neithern.g4music.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Console.desktop', 'org.gnome.Settings.desktop']
+favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'io.github.mrvladus.List.desktop', 'com.github.neithern.g4music.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Console.desktop', 'org.gnome.Settings.desktop']
 
 [org/gnome/Console]
 theme='auto'
