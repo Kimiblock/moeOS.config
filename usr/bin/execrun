@@ -1,2 +1,2 @@
 #!/bin/bash
-systemd-run --user -p CPUWeight=10 -p MemoryHigh=4G -p IOWeight=10 --pty "$@"
+systemd-run --user --same-dir -p CPUWeight=10 -p MemoryHigh=6G -p IOWeight=10 --pty "$@"

@@ -1,9 +1,0 @@
-#!/bin/bash
-
-bwrap \
-	--dev-bind / / \
-	--bind /usr/share/fonts/noto-cjk/NotoSansCJK-Medium.ttc /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc \
-	--bind /usr/share/fonts/inter/InterDisplay-Medium.ttf /usr/share/fonts/inter/InterDisplay-Regular.ttf \
-	--bind /usr/share/fonts/inter/Inter-Medium.ttf /usr/share/fonts/inter/Inter-Regular.ttf \
-	--bind /usr/share/fonts/TTF/RobotoMono-Medium.ttf /usr/share/fonts/TTF/RobotoMono-Regular.ttf \
-	thunderbird $@
