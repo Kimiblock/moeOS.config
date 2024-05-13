@@ -1,6 +1,6 @@
 # moeOS.Config
 
-An automatically generated package to configure Arch Linux. Simple and easy to use. Provides better switchable graphics and printing configuration.
+A simple way to provide a _preset_ for Arch Linux. Offers better switchable graphics and printing configuration.
 
 ---
 
