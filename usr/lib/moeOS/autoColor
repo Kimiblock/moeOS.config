@@ -23,7 +23,7 @@ function lightMode() {
 		else
 			echo "Kvantum theme not altered"
 		fi
-		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+		gsettings set org.gnome.desktop.interface gtk-theme Adw-dark
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
 	elif [[ ${scheme} =~ prefer-light ]]; then
 		if [[ ${kvTheme} =~ moeOS-Dark ]]; then
@@ -31,7 +31,7 @@ function lightMode() {
 		else
 			echo "Kvantum theme not altered"
 		fi
-		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
+		gsettings set org.gnome.desktop.interface gtk-theme Adw
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
 	fi
 }
