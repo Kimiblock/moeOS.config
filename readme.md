@@ -23,7 +23,7 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 ## GTK / GNOME
 
 - When using HiDPI scaling, older applications and some browsers may appear blurry.
-- GTK applications may feel sluggish [GTK #6328](https://gitlab.gnome.org/GNOME/gtk/-/issues/6328).
+- libadwaita applications are sluggish [GTK #6438](https://gitlab.gnome.org/GNOME/gtk/-/issues/6438).
 - When fractional scaling is enabled, screenshots of a window may appear slightly blurry.
 
 ## Qt
