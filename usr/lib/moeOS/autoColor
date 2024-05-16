@@ -12,7 +12,9 @@ function lightMode() {
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
 	kvTheme=$(cat ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig | grep 'theme=')
 	if [[ ${scheme} =~ default ]]; then
-		gsettings set org.gnome.desktop.interface color-scheme \'prefer-light\'
+		gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+		sleep 0.5s
+		scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
 	fi
 	
 	if [[ ${scheme} =~ prefer-dark ]]; then
@@ -31,12 +33,10 @@ function lightMode() {
 		else
 			echo "Kvantum theme not altered"
 		fi
+		echo "[Info] Tweaking GSettings"
 		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
 	fi
 }
 
-while true; do
-	lightMode
-	sleep 3600s
-done
+lightMode

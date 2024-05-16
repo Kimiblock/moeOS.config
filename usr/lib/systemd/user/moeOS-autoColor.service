@@ -3,13 +3,13 @@ Description=moeOS Auto Color Daemon
 After=dbus.service gnome-session.target gnome-session-wayland.target gnome-session-x11.target gnome-session@gnome.target
 
 [Service]
-ExecStartPre=sleep 10s
+Type=simple
+ExecStartPre=sleep 5s
 ExecStart=/usr/lib/moeOS/autoColor
 Restart=always
-RestartSec=10s
-RestartSteps=5s
-MemoryHigh=4M
-MemoryMax=5M
+RestartSec=1h
+MemoryHigh=10M
+MemoryMax=12M
 OOMPolicy=kill
 
 CapabilityBoundingSet=
