@@ -22,7 +22,7 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 
 ## Location Services
 
-Location Services may not be available in some countries. Google Services are used for locating since MLS is sunset.
+Location Services may not be available in some countries. Google Services are used for locating since MLS has been sunset.
 
 ## GTK / GNOME
 
