@@ -5,6 +5,24 @@ After=multi-user.target
 [Service]
 Type=oneshot
 User=root
+
+ProtectControlGroups=yes
+MemoryDenyWriteExecute=true
+RestrictAddressFamilies=none
+ProtectProc=ptraceable
+ProtectSystem=strict
+ProtectKernelLogs=yes
+ProtectKernelTunables=yes
+ProtectHome=yes
+SocketBindDeny=ipv4:tcp
+SocketBindDeny=ipv4:udp
+SocketBindDeny=ipv6:tcp
+SocketBindDeny=ipv6:udp
+LockPersonality=yes
+RestrictRealtime=yes
+ProtectClock=yes
+SystemCallFilter=~@aio:EPERM @chown:EPERM @clock:EPERM @cpu-emulation:EPERM @debug:EPERM @io-event:EPERM @keyring:EPERM @memlock:EPERM @module:EPERM @mount:EPERM @network-io:EPERM @obsolete:EPERM @pkey:EPERM @privileged:EPERM @raw-io:EPERM @reboot:EPERM @resources:EPERM @sandbox:EPERM @setuid:EPERM @swap:EPERM @sync:EPERM @timer:EPERM
+
 OOMPolicy=continue
 WorkingDirectory=/tmp
 ExecStart=/usr/lib/moeOS/throttle-stop
