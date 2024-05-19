@@ -1,6 +1,6 @@
 # moeOS.Config
 
-A simple way to provide a _preset_ for Arch Linux. Offers better switchable graphics and printing configuration.
+A simple way to provide a _preset_ for Arch Linux. Offers better switchable graphics and printing configuration with a focus on security.
 
 ---
 
