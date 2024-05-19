@@ -26,25 +26,15 @@ ProtectKernelModules=yes
 ProtectProc=invisible
 ProcSubset=pid
 ProtectHome=yes
-ProtectSystem=strict
+ProtectSystem=full
 PrivateDevices=yes
 NoNewPrivileges=yes
+RestrictAddressFamilies=AF_NETLINK AF_UNIX
 
 ReadWritePaths=/var/run
 
 KillMode=mixed
 
-SystemCallFilter=~@clock
-SystemCallFilter=~@cpu-emulation
-SystemCallFilter=~@debug
-SystemCallFilter=~@module
-#SystemCallFilter=~@mount
-SystemCallFilter=~@obsolete
-SystemCallFilter=~@raw-io
-SystemCallFilter=~@reboot
-SystemCallFilter=~@swap
-
-RestrictAddressFamilies=~AF_PACKET
-RestrictAddressFamilies=~AF_INET AF_INET6
+SystemCallFilter=~@aio:EPERM @chown:EPERM @clock:EPERM @cpu-emulation:EPERM @debug:EPERM @keyring:EPERM @memlock:EPERM @module:EPERM @obsolete:EPERM @pkey:EPERM @privileged:EPERM @raw-io:EPERM @reboot:EPERM @resources:EPERM @sandbox:EPERM @setuid:EPERM @swap:EPERM @sync:EPERM @timer:EPERM
 
 UMask=077
