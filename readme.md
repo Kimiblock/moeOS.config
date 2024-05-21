@@ -23,11 +23,12 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 
 ## Location Services
 
-Location Services may not be available in some countries. Google Services are used for locating since MLS has been sunset.
+Location Services may not be available in some countries and may provide wrong coordinates. Google Services are used for locating since MLS has been sunset.
 
 ## GTK / GNOME
 
 - When using HiDPI scaling, older applications and some browsers may appear blurry.
+- GTK applications may be blurry on systems with multiple screens.
 - libadwaita applications are sluggish [GTK #6438](https://gitlab.gnome.org/GNOME/gtk/-/issues/6438).
 - When fractional scaling is enabled, screenshots of a window may appear slightly blurry.
 
