@@ -17,7 +17,7 @@ bwrap \
 	--bind "$HOME" "$HOME" \
 	--setenv GTK_IM_MODULE ibus \
 	/usr/bin/chromium \
-		--gtk-version=4 \
 		--ozone-platform=wayland \
 		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
+		--enable-wayland-ime
 		$@
