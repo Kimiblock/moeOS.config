@@ -9,6 +9,7 @@ function main(){
 	if [ ! "${XDG_CONFIG_HOME}" ]; then
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
+	echo "[Info] Starting moeOS Autoconf"
 	cp -r /etc/gtk-{4,3}.0 "${HOME}/.config"
 	enableService
 	checkExist
@@ -17,15 +18,19 @@ function main(){
 }
 
 function enableService(){
-	systemctl --user enable --now snotify moeOS-autoColor
+	echo "[Info] Enabling moeOS daemon"
+	systemctl --user enable --now snotify
+	systemctl --user enable moeOS-autoColor
 }
 
 function setupFont(){
+	echo "[Info] Setting up fonts"
 	mkdir -p ~/.config/fontconfig
 	cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf
 }
 
 function moeOS-setup-firefox(){
+	echo "[Info] Setting up Firefox"
 	bash "/usr/lib/moeOS/moeOS-setup-firefox" 1>/dev/null 2>/dev/null
 }
 
