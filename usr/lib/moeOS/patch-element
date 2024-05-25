@@ -1,2 +1,2 @@
 #!/bin/bash
-cp /usr/share/moeOS-Docs/moeOS-web.desktop /usr/share/applications/chromium.desktop
+cp /usr/share/moeOS-Docs/element.desktop /usr/share/applications/io.element.Element.desktop

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Element Desktop
+Comment=Feature-rich client for Matrix
+Exec=/usr/lib/moeOS/element-desktop %u
+Terminal=false
+Type=Application
+Icon=io.element.Element
+StartupWMClass=Element
+Categories=Network;InstantMessaging;Chat;IRCClient
+MimeType=x-scheme-handler/element;
