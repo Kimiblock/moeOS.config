@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=moeOS Setup
+Exec=/usr/bin/moeOS-setup-user
+Type=Application
