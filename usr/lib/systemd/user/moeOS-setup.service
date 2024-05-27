@@ -1,0 +1,16 @@
+[Unit]
+Description=moeOS Auto Setup
+After=dbus.service gnome-session.target gnome-session-wayland.target gnome-session-x11.target gnome-session@gnome.target
+
+[Service]
+Type=simple
+ExecStartPre=sleep 5s
+ExecStart=/usr/bin/moeOS-setup-user
+Restart=on-failure
+RestartSec=1h
+MemoryHigh=15M
+MemoryMax=20M
+OOMPolicy=kill
+
+[Install]
+WantedBy=default.target

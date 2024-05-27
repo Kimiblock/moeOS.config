@@ -17,6 +17,7 @@ function main() {
 	/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 	/usr/lib/moeOS/patch-chromium
 	/usr/lib/moeOS/patch-element
+	#systemctl preset-all
 }
 
 function replace() {

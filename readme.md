@@ -92,6 +92,8 @@ paru -Sy --pkgbuilds
 paru -Syu "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta"
 ```
 
+If you are using Plasma, run `systemctl preset moeOS-setup.service --user` upon first login and log out.
+
 # Ingredients
 
 Contains the following configurations and customizations:
