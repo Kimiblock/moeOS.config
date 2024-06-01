@@ -49,8 +49,8 @@ function deleteGnomeTheme() {
 
 function main() {
 	pathNow="$(pwd)"
-	#gnomeTheme
-	deleteGnomeTheme
+	gnomeTheme
+	#deleteGnomeTheme
 	cd "${pathNow}"
 }
 
