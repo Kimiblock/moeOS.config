@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+for file in /usr/share/pixmaps/{archlinux-logo-text-dark.svg,archlinux-logo.svg,archlinux-logo-text.svg}; do
+	cp /usr/share/moeOS-Icons/icon/moeOS.svg ${file}
+done
