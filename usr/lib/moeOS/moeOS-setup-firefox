@@ -11,7 +11,7 @@ function _info() {
 	fi
 }
 
-function gnomeTheme(){
+function gnomeTheme() {
 	_info "Installing Firefox theme..."
 	for profile in $(ls "$HOME/.mozilla/firefox" | grep -v '.ini'); do
 		if [ ! -f $HOME/.mozilla/firefox/${profile}/chrome/firefox-gnome-theme ]; then
@@ -34,9 +34,23 @@ function gnomeTheme(){
 	done
 }
 
-function main(){
+function deleteGnomeTheme() {
+	if [ -! -d "${HOME}/.mozilla/firefox" ]; then
+		return 1
+	fi
+	cd "${HOME}/.mozilla/firefox"
+	for profile in $(ls "$HOME/.mozilla/firefox" | grep -v '.ini'); do
+		_info "Working on ${profile}"
+		if [ -d "$HOME/.mozilla/firefox/${profile}/chrome" ]; then
+			rm -r "$HOME/.mozilla/firefox/${profile}/chrome"
+		fi
+	done
+}
+
+function main() {
 	pathNow="$(pwd)"
-	gnomeTheme
+	#gnomeTheme
+	deleteGnomeTheme
 	cd "${pathNow}"
 }
 
