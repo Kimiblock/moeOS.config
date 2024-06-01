@@ -16,7 +16,7 @@ function main() {
 	sed -i 's|COMPRESSZST=(zstd -c -T0 --ultra -20 -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
 	/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 	/usr/lib/moeOS/patch-chromium
-	#/usr/lib/moeOS/patch-element
+	/usr/lib/moeOS/patch-icons
 	#systemctl preset-all
 }
 
