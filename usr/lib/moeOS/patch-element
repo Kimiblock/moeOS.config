@@ -1,2 +1,0 @@
-#!/bin/bash
-cp /usr/share/moeOS-Docs/element.desktop /usr/share/applications/io.element.Element.desktop
