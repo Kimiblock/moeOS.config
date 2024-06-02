@@ -1,0 +1,3 @@
+[org/gnome/settings-daemon/plugins/color]
+night-light-temperature=uint32 5700
+night-light-enabled=true

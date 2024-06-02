@@ -1,0 +1,4 @@
+[org/gnome/settings-daemon/plugins/power]
+idle-brightness=60
+power-button-action='none'
+sleep-inactive-battery-timeout=600

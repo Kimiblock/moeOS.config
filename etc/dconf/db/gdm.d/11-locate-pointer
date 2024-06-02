@@ -1,0 +1,5 @@
+[org/gnome/mutter]
+locate-pointer-key='Alt_R'
+
+[org/gnome/desktop/interface]
+locate-pointer=true

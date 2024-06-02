@@ -1,0 +1,20 @@
+[org/gnome/desktop/interface]
+icon-theme='Tela-circle-pink-light'
+color-scheme='prefer-light'
+gtk-theme='adw-gtk3'
+font-name='Inter Medium, Medium 12'
+document-font-name='Inter Medium, Medium 12'
+font-hinting='slight'
+font-antialiasing='rgba'
+cursor-theme='Adwaita'
+clock-show-weekday=true
+monospace-font-name='Roboto Mono Medium, Medium 12'
+clock-format='12h'
+clock-show-weekday=true
+
+[org/gnome/shell]
+favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'io.github.mrvladus.List.desktop', 'com.github.neithern.g4music.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Console.desktop', 'org.gnome.Settings.desktop']
+
+[org/gnome/Console]
+theme='auto'
+
