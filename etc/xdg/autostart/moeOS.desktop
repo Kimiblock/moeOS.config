@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=moeOS Setup
-Exec=/usr/bin/moeOS-setup-user
+Exec=/usr/bin/bash -c "systemctl --user preset moeOS-setup && systemctl --user enable --now moeOS-setup"
 Type=Application

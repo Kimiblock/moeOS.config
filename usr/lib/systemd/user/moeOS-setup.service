@@ -8,9 +8,10 @@ ExecStartPre=sleep 5s
 ExecStart=/usr/bin/moeOS-setup-user
 Restart=on-failure
 RestartSec=1h
-MemoryHigh=15M
-MemoryMax=20M
+MemoryHigh=18M
+MemoryMax=30M
 OOMPolicy=kill
+RemainAfterExit=yes
 
 [Install]
 WantedBy=default.target
