@@ -1,0 +1,6 @@
+[org/gnome/papers]
+page-cache-size=75
+
+[org/gnome/papers/default]
+show-sidebar=true
+sizing-mode='fit-page'
