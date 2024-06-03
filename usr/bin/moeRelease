@@ -5,6 +5,7 @@ function main() {
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace  "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
+	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
 	for unit in nvidia-powerd power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald avahi-daemon cups cups-browsed systemd-resolved ipp-usb; do
 		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
@@ -13,11 +14,9 @@ function main() {
 	done
 	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
-	sed -i 's|COMPRESSZST=(zstd -c -T0 --ultra -20 -)|COMPRESSZST=(zstd -c -z -q -T0 -)|g' /etc/makepkg.conf
 	/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 	/usr/lib/moeOS/patch-chromium
-	#ln -sf /dev/null /usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override
-	#systemctl preset-all
+	systemctl --global enable snotify moeOS-setup
 }
 
 function replace() {
