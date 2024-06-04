@@ -18,7 +18,8 @@ function main() {
 	/usr/lib/moeOS/patch-chromium
 	systemctl --global enable snotify moeOS-setup
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-	flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+	#flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+	flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
 }
 
 function replace() {
