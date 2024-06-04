@@ -1,6 +1,6 @@
 [org/gnome/mutter]
-experimental-features=['scale-monitor-framebuffer','autoclose-xwayland','variable-refresh-rate']
+experimental-features=['scale-monitor-framebuffer','autoclose-xwayland','variable-refresh-rate','kms-modifiers']
 
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true
-titlebar-font='Sans 12'
+titlebar-font='Inter Medium, Medium 12'
