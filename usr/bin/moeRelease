@@ -7,7 +7,7 @@ function main() {
 	replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
 	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
 	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-	for unit in nvidia-powerd power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald avahi-daemon cups cups-browsed systemd-resolved ipp-usb; do
+	for unit in nvidia-powerd power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald avahi-daemon cups cups-browsed systemd-resolved ipp-usb systemd-bsod; do
 		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
 			systemctl enable ${unit}
 		fi
