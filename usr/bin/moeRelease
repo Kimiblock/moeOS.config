@@ -14,8 +14,9 @@ function main() {
 	done
 	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
-	/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
+	#/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 	/usr/lib/moeOS/patch-chromium
+	/usr/lib/moeOS/patch-steam
 	systemctl --global enable snotify moeOS-setup
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 	flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub

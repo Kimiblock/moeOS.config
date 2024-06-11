@@ -31,6 +31,8 @@ PrivateDevices=yes
 NoNewPrivileges=yes
 RestrictAddressFamilies=AF_NETLINK AF_UNIX
 
+BindPaths=/usr/share/moeOS-Docs/cgproxy/config.json:/etc/cgproxy/config.json
+
 ReadWritePaths=/var/run
 
 KillMode=mixed
