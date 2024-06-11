@@ -5,6 +5,14 @@ busDir="${XDG_RUNTIME_DIR}/app/${busName}"
 
 function moveDirectories() {
 	if [ -d ~/.steam ]; then
+		mv ~/.steam "${XDG_DATA_HOME}/Steam_Data/HOME"
+	fi
+	if [ -f ~/.steampath ]; then
+		mv ~/.steampath "${XDG_DATA_HOME}/Steam_Data/HOME"
+	fi
+	if [ -f ~/.steampath ]; then
+		mv .steampid "${XDG_DATA_HOME}/Steam_Data/HOME"
+	fi
 }
 
 function createDir() {
@@ -105,6 +113,7 @@ function dbusProxy() {
 function main() {
 	sourceXDG
 	createDir
+	moveDirectories
 	dbusProxy &
 	sleep 0.5s
 	execSteam
