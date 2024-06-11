@@ -118,3 +118,5 @@ function main() {
 	sleep 0.5s
 	execSteam
 }
+
+main $@
