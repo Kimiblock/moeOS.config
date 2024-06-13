@@ -1,6 +1,6 @@
 [Action]
 When = PostTransaction
-Exec = /usr/bin/moeRelease
+Exec = /usr/lib/moeOS/moeRelease
 Depends = moeOS-git
 Description = Configuring moeOS
 
@@ -10,4 +10,4 @@ Operation = Upgrade
 Type = Path
 Target = etc/os-release
 Target = usr/lib/os-release
-Target = etc/tlp.conf
+Target = usr/share/moeOS-Docs/makepkg.conf
