@@ -1,2 +1,0 @@
-#!/bin/bash
-systemd-run --same-dir -p CPUWeight=10 -p IOWeight=10 --pty "$@"
