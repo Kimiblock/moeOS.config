@@ -19,8 +19,8 @@ function main() {
 	/usr/lib/moeOS/patch-steam
 	systemctl --global enable snotify moeOS-setup
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-	flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
-	#flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
+	#flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+	flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
 	
 	# Flatpak thingy
 	flatpak override --unset-env=__EGL_VENDOR_LIBRARY_FILENAMES
@@ -45,7 +45,7 @@ function main() {
 		flatpak mask --remove org.freedesktop.Platform.GL.nvidia* 2>/dev/null
 		flatpak mask --remove org.freedesktop.Platform.GL32.nvidia* 2>/dev/null
 	fi
-	flatpak update --noninteractive
+	#flatpak update --noninteractive
 }
 
 function replace() {
