@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/bin/element-desktop
+
+[Action]
+When = PostTransaction
+Exec = /usr/bin/cp /usr/share/moeOS-Docs/element.desktop /usr/share/applications/element.desktop
+Depends = element-desktop
+Description = Wrapping Element
