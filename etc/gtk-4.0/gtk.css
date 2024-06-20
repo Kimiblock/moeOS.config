@@ -1,2 +1,5 @@
 @define-color accent_color #ed65e2;
 @define-color accent_bg_color #ed65e2;
+:root {
+    --accent-color: #ed65e2;
+}
