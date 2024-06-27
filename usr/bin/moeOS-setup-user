@@ -20,7 +20,7 @@ function main(){
 
 function enableService(){
 	echo "[Info] Enabling moeOS daemon"
-	systemctl --user enable --now snotify
+	systemctl --user enable snotify
 	systemctl --user enable moeOS-autoColor
 }
 
