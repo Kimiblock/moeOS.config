@@ -14,6 +14,7 @@ function main(){
 	enableService
 	checkExist
 	_notify "Setting up moeOS"
+	moeOS-setup-firefox
 	checkExist set
 }
 
@@ -30,6 +31,9 @@ function setupFont(){
 }
 
 function moeOS-setup-firefox(){
+	if [[ ${moePreferDE} = KDE ]]; then
+		return 0
+	fi
 	echo "[Info] Setting up Firefox"
 	bash "/usr/lib/moeOS/moeOS-setup-firefox" 1>/dev/null 2>/dev/null
 }
@@ -39,7 +43,6 @@ function checkExist(){
 		echo "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then
 		setupFont
-		moeOS-setup-firefox
 		exit 0
 	fi
 	if [[ "$@" =~ set ]]; then
