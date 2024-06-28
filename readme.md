@@ -21,6 +21,10 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 
 # Upstream Problems
 
+## Video Playback
+
+HDR or too high definition (8K) video playback results in sluggish system. Use pre-installed MPV video player for those videos.
+
 ## Location Services
 
 Location Services may not be available in some countries and may provide wrong coordinates. Google Services are used for locating since MLS has been sunset.
@@ -52,7 +56,7 @@ Location Services may not be available in some countries and may provide wrong c
 
 ## Flatpak
 
-- Not using system font [Flatpak #1563](https://github.com/flatpak/flatpak/issues/1563).
+- Applications may not use system font [Flatpak #1563](https://github.com/flatpak/flatpak/issues/1563).
 
 # Install / Upgrade
 
