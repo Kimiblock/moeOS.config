@@ -1,4 +1,14 @@
 #!/bin/bash
+
+if [ ! -f /tmp/moeOS-prime-run-once ]; then
+	echo "[Info] Running for first time"
+	systemd-run --user \
+	-p RuntimeMaxSec=10s \
+	vkcube-wayland
+	sleep 10s
+	touch /tmp/moeOS-prime-run-once
+fi
+
 unset __EGL_VENDOR_LIBRARY_FILENAMES
 unset VK_ICD_FILENAMES
 env \
