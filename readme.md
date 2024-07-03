@@ -106,7 +106,7 @@ For Prism Launcher, navigate to _File_ -> _Settings..._ -> _Custom Commands_
 
 Set _Wrapper command_ to `prime-run`
 
-##Flatpak Applications (Experimental)
+## Flatpak Applications (Experimental)
 [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) is needed.
 
 Open Flatseal, select the Application you want to run on discrete GPU.
