@@ -27,9 +27,9 @@ function main() {
 	flatpak mask --remove 'org.freedesktop.Platform.GL32.nvidia*' 2>/dev/null
 
 	if [ -f /etc/environment.d/moeOS-nvidiaOffload-intel.conf ]; then
-		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json" >>/var/lib/flatpak/overrides/global
+		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json">>/var/lib/flatpak/overrides/global
 	elif [ -f /etc/environment.d/moeOS-nvidiaOffload-amd ]; then
-		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json" >>/var/lib/flatpak/overrides/global
+		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json">>/var/lib/flatpak/overrides/global
 	fi
 
 	if [[ $(cat /etc/security/faillock.conf | grep "fail_interval =") = "# fail_interval = 900" ]]; then
