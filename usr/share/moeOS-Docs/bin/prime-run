@@ -2,15 +2,13 @@
 
 if [ ! -f /tmp/moeOS-prime-run-once ]; then
 	echo "[Info] Running for first time"
-	systemd-run --user \
-	-p RuntimeMaxSec=10s \
-	vkcube-wayland
-	sleep 10s
 	touch /tmp/moeOS-prime-run-once
+	systemd-run --user \
+	-p RuntimeMaxSec=8s \
+	prime-run vkcube-wayland
+	sleep 6s
 fi
 
-unset __EGL_VENDOR_LIBRARY_FILENAMES
-unset VK_ICD_FILENAMES
 env \
 	__NV_PRIME_RENDER_OFFLOAD=1 \
 	__VK_LAYER_NV_optimus=NVIDIA_only \
