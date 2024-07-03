@@ -38,7 +38,7 @@ function main() {
 	if [[ $(cat /etc/security/faillock.conf | grep "deny =") = "# deny = 3" ]]; then
 		sed -i "s|# deny = 3|deny = 5|g" /etc/security/faillock.conf
 	fi
-	#flatpak update --noninteractive
+	flatpak remove --unused
 }
 
 function replace() {
