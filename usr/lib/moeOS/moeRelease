@@ -3,33 +3,34 @@
 function main() {
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
-	replace  "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
+	replace "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
 	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
-	replace /etc/tlp.d/1-moeOS.conf /etc/tlp.conf
-	for unit in nvidia-powerd power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper thermald avahi-daemon cups cups-browsed systemd-resolved ipp-usb watchdog; do
+	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
+	for unit in nvidia-powerd thermald; do
 		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
-			systemctl enable ${unit}
+			systemctl enable --now ${unit}
 		fi
 	done
+	systemctl enable --now systemd-resolved ipp-usb watchdog avahi-daemon cups cups-browsed power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper
+	systemctl --global enable snotify moeOS-setup
 	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
-	#/usr/bin/ln "-sf" "/usr/share/moeOS-Docs/cgproxy/config.json" "/etc/cgproxy/config.json"
 	/usr/lib/moeOS/patch-chromium
 	/usr/lib/moeOS/patch-steam
-	systemctl --global enable snotify moeOS-setup
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 	#flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
-	flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
-	
+	#flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
 	# Flatpak thingy
-	flatpak override --unset-env=__EGL_VENDOR_LIBRARY_FILENAMES
-	flatpak override --unset-env=VK_ICD_FILENAMES
-	flatpak override --filesystem=xdg-config/fontconfig:ro
-	flatpak override --filesystem=xdg-config/Kvantum:ro
-	flatpak override --filesystem=xdg-config/gtk-3.0:ro
-	flatpak override --filesystem=xdg-config/gtk-4.0:ro
-	flatpak override --device=dri
+	flatpak mask --remove org.freedesktop.Platform.GL.nvidia 2>/dev/null
+	flatpak mask --remove org.freedesktop.Platform.GL.nvidia* 2>/dev/null
+	flatpak mask --remove org.freedesktop.Platform.GL32.nvidia* 2>/dev/null
+
+	if [ -f /etc/environment.d/moeOS-nvidiaOffload-intel.conf ]; then
+		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json" >>/var/lib/flatpak/overrides/global
+	elif [ -f /etc/environment.d/moeOS-nvidiaOffload-amd ]; then
+		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json" >>/var/lib/flatpak/overrides/global
+	fi
 	
 	if [ -f /etc/environment.d/moeOS-nvidiaOffload-intel.conf ] || [ -f /etc/environment.d/moeOS-nvidiaOffload-amd ]; then
 		echo "[Info] Patching Flatpak"
