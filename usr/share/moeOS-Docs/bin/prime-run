@@ -9,7 +9,7 @@ if [ ! -f /tmp/moeOS-prime-run-once ]; then
 	sleep 6s
 fi
 
-env \
+env -u VK_DRIVER_FILES \
 	__NV_PRIME_RENDER_OFFLOAD=1 \
 	__VK_LAYER_NV_optimus=NVIDIA_only \
 	__GLX_VENDOR_LIBRARY_NAME=nvidia \
