@@ -1,0 +1,8 @@
+#!/bin/bash
+
+bwrap --dev-bind / / \
+	--tmpfs /tmp \
+	--ro-bind /dev/null "${XDG_RUNTIME_DIR}/bus" \
+	--tmpfs "${HOME}" \
+	--bind "$1" "$1" \
+	"$2"
