@@ -23,8 +23,8 @@ function main() {
 	flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
 	# Flatpak thingy
 	flatpak mask --remove org.freedesktop.Platform.GL.nvidia 2>/dev/null
-	flatpak mask --remove org.freedesktop.Platform.GL.nvidia* 2>/dev/null
-	flatpak mask --remove org.freedesktop.Platform.GL32.nvidia* 2>/dev/null
+	flatpak mask --remove 'org.freedesktop.Platform.GL.nvidia*' 2>/dev/null
+	flatpak mask --remove 'org.freedesktop.Platform.GL32.nvidia*' 2>/dev/null
 
 	if [ -f /etc/environment.d/moeOS-nvidiaOffload-intel.conf ]; then
 		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json" >>/var/lib/flatpak/overrides/global
