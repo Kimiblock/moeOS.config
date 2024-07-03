@@ -117,7 +117,7 @@ Under Environment, add those variables (one for each line):
 __NV_PRIME_RENDER_OFFLOAD=1
 __VK_LAYER_NV_optimus=NVIDIA_only
 __GLX_VENDOR_LIBRARY_NAME=nvidia
-VK_DRIVER_FILES=
+VK_LOADER_DRIVERS_SELECT=nvidia_icd.json
 ```
 
 # Upstream Problems

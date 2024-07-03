@@ -3,7 +3,6 @@
 function main() {
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
-	replace "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
 	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
 	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
@@ -25,12 +24,6 @@ function main() {
 	flatpak mask --remove org.freedesktop.Platform.GL.nvidia 2>/dev/null
 	flatpak mask --remove 'org.freedesktop.Platform.GL.nvidia*' 2>/dev/null
 	flatpak mask --remove 'org.freedesktop.Platform.GL32.nvidia*' 2>/dev/null
-
-	if [ -f /etc/environment.d/moeOS-nvidiaOffload-intel.conf ]; then
-		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json">>/var/lib/flatpak/overrides/global
-	elif [ -f /etc/environment.d/moeOS-nvidiaOffload-amd ]; then
-		echo "VK_DRIVER_FILES=/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_icd.x86_64.json:/usr/lib/x86_64-linux-gnu/GL/default/lib/vulkan/icd.d/intel_hasvk_icd.x86_64.json">>/var/lib/flatpak/overrides/global
-	fi
 
 	if [[ $(cat /etc/security/faillock.conf | grep "fail_interval =") = "# fail_interval = 900" ]]; then
 		sed -i "s|# fail_interval = 900|fail_interval = 30|g" /etc/security/faillock.conf
