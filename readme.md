@@ -151,9 +151,10 @@ Location Services may not be available in some countries and may provide wrong c
 ## Chromium
 
 - Input Method may not work at all.
-- Scrolling speed is too fast.
+- Trackpad scrolling speed is too fast.
 - Hardware accelerated video decoding / encoding may not work.
-- Not responding after performing a _Drag and Drop_.
+- Waking up discrete GPU.
+- Blurry due to XWayland usage.
 
 ## Flatpak
 
