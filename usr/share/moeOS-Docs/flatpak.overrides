@@ -1,6 +1,6 @@
 [Context]
 devices=dri;
-filesystems=xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-config/fontconfig:ro;xdg-config/Kvantum:ro;
+filesystems=xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-config/fontconfig:ro;xdg-config/Kvantum:ro;xdg-config/kdeglobals:ro;
 
 [Environment]
 moeOS=1
