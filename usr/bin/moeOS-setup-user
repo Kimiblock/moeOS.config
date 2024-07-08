@@ -1,36 +1,37 @@
 #!/bin/bash
 
-function _notify(){
+function _notify() {
 	notify-send -i moeos -u normal -t 5 -a moeOS "moeOS Setup" "$1"
 	sleep 2
 }
 
-function main(){
+function main() {
 	if [ ! "${XDG_CONFIG_HOME}" ]; then
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	echo "[Info] Starting moeOS Autoconf"
 	cp -r /etc/gtk-{4,3}.0 "${HOME}/.config"
 	enableService
+	setupBreeze
 	checkExist
 	_notify "Setting up moeOS"
 	moeOS-setup-firefox
 	checkExist set
 }
 
-function enableService(){
+function enableService() {
 	echo "[Info] Enabling moeOS daemon"
 	systemctl --user enable snotify
 	systemctl --user enable moeOS-autoColor
 }
 
-function setupFont(){
+function setupFont() {
 	echo "[Info] Setting up fonts"
 	mkdir -p ~/.config/fontconfig
 	cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf
 }
 
-function moeOS-setup-firefox(){
+function moeOS-setup-firefox() {
 	if [[ ${moePreferDE} = KDE ]]; then
 		return 0
 	fi
@@ -38,7 +39,19 @@ function moeOS-setup-firefox(){
 	bash "/usr/lib/moeOS/moeOS-setup-firefox" 1>/dev/null 2>/dev/null
 }
 
-function checkExist(){
+function setupBreeze() {
+	if [ ${XDG_CURRENT_DESKTOP} = KDE ]; then
+# 		for config in Trolltech.conf kdeglobals breezerc; do
+# 			if [ ! -f "${XDG_CONFIG_HOME}/${config}" ]; then
+# 				cp "/etc/xdg/${config}" "${XDG_CONFIG_HOME}/${config}"
+# 			fi
+# 		done
+	# I fucking hate Flatpak prohibiting the exposure of /etc/xdg
+	cp /etc/xdg/{Trolltech.conf,kdeglobals,breezerc} ${XDG_CONFIG_HOME}
+	fi
+}
+
+function checkExist() {
 	if [ "${_moeOS_Setup}" = 1 ]; then
 		echo "_moeOS_Setup detected!"
 	elif [ -f "${XDG_CONFIG_HOME}/moeOS/state" ]; then

@@ -1,6 +1,6 @@
 # moeOS.Config
 
-A simple way to provide a _preset_ for Arch Linux. Offers better switchable graphics and printing configuration with a focus on security.
+A simple way to provide a _preset_ for Arch Linux. Offers better switchable graphics and printing experience with a focus on security.
 
 ---
 
@@ -21,15 +21,15 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 
 # Install / Upgrade
 
-# makepkg
+## Manual
 
 ```
 git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
-makepkg -sif
+paru -Ui
 ```
 
-## paru
+## Update with your system
 
 Add the following lines to /etc/paru.conf:
 
@@ -54,10 +54,9 @@ Then install the package:
 
 ```
 paru -Sy --pkgbuilds
-paru -Syu "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta"
+paru -Syu
+paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "moe-fonts-meta" "moe-input-config" "moe-desktop-meta"
 ```
-
-If you are using Plasma, run `systemctl preset moeOS-setup.service --user` upon first login and log out.
 
 # Ingredients
 
