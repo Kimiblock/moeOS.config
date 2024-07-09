@@ -7,3 +7,16 @@ ShowOpenInNewTab=false
 ShowOpenInNewWindow=false
 ShowSortBy=false
 ShowViewMode=false
+ShowOpenInSplitView=false
+
+[General]
+ConfirmClosingMultipleTabs=false
+RememberOpenedTabs=false
+Version=202
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs

@@ -1,0 +1,11 @@
+[Auto Allow]
+kdewallet=kiod6,KDE System
+
+[Wallet]
+Enabled=true
+Leave Open=true
+Prompt on Open=true
+Use One Wallet=true
+
+[org.freedesktop.secrets]
+apiEnabled=true

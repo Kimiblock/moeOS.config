@@ -1,2 +1,2 @@
-[MainWindow]
-ToolBarsMovable=Disabled
+[ImageView]
+AnimationMethod=DocumentView::GLAnimation
