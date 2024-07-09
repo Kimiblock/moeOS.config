@@ -1,8 +1,14 @@
 #!/bin/bash
 
-if [ ! "${XDG_CONFIG_HOME}" ]; then
-	export XDG_CONFIG_HOME="${HOME}/.config"
-fi
+function plasma() {
+	gsettings set org.gnome.desktop.interface gtk-theme Breeze
+	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+	if [[ ${scheme} =~ prefer-dark ]]; then
+		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
+	elif [[ ${scheme} =~ prefer-light ]]; then
+		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
+	fi
+}
 
 function lightMode() {
 	if [ ! -f ${XDG_CONFIG_HOME}/Kvantum/kvantum.kvconfig ]; then
@@ -39,4 +45,12 @@ function lightMode() {
 	fi
 }
 
-lightMode
+if [ ! "${XDG_CONFIG_HOME}" ]; then
+	export XDG_CONFIG_HOME="${HOME}/.config"
+fi
+
+if [[ ${XDG_CURRENT_DESKTOP} = KDE ]]; then
+	plasma
+else
+	lightMode
+fi
