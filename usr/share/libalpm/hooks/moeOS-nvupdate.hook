@@ -1,0 +1,13 @@
+[Action]
+When = PostTransaction
+Exec = /usr/bin/flatpak update --noninteractive
+Depends = moeOS-git
+Description = Updating Flatpak runtimes
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = nvidia-utils
+Target = nvidia
+Target = nvidia-open
