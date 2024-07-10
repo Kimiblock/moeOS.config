@@ -8,6 +8,10 @@ function replace() {
 	fi
 }
 
+if [ ! -f /usr/share/applications/steam.desktop ]; then
+	exit 0
+fi
+
 replace /usr/share/applications/steam.desktop
 if [ -f /usr/share/applications/steam-native.desktop ]; then
 	ln -sf /dev/null /usr/share/applications/steam-native.desktop
