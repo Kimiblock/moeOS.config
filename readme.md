@@ -113,10 +113,15 @@ Open Flatseal, select the Application you want to run on discrete GPU.
 Under Environment, add those variables (one for each line):
 
 ```
-__NV_PRIME_RENDER_OFFLOAD=1
-__VK_LAYER_NV_optimus=NVIDIA_only
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 VK_LOADER_DRIVERS_SELECT=nvidia_icd.json
+```
+
+If you're having problems, add the following two:
+
+```
+__NV_PRIME_RENDER_OFFLOAD=1
+__VK_LAYER_NV_optimus=NVIDIA_only
 ```
 
 # Upstream Problems
