@@ -1,0 +1,17 @@
+[AC][Display]
+DimDisplayIdleTimeoutSec=840
+TurnOffDisplayIdleTimeoutSec=900
+TurnOffDisplayIdleTimeoutWhenLockedSec=300
+
+[Battery][Display]
+DimDisplayIdleTimeoutSec=540
+TurnOffDisplayIdleTimeoutSec=600
+
+[LowBattery][Display]
+DimDisplayIdleTimeoutSec=120
+TurnOffDisplayIdleTimeoutSec=180
+UseProfileSpecificDisplayBrightness=false
+
+[LowBattery][SuspendAndShutdown]
+InhibitLidActionWhenExternalMonitorPresent=false
+SleepMode=2

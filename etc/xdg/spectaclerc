@@ -1,14 +1,13 @@
 [General]
 autoSaveImage=true
 clipboardGroup=PostScreenshotCopyImage
-onLaunchAction=UseLastUsedCapturemode
 rememberLastRectangularRegion=Never
-useLightMaskColour=true
+useLightMaskColor=true
+launchAction=DoNotTakeScreenshot
 
 [GuiConfig]
-captureDelay=1
+captureDelay=2
 captureMode=0
 
-[Save]
-compressionQuality=96
-defaultSaveImageFormat=WEBP
+[ImageSave]
+preferredImageFormat=WEBP

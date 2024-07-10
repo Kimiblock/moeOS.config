@@ -50,7 +50,7 @@ ForegroundVisited=155,89,182
 
 [Colors:Header]
 BackgroundAlternate=239,240,241
-BackgroundNormal=222,224,226
+BackgroundNormal=239,240,241
 DecorationFocus=237,101,226
 DecorationHover=237,101,226
 ForegroundActive=237,101,226
@@ -173,16 +173,17 @@ Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
 Show hidden files=true
-Sort by=Name
-Sort directories first=true
+Sort by=Date
+Sort directories first=false
 Sort hidden files last=false
-Sort reversed=false
+Sort reversed=true
+View Style=Simple
 
 [KScreen]
 XwaylandClientsScale=false
 
 [WM]
-activeBackground=227,229,231
+activeBackground=239,240,241
 activeBlend=227,229,231
 activeFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
 activeForeground=35,38,41

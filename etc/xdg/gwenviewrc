@@ -1,2 +1,8 @@
+[ImageView]
+AnimationMethod=DocumentView::GLAnimation
+
+[General]
+LastUsedVersion=210800
+
 [MainWindow]
 ToolBarsMovable=Disabled
