@@ -50,7 +50,7 @@ ForegroundVisited=155,89,182
 
 [Colors:Header]
 BackgroundAlternate=42,46,50
-BackgroundNormal=239,240,241
+BackgroundNormal=49,54,59
 DecorationFocus=237,101,226
 DecorationHover=237,101,226
 ForegroundActive=237,101,226
@@ -183,7 +183,7 @@ View Style=Simple
 XwaylandClientsScale=false
 
 [WM]
-activeBackground=239,240,241
+activeBackground=49,54,59
 activeBlend=252,252,252
 activeFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
 activeForeground=252,252,252
