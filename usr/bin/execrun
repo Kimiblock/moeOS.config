@@ -1,2 +1,3 @@
 #!/bin/bash
-systemd-run --user --same-dir -p CPUWeight=10 -p MemoryHigh=6G -p IOWeight=10 --pty "$@"
+# This is a wrapper for executing long running program 
+systemd-run --user --same-dir -p CPUWeight=idle -p MemoryHigh=50% -p IOWeight=1 --pty "$@"
