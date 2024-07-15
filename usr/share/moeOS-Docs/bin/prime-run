@@ -13,5 +13,5 @@ env \
 	__NV_PRIME_RENDER_OFFLOAD=1 \
 	__VK_LAYER_NV_optimus=NVIDIA_only \
 	__GLX_VENDOR_LIBRARY_NAME=nvidia \
-	VK_LOADER_DRIVERS_SELECTnvidia_icd.json \
+	VK_LOADER_DRIVERS_SELECT=nvidia_icd.json \
 	"$@"
