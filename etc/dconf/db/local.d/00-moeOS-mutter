@@ -1,5 +1,5 @@
 [org/gnome/mutter]
-experimental-features=['scale-monitor-framebuffer','autoclose-xwayland','variable-refresh-rate','kms-modifiers']
+experimental-features=['scale-monitor-framebuffer','variable-refresh-rate','kms-modifiers','xwayland-native-scaling']
 
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true
