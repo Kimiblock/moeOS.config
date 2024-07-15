@@ -163,3 +163,4 @@ Location Services may not be available in some countries and may provide wrong c
 ## Flatpak
 
 - Applications may not use system font [Flatpak #1563](https://github.com/flatpak/flatpak/issues/1563).
+
