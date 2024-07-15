@@ -13,7 +13,7 @@ function main() {
 		fi
 	done
 	systemctl enable --now systemd-resolved ipp-usb watchdog avahi-daemon cups cups-browsed power-profiles-daemon bluetooth NetworkManager systemd-oomd moeOS-throttle-stopper
-	systemctl --global enable snotify moeOS-setup
+	systemctl --global enable snotify moeOS-setup moeOS-autoColor
 	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
 	/usr/lib/moeOS/patch-chromium
