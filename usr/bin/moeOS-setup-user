@@ -40,12 +40,6 @@ function moeOS-setup-firefox() {
 }
 
 function setupBreeze() {
-	if [ ${XDG_CURRENT_DESKTOP} = KDE ]; then
-# 		for config in Trolltech.conf kdeglobals breezerc; do
-# 			if [ ! -f "${XDG_CONFIG_HOME}/${config}" ]; then
-# 				cp "/etc/xdg/${config}" "${XDG_CONFIG_HOME}/${config}"
-# 			fi
-# 		done
 	# I fucking hate Flatpak prohibiting the exposure of /etc/xdg
 	for file in Trolltech.conf kdeglobals breezerc; do
 		if [ ! -f ${XDG_CONFIG_HOME}/${file} ]; then
