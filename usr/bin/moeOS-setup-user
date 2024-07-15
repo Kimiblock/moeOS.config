@@ -49,9 +49,9 @@ function setupBreeze() {
 	# I fucking hate Flatpak prohibiting the exposure of /etc/xdg
 	for file in Trolltech.conf kdeglobals breezerc; do
 		if [ ! -f ${XDG_CONFIG_HOME}/${file} ]; then
-		cp /etc/xdg/${file} ${XDG_CONFIG_HOME}
+			cp /etc/xdg/${file} ${XDG_CONFIG_HOME}
 		fi
-	fi
+	done
 }
 
 function checkExist() {
