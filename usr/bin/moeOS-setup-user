@@ -10,7 +10,7 @@ function main() {
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	echo "[Info] Starting moeOS Autoconf"
-	cp -r /etc/gtk-{4,3}.0 "${XDG_CONFIG_HOME}/"
+
 	setupBreeze
 	checkExist
 	_notify "Setting up moeOS"
@@ -33,12 +33,16 @@ function moeOS-setup-firefox() {
 }
 
 function setupBreeze() {
+	if [[ ${XDG_CURRENT_DESKTOP} = KDE ]]; then
 	# I fucking hate Flatpak prohibiting the exposure of /etc/xdg
-	for file in Trolltech.conf kdeglobals breezerc; do
-		if [ ! -f ${XDG_CONFIG_HOME}/${file} ]; then
-			cp /etc/xdg/${file} ${XDG_CONFIG_HOME}
-		fi
-	done
+		for file in Trolltech.conf kdeglobals breezerc; do
+			if [ ! -f ${XDG_CONFIG_HOME}/${file} ]; then
+				cp /etc/xdg/${file} ${XDG_CONFIG_HOME}
+			fi
+		done
+	else
+		cp -r /etc/gtk-{4,3}.0 "${XDG_CONFIG_HOME}/"
+	fi
 }
 
 function checkExist() {
