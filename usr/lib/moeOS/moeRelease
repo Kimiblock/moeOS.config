@@ -7,7 +7,7 @@ function main() {
 	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
 	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
 	ln "-sfr" "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
-	for unit in nvidia-powerd thermald; do
+	for unit in nvidia-powerd thermald nvidia-suspend nvidia-resume; do
 		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
 			systemctl enable --now ${unit}
 		fi
