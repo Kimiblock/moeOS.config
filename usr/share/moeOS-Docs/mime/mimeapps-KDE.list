@@ -125,7 +125,7 @@ inode/directory=org.kde.dolphin.desktop
 application/pdf=org.kde.okular.desktop
 application/vnd.rar=org.kde.ark.desktop
 
-application/epub+zip=org.kde.okular.desktop;
+application/epub+zip=org.kde.arianna.desktop;
 application/x-shellscript=org.kde.kate.desktop
 application/x-7z-compressed=org.kde.ark.desktop
 application/json=org.kde.kate.desktop
