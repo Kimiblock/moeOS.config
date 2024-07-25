@@ -1,3 +1,0 @@
-#!/bin/bash
-
-env ENABLE_HDR_WSI=1 $@

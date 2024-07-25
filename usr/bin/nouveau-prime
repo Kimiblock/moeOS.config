@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -f /tmp/moeOS-prime-run-once ]; then
+	echo "[Info] Running for first time"
+	touch /tmp/moeOS-prime-run-once
+	systemd-run --user \
+	-p RuntimeMaxSec=5s \
+	prime-run vkcube-wayland
+	sleep 5s
+fi
+
+env \
+	__NV_PRIME_RENDER_OFFLOAD=1 \
+	__VK_LAYER_NV_optimus=NVIDIA_only \
+	__GLX_VENDOR_LIBRARY_NAME=nvidia \
+	VK_LOADER_DRIVERS_SELECT=nvidia_icd.json \
+	"$@"
