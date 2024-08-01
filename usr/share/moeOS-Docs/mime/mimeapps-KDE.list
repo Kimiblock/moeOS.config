@@ -145,10 +145,14 @@ application/vnd.google-earth.kml+xml=org.gnome.Maps.desktop
 application/gpx+xml=org.gnome.Maps.desktop
 application/fits=org.gnome.Maps.desktop
 application/x-desktop=org.kde.kate.desktop;
-
+application/x-pem-file=org.kde.kate.desktop;
+audio/mp4=mpv.desktop;
 
 [Added Associations]
 x-scheme-handler/mailto=org.kde.kmail2.desktop;org.gnome.Geary.desktop;
 application/x-desktop=org.kde.kate.desktop;
 text/markdown=org.kde.kate.desktop;org.gnome.Builder.desktop;
 audio/mpeg=mpv.desktop;
+application/x-pem-file=org.kde.kate.desktop;
+audio/mp4=mpv.desktop;
+image/jpeg=org.kde.gwenview.desktop;
