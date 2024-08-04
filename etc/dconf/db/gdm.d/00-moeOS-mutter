@@ -3,4 +3,4 @@ experimental-features=['scale-monitor-framebuffer','autoclose-xwayland','variabl
 
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true
-titlebar-font='Sans 12'
+titlebar-font='moeSans, Regular 12'

@@ -5,8 +5,8 @@ Description=Kimiblock moeOS Boot Splash
 ModuleName=two-step
 
 [two-step]
-Font=Inter Medium, 20
-TitleFont=Inter Medium, 28
+Font=moeSans Regular, 20
+TitleFont=moeSans Regular, 28
 ImageDir=/usr/share/plymouth/themes/moe
 DialogHorizontalAlignment=.5
 DialogVerticalAlignment=.75

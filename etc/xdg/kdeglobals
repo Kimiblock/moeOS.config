@@ -143,11 +143,11 @@ Name=Breeze Light
 XftHintStyle=hintmedium
 XftSubPixel=rgb
 fixed=Roboto Mono [GOOG],12,-1,5,57,0,0,0,0,0,Medium
-font=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
-menuFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
+font=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
+menuFont=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
 shadeSortColumn=true
-smallestReadableFont=Inter Medium,11,-1,5,57,0,0,0,0,0,Regular
-toolBarFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
+smallestReadableFont=moeSans Regular,11,-1,5,57,0,0,0,0,0,Regular
+toolBarFont=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
 widgetStyle=Breeze
 
 [Icons]
@@ -185,7 +185,7 @@ XwaylandClientsScale=false
 [WM]
 activeBackground=239,240,241
 activeBlend=227,229,231
-activeFont=Inter Medium,12,-1,5,57,0,0,0,0,0,Regular
+activeFont=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241
