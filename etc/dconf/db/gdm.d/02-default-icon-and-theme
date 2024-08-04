@@ -18,3 +18,5 @@ favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'io.github.mrvla
 [org/gnome/Console]
 theme='auto'
 
+[org/gnome/builder/terminal]
+font-name='Monospace 12'
