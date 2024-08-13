@@ -142,12 +142,12 @@ LastUsedCustomAccentColor=237,101,226
 Name=Breeze Light
 XftHintStyle=hintmedium
 XftSubPixel=rgb
-fixed=Roboto Mono [GOOG],12,-1,5,57,0,0,0,0,0,Medium
-font=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
-menuFont=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
+fixed=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 shadeSortColumn=true
-smallestReadableFont=moeSans Regular,11,-1,5,57,0,0,0,0,0,Regular
-toolBarFont=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
+smallestReadableFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 widgetStyle=Breeze
 
 [Icons]
@@ -185,7 +185,7 @@ XwaylandClientsScale=false
 [WM]
 activeBackground=239,240,241
 activeBlend=227,229,231
-activeFont=moeSans Regular,12,-1,5,57,0,0,0,0,0,Regular
+activeFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241
