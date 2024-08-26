@@ -24,8 +24,8 @@ function createWrapIfNotExist() {
 }
 
 function execApp() {
-	mkdir -p /tmp/${busName}
-	touch /tmp/${busName}/.flatpak-info
+	#mkdir -p /tmp/${busName}
+	#touch /tmp/${busName}/.flatpak-info
 	#while [ ! -S "${busDir}/bus" ]; do
 	#	sleep 0.5s
 	#done
@@ -60,6 +60,8 @@ function execApp() {
 			"${XDG_CONFIG_HOME}"/mimeapps.list \
 		--bind-try "${XDG_DATA_HOME}/PrismLauncher" \
 			"${XDG_DATA_HOME}/PrismLauncher" \
+		--bind-try "${XDG_DATA_HOME}/FjordLauncher" \
+			"${XDG_DATA_HOME}/FjordLauncher" \
 		-- \
 		$@
 }
