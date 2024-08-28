@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function _notify() {
-	notify-send -i moeos -u normal -t 5 -a moeOS "moeOS Setup" "$1"
+	notify-send -i moeos -u normal -t 5 "moeOS Setup" "$1"
 	sleep 2
 }
 
