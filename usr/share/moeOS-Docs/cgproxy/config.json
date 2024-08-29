@@ -2,7 +2,7 @@
     "port": 65529,
     "program_noproxy": [],
     "program_proxy": [],
-    "cgroup_noproxy": ["/moeOS.slice/moeOS-noproxy.slice"],
+    "cgroup_noproxy": ["/moeOS.slice/moeOS-noproxy.slice", "/system.slice/chronyd.service"],
     "cgroup_proxy": ["/"],
     "enable_gateway": true,
     "enable_dns": true,
