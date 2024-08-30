@@ -13,8 +13,7 @@ function main() {
 		fi
 	done
 	systemctl enable --now chronyd moeOS-nvboost systemd-resolved ipp-usb watchdog avahi-daemon cups cups-browsed power-profiles-daemon bluetooth NetworkManager systemd-oomd
-	systemctl disable --now systemd-timesyncd
-	systemctl mask systemd-timesyncd # Do we really need risk masking it?
+	#systemctl mask systemd-timesyncd # Do we really need risk masking it?
 	systemctl --global enable snotify moeOS-setup moeOS-autoColor
 	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
