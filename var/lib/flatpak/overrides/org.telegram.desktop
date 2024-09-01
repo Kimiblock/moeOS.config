@@ -1,0 +1,10 @@
+[Context]
+sockets=!fallback-x11;!x11
+devices=!all;dri
+
+[Session Bus Policy]
+org.kde.StatusNotifierWatcher=none
+org.gnome.Mutter.IdleMonitor=none
+org.ayatana.indicator.application=none
+com.canonical.AppMenu.Registrar=none
+com.canonical.indicator.application=none
