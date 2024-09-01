@@ -13,7 +13,7 @@ function main() {
 	ln "-sfr" "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	for unit in nvidia-powerd thermald nvidia-suspend nvidia-resume nvidia-persistenced; do
 		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
-			systemctl enable --now ${unit}
+			systemctl enable ${unit}
 		fi
 	done
 	systemctl enable --now chronyd moeOS-nvboost systemd-resolved ipp-usb watchdog avahi-daemon cups cups-browsed power-profiles-daemon bluetooth NetworkManager systemd-oomd
