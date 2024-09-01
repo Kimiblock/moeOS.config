@@ -1,6 +1,10 @@
 #!/bin/bash
 
 function main() {
+	if [ ! -f /var/lib/flatpak/overrides ]; then
+		mkdir -p /var/lib/flatpak/
+		touch /var/lib/flatpak/overrides
+	fi
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
