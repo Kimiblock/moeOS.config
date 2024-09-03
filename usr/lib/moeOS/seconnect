@@ -10,7 +10,7 @@ function download() {
 	mkdir -p "/var/lib/${stateDirectory}/bin"
 	if [ ! -f "/var/lib/${stateDirectory}/bin/EasierConnect" ]; then
 		echo "[Info] Downloading EasierConnect..."
-		curl \
+		curl -L \
 			"${binUrl}" \
 			-o /tmp/seconnect.zip
 		unzip \
