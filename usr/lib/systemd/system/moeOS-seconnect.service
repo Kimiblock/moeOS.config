@@ -6,6 +6,11 @@ After=moeOS-clash-meta-auto.service
 [Service]
 Slice=moeOS.slice
 
+CPUQuota=30%
+CPUWeight=idle
+MemoryHigh=20M
+MemoryMax=50M
+
 ExecStart=/usr/lib/moeOS/seconnect
 EnvironmentFile=/etc/default/seconnect
 
@@ -73,4 +78,3 @@ UMask=077
 
 [Install]
 WantedBy=multi-user.target
-RequiredBy=moeOS-cgproxy.service
