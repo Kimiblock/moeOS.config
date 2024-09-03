@@ -26,6 +26,8 @@ CapabilityBoundingSet=
 AmbientCapabilities=
 
 DevicePolicy=closed
+IPAccounting=yes
+IPAddressDeny=link-local
 
 ProtectSystem=strict
 RemoveIPC=yes
@@ -52,8 +54,19 @@ PrivateUsers=yes
 PrivateDevices=yes
 
 RestrictAddressFamilies=~AF_PACKET
+RestrictAddressFamilies=~AF_NETLINK
 
-SystemCallFilter=@system-service ~@privileged @resources
+SystemCallFilter=~@clock
+SystemCallFilter=~@cpu-emulation
+SystemCallFilter=~@debug
+SystemCallFilter=~@module
+SystemCallFilter=~@mount
+SystemCallFilter=~@obsolete
+SystemCallFilter=~@privileged
+SystemCallFilter=~@raw-io
+SystemCallFilter=~@reboot
+SystemCallFilter=~@resources
+SystemCallFilter=~@swap
 SystemCallErrorNumber=EPERM
 
 UMask=077
