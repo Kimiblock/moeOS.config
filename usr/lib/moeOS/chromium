@@ -20,13 +20,17 @@ if [[ $(lsmod) =~ xe ]] || [[ $(lsmod) =~ amdgpu ]] || [[ $(lsmod) =~ i915 ]]; t
 		--setenv GTK_IM_MODULE ibus \
 		-- /usr/bin/chromium \
 			--ozone-platform=wayland \
-			--enable-f	eatures=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
+			--enable-vulkan \
+			--enable-zero-copy \
+			--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
 			--enable-wayland-ime \
 			$@
 else
 	/usr/bin/chromium \
 		--ozone-platform=wayland \
-		--enable-f	eatures=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
+		--enable-vulkan \
+		--enable-zero-copy \
+		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
 		--enable-wayland-ime \
 		$@
 fi

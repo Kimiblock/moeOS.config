@@ -38,6 +38,9 @@ function main() {
 		sed -i "s|# deny = 3|deny = 5|g" /etc/security/faillock.conf
 	fi
 	flatpak remove --unused --noninteractive
+	systemctl mask \
+		--global \
+		app-org.kde.discover.notifier@autostart.service 2>/dev/null
 }
 
 function replace() {
