@@ -11,20 +11,43 @@ function main() {
 	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
 	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
 	replace "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
-	for unit in nvidia-powerd nvidia-suspend nvidia-resume nvidia-persistenced; do
-		if [[ -f /usr/lib/systemd/system/"${unit}".service ]]; then
-			systemctl enable ${unit}
-		fi
-	done
-	systemctl enable --now chronyd moeOS-nvboost systemd-resolved ipp-usb watchdog avahi-daemon cups cups-browsed power-profiles-daemon bluetooth NetworkManager systemd-oomd thermald
-	#systemctl mask systemd-timesyncd # Do we really need risk masking it?
-	systemctl --global enable snotify moeOS-setup moeOS-autoColor
-	ln -sfr /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+	systemctl enable \
+		nvidia-powerd \
+		nvidia-suspend \
+		nvidia-persistenced 2>/dev/null
+	systemctl disable \
+		nvidia-resume 2>/dev/null
+
+	systemctl enable \
+		--now \
+		chronyd \
+		moeOS-nvboost \
+		systemd-resolved \
+		ipp-usb \
+		avahi-daemon \
+		cups \
+		cups-browsed \
+		power-profiles-daemon \
+		bluetooth \
+		NetworkManager \
+		systemd-oomd \
+		thermald
+	systemctl mask systemd-timesyncd # Do we really need risk masking it?
+	systemctl --global \
+		enable \
+		snotify moeOS-setup moeOS-autoColor
+	ln -sfr \
+		/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
 	/usr/lib/moeOS/patch-chromium
 	/usr/lib/moeOS/patch-steam
-	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-	flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+	flatpak remote-add \
+		--if-not-exists \
+		flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+	flatpak remote-modify \
+		flathub \
+		--url=https://mirror.sjtu.edu.cn/flathub
 	#flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
 	# Flatpak thingy
 	flatpak mask --remove org.freedesktop.Platform.GL.nvidia 2>/dev/null
@@ -40,6 +63,7 @@ function main() {
 	flatpak remove --unused --noninteractive
 	systemctl mask \
 		--global \
+		app-org.gnome.Software@autostart.service \
 		app-org.kde.discover.notifier@autostart.service 2>/dev/null
 }
 
