@@ -1,4 +1,13 @@
 #!/bin/bash
+
+videoMod=$(lsmod)
+
+if [[ ${videoMod} =~ i915 ]] || [[ ${videoMod} =~ xe ]] || [[ ${videoMod} =~ amdgpu ]]; then
+	bwArg=""
+elif [[ ${videoMod} =~ nvidia ]]; then
+	bwArg="--dev-bind /dev{,}"
+fi
+
 bwrap \
 	--symlink usr/lib /lib \
 	--symlink usr/lib64 /lib64 \
@@ -14,10 +23,15 @@ bwrap \
 	--ro-bind /sys/devices /sys/devices \
 	--bind /run /run \
 	--tmpfs /tmp \
+	"${bwArg}" \
 	--bind "$HOME" "$HOME" \
 	--setenv GTK_IM_MODULE ibus \
-	/usr/bin/element-desktop \
+	-- /usr/bin/element-desktop \
 		--ozone-platform=wayland \
-		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
+		--enable-vulkan \
+		--enable-zero-copy \
+		--ignore-gpu-blocklist \
+		--enable-features=VaapiVideoDecodeLinuxGL,VaapiIgnoreDriverChecks,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
+		--disable-features=UseChromeOSDirectVideoDecoder \
 		--enable-wayland-ime
 		$@
