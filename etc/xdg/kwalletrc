@@ -1,5 +1,5 @@
 [Auto Allow]
-kdewallet=kiod6,KDE System
+kdewallet=kiod6,KDE System,nheko
 
 [Wallet]
 Enabled=true

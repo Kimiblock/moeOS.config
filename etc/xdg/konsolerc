@@ -1,0 +1,9 @@
+[General]
+ConfigVersion=1
+
+[MainWindow]
+MenuBar=Enabled
+ToolBarsMovable=Disabled
+
+[UiSettings]
+ColorScheme=
