@@ -5,7 +5,7 @@ videoMod=$(lsmod)
 if [[ ${videoMod} =~ i915 ]] || [[ ${videoMod} =~ xe ]] || [[ ${videoMod} =~ amdgpu ]]; then
 	bwArg=""
 elif [[ ${videoMod} =~ nvidia ]]; then
-	bwArg="--dev-bind /dev{,}"
+	bwArg="--dev-bind /dev /dev"
 fi
 
 bwrap \
