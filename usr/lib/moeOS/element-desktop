@@ -25,10 +25,10 @@ bwrap \
 	--bind "$HOME" "$HOME" \
 	--setenv GTK_IM_MODULE ibus \
 	-- /usr/bin/element-desktop \
-		--ozone-platform=wayland \
+		--ozone-platform-hint=auto \
 		--enable-zero-copy \
 		--ignore-gpu-blocklist \
-		--enable-features=VaapiVideoDecodeLinuxGL,VaapiIgnoreDriverChecks,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
-		--disable-features=UseChromeOSDirectVideoDecoder \
+		--enable-features=VaapiVideoDecodeLinuxGL,VaapiIgnoreDriverChecks,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation,VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,VulkanFromANGLE \
+		--disable-features=UseChromeOSDirectVideoDecoder,UseSkiaRenderer \
 		--enable-wayland-ime
 		$@
