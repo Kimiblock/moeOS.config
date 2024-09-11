@@ -3,7 +3,7 @@
 videoMod=$(lsmod)
 
 if [[ ${videoMod} =~ i915 ]] || [[ ${videoMod} =~ xe ]] || [[ ${videoMod} =~ amdgpu ]]; then
-	bwArg=""
+	bwArg="--dev /dev"
 elif [[ ${videoMod} =~ nvidia ]]; then
 	bwArg="--dev-bind /dev /dev"
 fi
@@ -13,9 +13,9 @@ bwrap \
 	--symlink usr/lib64 /lib64 \
 	--symlink usr/bin /bin \
 	--symlink usr/bin /sbin \
+	${bwArg} \
 	--ro-bind /usr /usr \
 	--ro-bind /etc /etc \
-	--dev /dev \
 	--dev-bind /dev/dri /dev/dri \
 	--dev-bind /dev/shm /dev/shm \
 	--bind /proc /proc \
@@ -23,7 +23,6 @@ bwrap \
 	--ro-bind /sys/devices /sys/devices \
 	--bind /run /run \
 	--tmpfs /tmp \
-	"${bwArg}" \
 	--bind "$HOME" "$HOME" \
 	--setenv GTK_IM_MODULE ibus \
 	-- /usr/bin/element-desktop \
