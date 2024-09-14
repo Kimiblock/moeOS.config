@@ -1,6 +1,0 @@
-#!/bin/bash
-case "$2" in
-	connectivity-change)
-		timedatectl set-timezone "$(curl --fail --http2-prior-knowledge https://ipapi.co/timezone)"
-	;;
-esac
