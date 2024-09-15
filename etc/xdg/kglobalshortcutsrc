@@ -1,0 +1,4 @@
+[services][org.kde.spectacle.desktop]
+ActiveWindowScreenShot=Meta+Print\tMeta+Shift+S
+RectangularRegionScreenShot=Meta+Shift+Print\tAlt+Shift+S
+_launch=Print

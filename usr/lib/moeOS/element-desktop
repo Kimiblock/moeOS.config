@@ -1,23 +1,34 @@
 #!/bin/bash
+
+videoMod=$(lsmod)
+
+if [[ ${videoMod} =~ i915 ]] || [[ ${videoMod} =~ xe ]] || [[ ${videoMod} =~ amdgpu ]]; then
+	bwArg="--dev /dev"
+elif [[ ${videoMod} =~ nvidia ]]; then
+	bwArg="--dev-bind /dev /dev"
+fi
+
 bwrap \
 	--symlink usr/lib /lib \
 	--symlink usr/lib64 /lib64 \
 	--symlink usr/bin /bin \
 	--symlink usr/bin /sbin \
+	${bwArg} \
 	--ro-bind /usr /usr \
 	--ro-bind /etc /etc \
-	--dev /dev \
 	--dev-bind /dev/dri /dev/dri \
 	--dev-bind /dev/shm /dev/shm \
 	--bind /proc /proc \
-	--ro-bind /sys/dev/char /sys/dev/char \
-	--ro-bind /sys/devices /sys/devices \
+	--dev-bind /sys /sys \
 	--bind /run /run \
 	--tmpfs /tmp \
 	--bind "$HOME" "$HOME" \
 	--setenv GTK_IM_MODULE ibus \
-	/usr/bin/element-desktop \
-		--ozone-platform=wayland \
-		--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation \
+	-- /usr/bin/element-desktop \
+		--ozone-platform-hint=auto \
+		--enable-zero-copy \
+		--ignore-gpu-blocklist \
+		--enable-features=VaapiVideoDecodeLinuxGL,VaapiIgnoreDriverChecks,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation,VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,VulkanFromANGLE \
+		--disable-features=UseChromeOSDirectVideoDecoder,UseSkiaRenderer \
 		--enable-wayland-ime
 		$@

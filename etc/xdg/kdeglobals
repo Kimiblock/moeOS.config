@@ -136,7 +136,6 @@ ForegroundVisited=155,89,182
 AccentColor=237,101,226
 BrowserApplication=firefox.desktop
 ColorScheme=BreezeLight
-ColorSchemeHash=2ef8a9f7238e072ca91b0eb590f49ded650c76bd
 DeviceLedsAccentColored=true
 LastUsedCustomAccentColor=237,101,226
 Name=Breeze Light
@@ -151,7 +150,7 @@ toolBarFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 widgetStyle=Breeze
 
 [Icons]
-Theme=Tela-circle-pink-light
+Theme=Tela-circle-pink
 
 [KDE]
 AnimationDurationFactor=1.414213562373095
@@ -177,10 +176,11 @@ Sort by=Date
 Sort directories first=false
 Sort hidden files last=false
 Sort reversed=true
+Speedbar Width=169
 View Style=Simple
 
 [KScreen]
-XwaylandClientsScale=false
+XwaylandClientsScale=true
 
 [WM]
 activeBackground=239,240,241
@@ -190,3 +190,8 @@ activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241
 inactiveForeground=112,125,138
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=true
+MaximumRemoteSize=5242880
+MaximumSize=2147483648

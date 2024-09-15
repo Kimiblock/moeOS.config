@@ -1,11 +1,18 @@
 [AC][Display]
-DimDisplayIdleTimeoutSec=840
-TurnOffDisplayIdleTimeoutSec=900
-TurnOffDisplayIdleTimeoutWhenLockedSec=300
+DimDisplayIdleTimeoutSec=1200
+TurnOffDisplayIdleTimeoutSec=1680
+TurnOffDisplayIdleTimeoutWhenLockedSec=60
+
+[AC][SuspendAndShutdown]
+AutoSuspendIdleTimeoutSec=1800
+SleepMode=3
 
 [Battery][Display]
-DimDisplayIdleTimeoutSec=540
-TurnOffDisplayIdleTimeoutSec=600
+DimDisplayIdleTimeoutSec=300
+TurnOffDisplayIdleTimeoutSec=480
+
+[Battery][SuspendAndShutdown]
+SleepMode=3
 
 [LowBattery][Display]
 DimDisplayIdleTimeoutSec=120
@@ -15,3 +22,7 @@ UseProfileSpecificDisplayBrightness=false
 [LowBattery][SuspendAndShutdown]
 InhibitLidActionWhenExternalMonitorPresent=false
 SleepMode=2
+
+[LowBattery][Keyboard]
+KeyboardBrightness=0
+UseProfileSpecificKeyboardBrightness=true

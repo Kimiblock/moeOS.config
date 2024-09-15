@@ -17,7 +17,8 @@ function main() {
 		nvidia-suspend \
 		nvidia-persistenced 2>/dev/null
 	systemctl disable \
-		nvidia-resume 2>/dev/null
+		nvidia-resume \
+		nvidia-hibernate 2>/dev/null
 
 	systemctl enable \
 		--now \

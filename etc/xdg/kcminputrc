@@ -15,5 +15,8 @@ NaturalScroll=true
 ClickMethod=2
 NaturalScroll=true
 
+[Libinput]
+NaturalScroll=true
+
 [Mouse]
 cursorTheme=Breeze_Light
