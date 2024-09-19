@@ -20,3 +20,6 @@ theme='auto'
 
 [org/gnome/builder/terminal]
 font-name='Monospace 12'
+
+[org/gnome/desktop/interface]
+accent-color='pink'
