@@ -9,7 +9,7 @@
     "enable_udp": true,
     "enable_tcp": true,
     "enable_ipv4": true,
-    "enable_ipv6": true,
+    "enable_ipv6": false,
     "table": 10007,
     "fwmark": 39283
 }
