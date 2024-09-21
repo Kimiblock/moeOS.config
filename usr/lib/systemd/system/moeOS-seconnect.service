@@ -2,9 +2,11 @@
 Description=Auto updated EasierConnect daemon.
 After=network-online.target
 After=moeOS-clash-meta-auto.service
+StartLimitIntervalSec=120
+StartLimitBurst=10
 
 [Service]
-Slice=moeOS.slice
+Slice=moeOS-noproxy.slice
 
 CPUQuota=30%
 CPUWeight=idle
@@ -21,7 +23,7 @@ TimeoutStopSec=10
 Restart=on-failure
 OOMPolicy=kill
 
-RestartSec=10s
+RestartSec=1s
 OOMScoreAdjust=100
 
 DynamicUser=yes
