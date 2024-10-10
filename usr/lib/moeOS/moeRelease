@@ -33,16 +33,17 @@ function main() {
 		NetworkManager \
 		systemd-oomd \
 		thermald
-	systemctl mask systemd-timesyncd systemd-resolved # Do we really need risk masking it?
+	systemctl mask systemd-timesyncd # Do we really need risk masking it?
+	systemctl unmask systemd-resolved
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
-	#ln -sfr \
-	#	/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-	if [ -L /etc/resolv.conf ]; then
-		rm /etc/resolv.conf
-		systemctl restart NetworkManager
-	fi
+	ln -sfr \
+		/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+# 	if [ -L /etc/resolv.conf ]; then
+# 		rm /etc/resolv.conf
+# 		systemctl restart NetworkManager
+# 	fi
 	plymouth-set-default-theme moe-next
 	/usr/lib/moeOS/patch-chromium
 	/usr/lib/moeOS/patch-steam
