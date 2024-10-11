@@ -5,7 +5,7 @@
     "cgroup_noproxy": ["/moeOS.slice/moeOS-noproxy.slice", "/system.slice/chronyd.service", "/system.slice/system-cups.slice"],
     "cgroup_proxy": ["/"],
     "enable_gateway": true,
-    "enable_dns": true,
+    "enable_dns": false,
     "enable_udp": true,
     "enable_tcp": true,
     "enable_ipv4": true,
