@@ -10,7 +10,7 @@ function main() {
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	echo "[Info] Starting moeOS Autoconf"
-
+	setupFont
 	setupBreeze
 	checkExist
 	_notify "Setting up moeOS"
