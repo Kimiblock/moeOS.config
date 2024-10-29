@@ -15,10 +15,10 @@ function main() {
 	systemctl enable \
 		nvidia-powerd \
 		nvidia-suspend \
-		nvidia-persistenced 2>/dev/null
-	systemctl disable \
 		nvidia-resume \
-		nvidia-hibernate moeOS-nvboost 2>/dev/null
+		nvidia-persistenced 2>/dev/null
+		
+	systemctl disable --now thermald
 
 	systemctl enable \
 		--now \
@@ -30,9 +30,9 @@ function main() {
 		power-profiles-daemon \
 		bluetooth \
 		NetworkManager \
-		systemd-oomd \
-		thermald
-	systemctl mask systemd-timesyncd # Do we really need risk masking it?
+		systemd-oomd
+
+	systemctl mask systemd-timesyncd nvidia-hibernate # Do we really need risk masking it?
 	systemctl unmask systemd-resolved
 	systemctl --global \
 		enable \
