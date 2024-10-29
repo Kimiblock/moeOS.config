@@ -16,7 +16,8 @@ function main() {
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
-		nvidia-persistenced 2>/dev/null
+		nvidia-persistenced
+		moeOS-nvboost 2>/dev/null
 		
 	systemctl disable --now thermald
 
