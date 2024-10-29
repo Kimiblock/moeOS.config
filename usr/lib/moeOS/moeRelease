@@ -18,12 +18,11 @@ function main() {
 		nvidia-persistenced 2>/dev/null
 	systemctl disable \
 		nvidia-resume \
-		nvidia-hibernate 2>/dev/null
+		nvidia-hibernate moeOS-nvboost 2>/dev/null
 
 	systemctl enable \
 		--now \
 		chronyd \
-		moeOS-nvboost \
 		ipp-usb \
 		avahi-daemon \
 		cups \
