@@ -22,6 +22,7 @@ function main() {
 		--hdr-enabled \
 		--expose-wayland \
 		-e \
+		-f \
 		-- \
 			env \
 			GBM_BACKENDS_PATH="${backendPath}" \
