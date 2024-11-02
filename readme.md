@@ -65,6 +65,7 @@ paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "
 Contains the following configurations and customizations:
 
 - moeOS Plymouth splash theme.
+- Optional HDR which can be enabled by `ENABLE_HDR_WSI=1`
 - Default `sbctl` Secure Boot configuation.
 - Printing that just works with IPP Everywhere and AirPrint printers. Wired and wireless printers are supported. Older printer drivers are included, if there is any open source driver for it.
 - Example configuraions which can't be generated. (Located in `/usr/share/moeOS-Docs/Reference Configs`)
