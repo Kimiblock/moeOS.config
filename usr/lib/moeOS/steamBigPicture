@@ -16,20 +16,18 @@ function gbmProbe() {
 }
 
 function main() {
-	if [ ${ENABLE_HDR_WSI} = 1 ]; then
-		unset ENABLE_HDR_WSI
-	fi
 	gamescope \
-		--force-grab-cursor \
-		--hdr-enabled \
+		--adaptive-sync \
 		-W 1680 -H 1050 \
+		--hdr-enabled \
+		--expose-wayland \
 		-e \
 		-f \
 		-F fsr \
 		-- \
 			env \
 			GBM_BACKENDS_PATH="${backendPath}" \
-			flatpak run com.valvesoftware.Steam -bigpicture $@
+			flatpak run com.valvesoftware.Steam $@
 }
 
 checkInst
