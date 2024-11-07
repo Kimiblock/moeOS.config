@@ -12,14 +12,14 @@ function main() {
 	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
 	replace "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 
-	systemctl unmask systemd-resolved nvidia-resume 2>/dev/null
+	systemctl unmask systemd-resolved nvidia-resume nvidia-hibernate 2>/dev/null
 	systemctl enable \
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
 		moeOS-nvboost 2>/dev/null
 		
-	systemctl disable thermald nvidia-persistenced 2>/dev/null
+	systemctl disable thermald nvidia-persistenced nvidia-hibernate 2>/dev/null
 
 	systemctl enable \
 		--now \
