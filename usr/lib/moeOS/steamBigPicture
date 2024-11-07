@@ -20,8 +20,6 @@ function main() {
 		--adaptive-sync \
 		-W 1680 -H 1050 \
 		--hdr-enabled \
-		--hdr-itm-enable \
-		--force-grab-cursor \
 		-e \
 		-F fsr \
 		-- \
