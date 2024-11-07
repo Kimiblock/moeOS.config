@@ -12,16 +12,13 @@ function main() {
 	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
 	replace "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 
-	systemctl unmask nvidia-hibernate systemd-resolved 2>/dev/null
+	systemctl unmask systemd-resolved 2>/dev/null
 	systemctl enable \
 		nvidia-powerd \
 		nvidia-suspend \
-		nvidia-resume \
-		nvidia-hibernate \
-		nvidia-persistenced \
 		moeOS-nvboost 2>/dev/null
 		
-	systemctl disable --now thermald 2>/dev/null
+	systemctl disable thermald nvidia-resume nvidia-persistenced 2>/dev/null
 
 	systemctl enable \
 		--now \
@@ -34,7 +31,7 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		systemd-oomd
-	systemctl mask systemd-timesyncd # Do we really need risk masking it?
+	systemctl mask systemd-timesyncd nvidia-resume nvidia-hibernate # Do we really need risk masking it?
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
