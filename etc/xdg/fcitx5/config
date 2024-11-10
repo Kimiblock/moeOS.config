@@ -43,11 +43,11 @@ ActiveByDefault=False
 # Share Input State
 ShareInputState=No
 # Show preedit in application
-PreeditEnabledByDefault=True
+PreeditEnabledByDefault=False
 # Show Input Method Information when switch input method
-ShowInputMethodInformation=True
+ShowInputMethodInformation=False
 # Show Input Method Information when changing focus
-showInputMethodInformationWhenFocusIn=True
+showInputMethodInformationWhenFocusIn=False
 # Show compact input method information
 CompactInputMethodInformation=True
 # Show first input method information
