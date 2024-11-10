@@ -16,16 +16,26 @@ function gbmProbe() {
 }
 
 function main() {
-	gamescope \
-		--adaptive-sync \
+	env -u ENABLE_HDR_WSI \
+	env \
+		DXVK_HDR=1 \
+		STEAM_GAMESCOPE_HDR_SUPPORTED=1 \
+		ENABLE_GAMESCOPE_WSI=1 \
+		gamescope \
+		--hdr-itm-enable \
+		--hdr-itm-target-nits=1200 \
+		--hdr-itm-sdr-nits=40 \
 		-W 1680 -H 1050 \
+		--disable-color-management \
 		--hdr-enabled \
 		-e \
 		-F fsr \
 		-- \
 			env \
 			GBM_BACKENDS_PATH="${backendPath}" \
-			flatpak run com.valvesoftware.Steam $@
+			ENABLE_GAMESCOPE_WSI=1 \
+			flatpak run com.valvesoftware.Steam \
+			-gamepadui -steamos3 -steampal -pipewire-dmabuf $@
 }
 
 checkInst
