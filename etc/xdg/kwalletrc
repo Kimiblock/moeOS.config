@@ -1,5 +1,5 @@
 [Auto Allow]
-kdewallet=kiod6,KDE System,nheko
+kdewallet=kiod6,KDE System,nheko,kded6,kwalletmanager,KRDP,falkon,neochat
 
 [Wallet]
 Enabled=true

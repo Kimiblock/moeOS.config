@@ -4,6 +4,7 @@ NamedColors=false
 PreviewAfterColor=true
 
 [General]
+Output With Date=false
 Allow Tab Scrolling=true
 Auto Hide Tabs=false
 Close After Last=false
@@ -42,6 +43,9 @@ Tab Middle Click Close Document=true
 Tabbar Tab Limit=0
 
 [KTextEditor Document]
+BOM=false
+Backup Local=false
+Use Editor Config=true
 Allow End of Line Detection=true
 Auto Detect Indent=true
 Auto Reload If State Is In Version Control=true
@@ -167,3 +171,4 @@ SymbolExpand=true
 SymbolSort=false
 SymbolTree=true
 TypeFormatting=false
+AllowedServerCommandLines=/usr/bin/bash-language-server start,/usr/bin/pylsp --check-parent-process

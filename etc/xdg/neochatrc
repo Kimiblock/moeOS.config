@@ -1,0 +1,12 @@
+[General]
+Blur=true
+ColorScheme=Default
+Transparency=0.2
+
+[Timeline]
+ShowAvatarUpdate=true
+ShowDeletedMessages=true
+ShowRename=true
+
+[UiSettings]
+ColorScheme=
