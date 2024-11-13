@@ -1,9 +1,9 @@
 #!/bin/bash
 
 function main() {
-	if [ ! -f /var/lib/flatpak/overrides ]; then
-		mkdir -p /var/lib/flatpak/
-		mkdir /var/lib/flatpak/overrides
+	if [ ! -f /var/lib/flatpak/overrides/global ]; then
+		mkdir -p /var/lib/flatpak/overrides
+		touch /var/lib/flatpak/overrides/global
 	fi
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
