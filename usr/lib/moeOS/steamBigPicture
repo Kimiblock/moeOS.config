@@ -20,10 +20,7 @@ function main() {
 		env -u ENABLE_HDR_WSI \
 		gamescope \
 		-f \
-		--borderless \
-		--force-grab-cursor \
 		-W 1680 -H 1050 \
-		--adaptive-sync \
 		-e \
 		-F fsr \
 		-- \
