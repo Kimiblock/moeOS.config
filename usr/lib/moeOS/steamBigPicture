@@ -22,6 +22,7 @@ function main() {
 		STEAM_GAMESCOPE_HDR_SUPPORTED=1 \
 		ENABLE_GAMESCOPE_WSI=1 \
 		gamescope \
+		-f \
 		--hdr-itm-enable \
 		--hdr-itm-target-nits=1200 \
 		--hdr-itm-sdr-nits=40 \
