@@ -62,9 +62,9 @@ function execApp() {
 			"${XDG_DATA_HOME}/PrismLauncher" \
 		--bind-try "${XDG_DATA_HOME}/FjordLauncher" \
 			"${XDG_DATA_HOME}/FjordLauncher" \
-		-- gamescope -f \
+		gamescope -f \
 		-F fsr \
-		-W 1440 -H 900 \
+		-W 1440 -H 900 -- \
 		$@
 }
 
