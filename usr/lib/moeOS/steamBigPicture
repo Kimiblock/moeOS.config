@@ -16,8 +16,8 @@ function gbmProbe() {
 }
 
 function main() {
-	env -u ENABLE_HDR_WSI \
-	if [ ${XDG_CURRENT_DESKTOP} = GNOME ]; then
+	if [[ ${XDG_CURRENT_DESKTOP} = GNOME ]]; then
+		env -u ENABLE_HDR_WSI \
 		gamescope \
 		-f \
 		--borderless \
@@ -33,7 +33,7 @@ function main() {
 			flatpak run com.valvesoftware.Steam \
 			-gamepadui -steamos3 -steampal -pipewire-dmabuf $@
 	else
-		env \
+		env -u ENABLE_HDR_WSI \
 		DXVK_HDR=1 \
 		STEAM_GAMESCOPE_HDR_SUPPORTED=1 \
 		ENABLE_GAMESCOPE_WSI=1 \
