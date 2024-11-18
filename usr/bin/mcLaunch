@@ -29,6 +29,7 @@ function execApp() {
 	#while [ ! -S "${busDir}/bus" ]; do
 	#	sleep 0.5s
 	#done
+	# https://github.com/ValveSoftware/gamescope/issues/1561
 	echo "Launching App"
 	bwrap \
 		--cap-drop ALL \
