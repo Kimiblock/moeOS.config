@@ -31,7 +31,6 @@ function execApp() {
 	#done
 	echo "Launching App"
 	bwrap \
-		--die-with-parent \
 		--cap-drop ALL \
 		--dev-bind /dev /dev \
 		--bind /sys /sys \
@@ -62,9 +61,6 @@ function execApp() {
 			"${XDG_DATA_HOME}/PrismLauncher" \
 		--bind-try "${XDG_DATA_HOME}/FjordLauncher" \
 			"${XDG_DATA_HOME}/FjordLauncher" \
-		gamescope -f \
-		-F fsr \
-		-W 1440 -H 900 -- \
 		$@
 }
 
