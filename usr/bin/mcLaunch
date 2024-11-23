@@ -1,5 +1,101 @@
 #!/bin/bash
 
-launchTarget="$@"
+busName=net.minecraft
+busDir="${XDG_RUNTIME_DIR}/app/${busName}"
 
-_portalConfig=/usr/lib/portable/info/net.minecraft/config portable
+function sourceXDG() {
+	if [[ ! ${XDG_CONFIG_HOME} ]]; then
+		source "${HOME}"/.config/user-dirs.dirs
+		export XDG_CONFIG_HOME="${HOME}"/.config
+	else
+		source "${XDG_CONFIG_HOME}"/user-dirs.dirs
+	fi
+	if [[ ! ${XDG_DATA_HOME} ]]; then
+		export XDG_DATA_HOME="${HOME}"/.local/share
+	fi
+}
+
+function createWrapIfNotExist() {
+	if [ -d "$@" ]; then
+		return 0
+	else
+		mkdir -p "$@"
+	fi
+}
+
+function execApp() {
+	#mkdir -p /tmp/${busName}
+	#touch /tmp/${busName}/.flatpak-info
+	#while [ ! -S "${busDir}/bus" ]; do
+	#	sleep 0.5s
+	#done
+	# https://github.com/ValveSoftware/gamescope/issues/1561
+	echo "Launching App"
+	bwrap \
+		--cap-drop ALL \
+		--dev-bind /dev /dev \
+		--bind /sys /sys \
+		--proc /proc \
+		--tmpfs /tmp \
+		--bind /usr /usr \
+		--ro-bind /etc /etc \
+		--symlink usr/lib /lib \
+		--symlink usr/lib64 /lib64 \
+		--symlink usr/bin /bin \
+		--symlink usr/bin /sbin \
+		--ro-bind-try "${XDG_RUNTIME_DIR}" \
+			"${XDG_RUNTIME_DIR}" \
+		--ro-bind-try "${XAUTHORITY}" "${XAUTHORITY}" \
+		--unshare-all \
+		--share-net \
+		--ro-bind-try /run/systemd/resolve/stub-resolv.conf \
+			/run/systemd/resolve/stub-resolv.conf \
+		--ro-bind-try "${XDG_CONFIG_HOME}"/user-dirs.dirs \
+			"${XDG_CONFIG_HOME}"/user-dirs.dirs \
+		--ro-bind-try "${XDG_CONFIG_HOME}"/fontconfig \
+			"${XDG_CONFIG_HOME}"/fontconfig \
+		--ro-bind-try "${XDG_CONFIG_HOME}"/gtk-4.0 \
+			"${XDG_CONFIG_HOME}"/gtk-4.0 \
+		--ro-bind-try "${XDG_CONFIG_HOME}"/mimeapps.list \
+			"${XDG_CONFIG_HOME}"/mimeapps.list \
+		--bind-try "${XDG_DATA_HOME}/PrismLauncher" \
+			"${XDG_DATA_HOME}/PrismLauncher" \
+		--bind-try "${XDG_DATA_HOME}/FjordLauncher" \
+			"${XDG_DATA_HOME}/FjordLauncher" \
+		$@
+}
+
+function dbusProxy() {
+	mkdir "${busDir}" -p
+	echo "Launching D-Bus Proxy"
+	bwrap \
+		--new-session \
+		--symlink /usr/lib64 /lib64 \
+		--ro-bind /usr/lib /usr/lib \
+		--ro-bind /usr/lib64 /usr/lib64 \
+		--ro-bind /usr/bin /usr/bin \
+		--bind "${XDG_RUNTIME_DIR}" "${XDG_RUNTIME_DIR}" \
+		--ro-bind-try "/tmp/${busName}/.flatpak-info" \
+			/.flatpak-info \
+		--ro-bind-try "/tmp/${busName}/.flatpak-info" \
+			"${XDG_RUNTIME_DIR}/.flatpak-info" \
+		--die-with-parent \
+		-- \
+		xdg-dbus-proxy \
+			"${DBUS_SESSION_BUS_ADDRESS}" \
+			"${busDir}/bus" \
+			--log \
+			--call=org.freedesktop.portal.Desktop=*=* \
+			--broadcast=org.freedesktop.portal.*=@/org/freedesktop/portal/* \
+			--talk=org.freedesktop.DBus.Properties \
+			--talk=org.gtk.Settings \
+			--talk=org.freedesktop.portal.desktop
+}
+
+function launch() {
+	execApp $@
+}
+
+sourceXDG
+#dbusProxy &
+launch $@
