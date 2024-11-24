@@ -1,5 +1,5 @@
-gpu-hwdec-interop	=	vulkan
-hwdec			=	vulkan
+gpu-hwdec-interop	=	vaapi
+hwdec			=	vaapi
 ao			=	pipewire
 load-console		=	no
 scale			=	bilinear
