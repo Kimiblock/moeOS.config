@@ -1,21 +1,17 @@
-gpu-hwdec-interop	=	vaapi
-hwdec			=	vulkan,vaapi
-vo			=	gpu-next
-tone-mapping		=	auto
-tone-mapping-mode	=	auto
+gpu-hwdec-interop	=	vulkan
+hwdec			=	vulkan
 ao			=	pipewire
-load-osd-console	=	no
-#scale			=	oversample
-#dscale			=	mitchell
-af			=	dynaudnorm=g=45:p=0.5:m=1:s=0
+load-console		=	no
+scale			=	bilinear
+dscale			=	oversample
+af			=	dynaudnorm=p=0.9:g=49:m=2
 hwdec-codecs		=	all
-volume-max		=	100
 sub-auto		=	fuzzy
-vd-lavc-dr		=	yes
 replaygain		=	album
 gpu-api			=	vulkan
+gpu-context		=	waylandvk
+target-colorspace-hint
 native-keyrepeat
-keep-open		=	yes
-vd-lavc-film-grain	=	gpu
-embeddedfonts		=	no
-
+cscale			=	bilinear
+cache-secs		=	12
+video-timing-offset	=	0
