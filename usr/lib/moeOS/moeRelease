@@ -31,17 +31,14 @@ function main() {
 		power-profiles-daemon \
 		bluetooth \
 		NetworkManager \
-		systemd-oomd
+		systemd-oomd \
+		scx
 	systemctl mask systemd-timesyncd nvidia-resume nvidia-hibernate # Do we really need risk masking it?
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
 	ln -sfr \
 		/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-# 	if [ -L /etc/resolv.conf ]; then
-# 		rm /etc/resolv.conf
-# 		systemctl restart NetworkManager
-# 	fi
 	plymouth-set-default-theme moe-next
 	/usr/lib/moeOS/patch-chromium
 	/usr/lib/moeOS/patch-steam
