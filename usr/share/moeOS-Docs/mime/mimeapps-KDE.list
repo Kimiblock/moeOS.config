@@ -156,6 +156,8 @@ application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoff
 text/x-python=org.kde.kate.desktop;
 audio/vnd.dts=mpv.desktop;
 x-scheme-handler/geo=openstreetmap-geo-handler.desktop;
+audio/mpeg=mpv.desktop;
+text/csv=libreoffice-calc.desktop
 
 [Added Associations]
 application/x-zerosize=org.kde.kate.desktop;
@@ -174,3 +176,5 @@ audio/mpeg=mpv.desktop;
 audio/vnd.dts=mpv.desktop;
 text/x-python=org.kde.kate.desktop;
 x-scheme-handler/geo=openstreetmap-geo-handler.desktop;
+audio/mpeg=mpv.desktop;
+text/csv=libreoffice-calc.desktop;
