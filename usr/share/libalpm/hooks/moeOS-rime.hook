@@ -7,6 +7,6 @@ Target = usr/share/rime-data/default.yaml
 
 [Action]
 When = PostTransaction
-Exec = /usr/bin/ln "-sfr" "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
+Exec = cp "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 Depends = moeOS-git
 Description = Adding moeOS Input Method
