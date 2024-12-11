@@ -57,6 +57,7 @@ function main(){
 	#fi
 	#mergeConfig
 	#echo "[Info] Config has been modified"
+	enableTunInplace
 }
 
 main "$@"

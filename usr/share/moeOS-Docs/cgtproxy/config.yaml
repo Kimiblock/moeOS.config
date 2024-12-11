@@ -7,9 +7,9 @@ route-table: 300
 
 # This means any traffic send to 127.0.0.1 and ::1 will be directly send
 # without influenced by the following configuration.
-#bypass:
-#  - 127.0.0.0/8
-#  - ::1
+bypass:
+  - 127.0.0.0/8
+  - ::1
 
 tproxies:
   clash-meta:

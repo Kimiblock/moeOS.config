@@ -1,7 +1,7 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
 After=network.target
-Wants=moeOS-cgtproxy.service
+Conflicts=moeOS-cgtproxy.service
 
 [Service]
 Slice=moeOS-noproxy.slice
@@ -23,8 +23,8 @@ OOMScoreAdjust=50
 DynamicUser=yes
 WorkingDirectory=/var/tmp
 
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_NET_RAW
-AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_NET_RAW CAP_NET_ADMIN
+AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_NET_RAW CAP_NET_ADMIN
 
 #DevicePolicy=closed
 
@@ -61,4 +61,3 @@ SystemCallErrorNumber=EPERM
 
 [Install]
 WantedBy=multi-user.target
-RequiredBy=moeOS-cgtproxy.service
