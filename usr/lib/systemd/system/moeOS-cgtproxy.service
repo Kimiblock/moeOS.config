@@ -5,6 +5,7 @@ Conflicts=cgtproxy.service
 BindsTo=moeOS-clash-meta-auto.service
 
 [Service]
+BindPaths=/usr/share/moeOS-Docs/cgtproxy:/etc/cgtproxy
 Type=simple
 ExecStart=cgtproxy
 CapabilityBoundingSet=CAP_NET_ADMIN
@@ -16,7 +17,7 @@ PrivateTmp=yes
 ProtectKernelTunables=yes
 ProtectControlGroups=yes
 ConfigurationDirectory=cgtproxy
-ConfigurationDirectoryMode=0555
+#ConfigurationDirectoryMode=0555
 MemoryDenyWriteExecute=yes
 NoNewPrivileges=yes
 LockPersonality=yes

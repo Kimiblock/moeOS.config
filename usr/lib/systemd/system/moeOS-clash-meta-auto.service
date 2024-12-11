@@ -1,7 +1,7 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
 After=network.target
-Wants=moeOS-cgproxy.service
+Wants=moeOS-cgtproxy.service
 
 [Service]
 Slice=moeOS-noproxy.slice
@@ -61,4 +61,4 @@ SystemCallErrorNumber=EPERM
 
 [Install]
 WantedBy=multi-user.target
-RequiredBy=moeOS-cgproxy.service
+RequiredBy=moeOS-cgtproxy.service
