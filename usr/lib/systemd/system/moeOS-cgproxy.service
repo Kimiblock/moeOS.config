@@ -1,6 +1,5 @@
 [Unit]
 Description=moeOS cgproxy service
-After=moeOS-clash-meta-auto.service
 Conflicts=cgproxy.service
 
 [Service]
