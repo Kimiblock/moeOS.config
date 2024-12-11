@@ -7,21 +7,14 @@ route-table: 300
 
 # This means any traffic send to 127.0.0.1 and ::1 will be directly send
 # without influenced by the following configuration.
-bypass:
-  - 127.0.0.0/8
-  - ::1
+#bypass:
+#  - 127.0.0.0/8
+#  - ::1
 
 tproxies:
   clash-meta:
     mark: 3000
     port: 65529
-
-    # Hijack all IPv4 traffic which destination port is 53
-    # and redirect them to ip:port.
-    # This field is optional.
-    #dns-hijack:
-    #  ip: 127.0.0.43
-    #  port: 53
 
 # Rules are matched in order.
 # `match` is an regex to match the cgroup path.
@@ -38,13 +31,7 @@ rules:
   # This rule match the clash-meta core.
   # Make cgtproxy produce nft rules that
   # route the network traffic comes from this cgroupfs as usual.
-  - # AUR packages `clash-meta` and `clash-meta-bin`
-    # contains the `clash-meta` systemd service,
-    # which will be launched by systemd
-    # in cgroup `/system.slice/clash-meta.service`.
-    # But [my clash-meta deb package](https://github.com/black-desk/debs/tree/master/one.metacubex.clash-meta)
-    # use a systemd service name `one.metacubex.clash-meta`.
-    match: /moeOS.slice/moeOS-noproxy.slice
+  - match: /moeOS.slice/moeOS-noproxy.slice
     direct: true
 
   - match: /system.slice/chronyd.service
