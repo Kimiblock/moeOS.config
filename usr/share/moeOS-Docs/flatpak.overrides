@@ -4,4 +4,3 @@ filesystems=xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-config/fontconfig:ro
 
 [Environment]
 moeOS=1
-GSK_RENDERER=ngl
