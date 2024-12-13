@@ -13,7 +13,7 @@ function main() {
 	replace "/usr/share/moeOS-Docs/sched-ext-conf" "/etc/default/scx"
 
 	if [[ $(cat /etc/nsswitch.conf | grep 'hosts:') =~ mdns ]]; then
-		replace "/usr/share/moeOS-Docs/nsswitch.conf" "/etc/nsswitch.conf"
+		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 	fi
 
 	systemctl unmask systemd-resolved nvidia-resume nvidia-hibernate 2>/dev/null
