@@ -45,14 +45,13 @@ function main() {
 		/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
 	/usr/lib/moeOS/patch-chromium
-	/usr/lib/moeOS/patch-steam
 	flatpak remote-add \
 		--if-not-exists \
 		flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-	#flatpak remote-modify \
-	#	flathub \
-	#	--url=https://mirror.sjtu.edu.cn/flathub
-	flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
+	flatpak remote-modify \
+		flathub \
+		--url=https://mirror.sjtu.edu.cn/flathub
+	#flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
 	# Flatpak thingy
 	flatpak mask --remove org.freedesktop.Platform.GL.nvidia 2>/dev/null
 	flatpak mask --remove 'org.freedesktop.Platform.GL.nvidia*' 2>/dev/null
