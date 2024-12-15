@@ -2,10 +2,6 @@
 
 function plasma() {
 	gsettings set org.gnome.desktop.interface gtk-theme Breeze
-	if [[ $(gsettings get org.gnome.desktop.interface color-scheme) =~ default ]]; then
-		gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-		scheme="prefer-light"
-	fi
 	if [[ ${scheme} =~ prefer-dark ]]; then
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
 	elif [[ ${scheme} =~ prefer-light ]]; then
@@ -15,11 +11,6 @@ function plasma() {
 
 function lightMode() {
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
-	if [[ ${scheme} =~ default ]]; then
-		gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-		sleep 0.5s
-		scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
-	fi
 	if [[ ${scheme} =~ prefer-dark ]]; then
 		kvantummanager --set moeOS-Dark
 		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
@@ -35,6 +26,11 @@ function lightMode() {
 function loop() {
 	gsettings monitor org.gnome.desktop.interface color-scheme | while read -r line; do
 		echo "Triggered theme change"
+		if [[ ${scheme} =~ default ]]; then
+			gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+			sleep 0.5s
+			scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+		fi
 		main
 	done
 }
