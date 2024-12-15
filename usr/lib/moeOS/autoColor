@@ -32,17 +32,24 @@ function lightMode() {
 	fi
 }
 
-sleep 5s
+function loop() {
+	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+	while [[ ${scheme} = $(gsettings get org.gnome.desktop.interface color-scheme) ]]; do
+		sleep 60s
+	done
+	echo "Triggered theme change"
+	main
+}
 
-scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+function main() {
+	if [[ ${XDG_CURRENT_DESKTOP} = KDE ]]; then
+		echo "[Info] Detected DE as KDE"
+		plasma
+	else
+		lightMode
+	fi
+	sleep 5s
+	loop
+}
 
-while [[ ${scheme} = $(gsettings get org.gnome.desktop.interface color-scheme) ]]; do
-	sleep 10s
-done
-
-if [[ ${XDG_CURRENT_DESKTOP} = KDE ]]; then
-	echo "[Info] Detected DE as KDE"
-	plasma
-else
-	lightMode
-fi
+main
