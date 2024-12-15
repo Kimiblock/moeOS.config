@@ -33,12 +33,10 @@ function lightMode() {
 }
 
 function loop() {
-	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
-	while [[ ${scheme} = $(gsettings get org.gnome.desktop.interface color-scheme) ]]; do
-		sleep 60s
+	gsettings monitor org.gnome.desktop.interface color-scheme | while read -r line; do
+		echo "Triggered theme change"
+		main
 	done
-	echo "Triggered theme change"
-	main
 }
 
 function main() {
@@ -48,8 +46,7 @@ function main() {
 	else
 		lightMode
 	fi
-	sleep 5s
-	loop
 }
 
 main
+loop
