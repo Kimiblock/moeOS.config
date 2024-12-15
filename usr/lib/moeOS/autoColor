@@ -26,7 +26,7 @@ function lightMode() {
 function loop() {
 	gsettings monitor org.gnome.desktop.interface color-scheme | while read -r line; do
 		echo "Triggered theme change"
-		if [[ ${scheme} =~ default ]]; then
+		if [[ $(gsettings get org.gnome.desktop.interface color-scheme) =~ default ]]; then
 			gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 			sleep 0.5s
 			scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
