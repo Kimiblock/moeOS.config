@@ -32,7 +32,13 @@ function lightMode() {
 	fi
 }
 
-sleep 10s
+sleep 5s
+
+scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+
+while [[ ${scheme} = $(gsettings get org.gnome.desktop.interface color-scheme) ]]; do
+	sleep 10s
+done
 
 if [[ ${XDG_CURRENT_DESKTOP} = KDE ]]; then
 	echo "[Info] Detected DE as KDE"
