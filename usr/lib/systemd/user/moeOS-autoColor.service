@@ -8,8 +8,8 @@ ExecStartPre=sleep 5s
 ExecStart=/usr/lib/moeOS/autoColor
 Restart=always
 RestartSec=1h
-MemoryHigh=10M
-MemoryMax=12M
+MemoryHigh=18M
+MemoryMax=40M
 OOMPolicy=kill
 
 CapabilityBoundingSet=
