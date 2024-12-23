@@ -17,7 +17,7 @@ function lightMode() {
 			/etc/xdg/qt6ct/qt6ct.conf \
 			"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct/qt6ct.conf
 		sed -i \
-			's|style=kvantum-dark|style=kvantum|g' \
+			's|style=kvantum|style=kvantum-dark|g' \
 			"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct/qt6ct.conf
 		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
