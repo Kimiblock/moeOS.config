@@ -12,12 +12,27 @@ function plasma() {
 function lightMode() {
 	kvantummanager --set moeOS
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+	if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct.conf ]; then
+		install \
+			/etc/xdg/qt6ct/qt6ct.conf \
+			"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct.conf
+	fi
 	if [[ ${scheme} =~ prefer-dark ]]; then
 		#kvantummanager --set moeOS-Dark
+		if [[ $(cat "${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct.conf | grep 'style=') = 'style=kvantum-dark' ]]; then
+			sed -i \
+				's|style=kvantum-dark|style=kvantum|g' \
+				"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct.conf
+		fi
 		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
 	elif [[ ${scheme} =~ prefer-light ]]; then
 		#kvantummanager --set moeOS
+		if [[ $(cat "${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct.conf | grep 'style=') = 'style=kvantum-dark' ]]; then
+			sed -i \
+				's|style=kvantum|style=kvantum-dark|g' \
+				"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct.conf
+		fi
 		echo "[Info] Tweaking GSettings"
 		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
