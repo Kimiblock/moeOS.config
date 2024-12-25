@@ -24,7 +24,12 @@ function main() {
 		nvidia-resume \
 		moeOS-nvboost 2>/dev/null
 		
-	systemctl disable thermald nvidia-persistenced nvidia-hibernate 2>/dev/null
+	systemctl disable \
+		--now \
+		scx \
+		thermald \
+		nvidia-persistenced \
+		nvidia-hibernate 2>/dev/null
 
 	systemctl enable \
 		--now \
@@ -37,7 +42,7 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		systemd-oomd \
-		scx
+		scx_loader
 	systemctl mask systemd-timesyncd nvidia-resume nvidia-hibernate # Do we really need risk masking it?
 	systemctl --global \
 		enable \
