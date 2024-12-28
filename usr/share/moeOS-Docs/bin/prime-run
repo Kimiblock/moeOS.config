@@ -6,7 +6,7 @@ if [ ! -f /tmp/moeOS-prime-run-once ]; then
 	systemd-run --user \
 	-p RuntimeMaxSec=5s \
 	prime-run vkcube-wayland
-	sleep 5s
+	sleep 2s
 fi
 
 env \
