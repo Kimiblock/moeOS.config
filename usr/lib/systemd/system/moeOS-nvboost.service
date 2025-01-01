@@ -2,6 +2,7 @@
 Description=moeOS Throttle Stopper (NVIDIA)
 After=multi-user.target
 ConditionPathExists=/usr/bin/nvidia-smi
+ConditionPathExists=/etc/environment.d/moeOS-nvidiaOnly.conf
 
 [Service]
 Type=oneshot
