@@ -73,10 +73,6 @@ function main() {
 		--global \
 		app-org.gnome.Software@autostart.service \
 		app-org.kde.discover.notifier@autostart.service 2>/dev/null
-	if [ -f /etc/environment.d/moeOS-nvidiaOffload-* ]; then
-		printf "\n" >>/var/lib/flatpak/overrides/global
-		echo "__EGL_VENDOR_LIBRARY_FILENAMES=/usr/lib/x86_64-linux-gnu/GL/default/share/glvnd/egl_vendor.d/50_mesa.json" >>/var/lib/flatpak/overrides/global
-	fi
 }
 
 function replace() {
