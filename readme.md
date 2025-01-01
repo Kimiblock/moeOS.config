@@ -118,6 +118,7 @@ Under Environment, add those variables (one for each line):
 ```
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 VK_LOADER_DRIVERS_SELECT=nvidia_icd.json
+__EGL_VENDOR_LIBRARY_FILENAMES=''
 ```
 
 If you're having problems, add the following two:
