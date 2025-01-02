@@ -17,7 +17,7 @@ ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0b95", ATTR{idProduct}=="1790"
 
 ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c08b", GOTO="power_usb_rules_end"
 
-#ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
 LABEL="power_usb_rules_end"
 
 ACTION=="add", SUBSYSTEM=="usb", ATTR{power/wakeup}="disabled"
