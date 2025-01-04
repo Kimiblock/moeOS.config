@@ -76,7 +76,6 @@ Contains the following configurations and customizations:
 - Some handy scripts (eg. `v2hevc` `v2avc` `oggaudio`) to transcode video footages and audio files quickly using VA-API.
 - Powersave settings.
 - Better switchable graphics handling.
-- Hacks to revert recent shitty changes of GTK.
 - Default MPV / Celluloid config files.
     * Hardware Acceleration
     * Better scaling
@@ -129,10 +128,6 @@ __VK_LAYER_NV_optimus=NVIDIA_only
 
 # Upstream Problems
 
-## Video Playback
-
-HDR or too high definition (8K) video playback results in sluggish system. Use pre-installed MPV video player for those videos.
-
 ## Location Services
 
 Location Services may not be available in some countries and may provide wrong coordinates. Google Services are used for locating since MLS has been sunset.
@@ -140,7 +135,6 @@ Location Services may not be available in some countries and may provide wrong c
 ## GTK / GNOME
 
 - When using HiDPI scaling, older applications and some browsers may appear blurry.
-- GTK applications may be blurry on systems with multiple screens.
 - libadwaita applications are sluggish [GTK #6438](https://gitlab.gnome.org/GNOME/gtk/-/issues/6438).
 - When fractional scaling is enabled, screenshots of a window may appear slightly blurry.
 
@@ -150,10 +144,7 @@ Location Services may not be available in some countries and may provide wrong c
 
 ## Firefox
 
-- Performance may not be good.
-- Rounded bottom corner may disappear when viewing websites with `backdrop-filter`.
 - Resizing window is slow.
-- Does not follow the system font weight settings [Bugzilla](https://bugzilla.mozilla.org/show_bug.cgi?id=1895270).
 
 ## Chromium
 
