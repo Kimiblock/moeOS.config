@@ -23,7 +23,7 @@ function main() {
 	#download
 	#cd /var/lib/"${stateDirectory}"
 	exec \
-		"/usr/lib/moeOS/seconnect" \
+		"/opt/zju-connect-bin/zju-connect" \
 		-server "${gatewayUrl}" \
 		-username "${user}" \
 		-password "${password}" \
