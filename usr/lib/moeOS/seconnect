@@ -20,10 +20,10 @@ function download() {
 }
 
 function main() {
-	download
-	cd /var/lib/"${stateDirectory}"
+	#download
+	#cd /var/lib/"${stateDirectory}"
 	exec \
-		"/var/lib/${stateDirectory}/bin/EasierConnect" \
+		"/usr/lib/moeOS/seconnect" \
 		-server "${gatewayUrl}" \
 		-username "${user}" \
 		-password "${password}" \
