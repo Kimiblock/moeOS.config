@@ -1,3 +1,8 @@
 [Unit]
 Description=moeOS Devtools Slice
 Before=slices.target
+
+[Service]
+MemoryHigh=80%
+CPUWeight=idle
+IOWeight=1
