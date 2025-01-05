@@ -24,10 +24,7 @@ function main() {
 	#cd /var/lib/"${stateDirectory}"
 	exec \
 		"/opt/zju-connect-bin/zju-connect" \
-		-server "${gatewayUrl}" \
-		-username "${user}" \
-		-password "${password}" \
-		-socks-bind "127.0.0.1:${bindPort}"
+		-config /etc/zju-connect/config.toml
 }
 
 main $@
