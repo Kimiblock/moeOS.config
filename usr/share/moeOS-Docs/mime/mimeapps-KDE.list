@@ -158,6 +158,7 @@ audio/vnd.dts=mpv.desktop;
 x-scheme-handler/geo=openstreetmap-geo-handler.desktop;
 audio/mpeg=mpv.desktop;
 text/csv=libreoffice-calc.desktop
+application/vnd.efi.iso=org.kde.isoimagewriter.desktop;
 
 [Added Associations]
 application/x-zerosize=org.kde.kate.desktop;
@@ -178,3 +179,4 @@ text/x-python=org.kde.kate.desktop;
 x-scheme-handler/geo=openstreetmap-geo-handler.desktop;
 audio/mpeg=mpv.desktop;
 text/csv=libreoffice-calc.desktop;
+application/vnd.efi.iso=org.kde.isoimagewriter.desktop;
