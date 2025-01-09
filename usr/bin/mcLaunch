@@ -4,4 +4,4 @@ echo "$@" >"${HOME}/.local/share/PrismLauncher/launch.sh"
 chmod +x "${HOME}/.local/share/PrismLauncher/launch.sh"
 export launchTarget="bash ${HOME}/.local/share/PrismLauncher/launch.sh"
 
-_portalConfig=/usr/lib/portable/info/net.minecraft/config portable --actions connect-tty
+_portableConfig=net.minecraft portable --actions connect-tty
