@@ -105,7 +105,7 @@ prime-run %command%
 
 For Prism Launcher, navigate to _File_ -> _Settings..._ -> _Custom Commands_
 
-Set _Wrapper command_ to `prime-run`
+Set _Wrapper command_ to `prime-run mcLaunch`
 
 ## Flatpak Applications (Experimental)
 [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) is needed.
@@ -123,6 +123,7 @@ If you're having problems, add the following two:
 
 ```
 __NV_PRIME_RENDER_OFFLOAD=1
+__EGL_VENDOR_LIBRARY_FILENAMES=/usr/lib/x86_64-linux-gnu/GL/nvidia-565-77/extra/glvnd/egl_vendor.d/10_nvidia.json
 __VK_LAYER_NV_optimus=NVIDIA_only
 ```
 
