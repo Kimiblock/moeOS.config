@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+function main() {
+	nvidia-smi -lgc 2000,400000 --mode=1
+}
+
+if [ -f /etc/environment.d/moeOS-nvidiaOnly.conf ]; then
+	main
+else
+	for card in $(ls /proc/driver/nvidia/gpus); do
+		for pciDev in $(find /sys/devices -type d -name 0000:01:00.0 2>/dev/null); do
+			cat "${pciDev}"/drm/card*/card*/status | grep -qw "connected"
+			if [[ $? = 0 ]]; then
+				echo "${pciDev} matched!"
+				main
+			fi
+		done
+	done
+fi
