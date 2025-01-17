@@ -15,6 +15,8 @@ stateDirectory="mcLaunch_Data"
 # Takes boolean value. When enabled, do not process XAuth files and enable X access. Generally this should be always false.
 waylandOnly="false"
 
+bindInputDevices="true"
+
 gameMode="true"
 
 # Below you can set envs that will be imported into the application sandbox
