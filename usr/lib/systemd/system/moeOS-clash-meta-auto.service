@@ -2,6 +2,7 @@
 Description=Auto updated clash-meta daemon.
 After=network.target
 Wants=moeOS-cgproxy.service
+Before=moeOS-cgproxy.service
 
 [Service]
 Slice=moeOS-noproxy.slice
