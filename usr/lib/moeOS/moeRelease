@@ -16,7 +16,7 @@ function main() {
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 	fi
 
-	systemctl unmask systemd-resolved nvidia-resume nvidia-hibernate 2>/dev/null
+	systemctl unmask systemd-resolved nvidia-resume nvidia-hibernate moeOS-cgtproxy 2>/dev/null
 	systemctl enable \
 		nvidia-powerd \
 		nvidia-suspend \
@@ -46,7 +46,7 @@ function main() {
 		systemd-timesyncd \
 		nvidia-resume \
 		nvidia-hibernate \
-		moeOS-cgtproxy \
+		moeOS-cgproxy \
 		pkgstats
 	systemctl --global \
 		enable \
