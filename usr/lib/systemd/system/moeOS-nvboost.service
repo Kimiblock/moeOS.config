@@ -4,8 +4,11 @@ After=multi-user.target
 ConditionPathExists=/usr/bin/nvidia-smi
 
 [Service]
-Type=oneshot
+Type=simple
 User=root
+CPUWeight=idle
+IOWeight=1
+CPUQuota=5%
 
 ProtectControlGroups=yes
 MemoryDenyWriteExecute=true
