@@ -26,7 +26,7 @@ ProtectClock=yes
 
 OOMPolicy=continue
 WorkingDirectory=/tmp
-ExecStart=/usr/bin/bash -c "nvidia-smi -lgc 2000,400000"
+ExecStart=/usr/lib/moeOS/nvboost
 RemainAfterExit=yes
 
 [Install]

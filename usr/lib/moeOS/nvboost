@@ -13,9 +13,11 @@ function monitorLoop() {
 				if [[ $? = 0 ]]; then
 					echo "${pciDev} matched!"
 					main
+					intel_gpu_frequency -c min=1000
 				else
 					nvidia-smi -rgc
 					nvidia-smi -rmc
+					intel_gpu_frequency -d
 				fi
 				inotifywait "${pciDev}"
 				echo "Detected change on NVIDIA card at $(date)"
