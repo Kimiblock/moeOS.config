@@ -25,7 +25,7 @@ function monitorLoop() {
 						state=0
 					fi
 				fi
-				inotifywait "${pciDev}/drm"
+				inotifywait -r "${pciDev}/drm"
 				echo "Detected change on NVIDIA card at $(date)"
 			done
 		done

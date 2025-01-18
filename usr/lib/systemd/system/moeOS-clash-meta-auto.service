@@ -1,8 +1,8 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
 After=network.target
-Wants=moeOS-cgproxy.service
-Before=moeOS-cgproxy.service
+Wants=moeOS-cgtproxy.service
+Before=moeOS-cgtproxy.service
 
 [Service]
 Slice=moeOS-noproxy.slice
