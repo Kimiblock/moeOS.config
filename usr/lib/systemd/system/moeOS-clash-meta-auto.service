@@ -1,8 +1,10 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
-After=network.target
+After=network-online.target
 Wants=moeOS-cgtproxy.service
 Before=moeOS-cgtproxy.service
+StartLimitIntervalSec=120
+StartLimitBurst=10
 
 [Service]
 Slice=moeOS-noproxy.slice
@@ -18,7 +20,7 @@ TimeoutStopSec=10
 Restart=on-failure
 OOMPolicy=kill
 
-RestartSec=10s
+RestartSec=5s
 OOMScoreAdjust=50
 
 DynamicUser=yes
@@ -62,4 +64,4 @@ SystemCallErrorNumber=EPERM
 
 [Install]
 WantedBy=multi-user.target
-RequiredBy=moeOS-cgtproxy.service
+RequiredBy=moeOS-cgproxy.service

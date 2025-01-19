@@ -1,6 +1,10 @@
 [Unit]
-Description=moeOS cgproxy service
-Conflicts=cgproxy.service
+Description=moeOS-cgproxy service
+BindsTo=moeOS-clash-meta.service
+After=moeOS-clash-meta.service
+Conflicts=cgproxy.service moeOS-cgtproxy.service
+StartLimitIntervalSec=120
+StartLimitBurst=10
 
 [Service]
 Type=simple
