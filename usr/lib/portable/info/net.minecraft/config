@@ -19,6 +19,8 @@ bindInputDevices="true"
 
 gameMode="true"
 
+bindPipewire="true"
+
 # Below you can set envs that will be imported into the application sandbox
 
 bwBindPar="${HOME}/.local/share/PrismLauncher"
