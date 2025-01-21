@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Minecraft
+Exec=prismlauncher
+Icon=minecraft
+Terminal=false
+Type=Application
+Categories=Network;Game;
+StartupWMClass=minecraft
+X-Flatpak-RenamedFrom=minecraft.desktop;
+X-Flatpak-Tags=proprietary;
+X-Flatpak=net.minecraft.portable
+NoDisplay=true
+TryExec=/usr/bin/prismlauncher
+PrefersNonDefaultGPU=true
