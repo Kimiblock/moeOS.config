@@ -10,7 +10,7 @@ function checkInst() {
 
 function gbmProbe() {
 	if [ -f /etc/environment.d/moeOS-nvidia*.conf ]; then
-		nvidiaVer="$(pacman -Q nvidia-utils | sed -E 's/.* ([0-9]+\.[0-9]+\.[0-9]+)-([0-9]+)/\1/' | sed 's/\./-/g')"
+		nvidiaVer="$(pacman -Q nvidia-utils | sed -E 's/.* ([0-9]+\.[0-9]+\.[0-9]+)-([0-9]+)/\1/' | sed 's/\./-/g' | cut -c '14-')"
 		backendPath="/usr/lib/x86_64-linux-gnu/GL/nvidia-"${nvidiaVer}"/extra/gbm"
 	fi
 }
