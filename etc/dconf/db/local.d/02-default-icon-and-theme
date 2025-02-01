@@ -26,3 +26,6 @@ accent-color='pink'
 
 [org/gnome/Ptyxis]
 font-name='Monospace 12'
+
+[org/gnome/system/smb]
+display-mode='merged'
