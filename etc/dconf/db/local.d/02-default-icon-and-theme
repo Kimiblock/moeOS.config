@@ -13,7 +13,7 @@ clock-format='12h'
 clock-show-weekday=true
 
 [org/gnome/shell]
-favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.github.neithern.g4music.desktop', 'io.github.mrvladus.List.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Console.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
+favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.github.neithern.g4music.desktop', 'io.github.mrvladus.List.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Ptyxis.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
 
 [org/gnome/Console]
 theme='auto'
@@ -23,3 +23,6 @@ font-name='Monospace 12'
 
 [org/gnome/desktop/interface]
 accent-color='pink'
+
+[org/gnome/Ptyxis]
+font-name='Monospace 12'
