@@ -1,11 +1,11 @@
 [Unit]
 Description=moeOS Auto Setup
-After=dbus.service gnome-session.target gnome-session-wayland.target gnome-session-x11.target gnome-session@gnome.target
+After=dbus.service gnome-session.target gnome-session-wayland.target gnome-session-x11.target gnome-session@gnome.target plasma-plasmashell.service
 
 [Service]
 Type=simple
 ExecStartPre=sleep 5s
-ExecStart=/usr/bin/moeOS-setup-user
+ExecStart=/usr/bin/bash /usr/lib/moeOS/moeOS-setup-user
 Restart=on-failure
 CPUWeight=1
 RestartSec=1h
