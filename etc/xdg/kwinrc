@@ -16,6 +16,9 @@ contrastEnabled=false
 InputMethod[$e]=/usr/share/applications/fcitx5-wayland-launcher.desktop
 VirtualKeyboardEnabled=true
 
+[EdgeBarrier]
+CornerBarrier=false
+
 [Windows]
 WindowSnapZone=0
 FocusStealingPreventionLevel=3
