@@ -19,6 +19,7 @@ VirtualKeyboardEnabled=true
 [Windows]
 WindowSnapZone=0
 FocusStealingPreventionLevel=3
+BorderSnapZone=5
 
 [org.kde.kdecoration2]
 BorderSize=Tiny
