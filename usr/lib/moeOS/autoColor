@@ -44,7 +44,7 @@ function loop() {
 }
 
 function main() {
-	if [[ ${XDG_CURRENT_DESKTOP} = KDE ]]; then
+	if [ -f /etc/environment.d/moeOS-KDE.conf ]; then
 		echo "[Info] Detected DE as KDE"
 		plasma
 	else
