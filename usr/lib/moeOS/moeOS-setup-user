@@ -26,6 +26,11 @@ function setupFont() {
 
 function moeOS-setup-firefox() {
 	if [[ ${moePreferDE} = KDE ]]; then
+		if [ ! -d "${HOME}/.mozilla/firefox" ]; then
+			return 0
+		fi
+		rm "${HOME}"/.mozilla/firefox/*/chrome -r
+		rm "${HOME}"/.mozilla/firefox/*/user.js
 		return 0
 	fi
 	echo "[Info] Setting up Firefox"

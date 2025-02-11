@@ -1,22 +1,11 @@
 #!/bin/bash
-function _info() {
-	if [ -f /usr/bin/pamac ]; then
-		echo "  ==> [Info]: $@"
-	else
-		all_off="$(tput sgr0)"
-		bold="${all_off}$(tput bold)"
-		blue="${bold}$(tput setaf 4)"
-		yellow="${bold}$(tput setaf 3)"
-		printf "${blue}==>${yellow} [Info]:${bold} $1${all_off}\n"
-	fi
-}
 
 function gnomeTheme() {
-	_info "Installing Firefox theme..."
-	for profile in $(ls "$HOME/.mozilla/firefox" | grep -v '.ini'); do
-		if [ ! -f $HOME/.mozilla/firefox/${profile}/chrome/firefox-gnome-theme ]; then
-			_info "Working on ${profile}"
-			cd "$HOME/.mozilla/firefox/${profile}"
+	echo "Installing Firefox theme..."
+	for profile in $(ls "${HOME}/.mozilla/firefox" | grep -v '.ini'); do
+		if [ ! -f ${HOME}/.mozilla/firefox/${profile}/chrome/firefox-gnome-theme ]; then
+			echo "Working on ${profile}"
+			cd "${HOME}/.mozilla/firefox/${profile}"
 			if [[ $? = 0 ]]; then
 				mkdir chrome
 				cd chrome
@@ -29,22 +18,17 @@ function gnomeTheme() {
 				ln -fs chrome/firefox-gnome-theme/configuration/user.js user.js
 			fi
 		else
-			_info "Profile ${profile} skipped"
+			echo "Profile ${profile} skipped"
 		fi
 	done
 }
 
 function deleteGnomeTheme() {
-	if [ -! -d "${HOME}/.mozilla/firefox" ]; then
-		return 1
+	if [ ! -d "${HOME}/.mozilla/firefox" ]; then
+		return 0
 	fi
-	cd "${HOME}/.mozilla/firefox"
-	for profile in $(ls "$HOME/.mozilla/firefox" | grep -v '.ini'); do
-		_info "Working on ${profile}"
-		if [ -d "$HOME/.mozilla/firefox/${profile}/chrome" ]; then
-			rm -r "$HOME/.mozilla/firefox/${profile}/chrome"
-		fi
-	done
+	rm "${HOME}"/.mozilla/firefox/*/chrome -r
+	rm "${HOME}"/.mozilla/firefox/*/user.js
 }
 
 function main() {
