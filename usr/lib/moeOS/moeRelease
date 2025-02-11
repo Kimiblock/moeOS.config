@@ -28,6 +28,7 @@ function main() {
 		scx \
 		thermald \
 		nvidia-persistenced \
+		scx_loader \
 		nvidia-hibernate 2>/dev/null
 
 	systemctl enable \
@@ -40,8 +41,8 @@ function main() {
 		power-profiles-daemon \
 		bluetooth \
 		NetworkManager \
-		systemd-oomd \
-		scx_loader
+		systemd-oomd
+
 	systemctl mask \
 		systemd-timesyncd \
 		nvidia-resume \
