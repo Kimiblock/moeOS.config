@@ -30,7 +30,6 @@ function main() {
 		nvidia-persistenced \
 		nvidia-hibernate \
 		nvidia-resume \
-		nvidia-suspend-then-hibernate \
 		moeOS-nvboost 2>/dev/null
 		
 	systemctl disable \
@@ -54,7 +53,8 @@ function main() {
 	systemctl mask \
 		systemd-timesyncd \
 		moeOS-cgproxy \
-		pkgstats
+		pkgstats \
+		nvidia-suspend-then-hibernate
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
