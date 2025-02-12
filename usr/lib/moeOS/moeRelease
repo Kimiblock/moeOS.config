@@ -21,6 +21,7 @@ function main() {
 		nvidia-resume \
 		nvidia-hibernate \
 		moeOS-cgtproxy \
+		nvidia-resume \
 		nvidia-hibernate 2>/dev/null
 	systemctl enable \
 		nvidia-powerd \
@@ -28,6 +29,7 @@ function main() {
 		nvidia-resume \
 		nvidia-persistenced \
 		nvidia-hibernate \
+		nvidia-resume \
 		nvidia-suspend-then-hibernate \
 		moeOS-nvboost 2>/dev/null
 		
@@ -51,7 +53,6 @@ function main() {
 
 	systemctl mask \
 		systemd-timesyncd \
-		nvidia-resume \
 		moeOS-cgproxy \
 		pkgstats
 	systemctl --global \
