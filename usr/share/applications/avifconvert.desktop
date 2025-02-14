@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Convert to AVIF
+Icon=webpfier
+Type=Application
+Exec=/usr/lib/moeOS/avif %U
+Keywords=Picture;Convert;WebP;
+MimeType=image/jpeg;image/png;image/gif;image/tiff;image/x-tga;image/vnd-ms.dds;image/x-dds;image/bmp;image/vnd.microsoft.icon;image/vnd.radiance;image/x-exr;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-portable-anymap;image/x-qoi;image/webp;image/heic;image/jxl;
+Terminal=false
+Categories=Graphics;2DGraphics;RasterGraphics;
+StartupNotify=true
+NoDisplay=true
