@@ -4,11 +4,11 @@ function main() {
 	cd $(dirname "$@")
 	baseName=$(basename "$@")
 	if [[ ${baseName} =~ ".jpg" ]]; then
-		conName="$(echo ${baseName} | sed 's|.jpg|.webp|g')"
+		conName="$(echo ${baseName} | sed 's|.jpg|.avif|g')"
 	elif [[ ${baseName} =~ ".png" ]]; then
-		conName="$(echo ${baseName} | sed 's|.png|.webp|g')"
+		conName="$(echo ${baseName} | sed 's|.png|.avif|g')"
 	elif [[ ${baseName} =~ ".jpeg" ]]; then
-		conName="$(echo ${baseName} | sed 's|.jpeg|.webp|g')"
+		conName="$(echo ${baseName} | sed 's|.jpeg|.avif|g')"
 	else
 		conName="${baseName}.avif"
 	fi
