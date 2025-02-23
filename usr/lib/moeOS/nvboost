@@ -3,7 +3,7 @@
 function main() {
 	nvidia-smi -lgc 2000,400000 --mode=0
 	nvidia-smi -lmc 2000,400000
-	intel_gpu_frequency -c min=1000
+	#intel_gpu_frequency -c min=1000
 }
 
 if [ -f /etc/environment.d/moeOS-nvidiaOnly.conf ]; then
