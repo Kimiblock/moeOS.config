@@ -6,34 +6,6 @@ function main() {
 	intel_gpu_frequency -c min=1000
 }
 
-function monitorLoop() {
-	for card in $(ls /proc/driver/nvidia/gpus); do
-		while true; do
-			for pciDev in $(find /sys/devices -type d -name 0000:01:00.0 2>/dev/null); do
-				cat "${pciDev}"/drm/card*/card*/status | grep -qw "connected"
-				if [[ $? = 0 ]]; then
-					if [[ ! ${state} = 1 ]]; then
-						echo "${pciDev} matched!"
-						main
-						state=1
-					fi
-				else
-					if [[ ! ${state} = 0 ]]; then
-						nvidia-smi -rgc
-						nvidia-smi -rmc
-						intel_gpu_frequency -d
-						state=0
-					fi
-				fi
-				inotifywait -r "${pciDev}/drm"
-				echo "Detected change on NVIDIA card at $(date)"
-			done
-		done
-	done
-}
-
 if [ -f /etc/environment.d/moeOS-nvidiaOnly.conf ]; then
 	main
-else
-	monitorLoop
 fi
