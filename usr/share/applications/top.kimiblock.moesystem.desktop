@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=moeOS System
+Exec=sleep 1d
+Icon=moeos
+Terminal=false
+Type=Application
+Categories=Network;Game;
+X-Flatpak-Tags=system;
+X-Flatpak=top.kimiblock.moesystem
+NoDisplay=true

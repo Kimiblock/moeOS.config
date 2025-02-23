@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+function monitorDevice() {
+	while true; do
+		inotifywait \
+			"$@" \
+			--quiet
+		_notify "Device state changed to $(cat $@)"
+	done
+}
+
+function _notify() {
+	notify-send -a top.kimiblock.moesystem system -i moeos -u normal -t 5 "moeOS GPU Manager" "$1"
+}
+
+function main() {
+	for _device in /sys/class/drm/card[0-9]; do
+		echo "Monitoring ${_device}/device/power_state"
+		monitorDevice "${_device}/device/power_state" &
+	done
+	echo "Finished setting up watches"
+}
+
+main
