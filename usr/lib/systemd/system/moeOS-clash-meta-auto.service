@@ -1,7 +1,7 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
 After=network-online.target
-Requires=moeOS-cgproxy.service
+Wants=moeOS-cgproxy.service
 Before=moeOS-cgproxy.service
 StartLimitIntervalSec=120
 StartLimitBurst=10
