@@ -36,6 +36,7 @@ function main() {
 	systemctl disable \
 		--now \
 		scx \
+		scx_loader \
 		thermald 2>/dev/null
 
 	systemctl enable \
@@ -48,8 +49,7 @@ function main() {
 		power-profiles-daemon \
 		bluetooth \
 		NetworkManager \
-		systemd-oomd \
-		scx_loader
+		systemd-oomd
 
 	systemctl mask \
 		systemd-timesyncd \
