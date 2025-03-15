@@ -34,7 +34,7 @@ AmbientCapabilities=
 
 DevicePolicy=closed
 IPAccounting=yes
-IPAddressDeny=link-local
+IPAddressDeny=multicast
 
 ProtectSystem=strict
 RemoveIPC=yes
