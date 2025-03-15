@@ -29,3 +29,6 @@ font-name='Monospace 12'
 
 [org/gnome/system/smb]
 display-mode='merged'
+
+[org/gnome/desktop/a11y/interface]
+show-status-shapes=true
