@@ -80,4 +80,3 @@ UMask=077
 
 [Install]
 WantedBy=multi-user.target
-WantedBy=moeOS-clash-meta-auto.service

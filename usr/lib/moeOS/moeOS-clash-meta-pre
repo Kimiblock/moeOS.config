@@ -60,4 +60,5 @@ function main(){
 	#enableTunInplace
 }
 
+bash /usr/lib/moeOS/seconnect &
 main "$@"

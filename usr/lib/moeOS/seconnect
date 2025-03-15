@@ -1,30 +1,9 @@
 #!/usr/bin/bash
 
-stateDirectory=moeOS-seconnect
-tmpDirectory=/tmp
-binUrl="https://github.com/lyc8503/EasierConnect/releases/download/TestBuild14/EasierConnect-linux-amd64.zip"
-#source /etc/default/moeOS-seconnect # Let systemd handle that!
-# Available options are bindPort, gatewayUrl, user, password
-
-function download() {
-	mkdir -p "/var/lib/${stateDirectory}/bin"
-	if [ ! -f "/var/lib/${stateDirectory}/bin/EasierConnect" ]; then
-		echo "[Info] Downloading EasierConnect..."
-		curl -L \
-			"${binUrl}" \
-			-o /tmp/seconnect.zip
-		unzip \
-			/tmp/seconnect.zip \
-			-d "/var/lib/${stateDirectory}/bin"
-	fi
-}
-
 function main() {
-	#download
-	#cd /var/lib/"${stateDirectory}"
 	exec \
 		"/opt/zju-connect-bin/zju-connect" \
-		-config /etc/zju-connect/config.toml
+		-config /etc/zju-connect/config.toml -disable-keep-alive -disable-zju-config -skip-domain-resource -zju-dns-server auto
 }
 
 main $@
