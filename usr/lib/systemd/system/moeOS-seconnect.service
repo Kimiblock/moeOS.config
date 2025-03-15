@@ -10,8 +10,8 @@ Slice=moeOS-noproxy.slice
 
 CPUQuota=30%
 CPUWeight=idle
-MemoryHigh=20M
-MemoryMax=50M
+MemoryHigh=100M
+MemoryMax=200M
 
 ExecStart=/usr/lib/moeOS/seconnect
 EnvironmentFile=/etc/default/seconnect
