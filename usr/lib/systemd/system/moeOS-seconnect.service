@@ -6,7 +6,7 @@ StartLimitIntervalSec=120
 StartLimitBurst=10
 
 [Service]
-Slice=moeOS-noproxy.slice
+Slice=moeOS-proxy.slice
 
 CPUQuota=30%
 CPUWeight=idle
@@ -14,7 +14,6 @@ MemoryHigh=100M
 MemoryMax=200M
 
 ExecStart=/usr/lib/moeOS/seconnect
-EnvironmentFile=/etc/default/seconnect
 
 StateDirectory=moeOS-seconnect
 
