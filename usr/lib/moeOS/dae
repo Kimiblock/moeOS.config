@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl "${url}" -Lo /var/tmp/config.dae

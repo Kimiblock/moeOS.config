@@ -1,7 +1,6 @@
 [Unit]
 Description=Auto updated EasierConnect daemon.
 After=network-online.target
-After=moeOS-clash-meta-auto.service
 StartLimitIntervalSec=120
 StartLimitBurst=10
 
