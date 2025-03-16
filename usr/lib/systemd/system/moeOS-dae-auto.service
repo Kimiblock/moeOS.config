@@ -1,5 +1,5 @@
 [Unit]
-Description=Auto updated clash-meta daemon.
+Description=Auto updated dae daemon.
 After=network-online.target
 Conflicts=moeOS-cgproxy.service moeOS-clash-meta-auto.service
 Wants=moeOS-seconnect.service
