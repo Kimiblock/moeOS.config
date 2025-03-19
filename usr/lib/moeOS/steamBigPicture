@@ -26,7 +26,6 @@ function main() {
 		--hdr-itm-target-nits=1200 \
 		--hdr-itm-sdr-nits=40 \
 		-W 1680 -H 1050 \
-		--disable-color-management \
 		--hdr-enabled \
 		-e \
 		-F fsr \
