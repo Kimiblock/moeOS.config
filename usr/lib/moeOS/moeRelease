@@ -50,7 +50,8 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		systemd-oomd \
-		nmb
+		nmb \
+		fstrim.timer
 
 	systemctl mask \
 		systemd-timesyncd \
