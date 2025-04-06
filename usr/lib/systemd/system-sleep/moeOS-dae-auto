@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ $@ =~ "post" ]]; then
+	sleep 5s
+	systemctl try-restart moeOS-dae-auto moeOS-clash-meta-auto
+fi
