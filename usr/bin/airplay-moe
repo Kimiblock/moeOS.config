@@ -1,0 +1,11 @@
+#!/bin/bash
+
+exec uxplay \
+	-h265 \
+	-n "$(hostnamectl --pretty)" \
+	-hls \
+	-vd vah265dec \
+	-vs waylandsink \
+	-srgb \
+	-as pipewiresink \
+	-fps 60
