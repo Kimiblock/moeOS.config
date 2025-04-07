@@ -26,6 +26,7 @@ function main() {
 		nvidia-resume \
 		nvidia-hibernate 2>/dev/null
 	systemctl enable \
+		camberra-system-bootup \
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
