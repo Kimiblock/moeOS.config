@@ -123,7 +123,7 @@ text/markdown=org.gnome.gitlab.somas.Apostrophe.Devel.desktop
 application/zip=org.gnome.Nautilus.desktop
 inode/directory=org.gnome.Nautilus.desktop
 
-application/pdf=org.gnome.Papers.desktop
+application/pdf=org.gnome.Papers.desktop;
 application/vnd.rar=org.gnome.Nautilus.desktop
 
 application/epub+zip=org.kde.okular.desktop;
