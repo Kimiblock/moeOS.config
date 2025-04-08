@@ -152,3 +152,4 @@ application/x-xz-compressed-tar=org.gnome.Nautilus.desktop;
 application/gzip=org.gnome.Nautilus.desktop;
 application/octet-stream=org.gnome.TextEditor.desktop;
 application/java-archive=org.gnome.FileRoller.desktop;
+application/pdf=org.gnome.Papers.desktop;
