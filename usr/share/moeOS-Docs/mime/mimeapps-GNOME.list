@@ -153,3 +153,5 @@ application/gzip=org.gnome.Nautilus.desktop;
 application/octet-stream=org.gnome.TextEditor.desktop;
 application/java-archive=org.gnome.FileRoller.desktop;
 application/pdf=org.gnome.Papers.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
