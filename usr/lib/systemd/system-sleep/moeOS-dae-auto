@@ -2,5 +2,6 @@
 
 if [[ $@ =~ "post" ]]; then
 	sleep 5s
+	systemctl restart NetworkManager-wait-online.service
 	systemctl try-restart moeOS-dae-auto moeOS-clash-meta-auto
 fi
