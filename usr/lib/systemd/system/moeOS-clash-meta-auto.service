@@ -1,6 +1,6 @@
 [Unit]
 Description=Auto updated clash-meta daemon.
-After=network-online.target
+After=network-online.target NetworkManager-wait-online.service
 Wants=moeOS-cgproxy.service moeOS-seconnect.service
 Before=moeOS-cgproxy.service
 StartLimitIntervalSec=120

@@ -37,6 +37,7 @@ function mergeConfig(){
 }
 
 function main(){
+	sleep 10s
 	cp /usr/share/v2ray/geosite.dat /var/tmp/geosite.dat
 	cp /etc/clash/Country.mmdb /var/tmp
 	flags="$@"
