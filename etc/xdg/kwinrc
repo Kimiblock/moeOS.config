@@ -8,6 +8,10 @@ NoiseStrength=7
 [Input]
 TabletMode=off
 
+[TabBox]
+ActivitiesMode=0
+DesktopMode=0
+
 [Plugins]
 blurEnabled=true
 contrastEnabled=false
