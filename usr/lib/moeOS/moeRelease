@@ -48,7 +48,8 @@ function main() {
 		avahi-daemon \
 		cups \
 		cups-browsed \
-		power-profiles-daemon \
+		tuned \
+		tuned-ppd \
 		bluetooth \
 		NetworkManager \
 		systemd-oomd \
