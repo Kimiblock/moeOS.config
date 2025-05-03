@@ -7,6 +7,8 @@ StartLimitBurst=10
 [Service]
 Slice=moeOS-proxy.slice
 
+LoadCredential=config.toml:/etc/moeOS-seconnect/config.toml
+
 CPUQuota=30%
 CPUWeight=idle
 MemoryHigh=100M

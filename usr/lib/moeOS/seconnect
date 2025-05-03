@@ -3,7 +3,7 @@
 function main() {
 	exec \
 		"/opt/zju-connect-bin/zju-connect" \
-		-config /etc/zju-connect/config.toml -disable-keep-alive -disable-zju-config -skip-domain-resource -zju-dns-server auto
+		-config ${CREDENTIALS_DIRECTORY}/config.toml -disable-keep-alive -disable-zju-config -skip-domain-resource -zju-dns-server auto
 }
 
 main $@
