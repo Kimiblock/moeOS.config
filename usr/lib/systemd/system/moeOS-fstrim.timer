@@ -9,7 +9,7 @@ OnCalendar=*-*-* 01:00:00
 AccuracySec=1h
 Persistent=true
 RandomizedDelaySec=100min
-Triggers=fstrim.service
+Unit=fstrim.service
 
 [Install]
 WantedBy=multi-user.target
