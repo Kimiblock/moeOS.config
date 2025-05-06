@@ -39,6 +39,7 @@ function main() {
 		--now \
 		scx \
 		scx_loader \
+		fstrim.timer \
 		thermald 2>/dev/null
 
 	systemctl enable \
@@ -54,7 +55,7 @@ function main() {
 		NetworkManager \
 		systemd-oomd \
 		nmb \
-		fstrim.timer
+		moeOS-fstrim.timer
 
 	systemctl mask \
 		systemd-timesyncd \
