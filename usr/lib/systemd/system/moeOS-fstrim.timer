@@ -1,5 +1,5 @@
 [Unit]
-Description=Discard unused filesystem blocks once a week
+Description=Discard unused filesystem blocks everyday
 Documentation=man:fstrim
 ConditionVirtualization=!container
 ConditionPathExists=!/etc/initrd-release
