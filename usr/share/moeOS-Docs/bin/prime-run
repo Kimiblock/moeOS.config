@@ -4,7 +4,6 @@ if [ ! -f /dev/nvidia* ]; then
 	env \
 		-u VK_LOADER_DRIVERS_DISABLE \
 		DRI_PRIME=1 \
-		VK_LOADER_DRIVERS_SELECT=nouveau_icd.x86_64.json \
 		"$@"
 else
 	env \
