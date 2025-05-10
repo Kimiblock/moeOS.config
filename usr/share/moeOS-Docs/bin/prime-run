@@ -1,8 +1,18 @@
 #!/bin/bash
-env \
-	__NV_PRIME_RENDER_OFFLOAD=1 \
-	__VK_LAYER_NV_optimus=NVIDIA_only \
-	__GLX_VENDOR_LIBRARY_NAME=nvidia \
-	VK_LOADER_DRIVERS_SELECT=nvidia_icd.json \
-	__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json \
-	"$@"
+
+if [ ! -f /dev/nvidia* ]; then
+	env \
+		-u VK_LOADER_DRIVERS_DISABLE \
+		DRI_PRIME=1 \
+		VK_LOADER_DRIVERS_SELECT=nouveau_icd.x86_64.json \
+		"$@"
+else
+	env \
+		-u VK_LOADER_DRIVERS_DISABLE \
+		__NV_PRIME_RENDER_OFFLOAD=1 \
+		__VK_LAYER_NV_optimus=NVIDIA_only \
+		__GLX_VENDOR_LIBRARY_NAME=nvidia \
+		VK_LOADER_DRIVERS_SELECT=nvidia_icd.json \
+		__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json \
+		"$@"
+fi

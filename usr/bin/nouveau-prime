@@ -1,6 +1,0 @@
-#!/bin/bash
-
-env \
-	DRI_PRIME=1 \
-	VK_LOADER_DRIVERS_SELECT=nouveau_icd.x86_64.json \
-	"$@"

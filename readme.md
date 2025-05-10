@@ -119,11 +119,17 @@ __GLX_VENDOR_LIBRARY_NAME=nvidia
 VK_LOADER_DRIVERS_SELECT=nvidia_icd.json
 ```
 
+for nouveau, use these instead:
+
+```
+VK_LOADER_DRIVERS_SELECT=nouveau_icd.x86_64.json
+DRI_PRIME=1
+```
+
 If you're having problems, add the following two:
 
 ```
 __NV_PRIME_RENDER_OFFLOAD=1
-__EGL_VENDOR_LIBRARY_FILENAMES=/usr/lib/x86_64-linux-gnu/GL/nvidia-565-77/extra/glvnd/egl_vendor.d/10_nvidia.json
 __VK_LAYER_NV_optimus=NVIDIA_only
 ```
 
@@ -131,7 +137,7 @@ __VK_LAYER_NV_optimus=NVIDIA_only
 
 ## Location Services
 
-Location Services may not be available in some countries and may provide wrong coordinates. Google Services are used for locating since MLS has been sunset.
+Location Services may appear inaccurate. We are currently using BeaconDB, which relies someone in your region uploads Wi-Fi data to locate.
 
 ## GTK / GNOME
 
