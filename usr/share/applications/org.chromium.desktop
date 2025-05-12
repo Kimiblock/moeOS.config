@@ -9,7 +9,7 @@ Comment=Browse the web (moeOS patched ungoogled-chromium)
 Comment[en]=Browse the web (moeOS patched ungoogled-chromium)
 Comment[en_US]=Browse the web (moeOS patched ungoogled-chromium)
 Comment[en_US.UTF-8]=Browse the web (moeOS patched ungoogled-chromium)
-Exec=/usr/lib/moeOS/chromium %U
+Exec=/usr/bin/env _portableConfig="org.chromium" portable %U
 Hidden=false
 NoDisplay=false
 StartupNotify=true

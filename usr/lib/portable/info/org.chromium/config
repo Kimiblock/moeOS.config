@@ -10,7 +10,7 @@ friendlyName="Chromium"
 stateDirectory="Chromium_Data"
 
 # This is the target executable to launch
-#launchTarget="gtk3-demo"
+launchTarget="/usr/lib/chromium/chromium --ozone-platform-hint=auto --enable-vulkan --enable-zero-copy --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation --wayland-text-input-version=3 --enable-wayland-ime --no-suid-sandbox"
 
 # Takes boolean value. When enabled, do not process XAuth files and enable X access. Generally this should be always false.
 waylandOnly="true"
@@ -21,3 +21,4 @@ gameMode="false"
 
 # Below you can set envs that will be imported into the application sandbox
 
+bwBindPar=/tmp

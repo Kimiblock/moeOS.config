@@ -1,5 +1,3 @@
 #!/bin/bash
 
-export launchTarget="/usr/bin/chromium --ozone-platform-hint=auto --enable-vulkan --enable-zero-copy --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation --wayland-text-input-version=3 --enable-wayland-ime --no-suid-sandbox $@"
-
 _portableConfig="org.chromium" portable

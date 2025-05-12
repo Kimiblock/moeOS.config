@@ -1,3 +1,5 @@
 #!/bin/bash
 
 rm /usr/share/applications/chromium.desktop
+
+ln -srf /usr/lib/moeOS/chromium /usr/bin/chromium
