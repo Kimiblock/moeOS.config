@@ -24,6 +24,7 @@ function main() {
 		moeOS-cgtproxy \
 		moeOS-cgproxy \
 		nvidia-resume \
+		nvidia-suspend-then-hibernate \
 		nvidia-hibernate 2>/dev/null
 	systemctl enable \
 		camberra-system-bootup \
@@ -33,6 +34,7 @@ function main() {
 		nvidia-persistenced \
 		nvidia-hibernate \
 		nvidia-resume \
+		nvidia-suspend-then-hibernate \
 		moeOS-nvboost 2>/dev/null
 		
 	systemctl disable \
