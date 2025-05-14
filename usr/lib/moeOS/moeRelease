@@ -61,8 +61,7 @@ function main() {
 
 	systemctl mask \
 		systemd-timesyncd \
-		pkgstats \
-		nvidia-suspend-then-hibernate
+		pkgstats
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
