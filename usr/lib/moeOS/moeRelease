@@ -40,13 +40,13 @@ function main() {
 	systemctl disable \
 		--now \
 		scx \
-		scx_loader \
 		fstrim.timer \
 		thermald 2>/dev/null
 
 	systemctl enable \
 		--now \
 		chronyd \
+		scx_loader \
 		ipp-usb \
 		avahi-daemon \
 		cups \
