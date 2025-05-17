@@ -1,11 +1,6 @@
 #!/bin/bash
 
-if [ ! -f /dev/nvidia* ]; then
-	env \
-		-u VK_LOADER_DRIVERS_DISABLE \
-		DRI_PRIME=1 \
-		"$@"
-else
+if [ -f /dev/nvidia* ]; then
 	env \
 		-u VK_LOADER_DRIVERS_DISABLE \
 		__NV_PRIME_RENDER_OFFLOAD=1 \
@@ -13,5 +8,10 @@ else
 		__GLX_VENDOR_LIBRARY_NAME=nvidia \
 		VK_LOADER_DRIVERS_SELECT=nvidia_icd.json \
 		__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json \
+		"$@"
+else
+	env \
+		-u VK_LOADER_DRIVERS_DISABLE \
+		DRI_PRIME=1 \
 		"$@"
 fi
