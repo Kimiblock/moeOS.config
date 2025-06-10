@@ -52,7 +52,7 @@ EnvironmentFile=/etc/default/dae.url
 
 TimeoutStartSec=120
 TimeoutStopSec=10
-Restart=on-failure
+Restart=always
 OOMPolicy=kill
 
 RestartSec=10s
