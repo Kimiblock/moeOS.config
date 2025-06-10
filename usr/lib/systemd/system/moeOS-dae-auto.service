@@ -4,8 +4,6 @@ After=network-online.target
 Conflicts=moeOS-cgproxy.service moeOS-clash-meta-auto.service
 Wants=moeOS-seconnect.service
 Requires=NetworkManager-wait-online.service
-StartLimitIntervalSec=120
-StartLimitBurst=10
 
 [Service]
 
@@ -57,7 +55,7 @@ TimeoutStopSec=10
 Restart=on-failure
 OOMPolicy=kill
 
-RestartSec=5s
+RestartSec=10s
 OOMScoreAdjust=50
 
 #DynamicUser=yes
