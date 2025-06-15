@@ -1,0 +1,31 @@
+#!/bin/bash
+
+PATH="/usr/bin:/bin"
+LOG="/var/log/nvidia-hotplug.log"
+
+num_connected=0
+for st in /sys/class/drm/card*-*/status; do
+	[[ $(cat "$st") == "connected" ]] || continue
+	num_connected=$((num_connected+1))
+done
+
+if [ "$num_connected" -eq 1 ]; then
+	EXT_CONNECTED=false
+else
+	EXT_CONNECTED=true
+fi
+
+if $EXT_CONNECTED; then
+	GCLOCK=$(nvidia-smi --query-supported-clocks=gr  --format=csv,noheader \
+		| awk 'NR==1 {print $1}')
+	MCLOCK=$(nvidia-smi --query-supported-clocks=mem --format=csv,noheader \
+		| awk 'NR==1 {print $1}')
+	nvidia-smi -pm 1
+	nvidia-smi -lgc "$GCLOCK","$GCLOCK"
+	nvidia-smi -lmc "$MCLOCK","$MCLOCK"
+	echo "$(date '+%F %T') $num_connected displays → lock ${GCLOCK}/${MCLOCK}" >> "$LOG"
+else
+	nvidia-smi --reset-gpu-clocks
+	nvidia-smi --reset-memory-clocks
+	echo "$(date '+%F %T') $num_connected display  → clocks reset" >> "$LOG"
+fi

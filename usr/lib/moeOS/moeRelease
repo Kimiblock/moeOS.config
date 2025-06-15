@@ -56,6 +56,7 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		systemd-oomd \
+		nvidia-persistenced \
 		nmb \
 		moeOS-fstrim.timer
 
