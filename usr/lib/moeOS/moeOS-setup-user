@@ -12,6 +12,11 @@ function main() {
 	echo "[Info] Starting moeOS Autoconf"
 	setupFont
 	setupBreeze
+	mkdir -p \
+		"${XDG_CONFIG_HOME}/Phonon"
+	ln -sr \
+		/etc/mpv/mpv.conf \
+		"${XDG_CONFIG_HOME}/Phonon/mpv.conf" \
 	checkExist
 	_notify "Setting up moeOS"
 	moeOS-setup-firefox
