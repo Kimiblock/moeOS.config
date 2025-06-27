@@ -170,3 +170,121 @@ pref("svg.context-properties.content.enabled", true);
 pref("general.smoothScroll.msdPhysics.enabled", true);
 pref("widget.dmabuf.force-enabled", true);
 pref("xpinstall.whitelist.required", true);
+
+
+
+
+// enable APS
+pref("privacy.partition.always_partition_third_party_non_cookie_storage", true, locked);
+pref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false, locked);
+
+// HTTPS Only
+pref("dom.security.https_only_mode", true, locked);
+pref("network.auth.subresource-http-auth-allow", 2);
+
+// DNS
+pref("network.trr.confirmationNS", "skip", locked); // skip undesired doh test connection
+pref("network.dns.disablePrefetch", true, locked); // disable dns prefetching
+
+// Prefetching
+pref("network.predictor.enabled", false, locked);
+pref("network.prefetch-next", false, locked);
+pref("network.http.speculative-parallel-limit", 0, locked);
+pref("browser.places.speculativeConnect.enabled", false, locked);
+pref("browser.urlbar.speculativeConnect.enabled", false, locked);
+
+// SSL
+pref("security.ssl.require_safe_negotiation", true, locked);
+pref("security.ssl.treat_unsafe_negotiation_as_broken", false, locked);
+pref("security.remote_settings.crlite_filters.enabled", true, locked);
+//pref("security.tls.enable_0rtt_data", false, locked);
+pref("browser.xul.error_pages.expert_bad_cert", true, locked);
+
+// Disable safe browsing
+pref("browser.safebrowsing.malware.enabled", false, locked);
+pref("browser.safebrowsing.phishing.enabled", false, locked);
+pref("browser.safebrowsing.blockedURIs.enabled", false, locked);
+pref("browser.safebrowsing.provider.google4.gethashURL", "", locked);
+pref("browser.safebrowsing.provider.google4.updateURL", "", locked);
+pref("browser.safebrowsing.provider.google.gethashURL", "", locked);
+pref("browser.safebrowsing.provider.google.updateURL", "", locked);
+pref("browser.safebrowsing.downloads.enabled", false, locked);
+pref("browser.safebrowsing.downloads.remote.enabled", false, locked);
+pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false, locked);
+pref("browser.safebrowsing.downloads.remote.block_uncommon", false, locked);
+// empty for defense in depth
+pref("browser.safebrowsing.downloads.remote.url", "", locked);
+pref("browser.safebrowsing.provider.google4.dataSharingURL", "", locked);
+
+// No JS in PDF
+pref("pdfjs.enableScripting", false);
+
+// Location Services
+pref("geo.provider.ms-windows-location", false, locked);
+pref("geo.provider.use_corelocation", false, locked);
+pref("geo.provider.use_gpsd", false, locked);
+pref("geo.provider.use_geoclue", true, locked);
+
+// Disable Region Update
+pref("browser.region.network.url", "", locked);
+pref("browser.region.update.enabled", false, locked);
+
+// DRM
+pref("media.eme.enabled", true, locked);
+pref("media.gmp-provider.enabled", true, locked);
+pref("media.gmp-gmpopenh264.enabled", false, locked);
+
+// Search Bar
+pref("browser.urlbar.suggest.weather", false, locked);
+pref("browser.urlbar.quicksuggest.enabled", false, locked);
+pref("browser.urlbar.suggest.searches", true, locked);
+pref("browser.search.suggest.enabled", true, locked);
+pref("browser.search.update", true, locked);
+
+// Downloads
+pref("browser.download.useDownloadDir", false);
+pref("browser.download.autohideButton", false);
+pref("browser.download.alwaysOpenPanel", false);
+
+// Media Autoplay
+pref("media.autoplay.default", 5);
+
+// Disable Auto Update
+pref("extensions.systemAddon.update.enabled", false, locked);
+pref("extensions.systemAddon.update.url", "", locked);
+pref("extensions.webcompat-reporter.enabled", false, locked);
+pref("extensions.webcompat-reporter.newIssueEndpoint", "", locked);
+pref("app.update.auto", false, locked);
+pref("identity.fxaccounts.enabled", false, locked);
+pref("signon.rememberSignons", false, locked);
+pref("signon.autofillForms", false, locked);
+pref("extensions.formautofill.addresses.enabled", false, locked);
+pref("extensions.formautofill.creditCards.enabled", false, locked);
+pref("signon.formlessCapture.enabled", false, locked);
+pref("privacy.userContext.enabled", false, locked);
+pref("privacy.userContext.ui.enabled", false, locked);
+
+// First Launch
+pref("browser.startup.homepage_override.mstone", "ignore", locked);
+pref("startup.homepage_override_url", "about:blank", locked);
+pref("startup.homepage_welcome_url", "about:blank", locked);
+pref("startup.homepage_welcome_url.additional", "", locked);
+pref("browser.messaging-system.whatsNewPanel.enabled", false, locked);
+pref("browser.uitour.enabled", false, locked);
+pref("browser.uitour.url", "", locked);
+pref("browser.shell.checkDefaultBrowser", false, locked);
+
+// New Tab
+pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false, locked);
+pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false, locked);
+pref("browser.newtabpage.activity-stream.feeds.topsites", false, locked);
+// hide stories and sponsored content from Firefox Home
+pref("browser.newtabpage.activity-stream.feeds.section.topstories", false, locked);
+pref("browser.newtabpage.activity-stream.showSponsored", false, locked);
+pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false, locked);
+// disable telemetry in Firefox Home
+pref("browser.newtabpage.activity-stream.feeds.telemetry", false, locked);
+pref("browser.newtabpage.activity-stream.telemetry", false, locked);
+// hide stories UI in about:preferences#home, empty highlights list
+pref("browser.newtabpage.activity-stream.feeds.section.topstories.options", "{\"hidden\":true}", locked);
+pref("browser.newtabpage.activity-stream.default.sites", "", locked);
