@@ -1,5 +1,55 @@
 // moeOS new pref
 
+// Recommendations & Telemetry
+pref("browser.contentblocking.report.lockwise.enabled", false);
+pref("browser.contentblocking.report.hide_vpn_banner", true, locked);
+pref("browser.contentblocking.report.vpn.enabled", false, locked);
+pref("browser.contentblocking.report.show_mobile_app", false, locked);
+pref("browser.vpn_promo.enabled", false, locked);
+pref("browser.promo.focus.enabled", false, locked);
+// ...about:addons recommendations sections and more
+pref("extensions.htmlaboutaddons.recommendations.enabled", false, locked);
+pref("extensions.getAddons.showPane", false, locked);
+pref("extensions.getAddons.cache.enabled", false, locked); // disable fetching of extension metadata
+pref("lightweightThemes.getMoreURL", "", locked); // disable button to get more themes
+// ...about:preferences#home
+pref("browser.topsites.useRemoteSetting", false, locked); // hide sponsored shortcuts button
+// ...and about:config
+pref("browser.aboutConfig.showWarning", false, locked);
+// hide about:preferences#moreFromMozilla
+pref("browser.preferences.moreFromMozilla", false, locked);
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false, locked);
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false, locked);
+pref("toolkit.telemetry.unified", false, locked); // master switch
+pref("toolkit.telemetry.enabled", false, locked);  // master switch
+pref("toolkit.telemetry.server", "data:,", locked);
+pref("toolkit.telemetry.archive.enabled", false, locked);
+pref("toolkit.telemetry.newProfilePing.enabled", false, locked);
+pref("toolkit.telemetry.updatePing.enabled", false, locked);
+pref("toolkit.telemetry.firstShutdownPing.enabled", false, locked);
+pref("toolkit.telemetry.shutdownPingSender.enabled", false, locked);
+pref("toolkit.telemetry.bhrPing.enabled", false, locked);
+pref("toolkit.telemetry.cachedClientID", "", locked);
+pref("toolkit.telemetry.previousBuildID", "", locked);
+pref("toolkit.telemetry.server_owner", "", locked);
+pref("toolkit.coverage.opt-out", true, locked); // hidden
+pref("toolkit.telemetry.coverage.opt-out", true, locked); // hidden
+pref("toolkit.coverage.enabled", false, locked);
+pref("toolkit.coverage.endpoint.base", "", locked);
+pref("toolkit.crashreporter.infoURL", "", locked);
+pref("datareporting.healthreport.uploadEnabled", false, locked);
+pref("datareporting.policy.dataSubmissionEnabled", false, locked);
+pref("security.protectionspopup.recordEventTelemetry", false, locked);
+pref("browser.ping-centre.telemetry", false, locked);
+// opt-out of normandy and studies
+pref("app.normandy.enabled", false, locked);
+pref("app.normandy.api_url", "", locked);
+pref("app.shield.optoutstudies.enabled", false, locked);
+// disable personalized extension recommendations
+pref("browser.discovery.enabled", false, locked);
+pref("browser.discovery.containers.enabled", false, locked);
+pref("browser.discovery.sites", "", locked);
+
 pref("browser.shopping.experience2023.survey.enabled", false, locked);
 pref("browser.shopping.experience2023.autoOpen.userEnabled", false, locked);
 pref("browser.shopping.experience2023.autoOpen.enabled", false, locked);
@@ -8,9 +58,7 @@ pref("browser.shopping.experience2023.active", false, locked);
 pref("browser.newtabpage.pinned", "", locked);
 pref("browser.search.update", false, locked);
 pref("dom.private-attribution.submission.enabled", false, locked);
-
-perf("browser.tabs.unloadOnLowMemory", true)
-
+pref("browser.toolbars.bookmarks.visibility", "never");
 pref("gfx.webrender.compositor", true);
 pref("gfx.webrender.prefer-robustness", false);
 pref("gfx.webrender.low-quality-pinch-zoom", true);
@@ -41,7 +89,36 @@ pref("apz.overscroll.enabled", true);
 // Enforce security when dealing with SameSite=None
 pref("network.cookie.sameSite.noneRequiresSecure", true);
 
+// WebGPU
+pref("gfx.webgpu.ignore-blocklist", true);
+pref("gfx.webrender.all", true);
+pref("dom.webgpu.enabled", true);
+
+// Show compact mode
+pref("browser.compactmode.show", true, locked);
+
+// Enable VA-API
+pref("media.ffmpeg.vaapi.enabled", true);
+
+// Default compact mode
+pref("browser.uidensity", 1);
+
+// disable crash report
+pref("browser.tabs.crashReporting.sendReport", false, locked);
+pref("breakpad.reportURL", "", locked);
+
+
+// GNOME Theme
+pref("gnomeTheme.dragWindowHeaderbarButtons", false);
+pref("gnomeTheme.systemIcons", true);
+pref("gnomeTheme.hideWebrtcIndicator", true);
+pref("gnomeTheme.hideSingleTab", true);
+
+// Make scrolling less sensitive
+pref("apz.gtk.pangesture.page_delta_mode_multiplier", "0.38");
+
 // Lock font settings
+pref("browser.display.use_document_fonts", 0, locked);
 pref("font.default.x-western", "sans-serif", locked);
 pref("font.name.sans-serif.x-western", "sans-serif", locked);
 pref("font.name.serif.x-western", "sans-serif", locked);
