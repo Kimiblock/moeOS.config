@@ -93,8 +93,10 @@ function main() {
 	flatpak remove --unused --noninteractive &
 	systemctl mask \
 		--global \
-		app-org.gnome.Software@autostart.service \
 		app-org.kde.discover.notifier@autostart.service 2>/dev/null &
+	systemctl unmask \
+		--global \
+		app-org.gnome.Software@autostart.service &
 }
 
 function replace() {
