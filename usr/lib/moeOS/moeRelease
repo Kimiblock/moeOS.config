@@ -55,6 +55,7 @@ function main() {
 		tuned-ppd \
 		bluetooth \
 		NetworkManager \
+		ModemManager \
 		systemd-oomd \
 		nvidia-persistenced \
 		nmb \
