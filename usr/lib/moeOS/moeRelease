@@ -78,7 +78,8 @@ function main() {
 	#flatpak remote-modify \
 	#	flathub \
 	#	--url=https://mirror.sjtu.edu.cn/flathub &
-	flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
+	#flatpak remote-modify flathub --url=https://dl.flathub.org/repo/
+	flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 	# Flatpak thingy
 	flatpak mask --remove org.freedesktop.Platform.GL.nvidia 2>/dev/null &
 	flatpak mask --remove 'org.freedesktop.Platform.GL.nvidia*' 2>/dev/null &
