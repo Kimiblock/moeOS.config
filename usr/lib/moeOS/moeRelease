@@ -12,6 +12,7 @@ function main() {
 	replace "/usr/share/moeOS-Docs/ibus-rime.conf.d/default.yaml" "/usr/share/rime-data/default.yaml"
 	replace "/usr/share/moeOS-Docs/avahi-daemon.conf" "/etc/avahi/avahi-daemon.conf"
 	replace "/usr/share/moeOS-Docs/bluez/main.conf" "/etc/bluetooth/main.conf"
+	replace "/usr/share/moeOS-Docs/wireless-regdom" "/etc/conf.d/wireless-regdom"
 
 	if [[ $(cat /etc/nsswitch.conf | grep 'hosts:') =~ mdns ]]; then
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
