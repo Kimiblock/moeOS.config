@@ -35,7 +35,7 @@ function main() {
 		nvidia-hibernate \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
-		moeOS-nvboost 2>/dev/null
+		moeOS-nvboost
 		
 	systemctl disable \
 		--now \
