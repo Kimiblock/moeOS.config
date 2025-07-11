@@ -28,7 +28,6 @@ function main() {
 		nvidia-suspend-then-hibernate \
 		nvidia-hibernate 2>/dev/null
 	systemctl enable \
-		camberra-system-bootup \
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
@@ -36,13 +35,13 @@ function main() {
 		nvidia-hibernate \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
-		moeOS-nvboost 2>/dev/null &
+		moeOS-nvboost 2>/dev/null
 		
 	systemctl disable \
 		--now \
 		scx \
 		fstrim.timer \
-		thermald 2>/dev/null &
+		thermald 2>/dev/null
 
 	systemctl enable \
 		--now \
@@ -65,14 +64,14 @@ function main() {
 	systemctl mask \
 		systemd-timesyncd \
 		pkgstats \
-		dhcpcd &
+		dhcpcd
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
 	ln -sfr \
 		/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next
-	/usr/lib/moeOS/patch-chromium 2>/dev/null &
+	/usr/lib/moeOS/patch-chromium 2>/dev/null
 	flatpak remote-add \
 		--if-not-exists \
 		flathub https://dl.flathub.org/repo/flathub.flatpakrepo
