@@ -31,7 +31,6 @@ function main() {
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
-		nvidia-persistenced \
 		nvidia-hibernate \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
