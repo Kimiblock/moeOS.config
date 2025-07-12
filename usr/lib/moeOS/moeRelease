@@ -26,7 +26,7 @@ function main() {
 		moeOS-cgproxy \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
-		nvidia-hibernate 2>/dev/null
+		nvidia-hibernate &
 	systemctl enable \
 		nvidia-powerd \
 		nvidia-suspend \
@@ -35,7 +35,7 @@ function main() {
 		nvidia-hibernate \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
-		moeOS-nvboost
+		moeOS-nvboost &
 		
 	systemctl disable \
 		--now \
@@ -59,15 +59,18 @@ function main() {
 		systemd-oomd \
 		nvidia-persistenced \
 		nmb \
-		moeOS-fstrim.timer
+		moeOS-fstrim.timer &
 
 	systemctl mask \
 		systemd-timesyncd \
 		pkgstats \
-		dhcpcd
+		dhcpcd &
 	systemctl --global \
 		enable \
-		snotify moeOS-setup moeOS-autoColor
+		snotify moeOS-setup moeOS-autoColor &
+	systemctl --global \
+		mask \
+		app-org.fcitx.Fcitx5@autostart.service 2>/dev/null
 	ln -sfr \
 		/run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 	plymouth-set-default-theme moe-next

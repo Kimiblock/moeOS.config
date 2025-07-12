@@ -19,7 +19,7 @@ function main() {
 		"${XDG_CONFIG_HOME}/Phonon/mpv.conf"
 	checkExist
 	_notify "Setting up moeOS"
-	moeOS-setup-firefox
+	#moeOS-setup-firefox
 	checkExist set
 }
 
@@ -53,6 +53,7 @@ function setupBreeze() {
 	else
 		cp -r /etc/gtk-{4,3}.0 "${XDG_CONFIG_HOME}/"
 	fi
+	systemctl mask --user app-org.fcitx.Fcitx5@autostart.service &
 }
 
 function checkExist() {
