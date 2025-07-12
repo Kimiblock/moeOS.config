@@ -1,8 +1,8 @@
 [Default Applications]
-x-scheme-handler/http=firefox.desktop
-text/html=firefox.desktop
-application/xhtml+xml=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=org.mozilla.firefox.desktop
+text/html=org.mozilla.firefox.desktop
+application/xhtml+xml=org.mozilla.firefox.desktop
+x-scheme-handler/https=org.mozilla.firefox.desktop
 x-scheme-handler/mailto=org.gnome.Geary.desktop
 text/calendar=org.gnome.Calendar.desktop
 audio/x-vorbis+ogg=org.gnome.Decibels.desktop
@@ -145,6 +145,11 @@ x-scheme-handler/maps=org.gnome.Maps.desktop
 application/vnd.google-earth.kml+xml=org.gnome.Maps.desktop
 application/gpx+xml=org.gnome.Maps.desktop
 application/fits=org.gnome.Maps.desktop
+application/rss+xml=org.gnome.Builder.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop
+application/x-bat=org.gnome.TextEditor.desktop
+application/xhtml+xml=org.mozilla.firefox.desktop
+text/html=org.mozilla.firefox.desktop
 
 [Added Associations]
 application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop;
@@ -155,3 +160,10 @@ application/java-archive=org.gnome.FileRoller.desktop;
 application/pdf=org.gnome.Papers.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+application/rss+xml=org.gnome.Builder.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;
+application/x-bat=org.gnome.TextEditor.desktop;
+application/xhtml+xml=org.mozilla.firefox.desktop;
+text/html=org.mozilla.firefox.desktop;
+x-scheme-handler/http=org.mozilla.firefox.desktop;
+x-scheme-handler/https=org.mozilla.firefox.desktop;
