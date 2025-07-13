@@ -20,29 +20,27 @@ function main() {
 
 	systemctl unmask \
 		systemd-resolved \
-		nvidia-resume \
-		nvidia-hibernate \
 		moeOS-cgtproxy \
 		moeOS-cgproxy \
-		nvidia-resume \
-		nvidia-suspend-then-hibernate \
-		nvidia-hibernate 2>/dev/null
-	systemctl enable \
-		camberra-system-bootup \
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
-		nvidia-persistenced \
+		nvidia-resume \
+		nvidia-hibernate &
+	systemctl enable \
+		nvidia-powerd \
+		nvidia-suspend \
+		nvidia-resume \
 		nvidia-hibernate \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
-		moeOS-nvboost 2>/dev/null &
+		moeOS-nvboost &
 		
 	systemctl disable \
 		--now \
 		scx \
-		fstrim.timer \
-		thermald 2>/dev/null &
+		nvidia-persistenced \
+		fstrim.timer &
 
 	systemctl enable \
 		--now \
@@ -58,7 +56,6 @@ function main() {
 		NetworkManager \
 		ModemManager \
 		systemd-oomd \
-		nvidia-persistenced \
 		nmb \
 		moeOS-fstrim.timer
 
