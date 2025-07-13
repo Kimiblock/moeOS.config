@@ -25,7 +25,8 @@ function main() {
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
-		nvidia-resume \
+		nvidia-suspend-then-hibernate \
+		nvidia-suspend \
 		nvidia-hibernate &
 	systemctl enable \
 		nvidia-powerd \
