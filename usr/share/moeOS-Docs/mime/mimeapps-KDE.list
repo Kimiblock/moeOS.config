@@ -1,8 +1,8 @@
 [Default Applications]
-x-scheme-handler/http=org.zen.firefox.desktop
-text/html=org.zen.firefox.desktop
-application/xhtml+xml=org.zen.firefox.desktop
-x-scheme-handler/https=org.zen.firefox.desktop
+x-scheme-handler/http=org.mozilla.zen.desktop
+text/html=org.mozilla.zen.desktop
+application/xhtml+xml=org.mozilla.zen.desktop
+x-scheme-handler/https=org.mozilla.zen.desktop
 x-scheme-handler/mailto=org.kde.kmail2.desktop
 audio/x-vorbis+ogg=mpv.desktop
 audio/wav=mpv.desktop
