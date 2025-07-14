@@ -59,10 +59,7 @@ pref("browser.newtabpage.pinned", "", locked);
 pref("browser.search.update", false, locked);
 pref("dom.private-attribution.submission.enabled", false, locked);
 pref("browser.toolbars.bookmarks.visibility", "never");
-pref("gfx.webrender.compositor", true);
-pref("gfx.webrender.prefer-robustness", false);
 pref("gfx.webrender.low-quality-pinch-zoom", true);
-pref("gfx.webrender.fallback.software", false);
 
 pref("browser.ping-centre.telemetry", false, locked);
 pref("remote.prefs.recommended", false, locked);
@@ -71,8 +68,6 @@ pref("browser.tabs.firefox-view", false);
 pref("extensions.pocket.enabled", false);
 pref("browser.urlbar.suggest.pocket", false);
 
-pref("browser.gnome-search-provider.enabled", true, locked);
-
 // Use portal
 pref("widget.use-xdg-desktop-portal.open-uri", 1, locked);
 pref("widget.use-xdg-desktop-portal.settings", 1, locked);
@@ -80,39 +75,18 @@ pref("widget.use-xdg-desktop-portal.mime-handler", 1, locked);
 pref("widget.use-xdg-desktop-portal.file-picker", 1, locked);
 pref("widget.use-xdg-desktop-portal.location", 1, locked);
 
-// Rounded Corners
-pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
-
 // Touchpad Overscroll
 pref("apz.overscroll.enabled", true);
 
 // Enforce security when dealing with SameSite=None
 pref("network.cookie.sameSite.noneRequiresSecure", true);
 
-// WebGPU
-pref("gfx.webgpu.ignore-blocklist", true);
-pref("gfx.webrender.all", true);
-pref("dom.webgpu.enabled", true);
-
-// Show compact mode
-pref("browser.compactmode.show", true, locked);
-
 // Enable VA-API
 pref("media.ffmpeg.vaapi.enabled", true);
-
-// Default compact mode
-pref("browser.uidensity", 1);
 
 // disable crash report
 pref("browser.tabs.crashReporting.sendReport", false, locked);
 pref("breakpad.reportURL", "", locked);
-
-
-// GNOME Theme
-pref("gnomeTheme.dragWindowHeaderbarButtons", false);
-pref("gnomeTheme.systemIcons", true);
-pref("gnomeTheme.hideWebrtcIndicator", true);
-pref("gnomeTheme.hideSingleTab", true);
 
 // Make scrolling less sensitive
 pref("apz.gtk.pangesture.page_delta_mode_multiplier", "0.38");
@@ -162,13 +136,9 @@ pref("privacy.query_stripping.enabled", true);
 pref("privacy.query_stripping.enabled.pbmode", true);
 
 pref("general.autoconfig.testpref", true, locked);
-pref("widget.gtk.global-menu.wayland.enabled", true, locked);
-pref("widget.gtk.global-menu.enabled", true);
 pref("media.hevc.enabled", true);
 pref("browser.theme.dark-private-windows", false);
 pref("svg.context-properties.content.enabled", true);
-pref("general.smoothScroll.msdPhysics.enabled", true);
-pref("widget.dmabuf.force-enabled", true);
 pref("xpinstall.whitelist.required", true);
 
 
