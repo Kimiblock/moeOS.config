@@ -115,7 +115,9 @@ pref("gnomeTheme.hideWebrtcIndicator", true);
 pref("gnomeTheme.hideSingleTab", true);
 
 // Make scrolling less sensitive
-pref("apz.gtk.pangesture.page_delta_mode_multiplier", "0.38");
+pref("apz.gtk.pangesture.page_delta_mode_multiplier", "0.1");
+pref("apz.gtk.pangesture.pixel_delta_mode_multiplier", "17");
+pref("apz.gtk.pangesture.delta_mode", 2);
 
 // Lock font settings
 pref("browser.display.use_document_fonts", 0, locked);
