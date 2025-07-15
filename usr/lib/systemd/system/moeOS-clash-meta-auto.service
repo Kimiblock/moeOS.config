@@ -5,6 +5,7 @@ Wants=moeOS-cgproxy.service moeOS-seconnect.service
 Before=moeOS-cgproxy.service
 StartLimitIntervalSec=120
 StartLimitBurst=10
+Conflicts=sleep.target
 
 [Service]
 Slice=moeOS-noproxy.slice
@@ -65,3 +66,4 @@ SystemCallErrorNumber=EPERM
 [Install]
 WantedBy=multi-user.target
 RequiredBy=moeOS-cgproxy.service
+WantedBy=NetworkManager-wait-online.service

@@ -4,6 +4,7 @@ After=network-online.target
 Conflicts=moeOS-cgproxy.service moeOS-clash-meta-auto.service
 Wants=moeOS-seconnect.service
 Requires=NetworkManager-wait-online.service
+Conflicts=sleep.target
 
 [Service]
 
@@ -64,3 +65,4 @@ WorkingDirectory=/var/tmp
 
 [Install]
 WantedBy=multi-user.target
+WantedBy=NetworkManager-wait-online.service
