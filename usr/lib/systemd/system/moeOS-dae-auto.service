@@ -1,6 +1,6 @@
 [Unit]
 Description=Auto updated dae daemon.
-After=network-online.target
+After=network-online.target NetworkManager-wait-online.service
 Conflicts=moeOS-cgproxy.service moeOS-clash-meta-auto.service
 Wants=moeOS-seconnect.service
 Requires=NetworkManager-wait-online.service
