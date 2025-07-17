@@ -3,8 +3,8 @@ Description=Auto updated clash-meta daemon.
 After=network-online.target NetworkManager-wait-online.service
 Wants=moeOS-cgproxy.service moeOS-seconnect.service
 Before=moeOS-cgproxy.service
-StartLimitIntervalSec=120
-StartLimitBurst=10
+StartLimitIntervalSec=600
+StartLimitBurst=60
 Conflicts=sleep.target
 
 [Service]
@@ -18,7 +18,7 @@ EnvironmentFile=/etc/moeOS-clash-meta/env.conf
 
 TimeoutStartSec=120
 TimeoutStopSec=10
-Restart=on-failure
+Restart=always
 OOMPolicy=kill
 
 RestartSec=5s
