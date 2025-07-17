@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f /dev/nvidia* ]; then
+if [ -d /proc/driver/nvidia/gpus ]; then
 	env \
 		-u VK_LOADER_DRIVERS_DISABLE \
 		__NV_PRIME_RENDER_OFFLOAD=1 \
