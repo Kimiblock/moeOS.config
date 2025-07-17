@@ -1,3 +1,11 @@
 #!/usr/bin/bash
 
-systemctl restart NetworkManager-wait-online.service
+if [[ $@ =~ post ]]; then
+	systemctl restart \
+	NetworkManager-wait-online.service \
+	moeOS-proxy
+else
+	systemctl stop \
+	NetworkManager-wait-online.service \
+	moeOS-proxy
+fi
