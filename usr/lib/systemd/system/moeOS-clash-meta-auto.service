@@ -18,7 +18,7 @@ EnvironmentFile=/etc/moeOS-clash-meta/env.conf
 
 TimeoutStartSec=120
 TimeoutStopSec=10
-Restart=always
+Restart=on-failure
 OOMPolicy=kill
 
 RestartSec=5s
@@ -66,4 +66,4 @@ SystemCallErrorNumber=EPERM
 [Install]
 WantedBy=multi-user.target
 RequiredBy=moeOS-cgproxy.service
-WantedBy=NetworkManager-wait-online.service
+Alias=moeOS-proxy.service

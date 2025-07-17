@@ -65,4 +65,4 @@ WorkingDirectory=/var/tmp
 
 [Install]
 WantedBy=multi-user.target
-WantedBy=NetworkManager-wait-online.service
+Alias=moeOS-proxy.service
