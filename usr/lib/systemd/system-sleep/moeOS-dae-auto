@@ -1,6 +1,5 @@
 #!/bin/bash
 
 if [[ $@ =~ "post" ]]; then
-	sleep 10s
 	systemctl restart NetworkManager-wait-online.service
 fi
