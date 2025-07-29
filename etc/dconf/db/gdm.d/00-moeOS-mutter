@@ -1,5 +1,5 @@
 [org/gnome/mutter]
-experimental-features=['scale-monitor-framebuffer','kms-modifiers']
+experimental-features=['scale-monitor-framebuffer', 'kms-modifiers', 'variable-refresh-rate']
 
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true

@@ -1,0 +1,5 @@
+[org/gnome/builder/editor]
+font-name='Monospace 12'
+draw-spaces=['tab', 'space']
+highlight-matching-brackets=true
+wrap-text='whitespace'
