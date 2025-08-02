@@ -192,10 +192,10 @@ pref("browser.safebrowsing.provider.google4.dataSharingURL", "", locked);
 pref("pdfjs.enableScripting", false);
 
 // Location Services
-pref("geo.provider.ms-windows-location", false, locked);
-pref("geo.provider.use_corelocation", false, locked);
-pref("geo.provider.use_gpsd", false, locked);
-pref("geo.provider.use_geoclue", true, locked);
+//pref("geo.provider.ms-windows-location", false, locked);
+//pref("geo.provider.use_corelocation", false, locked);
+//pref("geo.provider.use_gpsd", false, locked);
+//pref("geo.provider.use_geoclue", true, locked);
 
 // Disable Region Update
 pref("browser.region.network.url", "", locked);
