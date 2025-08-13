@@ -64,6 +64,7 @@ function main() {
 	systemctl mask \
 		systemd-timesyncd \
 		pkgstats \
+		passim \
 		dhcpcd &
 	systemctl --global \
 		enable \
