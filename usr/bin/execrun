@@ -1,3 +1,9 @@
 #!/bin/bash
 # This is a wrapper for executing long running program 
-systemd-run --user --same-dir -p CPUWeight=idle -p MemoryHigh=50% -p IOWeight=1 --pty "$@"
+systemd-run \
+	--user \
+	--same-dir \
+	-p CPUWeight=idle \
+	-p MemoryHigh=50% \
+	-p IOWeight=1 \
+	--pty "$@"
