@@ -41,7 +41,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 4. Create your user: `useradd -m -G wheel <User>` `passwd <User>`
 5. Exit the shell, and chroot back
 6. Uncomment or add `%wheel ALL=(ALL:ALL) ALL` in /etc/sudoers
-4. Install this project: (Note you should choose xdg-desktop-portal-gnome)
+7. Install this project: (Note you should choose xdg-desktop-portal-gnome)
 ```
 sudo -u <User>
 paru -S xone-dongle-firmware
@@ -49,8 +49,18 @@ git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
 paru -Ui
 exit
+install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.conf /etc/mkinitcpio.conf
+install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux.preset
+install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.d/cmdline /etc/kernel/cmdline
+install /usr/share/moeOS-Docs/Reference\ Configsfstab /etc/kernel/cmdline
+systemctl enable gdm
+cd /
+rm moeOS-Package
 ```
-3. Write [cmdline](https://github.com/Kimiblock/moeOS.config/blob/master/usr/share/moeOS-Docs/Reference%20Configs/cmdline) into /etc/kernel/cmdline, modify `rd.luks.name` UUID
+8. Edit /etc/kernel/cmdline, modify `rd.luks.name` UUID
+9. Format and mount /efi
+10. Mofify /etc/fstab
+11. Run `mkdir -p /efi/EFI/Boot -p && mkinitcpio -P`
 
 ## Manual
 
@@ -58,7 +68,6 @@ exit
 git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
 paru -Ui
-install /usr/share/moeOS-Docs/mkinitcpio.conf /etc/mkinitcpio.conf
 ```
 
 ## Update with your system
