@@ -22,7 +22,35 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 - If you prefer not using integrated graphics, set `moeDiscreteOnly=1` environment variable.
 - Defaults to NVIDIA driver stack, nouveau can be used by setting `moeNouveau` environment.
 
-# Install / Upgrade
+# Install / Upgrade from a new system
+
+1. Please follow the official Arch Linux installation guide using the BTRFS file system with subvolumes `@` and `@home`, until _Initramfs_, excluding `Fstab`.
+	- Note that unencrypted setups are not tested
+2. Please add the archlinuxcn repository. Add the following lines in the chroot system /etc/pacman.conf:
+
+```
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+```
+
+	- Optionally, configure the mirror:
+		- run `pacman -Syu archlinuxcn-mirrorlist-git`
+		- edit `/etc/pacman.d/archlinuxcn-mirrorlist`, uncomment wanted mirrors
+		- edit `/etc/pacman.conf` replace the _Server_ line with `Include = /etc/pacman.d/archlinuxcn-mirrorlist`
+3. Install package `fish` `nano` `git` `paru` `devtools` `linux-headers`
+4. Create your user: `useradd -m -G wheel <User>` `passwd <User>`
+5. Exit the shell, and chroot back
+6. Uncomment or add `%wheel ALL=(ALL:ALL) ALL` in /etc/sudoers
+4. Install this project: (Note you should choose xdg-desktop-portal-gnome)
+```
+sudo -u <User>
+paru -S xone-dongle-firmware
+git clone https://github.com/Kimiblock/moeOS-Package.git
+cd moeOS-Package
+paru -Ui
+exit
+```
+3. Write [cmdline](https://github.com/Kimiblock/moeOS.config/blob/master/usr/share/moeOS-Docs/Reference%20Configs/cmdline) into /etc/kernel/cmdline, modify `rd.luks.name` UUID
 
 ## Manual
 
@@ -30,6 +58,7 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
 paru -Ui
+install /usr/share/moeOS-Docs/mkinitcpio.conf /etc/mkinitcpio.conf
 ```
 
 ## Update with your system
