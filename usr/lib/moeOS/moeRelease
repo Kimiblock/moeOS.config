@@ -34,9 +34,7 @@ function main() {
 		nvidia-resume \
 		nvidia-hibernate \
 		nvidia-resume \
-		nvidia-suspend-then-hibernate \
-		NetworkManager-wait-online \
-		moeOS-nvboost &
+		nvidia-suspend-then-hibernate &
 		
 	systemctl disable \
 		--now \
@@ -46,6 +44,9 @@ function main() {
 
 	systemctl enable \
 		--now \
+		systemd-resolved \
+		NetworkManager-wait-online \
+		moeOS-nvboost
 		chronyd \
 		scx_loader \
 		ipp-usb \
