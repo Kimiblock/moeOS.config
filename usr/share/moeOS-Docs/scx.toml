@@ -1,4 +1,4 @@
-default_sched = "scx_lavd"
+default_sched = "scx_flash"
 default_mode = "Auto"
 
 [scheds.scx_lavd]
