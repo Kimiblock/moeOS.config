@@ -5,4 +5,4 @@ default_mode = "Auto"
 auto_mode = ["--autopower"]
 
 [scheds.scx_flash]
-auto_mode = []
+auto_mode = ["--cpufreq", "--sticky-cpu", "--tickless"]
