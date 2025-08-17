@@ -260,3 +260,4 @@ pref("browser.newtabpage.activity-stream.telemetry", false, locked);
 // hide stories UI in about:preferences#home, empty highlights list
 pref("browser.newtabpage.activity-stream.feeds.section.topstories.options", "{\"hidden\":true}", locked);
 pref("browser.newtabpage.activity-stream.default.sites", "", locked);
+pref("media.hardware-video-decoding.force-enabled", true, locked);
