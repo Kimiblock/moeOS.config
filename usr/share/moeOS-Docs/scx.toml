@@ -3,3 +3,6 @@ default_mode = "Auto"
 
 [scheds.scx_lavd]
 auto_mode = ["--autopower"]
+
+[scheds.scx_flash]
+auto_mode = []
