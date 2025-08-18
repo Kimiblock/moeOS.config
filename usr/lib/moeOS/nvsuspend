@@ -5,18 +5,18 @@ if [ ! -f /proc/driver/nvidia/suspend ]; then
 fi
 
 case "$1" in
-    is-suspend-then-hibernate-supported)
-	exit 0
-        ;;
-    suspend|hibernate)
-        echo "$1" > /proc/driver/nvidia/suspend
-        RET_VAL=$?
-        exit $RET_VAL
-        ;;
-    resume)
-        echo "$1" > /proc/driver/nvidia/suspend
-        exit 0
-        ;;
-    *)
-        exit 1
+	is-suspend-then-hibernate-supported)
+		exit 0
+;;
+	suspend|hibernate)
+		echo suspend | tee /proc/driver/nvidia/suspend
+		RET_VAL=$?
+		exit $RET_VAL
+;;
+	resume)
+		echo "$1" | tee /proc/driver/nvidia/suspend
+		exit 0
+;;
+	*)
+	exit 1
 esac
