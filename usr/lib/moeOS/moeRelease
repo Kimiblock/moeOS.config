@@ -28,13 +28,6 @@ function main() {
 		nvidia-suspend-then-hibernate \
 		nvidia-suspend \
 		nvidia-hibernate &
-	systemctl enable \
-		nvidia-powerd \
-		nvidia-suspend \
-		nvidia-resume \
-		nvidia-hibernate \
-		nvidia-resume \
-		nvidia-suspend-then-hibernate &
 		
 	systemctl disable \
 		--now \
@@ -43,7 +36,6 @@ function main() {
 		fstrim.timer &
 
 	systemctl enable \
-		--now \
 		systemd-resolved \
 		NetworkManager-wait-online \
 		moeOS-nvboost
@@ -60,6 +52,12 @@ function main() {
 		ModemManager \
 		systemd-oomd \
 		nmb \
+		nvidia-powerd \
+		nvidia-suspend \
+		nvidia-resume \
+		nvidia-hibernate \
+		nvidia-resume \
+		nvidia-suspend-then-hibernate \
 		moeOS-fstrim.timer
 
 	systemctl mask \
@@ -103,8 +101,10 @@ function main() {
 }
 
 function replace() {
-	if [[ $(diff $1 $2) ]]; then
-		cp $1 $2
+	if [[ ! -e $2 ]]; then
+		install $1 $2
+	elif [[ $(diff $1 $2) ]]; then
+		install $1 $2
 	fi
 }
 
