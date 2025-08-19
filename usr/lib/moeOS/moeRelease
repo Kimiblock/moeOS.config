@@ -58,6 +58,7 @@ function main() {
 		nvidia-hibernate \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
+		moeOS-startup-chime.service \
 		moeOS-fstrim.timer
 
 	systemctl mask \

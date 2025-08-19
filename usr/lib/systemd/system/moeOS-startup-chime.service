@@ -1,0 +1,15 @@
+[Unit]
+Description=Play Bootup Sound
+DefaultDependencies=no
+After=alsa-restore.service
+Before=shutdown.target
+Conflicts=shutdown.target
+ConditionPathExists=/usr/share/sounds/freedesktop/stereo/device-added.oga
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/canberra-boot device-added
+
+[Install]
+WantedBy=sound.target
+Also=canberra-system-shutdown.service canberra-system-shutdown-reboot.service
