@@ -28,17 +28,11 @@ function main() {
 		nvidia-suspend-then-hibernate \
 		nvidia-suspend \
 		nvidia-hibernate &
-		
-	systemctl disable \
-		--now \
-		scx \
-		nvidia-persistenced \
-		fstrim.timer &
 
 	systemctl enable \
 		systemd-resolved \
 		NetworkManager-wait-online \
-		moeOS-nvboost
+		moeOS-nvboost \
 		chronyd \
 		scx_loader \
 		ipp-usb \
@@ -52,20 +46,25 @@ function main() {
 		ModemManager \
 		systemd-oomd \
 		nmb \
+		moeOS-startup-chime.service \
+		moeOS-fstrim.timer
+
+	systemctl enable \
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
 		nvidia-hibernate \
 		nvidia-resume \
-		nvidia-suspend-then-hibernate \
-		moeOS-startup-chime.service \
-		moeOS-fstrim.timer
+		nvidia-suspend-then-hibernate
 
 	systemctl mask \
 		systemd-timesyncd \
 		pkgstats \
 		passim \
-		dhcpcd &
+		dhcpcd \
+		scx \
+		nvidia-persistenced \
+		fstrim.timer &
 	systemctl --global \
 		enable \
 		snotify moeOS-setup moeOS-autoColor
