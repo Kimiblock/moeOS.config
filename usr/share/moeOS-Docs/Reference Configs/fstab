@@ -3,7 +3,7 @@
 
 # <file system> <dir> <type> <options> <dump> <pass>
 
-UUID=b37818ba-5722-4890-8ec8-9acd4eccea89	/			btrfs	rw,relatime,nodiscard,compress=lzo,ssd,space_cache=v2,subvol=@	0 0
-UUID=b37818ba-5722-4890-8ec8-9acd4eccea89	/home			btrfs	rw,relatime,nodiscard,compress=lzo,ssd,space_cache=v2,subvol=@home	0 0
+/dev/mapper/moeOS	/			btrfs	rw,relatime,nodiscard,compress-force=zstd:-7,ssd,space_cache=v2,subvol=@	0 0
+/dev/mapper/moeOS	/home			btrfs	rw,relatime,nodiscard,compress-force=zstd:-7,ssd,space_cache=v2,subvol=@home	0 0
 
-UUID=941e5786-54d9-45f5-9369-c88834918284	none			swap	defaults,nofail	0 0
+/dev/mapper/moeOS-SWAP	none			swap	defaults,nofail	0 0
