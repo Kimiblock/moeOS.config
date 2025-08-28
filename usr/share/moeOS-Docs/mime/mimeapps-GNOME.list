@@ -145,6 +145,8 @@ x-scheme-handler/maps=org.gnome.Maps.desktop
 application/vnd.google-earth.kml+xml=org.gnome.Maps.desktop
 application/gpx+xml=org.gnome.Maps.desktop
 application/fits=org.gnome.Maps.desktop
+audio/x-matroska=org.gnome.Decibels.desktop;
+application/vnd.efi.iso=gnome-disk-image-mounter.desktop;
 
 [Added Associations]
 application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop;
@@ -155,3 +157,5 @@ application/java-archive=org.gnome.FileRoller.desktop;
 application/pdf=org.gnome.Papers.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+audio/x-matroska=org.gnome.Decibels.desktop
+application/vnd.efi.iso=gnome-disk-image-mounter.desktop
