@@ -157,7 +157,6 @@ Under Environment, add those variables (one for each line):
 ```
 __GLX_VENDOR_LIBRARY_NAME=nvidia
 VK_LOADER_DRIVERS_SELECT=nvidia_icd.json
-NVPRESENT_ENABLE_SMOOTH_MOTION=1
 ```
 
 for nouveau, use these instead:

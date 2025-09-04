@@ -7,7 +7,6 @@ if [ -d /proc/driver/nvidia/gpus ]; then
 		__VK_LAYER_NV_optimus=NVIDIA_only \
 		__GLX_VENDOR_LIBRARY_NAME=nvidia \
 		VK_LOADER_DRIVERS_SELECT=nvidia_icd.json \
-		NVPRESENT_ENABLE_SMOOTH_MOTION=1 \
 		__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json \
 		"$@"
 else
