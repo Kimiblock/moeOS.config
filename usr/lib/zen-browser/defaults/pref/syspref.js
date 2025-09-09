@@ -262,3 +262,5 @@ pref("browser.newtabpage.activity-stream.feeds.section.topstories.options", "{\"
 pref("browser.newtabpage.activity-stream.default.sites", "", locked);
 pref("media.hardware-video-decoding.force-enabled", true, locked);
 pref("widget.dmabuf.force-enabled", true, locked);
+pref("widget.gtk.global-menu.enabled", true, locked);
+pref("widget.gtk.global-menu.wayland.enabled", true, locked);
