@@ -1,6 +1,7 @@
 [Unit]
 Description=moeOS Auto Setup
 After=dbus.service gnome-session.target gnome-session-wayland.target gnome-session-x11.target gnome-session@gnome.target plasma-plasmashell.service
+ConditionUser=!@system
 
 [Service]
 Type=simple
