@@ -1,0 +1,82 @@
+#!/usr/bin/bash
+
+function bwSandbox() {
+	bwrap \
+		--unshare-cgroup-try \
+		--unshare-ipc \
+		--unshare-uts \
+		--unshare-pid \
+		--unshare-user \
+		--overlay-src "${buildLocation}" \
+		--tmp-overlay /build \
+		--dev-bind /dev /dev \
+		--dev-bind /sys /sys \
+		--bind /usr /usr \
+		--ro-bind /usr/bin/run0 /usr/bin/sudo \
+		--proc /proc \
+		--ro-bind /etc /etc \
+		--symlink /usr/lib /lib \
+		--symlink /usr/lib /lib64 \
+		--symlink /usr/bin /bin \
+		--symlink /usr/bin /sbin \
+		--ro-bind-try /opt /opt \
+		--bind /run /run \
+		--bind /var /var \
+		--bind "${HOME}" "${HOME}" \
+		--chdir "${buildLocation}" \
+		-- $@
+}
+
+function sourceXDG() {
+	if [[ ! "${XDG_CONFIG_HOME}" ]]; then
+		export XDG_CONFIG_HOME="${HOME}/.config"
+		echo info "Guessing XDG Config Home @ ${XDG_CONFIG_HOME}"
+	else
+		source "${XDG_CONFIG_HOME}/user-dirs.dirs"
+		echo info "XDG Config Home defined @ ${XDG_CONFIG_HOME}"
+	fi
+	if [[ ! "${XDG_DATA_HOME}" ]]; then
+		export XDG_DATA_HOME="${HOME}/.local/share"
+	fi
+	export XDG_DOCUMENTS_DIR="$(xdg-user-dir DOCUMENTS)"
+}
+
+function initRepo() {
+	echo "Initializing Repository..."
+	if [[ ! -d "${buildLocation}" ]]; then
+		git clone \
+			--depth=1 \
+			https://github.com/Kimiblock/moeOS-Package.git \
+			"${buildLocation}"
+		return $?
+	fi
+	cd "${buildLocation}"
+	git status 2>/dev/null
+	if [[ $? -eq 0 ]]; then
+		return 0
+	else
+		cd "${buildLocation}"/../
+		rm -rf "${buildLocation}".bak
+		mv "${buildLocation}" "${buildLocation}".bak
+		git clone \
+			--depth=1 \
+			https://github.com/Kimiblock/moeOS-Package.git \
+			"${buildLocation}"
+		return $?
+	fi
+}
+
+function buildPkg() {
+	#cd "${buildLocation}"
+	bwSandbox \
+		paru -U --nochroot --noconfirm
+}
+
+function main() {
+	sourceXDG
+	export buildLocation="${XDG_DATA_HOME}/moeOS_Updates"
+	initRepo
+	buildPkg
+}
+
+main
