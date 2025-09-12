@@ -21,7 +21,7 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 - (Optional) Your own sbctl keys which can be imported.
 - The `moeDiscreteOnly=1` environment variable can be used to override GPU detection:
 	- 1:	Force use of discrete GPU
-	- no:	Force use of hybrid graphics
+	- Side note: while switching from discrete mode to hybrid mode, run `sudo touch /dev/dru/rebderD100 && sudo modprobe xe` to trick the building script
 - Defaults to NVIDIA driver stack, nouveau can be used by setting `moeNouveau` environment.
 
 # Install / Upgrade from a new system
@@ -105,11 +105,10 @@ paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "
 Contains the following configurations and customizations:
 
 - moeOS Plymouth splash theme.
-- Optional HDR which can be enabled by `ENABLE_HDR_WSI=1`
 - Default `sbctl` Secure Boot configuation.
 - Printing that just works with IPP Everywhere and AirPrint printers. Wired and wireless printers are supported. Older printer drivers are included, if there is any open source driver for it.
 - Example configuraions which can't be generated. (Located in `/usr/share/moeOS-Docs/Reference Configs`)
-- Firefox configuration, no annoyance.
+- Firefox and Zen configuration, no annoyance.
 - OS branding replacement.
 - Pacman hooks to replace files automatically.
 - A libadwaita-like Kvantum theme for Qt applications.
@@ -132,6 +131,10 @@ Contains the following configurations and customizations:
   - Dark: Accent: `#ed65e2`; Background: `#da7de3`
 
 # Switchable Graphics
+
+## Portable Applications
+
+Applications using the [Portable Sandboxing framework](https://github.com/Kraftland/portable) already supports discrete GPU utilisation.
 
 ## Native Applications
 
