@@ -264,3 +264,4 @@ pref("media.hardware-video-decoding.force-enabled", true, locked);
 pref("widget.dmabuf.force-enabled", true, locked);
 pref("widget.gtk.global-menu.enabled", true, locked);
 pref("widget.gtk.global-menu.wayland.enabled", true, locked);
+pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
