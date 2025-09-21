@@ -13,6 +13,7 @@ function main() {
 	replace "/usr/share/moeOS-Docs/avahi-daemon.conf" "/etc/avahi/avahi-daemon.conf"
 	replace "/usr/share/moeOS-Docs/bluez/main.conf" "/etc/bluetooth/main.conf"
 	replace "/usr/share/moeOS-Docs/wireless-regdom" "/etc/conf.d/wireless-regdom"
+	replace "/usr/share/moeOS-Docs/dhcpcd.conf" "/etc/dhcpcd.conf"
 
 	if [[ $(cat /etc/nsswitch.conf | grep 'hosts:') =~ mdns ]]; then
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
