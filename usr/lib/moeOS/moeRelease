@@ -69,6 +69,8 @@ function main() {
 		dhcpcd \
 		scx \
 		nvidia-persistenced \
+		scx.service \
+		scx_loader.service \
 		fstrim.timer &
 	systemctl --global \
 		enable \
