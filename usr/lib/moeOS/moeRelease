@@ -18,6 +18,12 @@ function main() {
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 	fi
 
+	systemctl \
+		disable \
+		--now \
+		scx.service \
+		scx_loader.service
+
 	systemctl unmask \
 		systemd-resolved \
 		moeOS-cgtproxy \
@@ -34,7 +40,6 @@ function main() {
 		NetworkManager-wait-online \
 		moeOS-nvboost \
 		chronyd \
-		scx_loader \
 		ipp-usb \
 		avahi-daemon \
 		cups \
@@ -45,10 +50,11 @@ function main() {
 		NetworkManager \
 		ModemManager \
 		systemd-oomd \
-		moeOS-startup-chime.service \
-		moeOS-fstrim.timer
+		moeOS-scheduler.service \
+		moeOS-fstrim.timer --now
 
 	systemctl enable \
+		moeOS-startup-chime.service \
 		nvidia-powerd \
 		nvidia-suspend \
 		nvidia-resume \
