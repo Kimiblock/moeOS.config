@@ -1,0 +1,14 @@
+# /usr/lib/systemd/system/scx_loader.service
+[Unit]
+Description=moeOS scx_sched schedulers
+StartLimitIntervalSec=30
+StartLimitBurst=2
+Conflicts=scx.service scx_loader.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/scx_lavd --autopower
+KillSignal=SIGINT
+
+[Install]
+WantedBy=graphical.target
