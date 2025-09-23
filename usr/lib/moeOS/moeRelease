@@ -67,7 +67,6 @@ function main() {
 		pkgstats \
 		passim \
 		dhcpcd \
-		scx \
 		nvidia-persistenced \
 		scx.service \
 		scx_loader.service \
