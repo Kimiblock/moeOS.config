@@ -10,7 +10,8 @@ function plasma() {
 }
 
 function lightMode() {
-	kvantummanager --set moeOS
+	#kvantummanager --set moeOS &
+	#kvPid=$!
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
 	if [[ ${scheme} =~ prefer-dark ]]; then
 		install \
@@ -29,6 +30,8 @@ function lightMode() {
 		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
 	fi
+	#sleep 1s
+	#kill -9 $!
 }
 
 function loop() {
