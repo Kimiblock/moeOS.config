@@ -18,12 +18,6 @@ function main() {
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 	fi
 
-	systemctl \
-		disable \
-		--now \
-		scx.service \
-		scx_loader.service
-
 	systemctl unmask \
 		systemd-resolved \
 		moeOS-cgtproxy \
