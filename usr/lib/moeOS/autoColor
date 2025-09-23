@@ -11,6 +11,9 @@ function plasma() {
 
 function lightMode() {
 	#kvantummanager --set moeOS &
+	install \
+		/etc/xdg/Kvantum/kvantum.kvconfig \
+		"${XDG_CONFIG_HOME:-$HOME/.config}"/Kvantum/kvantum.kvconfig
 	#kvPid=$!
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
 	if [[ ${scheme} =~ prefer-dark ]]; then
