@@ -1,7 +1,7 @@
 [Unit]
 Description=Auto updated sing-box daemon, with Mihomo fallback backend
 After=network-online.target NetworkManager-wait-online.service
-Wants=moeOS-cgproxy.service moeOS-seconnect.service moeOS-clash-meta.service
+Wants=moeOS-cgtproxy.service moeOS-seconnect.service moeOS-clash-meta.service
 Before=moeOS-cgproxy.service
 StartLimitIntervalSec=600
 StartLimitBurst=60
@@ -63,5 +63,5 @@ SystemCallErrorNumber=EPERM
 
 [Install]
 WantedBy=multi-user.target
-RequiredBy=moeOS-cgproxy.service
+RequiredBy=moeOS-cgtproxy.service
 Alias=moeOS-proxy.service

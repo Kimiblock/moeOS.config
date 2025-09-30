@@ -14,7 +14,7 @@ route-table: 300
 tproxies:
   clash-meta:
     mark: 3000
-    port: 65529
+    port: 11100
 
 # Rules are matched in order.
 # `match` is an regex to match the cgroup path.
@@ -35,6 +35,8 @@ rules:
     direct: true
 
   - match: /system.slice/chronyd.service
+    direct: true
+  - match: /system.slice/moeOS-sing.service
     direct: true
   - match: /system.slice/system-cups.slice
     direct: true
