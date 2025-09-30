@@ -1,10 +1,10 @@
 {
-    "port": 65529,
+    "port": 11100,
     "program_noproxy": [],
     "program_proxy": [],
     "cgroup_noproxy": ["/moeOS.slice/moeOS-noproxy.slice", "/system.slice/chronyd.service", "/system.slice/system-cups.slice"],
     "cgroup_proxy": ["/"],
-    "enable_gateway": false,
+    "enable_gateway": true,
     "enable_dns": false,
     "enable_udp": true,
     "enable_tcp": true,
@@ -12,6 +12,6 @@
     "enable_ipv6": true,
     "table": 10007,
     "fwmark": "39283",
-    "enable_nftables": true
+    "enable_nftables": false
 }
 

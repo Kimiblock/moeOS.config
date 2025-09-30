@@ -1,0 +1,27 @@
+#!/bin/bash
+function download(){
+	info "Downloading subscribe file..."
+	execute curl -vL "${url}" -o "config.json"
+}
+
+function execute(){
+	"$@"
+	if [[ $? = 0 ]]; then
+		return 0
+	else
+		err=$?
+		info "Something went wrong, error code ${err}"
+		exit ${err}
+	fi
+}
+
+function info(){
+	echo "  ==> [Info]: $@"
+}
+
+function main(){
+	sleep 2s
+	download
+	sing-box run -c config.json
+}
+main "$@"

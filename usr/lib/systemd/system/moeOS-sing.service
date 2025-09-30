@@ -1,19 +1,18 @@
 [Unit]
-Description=Auto updated clash-meta daemon. For sing-box fallback.
+Description=Auto updated sing-box daemon, with Mihomo fallback backend
 After=network-online.target NetworkManager-wait-online.service
-Wants=moeOS-cgproxy.service
-After=moeOS-sing.service
+Wants=moeOS-cgproxy.service moeOS-seconnect.service moeOS-clash-meta.service
+Before=moeOS-cgproxy.service
 StartLimitIntervalSec=600
 StartLimitBurst=60
 
 [Service]
 Slice=moeOS-noproxy.slice
 
-CPUWeight=80
+CPUWeight=190
 
-ExecStartPre=bash /usr/lib/moeOS/moeOS-clash-meta-pre
-ExecStart=/usr/bin/clash-meta -d /var/tmp
-EnvironmentFile=/etc/moeOS-clash-meta/env.conf
+ExecStart=bash /usr/lib/moeOS/sing-pre
+EnvironmentFile=/etc/default/moeOS-sing.env
 
 TimeoutStartSec=120
 TimeoutStopSec=10
@@ -29,7 +28,7 @@ WorkingDirectory=/var/tmp
 CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_NET_RAW
 AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_NET_RAW
 
-#DevicePolicy=closed
+DevicePolicy=closed
 
 ProtectSystem=strict
 RemoveIPC=yes
@@ -47,7 +46,7 @@ LockPersonality=yes
 ProtectKernelTunables=yes
 ProtectControlGroups=yes
 RestrictRealtime=yes
-PrivateTmp=yes
+PrivateTmp=disconnected
 ProtectHome=yes
 ProtectProc=invisible
 ProcSubset=pid
@@ -61,3 +60,8 @@ SystemCallFilter=@system-service bpf
 
 UMask=077
 SystemCallErrorNumber=EPERM
+
+[Install]
+WantedBy=multi-user.target
+RequiredBy=moeOS-cgproxy.service
+Alias=moeOS-proxy.service
