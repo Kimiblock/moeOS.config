@@ -1,5 +1,5 @@
 {
-    "port": 11100,
+    "port": 65529,
     "program_noproxy": [],
     "program_proxy": [],
     "cgroup_noproxy": ["/moeOS.slice/moeOS-noproxy.slice", "/system.slice/chronyd.service", "/system.slice/system-cups.slice"],
