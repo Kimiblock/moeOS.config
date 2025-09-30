@@ -2,9 +2,8 @@
 Description=Manage nftables according to cgroupv2
 Documentation=https://github.com/black-desk/cgtproxy
 Conflicts=cgtproxy.service
-BindsTo=moeOS-sing.service
-#Requires=moeOS-clash-meta-auto.service
-After=moeOS-sing.service
+BindsTo=moeOS-proxy.service
+After=moeOS-proxy.service
 
 [Service]
 BindPaths=/usr/share/moeOS-Docs/cgtproxy:/etc/cgtproxy

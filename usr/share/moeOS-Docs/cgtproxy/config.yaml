@@ -5,16 +5,10 @@ version: 1
 cgroup-root: AUTO # path to cgroupfs v2 mount point or "AUTO"
 route-table: 300
 
-# This means any traffic send to 127.0.0.1 and ::1 will be directly send
-# without influenced by the following configuration.
-#bypass:
-#  - 127.0.0.0/8
-#  - ::1
-
 tproxies:
   clash-meta:
     mark: 3000
-    port: 11100
+    port: 65529
 
 # Rules are matched in order.
 # `match` is an regex to match the cgroup path.
