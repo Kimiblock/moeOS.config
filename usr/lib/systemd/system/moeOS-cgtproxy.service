@@ -4,11 +4,12 @@ Documentation=https://github.com/black-desk/cgtproxy
 Conflicts=cgtproxy.service
 BindsTo=moeOS-sing.service
 #Requires=moeOS-clash-meta-auto.service
-After=moeOS-clash-meta-auto.service
+After=moeOS-sing.service
 
 [Service]
 BindPaths=/usr/share/moeOS-Docs/cgtproxy:/etc/cgtproxy
 Type=simple
+ExecStartPre=sleep 5s
 ExecStart=cgtproxy
 CapabilityBoundingSet=CAP_NET_ADMIN
 LimitNPROC=1
