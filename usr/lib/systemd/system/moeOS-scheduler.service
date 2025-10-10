@@ -8,6 +8,7 @@ Conflicts=scx.service scx_loader.service
 Type=simple
 #ExecStart=/usr/bin/scx_lavd --autopower
 ExecStart=/usr/bin/scx_flash -m powersave -I 1000 -t 1000 -s 9000 -S 768
+CPUWeight=10000
 KillSignal=SIGINT
 
 [Install]
