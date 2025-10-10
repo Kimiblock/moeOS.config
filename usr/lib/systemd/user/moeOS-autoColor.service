@@ -8,9 +8,11 @@ ExecStartPre=sleep 5s
 ExecStart=/usr/lib/moeOS/autoColor
 Restart=always
 RestartSec=1h
-MemoryHigh=18M
+MemoryHigh=28M
 MemoryMax=40M
 OOMPolicy=kill
+CPUQuota=1%
+CPUWeight=idle
 
 CapabilityBoundingSet=
 AmbientCapabilities=
