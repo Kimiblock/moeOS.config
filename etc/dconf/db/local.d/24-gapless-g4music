@@ -1,3 +1,4 @@
 [com/github/neithern/g4music]
 rotate-cover=false
 show-peak=false
+audio-sink='openalsink'
