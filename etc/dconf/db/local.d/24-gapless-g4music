@@ -2,3 +2,5 @@
 rotate-cover=false
 show-peak=false
 audio-sink='openalsink'
+replay-gain=1
+sort-mode=3
