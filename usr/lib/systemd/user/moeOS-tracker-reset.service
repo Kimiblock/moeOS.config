@@ -1,0 +1,30 @@
+[Unit]
+Description=moeOS Tracker reset util
+ConditionUser=!@system
+Conflicts=localsearch-3.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rm -rf ${HOME}/.cache/tracker3
+CPUWeight=500
+CPUQuota=20%
+MemoryHigh=500M
+MemoryMax=800M
+OOMPolicy=kill
+PrivateTmp=disconnected
+ProtectControlGroups=strict
+CapabilityBoundingSet=
+ProtectKernelModules=yes
+ProtectClock=yes
+KeyringMode=private
+NoNewPrivileges=yes
+PrivateMounts=yes
+RestrictNamespaces=yes
+RestrictSUIDSGID=yes
+ProtectHostname=yes
+LockPersonality=yes
+RestrictRealtime=yes
+ProtectProc=invisible
+ProcSubset=pid
+PrivateUsers=yes
+UMask=077
