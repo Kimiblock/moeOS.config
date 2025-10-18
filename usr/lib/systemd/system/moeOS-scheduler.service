@@ -7,9 +7,8 @@ Conflicts=scx.service scx_loader.service
 [Service]
 Type=simple
 #ExecStart=/usr/bin/scx_lavd --autopower
-#ExecStart=/usr/bin/scx_cosmos --no-deferred-wakeup
-ExecStart=/usr/bin/scx_flash --no-builtin-idle --native-priority
-CPUWeight=10000
+ExecStart=/usr/bin/scx_cosmos --no-deferred-wakeup --cpu-busy-thresh 50
+CPUWeight=500
 KillSignal=SIGINT
 
 [Install]
