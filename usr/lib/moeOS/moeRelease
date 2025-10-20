@@ -32,6 +32,7 @@ function main() {
 
 	systemctl enable \
 		systemd-resolved \
+		rtkit-daemon \
 		NetworkManager-wait-online \
 		moeOS-nvboost \
 		chronyd \
