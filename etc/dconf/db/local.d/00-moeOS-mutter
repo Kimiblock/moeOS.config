@@ -1,6 +1,9 @@
 [org/gnome/mutter]
 experimental-features=['scale-monitor-framebuffer', 'autoclose-xwayland']
 
+[org/gnome/shell]
+remember-mount-password=true
+
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true
 titlebar-font='moeSans, Regular 12'

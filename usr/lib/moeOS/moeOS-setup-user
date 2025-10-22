@@ -10,11 +10,14 @@ function main() {
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	echo "[Info] Starting moeOS Autoconf"
+	ln -srf \
+		/usr/share/moeOS-Docs/shell-pri.conf \
+		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@wayland.service.d/override.conf"
 	setupFont
 	setupBreeze
 	mkdir -p \
 		"${XDG_CONFIG_HOME}/Phonon"
-	ln -sr \
+	ln -sfr \
 		/etc/mpv/mpv.conf \
 		"${XDG_CONFIG_HOME}/Phonon/mpv.conf"
 	checkExist
