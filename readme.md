@@ -187,6 +187,7 @@ Location Services may appear inaccurate. We are currently using BeaconDB, which 
 - When using HiDPI scaling, older applications and some browsers may appear blurry.
 - libadwaita applications are sluggish [GTK #6438](https://gitlab.gnome.org/GNOME/gtk/-/issues/6438).
 - When fractional scaling is enabled, screenshots of a window may appear slightly blurry.
+- With many intel GPUs, the brightness may not be controllable if HDR is off. Switching to xe solves this issue.
 
 ## Qt
 
