@@ -191,19 +191,14 @@ Location Services may appear inaccurate. We are currently using BeaconDB, which 
 
 ## Qt
 
-- Qt applications do not have any _kinetic_ when scrolling with a trackpad.
-
-## Firefox
-
-- Resizing window is slow.
+- Qt applications may not have any _kinetic_ when scrolling with a trackpad, or behave strange.
 
 ## Chromium
 
-- Input Method may not work at all.
 - Trackpad scrolling speed is too fast.
 - Hardware accelerated video decoding / encoding may not work.
 - Waking up discrete GPU.
-- Blurry due to XWayland usage.
+- Input method may not work.
 
 ## Flatpak
 
