@@ -30,8 +30,8 @@ FocusStealingPreventionLevel=3
 BorderSnapZone=5
 
 [org.kde.kdecoration2]
-BorderSize=Tiny
-BorderSizeAuto=false
+BorderSize=Normal
+BorderSizeAuto=true
 ButtonsOnLeft=X
 ButtonsOnRight=M
 
