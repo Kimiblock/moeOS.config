@@ -1,0 +1,16 @@
+# mkinitcpio preset file for the 'linux-cachyos' package
+
+#ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux-cachyos"
+
+PRESETS=('fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+#default_image="/boot/initramfs-linux-cachyos.img"
+#default_uki="/efi/EFI/BOOT/BOOTx64.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+
+#fallback_config="/etc/mkinitcpio.conf"
+#fallback_image="/boot/initramfs-linux-cachyos-fallback.img"
+fallback_uki="/efi/EFI/BOOT/BOOTx64.efi"
+fallback_options="-S autodetect"

@@ -14,6 +14,9 @@ function main() {
 	replace "/usr/share/moeOS-Docs/bluez/main.conf" "/etc/bluetooth/main.conf"
 	replace "/usr/share/moeOS-Docs/wireless-regdom" "/etc/conf.d/wireless-regdom"
 	replace "/usr/share/moeOS-Docs/libreoffice/sofficerc" "/etc/libreoffice/sofficerc"
+	replace \
+		"/usr/share/moeOS-Docs/mkinitcpio.d/linux-cachyos.preset" \
+		"/etc/mkinitcpio.d/linux-cachyos.preset"
 
 	if [[ $(cat /etc/nsswitch.conf | grep 'hosts:') =~ mdns ]]; then
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
@@ -103,11 +106,7 @@ function main() {
 }
 
 function replace() {
-	if [[ ! -e $2 ]]; then
-		install $1 $2
-	elif [[ $(diff $1 $2) ]]; then
-		install $1 $2
-	fi
+	install -vDm755 "$1" "$2"
 }
 
 set -m
