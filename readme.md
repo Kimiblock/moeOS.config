@@ -50,8 +50,6 @@ git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
 paru -Ui
 exit
-install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.conf /etc/mkinitcpio.conf
-install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux.preset
 install /usr/share/moeOS-Docs/Reference\ Configs/cmdline /etc/kernel/cmdline
 install /usr/share/moeOS-Docs/Reference\ Configs/fstab /etc/fstab
 systemctl enable gdm
