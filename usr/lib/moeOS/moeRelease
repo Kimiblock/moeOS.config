@@ -17,6 +17,9 @@ function main() {
 	replace \
 		"/usr/share/moeOS-Docs/mkinitcpio.d/linux-cachyos.preset" \
 		"/etc/mkinitcpio.d/linux-cachyos.preset"
+	replace \
+		"/usr/share/moeOS-Docs/mkinitcpio.conf" \
+		"/etc/mkinitcpio.conf"
 
 	if [[ $(cat /etc/nsswitch.conf | grep 'hosts:') =~ mdns ]]; then
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
