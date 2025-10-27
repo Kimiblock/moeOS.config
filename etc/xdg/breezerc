@@ -3,5 +3,5 @@ OutlineCloseButton=true
 ShadowSize=ShadowSmall
 
 [Style]
-MenuOpacity=55
+MenuOpacity=70
 TabBarDrawCenteredTabs=true
