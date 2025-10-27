@@ -26,7 +26,7 @@ EdgeBarrier=0
 
 [Windows]
 WindowSnapZone=0
-FocusStealingPreventionLevel=3
+FocusStealingPreventionLevel=1
 BorderSnapZone=5
 
 [org.kde.kdecoration2]
