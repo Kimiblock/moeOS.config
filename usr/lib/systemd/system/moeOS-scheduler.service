@@ -6,7 +6,7 @@ Conflicts=scx.service scx_loader.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/scx_cosmos -m powersave --no-deferred-wakeup --cpu-busy-thresh 80 --flat-idle-scan --mm-affinity
+ExecStart=/usr/bin/scx_cosmos -m powersave --no-deferred-wakeup --cpu-busy-thresh 80 --mm-affinity
 #ExecStart=/usr/bin/scx_flash --native-priority --no-builtin-idle
 CPUWeight=500
 KillSignal=SIGINT
