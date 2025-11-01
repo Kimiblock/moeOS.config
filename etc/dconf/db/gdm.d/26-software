@@ -1,0 +1,5 @@
+[org/gnome/software]
+download-updates=false
+show-only-free-apps=true
+show-ratings=true
+show-upgrade-prerelease=true
