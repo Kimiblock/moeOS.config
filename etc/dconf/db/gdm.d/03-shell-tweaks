@@ -4,3 +4,6 @@ disable-extension-version-validation=true
 
 [org/gnome/shell/weather]
 automatic-location=true
+
+[org/gnome/desktop/datetime]
+automatic-timezone=true
