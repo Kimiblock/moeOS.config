@@ -15,8 +15,8 @@ function main() {
 	replace "/usr/share/moeOS-Docs/wireless-regdom" "/etc/conf.d/wireless-regdom"
 	replace "/usr/share/moeOS-Docs/libreoffice/sofficerc" "/etc/libreoffice/sofficerc"
 	replace \
-		"/usr/share/moeOS-Docs/mkinitcpio.d/linux-cachyos.preset" \
-		"/etc/mkinitcpio.d/linux-cachyos.preset"
+		"/usr/share/moeOS-Docs/mkinitcpio.d/linux.preset" \
+		"/etc/mkinitcpio.d/linux.preset"
 	replace \
 		"/usr/share/moeOS-Docs/mkinitcpio.conf" \
 		"/etc/mkinitcpio.conf"
