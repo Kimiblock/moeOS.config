@@ -267,3 +267,4 @@ pref("widget.gtk.global-menu.wayland.enabled", true, locked);
 pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
 pref("zen.theme.content-element-separation", 0);
 pref("gfx.webrender.compositor", true);
+pref("widget.wayland.fractional-scale.enabled", true);
