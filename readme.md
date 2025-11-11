@@ -14,7 +14,7 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 # Pre-reqirements
 
 - No X11 session supported. We enforce Wayland.
-- CachyOS kernel in archlinuxcn repos.
+- Vanilla kernel.
 - Defaults to GNOME, KDE flavor is actively improving.
 - EFI System Partition auto-mounted by systemd.
 - (Optional) Your own sbctl keys which can be imported.
