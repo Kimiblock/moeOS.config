@@ -268,3 +268,6 @@ pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
 pref("zen.theme.content-element-separation", 0);
 pref("gfx.webrender.compositor", true);
 pref("widget.wayland.fractional-scale.enabled", true);
+
+// Use system title bar! Otherwise pixel caching doesn't work
+pref("browser.tabs.inTitlebar", 0);
