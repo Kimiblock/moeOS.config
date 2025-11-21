@@ -1,5 +1,6 @@
 [org/freedesktop/tracker/miner/files]
 index-on-battery=false
+index-on-battery-first-time=false
 
 [org/freedesktop/tracker/extract]
 max-bytes=10240
