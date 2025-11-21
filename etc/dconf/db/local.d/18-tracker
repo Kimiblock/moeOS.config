@@ -1,3 +1,7 @@
 [org/freedesktop/tracker/miner/files]
 index-on-battery=false
 
+[org/freedesktop/tracker/extract]
+max-bytes=10240
+wait-for-miner-fs=true
+text-allowlist
