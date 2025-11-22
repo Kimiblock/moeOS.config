@@ -10,6 +10,10 @@ tproxies:
     mark: 3000
     port: 11100
 
+bypass:
+  - 127.0.0.0/8
+  - ::1
+
 # Rules are matched in order.
 # `match` is an regex to match the cgroup path.
 # `direct` means the traffic will not be redirect to any TPROXY server;
