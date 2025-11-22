@@ -1,7 +1,7 @@
 [Unit]
 Description=Auto updated clash-meta daemon. For sing-box fallback.
 After=network-online.target NetworkManager-wait-online.service
-Wants=moeOS-cgproxy.service
+#Wants=moeOS-cgproxy.service
 After=moeOS-sing.service
 StartLimitIntervalSec=600
 StartLimitBurst=60
