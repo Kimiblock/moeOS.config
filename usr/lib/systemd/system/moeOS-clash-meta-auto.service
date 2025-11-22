@@ -64,5 +64,5 @@ SystemCallErrorNumber=EPERM
 
 [Install]
 WantedBy=multi-user.target
-RequiredBy=moeOS-cgtproxy.service
+WantedBy=moeOS-cgtproxy.service
 Alias=moeOS-proxy.service
