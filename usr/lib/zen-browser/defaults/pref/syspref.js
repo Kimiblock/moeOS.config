@@ -264,10 +264,9 @@ pref("media.hardware-video-decoding.force-enabled", true, locked);
 //pref("widget.dmabuf.force-enabled", true, locked);
 pref("widget.gtk.global-menu.enabled", true, locked);
 pref("widget.gtk.global-menu.wayland.enabled", true, locked);
-pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
-pref("zen.theme.content-element-separation", 0);
-pref("gfx.webrender.compositor", true);
-pref("widget.wayland.fractional-scale.enabled", true);
 
-// Use system title bar! Otherwise pixel caching doesn't work
-pref("browser.tabs.inTitlebar", 0);
+// This BREAKS pixel caching for scrolling
+pref("widget.gtk.rounded-bottom-corners.enabled", false, locked);
+
+pref("zen.theme.content-element-separation", 0);
+pref("widget.wayland.fractional-scale.enabled", true);
