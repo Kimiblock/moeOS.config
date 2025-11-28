@@ -5,4 +5,4 @@ index-on-battery-first-time=false
 [org/freedesktop/tracker/extract]
 max-bytes=10240
 wait-for-miner-fs=true
-text-allowlist
+#text-allowlist
