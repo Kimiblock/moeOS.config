@@ -6,9 +6,9 @@ Conflicts=scx.service scx_loader.service
 
 [Service]
 Type=simple
-#ExecStart=/usr/bin/scx_cosmos -m powersave --no-deferred-wakeup --cpu-busy-thresh 70 --avoid-smt -f
-#ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --freq-control --cpu-priority true --task-slice true --autoslice
-ExecStart=/usr/bin/scx_flash --native-priority --no-builtin-idle
+ExecStart=/usr/bin/scx_cosmos -m powersave --no-deferred-wakeup --cpu-busy-thresh 70 --avoid-smt -f
+#ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --keep-running --freq-control --autoslice --virt-llc-enabled true
+#ExecStart=/usr/bin/scx_flash --native-priority --no-builtin-idle
 CPUWeight=500
 KillSignal=SIGINT
 
