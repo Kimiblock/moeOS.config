@@ -266,7 +266,8 @@ pref("widget.gtk.global-menu.enabled", true, locked);
 pref("widget.gtk.global-menu.wayland.enabled", true, locked);
 
 // This BREAKS pixel caching for scrolling
-pref("widget.gtk.rounded-bottom-corners.enabled", false, locked);
+//pref("widget.gtk.rounded-bottom-corners.enabled", false, locked);
 
 pref("zen.theme.content-element-separation", 0);
 pref("widget.wayland.fractional-scale.enabled", true);
+pref("browser.download.useDownloadDir", false, locked);
