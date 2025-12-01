@@ -200,4 +200,3 @@ Location Services may appear inaccurate. We are currently using BeaconDB, which 
 ## Flatpak
 
 - Applications may not use system font [Flatpak #1563](https://github.com/flatpak/flatpak/issues/1563).
-
