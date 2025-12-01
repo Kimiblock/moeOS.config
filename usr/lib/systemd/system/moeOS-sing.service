@@ -12,6 +12,8 @@ Slice=moeOS-noproxy.slice
 CPUWeight=190
 
 ExecStart=bash /usr/lib/moeOS/sing-pre
+ExecStartPre=!resolvectl flush-caches
+ExecStopPost=!resolvectl flush-caches
 EnvironmentFile=/etc/default/moeOS-sing.env
 
 TimeoutStartSec=120
