@@ -6,8 +6,8 @@ Conflicts=scx.service scx_loader.service
 
 [Service]
 Type=simple
-#ExecStart=/usr/bin/scx_cosmos -m powersave --no-deferred-wakeup -f
-ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --freq-control --cpu-priority true
+ExecStart=/usr/bin/scx_cosmos -m powersave --no-deferred-wakeup -f
+#ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --freq-control --cpu-priority true
 CPUWeight=500
 KillSignal=SIGINT
 
