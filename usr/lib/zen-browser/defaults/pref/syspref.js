@@ -267,3 +267,5 @@ pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
 pref("zen.theme.content-element-separation", 0);
 pref("widget.wayland.fractional-scale.enabled", true);
 pref("browser.download.useDownloadDir", false, locked);
+
+pref("general.smoothScroll.msdPhysics.enabled", true);
