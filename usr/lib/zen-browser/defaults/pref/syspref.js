@@ -90,7 +90,7 @@ pref("breakpad.reportURL", "", locked);
 
 // Make scrolling less sensitive
 pref("apz.gtk.pangesture.page_delta_mode_multiplier", "0.1");
-pref("apz.gtk.pangesture.pixel_delta_mode_multiplier", "17");
+pref("apz.gtk.pangesture.pixel_delta_mode_multiplier", "22");
 pref("apz.gtk.pangesture.delta_mode", 2);
 
 // Lock font settings
@@ -132,7 +132,6 @@ pref("font.minimum-size.zh-TW", 16, locked);
 pref("font.name-list.emoji", "emoji", locked);
 pref("gfx.font_rendering.opentype_svg.enabled", false, locked);
 
-
 // Strip URL
 pref("privacy.query_stripping.enabled", true);
 pref("privacy.query_stripping.enabled.pbmode", true);
@@ -142,9 +141,6 @@ pref("media.hevc.enabled", true);
 pref("browser.theme.dark-private-windows", false);
 pref("svg.context-properties.content.enabled", true);
 pref("xpinstall.whitelist.required", true);
-
-
-
 
 // enable APS
 pref("privacy.partition.always_partition_third_party_non_cookie_storage", true, locked);
