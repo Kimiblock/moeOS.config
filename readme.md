@@ -1,6 +1,8 @@
 # moeOS.Config
 
-A simple way to provide a _preset_ for Arch Linux. Offers better switchable graphics and printing experience with a focus on security. This is a personal project by Kimiblock, with her own pick of options.
+moeOS is an elegant Operating System based on Arch Linux. It fits on tablets, laptops and desktops.
+
+Things just work, with a touch of security. No need to fiddle with printers and hybrid graphics.
 
 ---
 
