@@ -20,7 +20,7 @@ A simple way to provide a _preset_ for Arch Linux. Offers better switchable grap
 - (Optional) Your own sbctl keys which can be imported.
 - The `moeDiscreteOnly=1` environment variable can be used to override GPU detection:
 	- 1:	Force use of discrete GPU
-	- Side note: while switching from discrete mode to hybrid mode, run `sudo touch /dev/dru/rebderD100 && sudo modprobe xe` to trick the building script
+	- Side note: while switching from discrete mode to hybrid mode, run `sudo touch /dev/dri/renderD100 && sudo modprobe xe` to trick the building script
 - Defaults to NVIDIA driver stack, nouveau can be used by setting `moeNouveau` environment.
 
 # Install / Upgrade from a new system
