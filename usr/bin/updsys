@@ -70,6 +70,7 @@ function initRepo() {
 function buildPkg() {
 	cd "${buildLocation}"
 	git reset --hard
+	git clean -fdx
 	git pull --all
 	bwSandbox \
 		paru -Ui --nochroot --noconfirm
