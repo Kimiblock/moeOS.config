@@ -3,8 +3,8 @@ Description=Auto updated sing-box daemon, with Mihomo fallback backend
 After=network-online.target NetworkManager-wait-online.service
 Wants=moeOS-cgtproxy.service moeOS-seconnect.service moeOS-clash-meta.service
 Before=moeOS-cgtproxy.service
-StartLimitIntervalSec=600
-StartLimitBurst=60
+StartLimitIntervalSec=1200
+StartLimitBurst=110
 
 [Service]
 Slice=moeOS-noproxy.slice
@@ -21,7 +21,7 @@ TimeoutStopSec=10
 Restart=on-failure
 OOMPolicy=kill
 
-RestartSec=5s
+RestartSec=10s
 OOMScoreAdjust=50
 
 DynamicUser=yes
