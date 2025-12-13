@@ -15,9 +15,8 @@ Things just work, with a touch of security. No need to fiddle with printers and 
 
 # Pre-reqirements
 
-- No X11 session supported. We enforce Wayland.
+- A swap partition is **REQUIRED**
 - Vanilla kernel.
-- Defaults to GNOME, KDE flavor is actively improving.
 - EFI System Partition auto-mounted by systemd.
 - (Optional) Your own sbctl keys which can be imported.
 - The `moeDiscreteOnly=1` environment variable can be used to override GPU detection:
@@ -104,6 +103,7 @@ paru -S "moeOS-git" "lsb-release-moe" "nvidia-prime-moe" "moe-multimedia-meta" "
 Contains the following configurations and customizations:
 
 - moeOS Plymouth splash theme.
+- Defaults to GNOME, KDE flavor is actively improving.
 - Default `sbctl` Secure Boot configuation.
 - Printing that just works with IPP Everywhere and AirPrint printers. Wired and wireless printers are supported. Older printer drivers are included, if there is any open source driver for it.
 - Example configuraions which can't be generated. (Located in `/usr/share/moeOS-Docs/Reference Configs`)
