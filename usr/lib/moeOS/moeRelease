@@ -33,7 +33,6 @@ function main() {
 		nvidia-suspend \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
-		nvidia-suspend \
 		nvidia-hibernate &
 
 	systemctl enable \
