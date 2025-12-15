@@ -6,6 +6,7 @@ BindsTo=moeOS-proxy.service
 After=moeOS-proxy.service
 
 [Service]
+Slice=moeOS-noproxy.slice
 BindPaths=/usr/share/moeOS-Docs/cgtproxy:/etc/cgtproxy
 Type=simple
 ExecStartPre=sleep 5s
