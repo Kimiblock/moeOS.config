@@ -6,7 +6,8 @@ Conflicts=scx.service scx_loader.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
+ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq --preferred-idle-scan --avoid-smt
+#ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --freq-control --cpu-priority true --dhq-enabled true --interactive-sticky
 CPUWeight=180
 KillSignal=SIGINT
