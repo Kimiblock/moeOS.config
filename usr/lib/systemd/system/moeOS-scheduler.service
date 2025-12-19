@@ -9,7 +9,8 @@ Restart=always
 Type=simple
 #ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq --avoid-smt
 #ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
-ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --autoslice --cpu-priority true --latency-priority --wakeup-preemption --enable-eas true --deadline --disable-kthreads-local --atq-enabled true --queued-wakeup --task-slice true --single-llc-fast-path
+ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --cpu-priority true --latency-priority --interactive-sticky --wakeup-preemption --enable-eas true --deadline --disable-kthreads-local --atq-enabled true --queued-wakeup --task-slice true --single-llc-fast-path
+
 CPUWeight=150
 KillSignal=SIGINT
 Nice=-5
