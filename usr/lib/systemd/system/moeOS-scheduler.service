@@ -1,10 +1,11 @@
 [Unit]
 Description=moeOS scx_sched schedulers
 StartLimitIntervalSec=30
-StartLimitBurst=2
+StartLimitBurst=5
 Conflicts=scx.service scx_loader.service
 
 [Service]
+Restart=always
 Type=simple
 ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq --avoid-smt
 #ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
