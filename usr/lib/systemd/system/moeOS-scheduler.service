@@ -9,9 +9,10 @@ Restart=always
 Type=simple
 #ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq --avoid-smt
 #ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
-ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --dhq-enabled true --autoslice --deadline --cpu-priority true --latency-priority --wakeup-preemption --interactive-sticky --keep-running --disable-kthreads-local --atq-enabled true --virt-llc-enabled true --enable-eas true
-CPUWeight=180
+ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --interactive-ratio 15 --dhq-enabled true --autoslice --cpu-priority true --latency-priority --wakeup-preemption --enable-eas true --deadline
+CPUWeight=150
 KillSignal=SIGINT
+Nice=-5
 
 [Install]
 WantedBy=multi-user.target
