@@ -7,9 +7,9 @@ Conflicts=scx.service scx_loader.service
 [Service]
 Restart=always
 Type=simple
-#ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq --avoid-smt
-ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
-#ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --cpu-priority true --latency-priority --interactive-sticky --wakeup-preemption --enable-eas true --deadline --atq-enabled true --queued-wakeup --task-slice true --single-llc-fast-path
+#ExecStart=/usr/bin/scx_cosmos --primary-domain powersave --no-deferred-wakeup --disable-cpufreq
+ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --cpu-priority true --latency-priority --interactive-sticky --enable-eas true --task-slice true --single-llc-fast-path
+#ExecStart=/usr/bin/scx_lavd --autopower --no-freq-scaling
 
 CPUWeight=150
 KillSignal=SIGINT
