@@ -3,6 +3,7 @@ Description=Discard unused filesystem blocks everyday
 Documentation=man:fstrim
 ConditionVirtualization=!container
 ConditionPathExists=!/etc/initrd-release
+ConditionACPower=true
 
 [Timer]
 OnCalendar=*-*-* 01:00:00
