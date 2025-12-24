@@ -10,8 +10,6 @@ Type=simple
 #ExecStart=/usr/bin/scx_cosmos --avoid-smt --no-deferred-wakeup --primary-domain powersave --disable-cpufreq --flat-idle-scan --perf-sticky
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --autoslice --cpu-priority true --latency-priority --interactive-sticky --enable-eas true --task-slice true --disable-kthreads-local
 ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --preempt-shift 2 --autopower
-
-CPUWeight=150
 KillSignal=SIGINT
 Nice=-5
 
