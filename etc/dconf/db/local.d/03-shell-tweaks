@@ -1,6 +1,6 @@
 [org/gnome/shell]
 enabled-extensions=[]
-disable-extension-version-validation=true
+disable-user-extensions=true
 
 [org/gnome/shell/weather]
 automatic-location=true
