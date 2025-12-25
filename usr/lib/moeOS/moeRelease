@@ -51,7 +51,6 @@ function main() {
 		NetworkManager \
 		ModemManager \
 		systemd-oomd \
-		moeOS-scheduler.service \
 		moeOS-fstrim.timer --now
 
 	systemctl enable \
@@ -71,6 +70,7 @@ function main() {
 		nvidia-persistenced \
 		scx.service \
 		scx_loader.service \
+		moeOS-scheduler.service \
 		fstrim.timer &
 	systemctl --global \
 		enable \
