@@ -1,6 +1,6 @@
 [org/gnome/shell]
-enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io']
-disable-extension-version-validation=true
+enabled-extensions=[]
+disable-user-extensions=true
 
 [org/gnome/shell/weather]
 automatic-location=true
