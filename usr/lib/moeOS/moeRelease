@@ -33,6 +33,7 @@ function main() {
 		nvidia-suspend \
 		nvidia-resume \
 		nvidia-suspend-then-hibernate \
+		moeOS-scheduler.service \
 		nvidia-hibernate &
 
 	systemctl enable \
@@ -51,6 +52,7 @@ function main() {
 		NetworkManager \
 		ModemManager \
 		systemd-oomd \
+		moeOS-scheduler.service \
 		moeOS-fstrim.timer --now
 
 	systemctl enable \
@@ -70,7 +72,6 @@ function main() {
 		nvidia-persistenced \
 		scx.service \
 		scx_loader.service \
-		moeOS-scheduler.service \
 		fstrim.timer &
 	systemctl --global \
 		enable \
