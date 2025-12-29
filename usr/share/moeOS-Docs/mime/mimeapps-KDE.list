@@ -1,9 +1,9 @@
 [Default Applications]
 text/javascript=org.kde.kate.desktop;
-x-scheme-handler/http=org.mozilla.firefox.desktop
-text/html=org.mozilla.firefox.desktop
-application/xhtml+xml=org.mozilla.firefox.desktop
-x-scheme-handler/https=org.mozilla.firefox.desktop
+x-scheme-handler/http=org.mozilla.zen.desktop
+text/html=org.mozilla.zen.desktop
+application/xhtml+xml=org.mozilla.zen.desktop
+x-scheme-handler/https=org.mozilla.zen.desktop
 x-scheme-handler/mailto=org.kde.kmail2.desktop
 audio/x-vorbis+ogg=mpv.desktop
 audio/wav=mpv.desktop
