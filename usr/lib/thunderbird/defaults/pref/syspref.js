@@ -1,1 +1,1 @@
-../../../zen-browser/defaults/pref/syspref.js
+../../../firefox/defaults/pref/syspref.js

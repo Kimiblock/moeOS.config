@@ -90,7 +90,7 @@ pref("breakpad.reportURL", "", locked);
 
 // Make scrolling less sensitive
 pref("apz.gtk.pangesture.page_delta_mode_multiplier", "0.1");
-pref("apz.gtk.pangesture.pixel_delta_mode_multiplier", "22");
+pref("apz.gtk.pangesture.pixel_delta_mode_multiplier", "10");
 pref("apz.gtk.pangesture.delta_mode", 2);
 
 // Lock font settings
