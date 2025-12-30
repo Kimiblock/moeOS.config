@@ -7,7 +7,7 @@ Conflicts=scx.service scx_loader.service
 [Service]
 Restart=always
 Type=simple
-ExecStart=/usr/bin/scx_cosmos --no-deferred-wakeup --primary-domain powersave --preferred-idle-scan
+ExecStart=/usr/bin/scx_cosmos --no-deferred-wakeup --primary-domain powersave --preferred-idle-scan --mm-affinity --cpu-busy-thresh 40
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --autoslice --cpu-priority true --latency-priority --interactive-sticky --enable-eas true --task-slice true --disable-kthreads-local
 #ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --preempt-shift 2 --autopower
 KillSignal=SIGINT
