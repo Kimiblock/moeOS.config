@@ -1,5 +1,4 @@
 [org/gnome/shell]
-enabled-extensions=[]
 disable-user-extensions=true
 
 [org/gnome/shell/weather]
