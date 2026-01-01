@@ -269,3 +269,8 @@ pref("widget.wayland.fractional-scale.enabled", true);
 pref("browser.download.useDownloadDir", false, locked);
 
 pref("general.smoothScroll.msdPhysics.enabled", true);
+
+// NVIDIA patch
+pref("gfx.blacklist.dmabuf", "", locked);
+pref("widget.dmabuf.force-enabled", true, locked);
+pref("gfx.blacklist.dmabuf.failureid", "", locked);
