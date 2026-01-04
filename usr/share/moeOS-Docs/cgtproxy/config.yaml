@@ -36,8 +36,8 @@ rules:
     direct: true
   - match: /system.slice/moeOS-sing.service
     direct: true
-  - match: /system.slice/system-cups.slice
-    direct: true
+#  - match: /system.slice/system-cups.slice
+#    direct: true
 
   # For any cgroup else, TPROXY to clash-meta.
   - match: .*
