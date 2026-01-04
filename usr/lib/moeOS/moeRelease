@@ -27,6 +27,7 @@ function main() {
 
 	systemctl unmask \
 		systemd-resolved \
+		moeOS-scheduler.service \
 		moeOS-cgtproxy \
 		moeOS-cgproxy \
 		nvidia-powerd \
@@ -50,6 +51,7 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		ModemManager \
+		moeOS-scheduler.service \
 		systemd-oomd \
 		moeOS-fstrim.timer --now
 
@@ -70,7 +72,6 @@ function main() {
 		nvidia-persistenced \
 		scx.service \
 		scx_loader.service \
-		moeOS-scheduler.service \
 		fstrim.timer &
 	systemctl --global \
 		enable \
