@@ -16,7 +16,7 @@ Things just work, with a touch of security. No need to fiddle with printers and 
 # Pre-reqirements
 
 - A swap partition is **REQUIRED**
-- Vanilla kernel.
+- Vanilla Zen kernel.
 - EFI System Partition auto-mounted by systemd.
 - (Optional) Your own sbctl keys which can be imported.
 - The `moeDiscreteOnly=1` environment variable can be used to override GPU detection:
@@ -52,6 +52,7 @@ paru -Ui
 exit
 install /usr/share/moeOS-Docs/Reference\ Configs/cmdline /etc/kernel/cmdline
 install /usr/share/moeOS-Docs/Reference\ Configs/fstab /etc/fstab
+install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.d/linux-zen.preset /etc/mkinitcpio.d/linux-zen.preset
 systemctl enable gdm
 cd /
 rm moeOS-Package
