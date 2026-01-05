@@ -42,7 +42,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 3. Install package `fish` `nano` `git` `paru` `devtools` `linux-headers`
 4. Create your user: `useradd -m -G wheel <User>` `passwd <User>`
 5. Uncomment or add `%wheel ALL=(ALL:ALL) ALL` in /etc/sudoers
-6. Install this project: (Note that you should choose xdg-desktop-portal-gnome)
+6. Install this project: (Note that you should choose xdg-desktop-portal-gnome, and nvidia-open-dkms when asked)
 ```
 sudo -u <User>
 paru -S xone-dongle-firmware
