@@ -1,8 +1,6 @@
 # mkinitcpio preset file for the 'linux-lily' package
 
-#ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/vmlinuz-linux-lily"
-ALL_microcode=(/boot/*-ucode.img)
 
 PRESETS=('default')
 

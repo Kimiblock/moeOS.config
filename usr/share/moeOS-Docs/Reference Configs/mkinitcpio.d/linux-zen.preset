@@ -1,8 +1,6 @@
 # mkinitcpio preset file for the 'linux-zen' package
 
-ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/vmlinuz-linux-zen"
-ALL_microcode=(/boot/*-ucode.img)
 
 PRESETS=('default')
 
