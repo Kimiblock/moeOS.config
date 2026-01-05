@@ -1,6 +1,5 @@
 # mkinitcpio preset file for the 'linux-cachyos' package
 
-#ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/vmlinuz-linux-cachyos"
 
 PRESETS=('fallback')
