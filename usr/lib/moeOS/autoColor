@@ -10,11 +10,9 @@ function plasma() {
 }
 
 function lightMode() {
-	#kvantummanager --set moeOS &
 	install \
 		/etc/xdg/Kvantum/kvantum.kvconfig \
 		"${XDG_CONFIG_HOME:-$HOME/.config}"/Kvantum/kvantum.kvconfig
-	#kvPid=$!
 	scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
 	if [[ ${scheme} =~ prefer-dark ]]; then
 		install \
@@ -23,14 +21,14 @@ function lightMode() {
 		sed -i \
 			's|style=kvantum|style=kvantum-dark|g' \
 			"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct/qt6ct.conf
-		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+		gsettings set org.gnome.desktop.interface gtk-theme Adw-dark
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-dark
 	elif [[ ${scheme} =~ prefer-light ]]; then
 		install \
 			/etc/xdg/qt6ct/qt6ct.conf \
 			"${XDG_CONFIG_HOME:-$HOME/.config}"/qt6ct/qt6ct.conf
 		echo "[Info] Tweaking GSettings"
-		gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
+		gsettings set org.gnome.desktop.interface gtk-theme Adw
 		gsettings set org.gnome.desktop.interface icon-theme Tela-circle-pink-light
 	fi
 	#sleep 1s

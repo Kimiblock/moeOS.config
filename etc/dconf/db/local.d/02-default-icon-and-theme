@@ -1,7 +1,7 @@
 [org/gnome/desktop/interface]
 icon-theme='Tela-circle-pink-light'
 color-scheme='prefer-light'
-gtk-theme='adw-gtk3'
+gtk-theme='Adw'
 font-name='Sans 12'
 document-font-name='Sans 12'
 font-hinting='slight'
