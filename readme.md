@@ -17,6 +17,7 @@ Things just work, with a touch of security. No need to fiddle with printers and 
 
 - A swap partition is **REQUIRED**
 - Vanilla Zen kernel.
+- Multi-core CPU.
 - EFI System Partition auto-mounted by systemd.
 - (Optional) Your own sbctl keys which can be imported.
 - The `moeDiscreteOnly=1` environment variable can be used to override GPU detection:
