@@ -264,7 +264,7 @@ pref("widget.gtk.global-menu.wayland.enabled", true, locked);
 // This BREAKS pixel caching for scrolling || apparently not so much performance lost
 pref("widget.gtk.rounded-bottom-corners.enabled", true, locked);
 
-pref("zen.theme.content-element-separation", 0);
+pref("zen.theme.content-element-separation", 0, locked);
 pref("widget.wayland.fractional-scale.enabled", true);
 pref("browser.download.useDownloadDir", false, locked);
 
