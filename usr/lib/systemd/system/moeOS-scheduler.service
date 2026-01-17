@@ -11,7 +11,7 @@ Type=simple
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --autoslice --cpu-priority true --latency-priority --interactive-sticky --enable-eas true --task-slice true --disable-kthreads-local
 ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --preempt-shift 2 --autopower --enable-cpu-bw
 KillSignal=SIGINT
-Nice=-19
+Nice=-16
 
 [Install]
 WantedBy=multi-user.target
