@@ -51,7 +51,7 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		ModemManager \
-		moeOS-scheduler@balanced.service \
+		moeOS-scheduler@autopower.service \
 		systemd-oomd \
 		moeOS-fstrim.timer --now
 
