@@ -25,6 +25,10 @@ function main() {
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 	fi
 
+	systemctl disable \
+		moeOS-scheduler@autopilot \
+		moeOS-scheduler
+
 	systemctl unmask \
 		systemd-resolved \
 		moeOS-scheduler.service \
@@ -55,7 +59,6 @@ function main() {
 		moeOS-fstrim.timer --now
 
 	systemctl enable \
-		moeOS-scheduler@autopilot.service \
 		moeOS-startup-chime.service \
 		nvidia-powerd \
 		nvidia-suspend \
