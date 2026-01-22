@@ -51,11 +51,11 @@ function main() {
 		bluetooth \
 		NetworkManager \
 		ModemManager \
-		moeOS-scheduler@autopower.service \
 		systemd-oomd \
 		moeOS-fstrim.timer --now
 
 	systemctl enable \
+		moeOS-scheduler@autopilot.service \
 		moeOS-startup-chime.service \
 		nvidia-powerd \
 		nvidia-suspend \
