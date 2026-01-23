@@ -1,0 +1,60 @@
+#!/bin/bash
+
+COMMAND="${1:?}"
+KERNEL_VERSION="${2:?}"
+# shellcheck disable=SC2034
+ENTRY_DIR_ABS="$3"
+KERNEL_IMAGE="$4"
+
+ENTRY_TOKEN="$KERNEL_INSTALL_ENTRY_TOKEN"
+BOOT_ROOT="$KERNEL_INSTALL_BOOT_ROOT"
+
+UKI_DIR="$BOOT_ROOT/EFI/BOOT"
+
+case "$COMMAND" in
+	add)
+		;;
+	*)
+		exit 0
+	;;
+esac
+
+[ "$KERNEL_INSTALL_LAYOUT" = "uki" ] || exit 0
+
+if ! [ -d "$UKI_DIR" ]; then
+	[ "$KERNEL_INSTALL_VERBOSE" -gt 0 ] && echo "creating $UKI_DIR"
+	mkdir -p "$UKI_DIR"
+fi
+
+UKI_FILE="$UKI_DIR/BOOTx64.efi"
+
+# If there is a UKI named uki.efi on the staging area use that, if not use what
+# was passed in as $KERNEL_IMAGE but insist it has a .efi extension
+if [ -f "$KERNEL_INSTALL_STAGING_AREA/uki.efi" ]; then
+    [ "$KERNEL_INSTALL_VERBOSE" -gt 0 ] && echo "Installing $KERNEL_INSTALL_STAGING_AREA/uki.efi as $UKI_FILE"
+    install -m 0644 "$KERNEL_INSTALL_STAGING_AREA/uki.efi" "$UKI_FILE" || {
+        echo "Error: could not copy '$KERNEL_INSTALL_STAGING_AREA/uki.efi' to '$UKI_FILE'." >&2
+        exit 1
+    }
+elif [ -n "$KERNEL_IMAGE" ]; then
+    [ -f "$KERNEL_IMAGE" ] || {
+        echo "Error: UKI '$KERNEL_IMAGE' not a file." >&2
+        exit 1
+    }
+    [ "$KERNEL_IMAGE" != "${KERNEL_IMAGE%*.efi}.efi" ] && {
+        echo "Error: $KERNEL_IMAGE is missing .efi suffix." >&2
+        exit 1
+    }
+    [ "$KERNEL_INSTALL_VERBOSE" -gt 0 ] && echo "Installing $KERNEL_IMAGE as $UKI_FILE"
+    install -m 0644 "$KERNEL_IMAGE" "$UKI_FILE" || {
+        echo "Error: could not copy '$KERNEL_IMAGE' to '$UKI_FILE'." >&2
+        exit 1
+    }
+else
+    [ "$KERNEL_INSTALL_VERBOSE" -gt 0 ] && echo "No UKI available. Nothing to do."
+    exit 0
+fi
+
+chown root:root "$UKI_FILE" || :
+
+exit 0
