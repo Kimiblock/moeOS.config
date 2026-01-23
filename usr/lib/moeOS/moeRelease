@@ -29,6 +29,16 @@ function main() {
 		echo "Generating secure boot credentials..."
 		sbctl create-keys
 	fi
+	if [ ! -f /var/lib/moeOS/TPM-Keys/Private.pem ]; then
+		rm -rf /var/lib/moeOS/TPM-Keys
+		mkdir -p \
+			--mode=700 \
+			/var/lib/moeOS/TPM-Keys
+		ukify \
+			genkey \
+			--pcr-public-key=/var/lib/moeOS/TPM-Keys/Public.pem \
+			--pcr-private-key=/var/lib/moeOS/TPM-Keys/Private.pem
+	fi
 
 	systemctl disable \
 		moeOS-scheduler@autopilot \
