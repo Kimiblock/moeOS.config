@@ -25,6 +25,11 @@ function main() {
 		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 	fi
 
+	if [ ! -f /var/lib/sbctl/keys/db/db.key ]; then
+		echo "Generating secure boot credentials..."
+		sbctl create-keys
+	fi
+
 	systemctl disable \
 		moeOS-scheduler@autopilot \
 		moeOS-scheduler

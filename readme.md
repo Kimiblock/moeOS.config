@@ -4,6 +4,8 @@ moeOS is an elegant Operating System based on Arch Linux. It fits on tablets, la
 
 Things just work, with a touch of security. No need to fiddle with printers and hybrid graphics.
 
+For a list of breaking changes, see `/usr/share/moeOS-Docs/NEWS`
+
 ---
 
 <h1 align="center">
@@ -61,7 +63,8 @@ rm moeOS-Package
 8. Edit /etc/kernel/cmdline, modify `rd.luks.name` UUID
 9. Format and mount /efi
 10. Mofify /etc/fstab
-11. Run `mkdir -p /efi/EFI/Boot -p && mkinitcpio -P`
+11. Run `dracut -f --regenerate-all`
+12. Reboot to firmware: `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sbctl enroll-keys --tpm-eventlog` to complete Secure Boot setup.
 
 ## Manual
 
