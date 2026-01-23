@@ -9,7 +9,7 @@ case "$1" in
 		exit 0
 ;;
 	suspend|hibernate)
-		echo suspend | tee /proc/driver/nvidia/suspend
+		echo $1 | tee /proc/driver/nvidia/suspend
 		RET_VAL=$?
 		exit $RET_VAL
 ;;
