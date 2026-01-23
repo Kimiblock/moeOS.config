@@ -1,0 +1,3 @@
+# 23th January 2026
+
+The initramfs has moved to dracut + ukify generation. A secure boot key update may be required.
