@@ -62,9 +62,10 @@ rm moeOS-Package
 ```
 8. Edit /etc/kernel/cmdline, modify `rd.luks.name` UUID
 9. Format and mount /efi
-10. Mofify /etc/fstab
+10. Modify /etc/fstab
 11. Run `dracut -f --regenerate-all`
-12. Reboot to firmware: `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sbctl enroll-keys --tpm-eventlog` to complete Secure Boot setup.
+12. Reboot to firmware: `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sudo sbctl enroll-keys --tpm-eventlog` in the new system to complete Secure Boot setup.
+13. Run `sudo systemd-cryptenroll /dev/nvme* --tpm2-device=auto --tpm2-pcrs=7 --tpm2-public-key=/var/lib/moeOS/TPM-Keys/Public.pem --tpm2-public-key-pcrs=11`
 
 ## Manual
 
