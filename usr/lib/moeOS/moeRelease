@@ -6,6 +6,7 @@ function main() {
 		touch /var/lib/flatpak/overrides/global
 	fi
 	replace "/usr/share/moeOS-Docs/os-release" "/etc/os-release"
+	replace "/etc/fstab.moe" "/etc/fstab"
 	replace "/usr/share/moeOS-Docs/os-release" "/usr/lib/os-release"
 	replace "/usr/share/moeOS-Docs/makepkg.conf" "/etc/makepkg.conf"
 	replace "/usr/share/moeOS-Docs/flatpak.overrides" "/var/lib/flatpak/overrides/global"
