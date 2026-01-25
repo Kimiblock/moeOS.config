@@ -65,7 +65,7 @@ rm moeOS-Package
 ```
 7. Format and mount /efi
 8. Run `dracut -f --regenerate-all`
-9. Reboot to firmware: `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sudo sbctl enroll-keys --tpm-eventlog` in the new system to complete Secure Boot setup.
+9. Reboot to firmware via `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sudo sbctl enroll-keys --tpm-eventlog` in the new system to complete Secure Boot setup.
 10. Run `sudo systemd-cryptenroll /dev/nvme* --tpm2-device=auto --tpm2-pcrs=7 --tpm2-public-key=/var/lib/moeOS/TPM-Keys/Public.pem --tpm2-public-key-pcrs=11`
 
 ## Manual
