@@ -31,6 +31,7 @@ For a list of breaking changes, see `/usr/share/moeOS-Docs/NEWS`
 
 1. Please follow the official Arch Linux installation guide using the BTRFS file system with subvolumes `@` and `@home`, until _Initramfs_, excluding `Fstab`.
 	- Note that unencrypted setups are not tested
+	- Your root partition **MUST** be btrfs, and has 2 subvolumes: `@` and `@home`. The former which should mount to `/`, and the latter to `/home`
 	- You **MUST** set the [correct partition type UUID](https://uapi-group.org/specifications/specs/discoverable_partitions_specification/#defined-partition-type-uuids), or the system may not boot
 		- Cheatsheet:
 			- x86_64 root: SD_GPT_ROOT_X86_64: 4f68bce3-e8cd-4db1-96e7-fbcaf984b709
@@ -58,19 +59,14 @@ git clone https://github.com/Kimiblock/moeOS-Package.git
 cd moeOS-Package
 paru -Ui
 exit
-install /usr/share/moeOS-Docs/Reference\ Configs/cmdline /etc/kernel/cmdline
-install /usr/share/moeOS-Docs/Reference\ Configs/fstab /etc/fstab
-install /usr/share/moeOS-Docs/Reference\ Configs/mkinitcpio.d/linux-zen.preset /etc/mkinitcpio.d/linux-zen.preset
 systemctl enable gdm
 cd /
 rm moeOS-Package
 ```
-8. Edit /etc/kernel/cmdline, modify `rd.luks.name` UUID
-9. Format and mount /efi
-10. Modify /etc/fstab
-11. Run `dracut -f --regenerate-all`
-12. Reboot to firmware: `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sudo sbctl enroll-keys --tpm-eventlog` in the new system to complete Secure Boot setup.
-13. Run `sudo systemd-cryptenroll /dev/nvme* --tpm2-device=auto --tpm2-pcrs=7 --tpm2-public-key=/var/lib/moeOS/TPM-Keys/Public.pem --tpm2-public-key-pcrs=11`
+7. Format and mount /efi
+8. Run `dracut -f --regenerate-all`
+9. Reboot to firmware: `systemctl reboot -i --firmware-setup`, put Secure Boot in Setup Mode, then run `sudo sbctl enroll-keys --tpm-eventlog` in the new system to complete Secure Boot setup.
+10. Run `sudo systemd-cryptenroll /dev/nvme* --tpm2-device=auto --tpm2-pcrs=7 --tpm2-public-key=/var/lib/moeOS/TPM-Keys/Public.pem --tpm2-public-key-pcrs=11`
 
 ## Manual
 

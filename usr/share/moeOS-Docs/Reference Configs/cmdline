@@ -1,1 +1,0 @@
-rd.luks.name=<UUID>=moeOS-SWAP rd.luks.name=<UUID>=moeOS root=/dev/mapper/moeOS rootflags=subvol=@,compress-force=zstd:-7,relatime,ssd,space_cache=v2,nodiscard rootfstype=btrfs

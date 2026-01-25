@@ -1,3 +1,8 @@
+# 25th January 2026
+The kernel command line arguments are now managed by the moeOS project.
+
+Existing users will need to set their partition types according to UAPI.2 (https://uapi-group.org/specifications/specs/discoverable_partitions_specification/#defined-partition-type-uuids), and remove `/etc/kernel/cmdline` before attempting an update.
+
 # 23th January 2026
 
 The initramfs has moved to dracut + ukify generation. A secure boot key update may be required.
