@@ -31,6 +31,11 @@ For a list of breaking changes, see `/usr/share/moeOS-Docs/NEWS`
 
 1. Please follow the official Arch Linux installation guide using the BTRFS file system with subvolumes `@` and `@home`, until _Initramfs_, excluding `Fstab`.
 	- Note that unencrypted setups are not tested
+	- You **MUST** set the [correct partition type UUID](https://uapi-group.org/specifications/specs/discoverable_partitions_specification/#defined-partition-type-uuids), or the system may not boot
+		- Cheatsheet:
+			- x86_64 root: SD_GPT_ROOT_X86_64: 4f68bce3-e8cd-4db1-96e7-fbcaf984b709
+			- Swap: SD_GPT_SWAP: 0657fd6d-a4ab-43c4-84e5-0933c84b4f4f
+			- EFI: c12a7328-f81f-11d2-ba4b-00a0c93ec93b
 2. Please add the archlinuxcn repository. Add the following lines in the chroot system /etc/pacman.conf:
 
 ```
