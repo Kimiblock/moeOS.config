@@ -81,7 +81,9 @@ function main() {
 		nvidia-resume \
 		nvidia-hibernate \
 		nvidia-resume \
-		nvidia-suspend-then-hibernate
+		nvidia-suspend-then-hibernate \
+		snapper-timeline.timer \
+		snapper-cleanup.timer
 
 	systemctl mask \
 		systemd-timesyncd \
@@ -125,6 +127,7 @@ function main() {
 	systemctl unmask \
 		--global \
 		app-org.gnome.Software@autostart.service &
+	btrfs subvolume create /.snapshots
 }
 
 function replace() {
