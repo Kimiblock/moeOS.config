@@ -128,6 +128,7 @@ function main() {
 		--global \
 		app-org.gnome.Software@autostart.service &
 	btrfs subvolume create /.snapshots
+	btrfs subvolume create /home/.snapshots
 }
 
 function replace() {

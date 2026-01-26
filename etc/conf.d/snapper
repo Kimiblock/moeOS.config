@@ -4,3 +4,4 @@
 ## Default:     ""
 # List of snapper configurations.
 SNAPPER_CONFIGS="moeOS"
+SNAPPER_CONFIGS="moeOS-home"

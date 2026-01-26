@@ -1,5 +1,5 @@
 # subvolume to snapshot
-SUBVOLUME="/"
+SUBVOLUME="/home"
 
 # filesystem type
 FSTYPE="btrfs"
@@ -10,7 +10,7 @@ QGROUP=""
 
 
 # fraction or absolute size of the filesystems space the snapshots may use
-SPACE_LIMIT="0.3"
+SPACE_LIMIT="0.5"
 
 # fraction or absolute size of the filesystems space that should be free
 FREE_LIMIT="0.2"
@@ -49,8 +49,8 @@ TIMELINE_CLEANUP="yes"
 TIMELINE_MIN_AGE="3600"
 TIMELINE_LIMIT_HOURLY="24"
 TIMELINE_LIMIT_DAILY="2"
-TIMELINE_LIMIT_WEEKLY="0"
-TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_WEEKLY="1"
+TIMELINE_LIMIT_MONTHLY="1"
 TIMELINE_LIMIT_QUARTERLY="0"
 TIMELINE_LIMIT_YEARLY="0"
 
