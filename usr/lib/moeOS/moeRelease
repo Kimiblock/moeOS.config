@@ -43,7 +43,7 @@ function main() {
 
 	systemctl disable \
 		moeOS-scheduler@autopilot \
-		moeOS-scheduler
+		moeOS-scheduler &
 
 	systemctl unmask \
 		systemd-resolved \
