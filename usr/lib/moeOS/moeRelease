@@ -127,8 +127,8 @@ function main() {
 	systemctl unmask \
 		--global \
 		app-org.gnome.Software@autostart.service &
-	btrfs subvolume create /.snapshots
-	btrfs subvolume create /home/.snapshots
+	btrfs subvolume create /.snapshots 2>/dev/null
+	btrfs subvolume create /home/.snapshots 2>/dev/null
 }
 
 function replace() {
