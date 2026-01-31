@@ -7,11 +7,12 @@ Conflicts=scx.service scx_loader.service moeOS-scheduler.service
 [Service]
 Restart=always
 Type=simple
-#ExecStart=/usr/bin/scx_cosmos --no-deferred-wakeup --primary-domain powersave --preferred-idle-scan --mm-affinity --cpu-busy-thresh 25
+ExecStart=/usr/bin/scx_cosmos --no-deferred-wakeup --primary-domain powersave --preferred-idle-scan --mm-affinity --cpu-busy-thresh %I
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --cpu-priority true --latency-priority --interactive-sticky --task-slice true --disable-kthreads-local --turbo true --uncore-max-freq-mhz 4294967295 --enable-eas true
-ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --preempt-shift 2 --%I --enable-cpu-bw --per-cpu-dsq
+#ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --preempt-shift 2 --%I --enable-cpu-bw --per-cpu-dsq
 KillSignal=SIGINT
 Nice=-16
 
 [Install]
 WantedBy=multi-user.target
+Alias=moeOS-scheduler.service
