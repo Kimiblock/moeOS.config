@@ -1,5 +1,5 @@
 [Unit]
-Description=moeOS LAVD scheduler operating on %I
+Description=moeOS scheduler operating at %I
 StartLimitIntervalSec=30
 StartLimitBurst=5
 Conflicts=scx.service scx_loader.service moeOS-scheduler.service
