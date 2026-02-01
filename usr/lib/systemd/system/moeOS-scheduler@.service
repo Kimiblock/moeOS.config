@@ -11,7 +11,6 @@ Type=simple
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --cpu-priority true --latency-priority --interactive-sticky --task-slice true --disable-kthreads-local --turbo true --uncore-max-freq-mhz 4294967295 --enable-eas true
 ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --%I
 KillSignal=SIGINT
-Nice=-16
 
 [Install]
 WantedBy=multi-user.target
