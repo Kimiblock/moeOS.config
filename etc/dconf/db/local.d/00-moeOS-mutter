@@ -1,5 +1,5 @@
 [org/gnome/mutter]
-experimental-features=['scale-monitor-framebuffer', 'kms-modifiers', 'autoclose-xwayland']
+experimental-features=['scale-monitor-framebuffer']
 
 [org/gnome/shell]
 remember-mount-password=true
