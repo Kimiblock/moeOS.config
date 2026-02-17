@@ -1,6 +1,3 @@
-[org/gnome/mutter]
-experimental-features=[]
-
 [org/gnome/shell]
 remember-mount-password=true
 
