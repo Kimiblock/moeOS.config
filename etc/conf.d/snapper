@@ -3,5 +3,4 @@
 ## Type:        string
 ## Default:     ""
 # List of snapper configurations.
-SNAPPER_CONFIGS="moeOS"
-SNAPPER_CONFIGS="moeOS-home"
+SNAPPER_CONFIGS="moeOS moeOS-home"
