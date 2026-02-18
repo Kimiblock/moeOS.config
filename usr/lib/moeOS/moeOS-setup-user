@@ -10,6 +10,7 @@ function main() {
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	echo "[Info] Starting moeOS Autoconf"
+	mkdir -p "${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d"
 	ln -srf \
 		/usr/share/moeOS-Docs/shell-pri.conf \
 		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d/override.conf"
