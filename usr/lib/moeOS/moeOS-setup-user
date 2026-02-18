@@ -12,7 +12,7 @@ function main() {
 	echo "[Info] Starting moeOS Autoconf"
 	ln -srf \
 		/usr/share/moeOS-Docs/shell-pri.conf \
-		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@wayland.service.d/override.conf"
+		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d/override.conf"
 	setupFont
 	setupBreeze
 	mkdir -p \
