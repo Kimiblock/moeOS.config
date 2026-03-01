@@ -4,3 +4,6 @@ remember-mount-password=true
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true
 titlebar-font='Sans, Regular 12'
+
+[org/gnome/mutter/wayland]
+xwayland-scaling-factor=1
