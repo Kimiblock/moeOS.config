@@ -274,3 +274,7 @@ pref("general.smoothScroll.msdPhysics.enabled", true);
 pref("gfx.blacklist.dmabuf", "", locked);
 pref("widget.dmabuf.force-enabled", true, locked);
 pref("gfx.blacklist.dmabuf.failureid", "", locked);
+
+pref("browser.tabs.unloadOnLowMemory", true);
+pref("browser.low_commit_space_threshold_percent", 80);
+pref("browser.tabs.min_inactive_duration_before_unload", 3600000);
