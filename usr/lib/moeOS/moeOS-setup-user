@@ -10,10 +10,6 @@ function main() {
 		export XDG_CONFIG_HOME="${HOME}/.config"
 	fi
 	echo "[Info] Starting moeOS Autoconf"
-	mkdir -p "${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d"
-	ln -srf \
-		/usr/share/moeOS-Docs/shell-pri.conf \
-		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d/override.conf"
 	setupFont
 	setupBreeze
 	mkdir -p \
@@ -23,7 +19,6 @@ function main() {
 		"${XDG_CONFIG_HOME}/Phonon/mpv.conf"
 	checkExist
 	_notify "Setting up moeOS"
-	moeOS-setup-firefox
 	checkExist set
 }
 
@@ -31,19 +26,6 @@ function setupFont() {
 	echo "[Info] Setting up fonts"
 	mkdir -p ~/.config/fontconfig
 	cp /etc/fonts/conf.d/99-moeos.conf ~/.config/fontconfig/fonts.conf
-}
-
-function moeOS-setup-firefox() {
-	if [[ ${moePreferDE} = KDE ]]; then
-		if [ ! -d "${HOME}/.mozilla/firefox" ]; then
-			return 0
-		fi
-		rm "${HOME}"/.mozilla/firefox/*/chrome -r
-		rm "${HOME}"/.mozilla/firefox/*/user.js
-		return 0
-	fi
-	echo "[Info] Setting up Firefox"
-	bash "/usr/lib/moeOS/moeOS-setup-firefox" 1>/dev/null 2>/dev/null
 }
 
 function setupBreeze() {
