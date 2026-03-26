@@ -1,11 +1,11 @@
 [Unit]
 Description=moeOS Auto Color Daemon
-After=dbus.service gnome-session.target gnome-session-wayland.target gnome-session-x11.target gnome-session@gnome.target
+After=xdg-desktop-portal-gnome.service xdg-desktop-portal.service
 
 [Service]
 Type=simple
-ExecStartPre=sleep 5s
-ExecStart=/usr/lib/moeOS/autoColor
+ExecStartPre=sleep 1s
+ExecStart=/usr/bin/autocolor --config /usr/share/moeOS-Docs/autocolor.toml
 Restart=always
 RestartSec=1h
 MemoryHigh=28M
