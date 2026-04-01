@@ -1,0 +1,17 @@
+[qt]
+enable = false
+[qt.theme]
+light = "kvantum"
+dark = "kvantum-dark"
+
+[icon]
+enable = true
+[icon.theme]
+light = "Tela-circle-pink"
+dark = "Tela-circle-pink-dark"
+
+[gtk]
+enable = true
+[gtk.theme]
+light = "Breeze"
+dark = "Breeze-dark"
