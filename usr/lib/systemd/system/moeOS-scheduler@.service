@@ -7,9 +7,9 @@ Conflicts=scx.service scx_loader.service moeOS-scheduler.service
 [Service]
 Restart=always
 Type=simple
-ExecStart=/usr/bin/scx_cosmos -d -m %I --cpu-busy-thresh 15
+#ExecStart=/usr/bin/scx_cosmos -d -m %I --cpu-busy-thresh 15
 #ExecStart=/usr/bin/scx_p2dq --sched-mode efficiency --cpu-priority true --latency-priority --interactive-sticky --task-slice true --disable-kthreads-local --turbo true --uncore-max-freq-mhz 4294967295 --enable-eas true
-#ExecStart=/usr/bin/scx_lavd --slice-min-us 700 --%I
+ExecStart=/usr/bin/scx_lavd --autopower --%I
 #ExecStart=/usr/bin/scx_lavd --powersave --enable-cpu-bw --no-freq-scaling --partial
 KillSignal=SIGINT
 
