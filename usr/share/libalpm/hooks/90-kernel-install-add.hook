@@ -25,5 +25,5 @@ Target = boot/*-ucode.img
 [Action]
 Description = Installing kernel and initrd using kernel-install...
 When = PostTransaction
-Exec = kernel-install add-all
+Exec = /usr/bin/kernel-install add-all
 NeedsTargets
