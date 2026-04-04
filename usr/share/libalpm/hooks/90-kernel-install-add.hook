@@ -25,5 +25,5 @@ Target = boot/*-ucode.img
 [Action]
 Description = Installing kernel and initrd using kernel-install...
 When = PostTransaction
-Exec = /usr/share/libalpm/scripts/moe-kernel-install add
+Exec = kernel-install add-all
 NeedsTargets
