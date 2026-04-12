@@ -1,5 +1,5 @@
 [org/gnome/desktop/interface]
-icon-theme='Tela-circle-pink-light'
+icon-theme='Adwaita'
 color-scheme='prefer-light'
 gtk-theme='Adw'
 font-name='Sans 12'
