@@ -7,8 +7,8 @@ dark = "kvantum-dark"
 [icon]
 enable = true
 [icon.theme]
-light = "Tela-circle-pink"
-dark = "Tela-circle-pink-dark"
+light = "Adwaita"
+dark = "Adwaita"
 
 [gtk]
 enable = true
