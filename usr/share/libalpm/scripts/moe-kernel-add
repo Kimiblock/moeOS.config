@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+set -euo pipefail
+
+while read -r kver; do
+	if [[ "${kver}" =~ "vmlinuz" ]] && [[ "${kver}" =~ "usr/lib/modules" ]]; then
+		kpath="$(dirname "${kver}")"
+		kver="$(basename "${kpath}")"
+		echo "Installing kernel ${kver} using kernel-install..."
+		kernel-install add "${kver}" /usr/lib/modules/"${kver}"/vmlinuz
+	fi
+done
