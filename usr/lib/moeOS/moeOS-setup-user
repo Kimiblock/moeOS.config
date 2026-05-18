@@ -17,6 +17,10 @@ function main() {
 	ln -sfr \
 		/etc/mpv/mpv.conf \
 		"${XDG_CONFIG_HOME}/Phonon/mpv.conf"
+
+	install -vDm600 \
+		/usr/share/moeOS-Docs/shell-pri.conf \
+		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d/moeOS.conf"
 	checkExist
 	_notify "Setting up moeOS"
 	checkExist set
