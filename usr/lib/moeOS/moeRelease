@@ -72,6 +72,7 @@ function main() {
 		NetworkManager \
 		ModemManager \
 		systemd-oomd \
+		irqbalance \
 		moeOS-fstrim.timer --now
 
 	systemctl enable \
