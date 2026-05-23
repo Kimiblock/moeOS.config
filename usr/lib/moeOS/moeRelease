@@ -60,7 +60,6 @@ function main() {
 		systemd-resolved \
 		rtkit-daemon \
 		NetworkManager-wait-online \
-		moeOS-nvboost \
 		chronyd \
 		ipp-usb \
 		avahi-daemon \
