@@ -4,11 +4,12 @@ After=dbus.service gnome-session.target gnome-session-wayland.target gnome-sessi
 ConditionUser=!@system
 
 [Service]
+Slice=session.slice
 Type=simple
 ExecStartPre=sleep 5s
 ExecStart=/usr/bin/bash /usr/lib/moeOS/moeOS-setup-user
 Restart=on-failure
-CPUWeight=50
+CPUWeight=idle
 CPUQuota=5%
 RestartSec=1h
 MemoryHigh=30M
