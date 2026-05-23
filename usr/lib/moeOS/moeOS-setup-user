@@ -29,6 +29,8 @@ function main() {
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.weight"
 	echo 100 | tee \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
+	echo 100 | tee \
+		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.uclamp.min"
 	checkExist
 	_notify "Setting up moeOS"
 	checkExist set
