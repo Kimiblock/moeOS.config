@@ -41,7 +41,7 @@ for Intel Energy Optimizer (LPMD) daemon
 		 1: force on. (Always stay in Low Power Mode)
 		 0: auto. (opportunistic Low Power Mode enter/exit)
 	-->
-	<PowersaverDef>1</PowersaverDef>
+	<PowersaverDef>0</PowersaverDef>
 
 	<WLTHintEnable>0</WLTHintEnable>
 	<HfiLpmEnable>0</HfiLpmEnable>
@@ -66,7 +66,7 @@ for Intel Energy Optimizer (LPMD) daemon
 		from 0 - 100
 		clear both util_entry_threshold and util_exit_threshold to disable util monitor
 	-->
-	<util_exit_threshold>85</util_exit_threshold>
+	<util_exit_threshold>50</util_exit_threshold>
 
 	<!--
 		Entry delay. Minimum delay in non Low Power mode to
