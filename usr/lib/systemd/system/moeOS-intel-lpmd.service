@@ -1,0 +1,34 @@
+[Unit]
+Description=Sandboxed and Customized Intel Linux Energy Optimizer (lpmd) Service
+ConditionPathExists=/sys/devices/system/cpu/intel_pstate/status
+Documentation=man:intel_lpmd(8)
+ConditionVirtualization=no
+StartLimitInterval=10
+StartLimitBurst=5
+Conflicts=intel_lpmd.service
+
+[Service]
+CPUWeight=1000
+Nice=-5
+#Type=dbus
+SuccessExitStatus=2
+BusName=org.freedesktop.intel_lpmd
+ExecStart=/usr/bin/intel_lpmd --no-daemon #--systemd --dbus-enable
+Restart=on-failure
+RestartSec=0
+PrivateTmp=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+ProtectSystem=strict
+ReadWritePaths=/proc/irq
+ReadWritePaths=/proc/sys/kernel
+TemporaryFileSystem=/var
+RemoveIPC=yes
+NoNewPrivileges=yes
+ProtectClock=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+MemoryDenyWriteExecute=yes
+RestrictAddressFamilies=AF_UNIX
+SystemCallFilter=@system-service
+BindPaths=/usr/share/moeOS-Docs/lpmd/config.xml:/etc/intel_lpmd/intel_lpmd_config.xml
