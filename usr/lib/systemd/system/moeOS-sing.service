@@ -1,7 +1,7 @@
 [Unit]
 Description=Auto updated sing-box daemon, with Mihomo fallback backend
 After=network-online.target NetworkManager-wait-online.service
-Wants=moeOS-cgtproxy.service moeOS-seconnect.service moeOS-clash-meta.service
+Wants=moeOS-cgtproxy.service moeOS-seconnect.service moeOS-clash-meta.service NetworkManager-wait-online.service
 Before=moeOS-cgtproxy.service
 StartLimitIntervalSec=1200
 StartLimitBurst=110
