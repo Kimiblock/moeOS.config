@@ -25,8 +25,8 @@ function main() {
 	declare uid
 	uid="$(id -u)"
 	echo "Ensuring mutter always get max CPU time"
-	echo 10000 | tee \
-		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.weight"
+	echo 1 | tee \
+		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/background.slice/cpu.uclamp.max"
 	echo 100 | tee \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
 	checkExist
