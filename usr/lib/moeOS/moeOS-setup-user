@@ -25,9 +25,11 @@ function main() {
 	declare uid
 	uid="$(id -u)"
 	echo "Ensuring mutter always get max CPU time"
-	echo 1 | tee \
+	echo 1 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/background.slice/cpu.uclamp.max"
-	echo 100 | tee \
+	echo 25 > \
+		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/app.slice/cpu.uclamp.min"
+	echo 100 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
 	checkExist
 	_notify "Setting up moeOS"
