@@ -3,6 +3,7 @@ Description=Auto updated EasierConnect daemon.
 After=network-online.target
 StartLimitIntervalSec=120
 StartLimitBurst=10
+Requires=moeOS-proxy.slice
 
 [Service]
 LoadCredential=config.toml:/etc/moeOS-seconnect/config.toml
