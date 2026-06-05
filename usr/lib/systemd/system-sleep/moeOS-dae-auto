@@ -1,9 +1,10 @@
 #!/usr/bin/bash
 
-if [[ $@ =~ post ]]; then
+if [[ "$1" =~ post ]]; then
 	systemctl restart \
 	NetworkManager-wait-online.service \
-	moeOS-proxy
+	moeOS-proxy \
+	moeOS-seconnect
 else
 	systemctl stop \
 	NetworkManager-wait-online.service \
