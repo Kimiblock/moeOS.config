@@ -3,7 +3,7 @@ Description=moeOS Auto Color Daemon
 After=xdg-desktop-portal-gnome.service xdg-desktop-portal.service
 
 [Service]
-Slice=session.slice
+Slice=background.slice
 Type=simple
 ExecStartPre=sleep 1s
 ExecStart=/usr/bin/autocolor --config /usr/share/moeOS-Docs/autocolor.toml
