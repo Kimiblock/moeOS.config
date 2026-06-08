@@ -3,10 +3,10 @@
 if [[ "$1" =~ post ]]; then
 	systemctl restart \
 	NetworkManager-wait-online.service \
-	moeOS-proxy \
 	moeOS-seconnect
+	#moeOS-proxy \
+
 else
 	systemctl stop \
-	NetworkManager-wait-online.service \
-	moeOS-proxy
+	NetworkManager-wait-online.service
 fi
