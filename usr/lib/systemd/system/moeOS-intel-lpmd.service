@@ -13,7 +13,6 @@ CPUWeight=1000
 Nice=-5
 #Type=dbus
 SuccessExitStatus=2
-BusName=org.freedesktop.intel_lpmd
 ExecStart=/usr/bin/intel_lpmd --no-daemon
 #--systemd --dbus-enable
 Restart=on-failure
