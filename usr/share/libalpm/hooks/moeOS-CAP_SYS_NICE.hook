@@ -1,0 +1,10 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = usr/bin/gnome-shell
+
+[Action]
+Description = Granting CAP_SYS_NICE for GNOME Shell
+When = PostTransaction
+Exec = setcap CAP_SYS_NICE=eip /usr/bin/gnome-shell
