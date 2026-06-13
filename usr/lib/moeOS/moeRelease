@@ -71,6 +71,7 @@ function main() {
 		NetworkManager \
 		ModemManager \
 		systemd-oomd \
+		moeOS-nvboost \
 		moeOS-fstrim.timer --now
 
 	systemctl enable \
