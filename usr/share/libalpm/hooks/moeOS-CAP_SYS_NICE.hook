@@ -7,4 +7,4 @@ Target = usr/bin/gnome-shell
 [Action]
 Description = Granting CAP_SYS_NICE for GNOME Shell
 When = PostTransaction
-Exec = setcap CAP_SYS_NICE=eip /usr/bin/gnome-shell
+Exec = /usr/bin/setcap CAP_SYS_NICE=eip /usr/bin/gnome-shell
