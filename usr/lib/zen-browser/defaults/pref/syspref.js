@@ -278,3 +278,5 @@ pref("gfx.blacklist.dmabuf.failureid", "", locked);
 pref("browser.tabs.unloadOnLowMemory", true);
 pref("browser.low_commit_space_threshold_percent", 80);
 pref("browser.tabs.min_inactive_duration_before_unload", 3600000);
+
+pref("browser.display.use_document_fonts.icon_font_allowlist", "Material Icons, Material Icons Extended, Material Icons Outlined, Material Icons Round, Material Icons Sharp, Material Icons Two Tone, Google Material Icons, Google Material Icons Filled, Material Symbols Outlined, Material Symbols Round, Material Symbols Rounded, Material Symbols Sharp, Google Symbols, FontAwesome, MJXTEX, MJXTEX-A, MJXTE X-BI, MJXTEX-I, MJXTEX-S1, MJXTEX-S2, MJXTEX-S3, MJXTEX-S4, MJXZERO, KaTeX_Main, KaTeX_Math, KaTeX_Size1, KaTeX_Size2, KaTeX_Size3, KaTeX_Size4, iconfont, Mathjax_Math, Mathjax_Main, fm-mono, docons, Luminous Symbols");
