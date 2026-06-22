@@ -125,21 +125,6 @@ function main() {
 		app-org.gnome.Software@autostart.service &
 	snapper -c moeOS-home create-config /home 2>/dev/null
 	snapper -c moeOS create-config / 2>/dev/null
-
-	if [[ -f /etc/environment.d/moeOS-nvidiaOnly.conf ]]; then
-		if [[ ! -f /etc/modprobe.d/moeOS-NVpstate.conf ]]; then
-			install -vDm644 \
-				/usr/share/moeOS-Docs/modprobe.d/moeOS-nvonly.conf \
-				/etc/modprobe.d/moeOS-NVpstate.conf
-			kernel-install add-all
-		fi
-	else
-		if [[ -f /etc/modprobe.d/moeOS-NVpstate.conf ]]; then
-			rm /etc/modprobe.d/moeOS-NVpstate.conf
-			kernel-install add-all
-		fi
-
-	fi
 }
 
 function replace() {
