@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
 function main() {
-	nvidia-smi -lmc 2000,400000
-	nvidia-smi -lgc 1000,400000
+	nvidia-smi -lmc 1000,400000
+	nvidia-smi -lgc 1500,400000
 	#intel_gpu_frequency -c min=1000
 }
 
