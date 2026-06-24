@@ -31,7 +31,7 @@ function main() {
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/background.slice/cpu.idle"
 	echo 5 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/app.slice/cpu.uclamp.min"
-	echo 500 > \
+	echo 5000 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.weight"
 	echo 50 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.uclamp.min"
