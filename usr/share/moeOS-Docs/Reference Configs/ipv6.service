@@ -1,0 +1,12 @@
+[Unit]
+Description="Template to execute script on startup before network ready"
+After=network.target
+PartOf=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=bash -c true
+
+[Install]
+WantedBy=network-online.target
+WantedBy=multi-user.target
