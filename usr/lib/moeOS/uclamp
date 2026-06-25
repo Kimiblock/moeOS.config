@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+echo 1 > /sys/fs/cgroup/system.slice/cpu.uclamp.max
+echo 50 > /sys/fs/cgroup/system.slice/cpu.weight
