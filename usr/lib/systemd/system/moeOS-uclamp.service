@@ -56,3 +56,7 @@ MemoryHigh=1M
 MemoryMax=10M
 
 CPUWeight=idle
+
+[Install]
+WantedBy=gdm.service
+WantedBy=graphical.target
