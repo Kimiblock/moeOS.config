@@ -52,8 +52,8 @@ SystemCallFilter=~@reboot
 SystemCallFilter=~@swap
 SystemCallErrorNumber=EPERM
 
-MemoryHigh=1M
-MemoryMax=10M
+MemoryHigh=5M
+MemoryMax=20M
 
 CPUWeight=idle
 
