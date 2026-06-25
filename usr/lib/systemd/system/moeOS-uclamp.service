@@ -8,8 +8,6 @@ Before=gdm.service
 Type=oneshot
 ExecStart=bash /usr/lib/moeOS/uclamp
 
-ReadWritePaths=/mnt/external
-
 OOMPolicy=kill
 OOMScoreAdjust=500
 
