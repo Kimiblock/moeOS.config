@@ -1,4 +1,5 @@
 #!/usr/bin/bash
 
 echo 5 > /sys/fs/cgroup/system.slice/cpu.uclamp.max
-echo 100 > /sys/fs/cgroup/user.slice/cpu.weight
+echo 10000 > /sys/fs/cgroup/user.slice/cpu.weight
+echo 100 > /sys/fs/cgroup/user.slice/cpu.uclamp.min
