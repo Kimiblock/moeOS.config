@@ -1,4 +1,4 @@
-#!/bin/bash
+/home/kimiblock/Projects/moeOS.config/usr/lib/moeOS/nvboost#!/bin/bash
 
 function _notify() {
 	notify-send -i moeos -u normal -t 5 "moeOS Setup" "$1"
@@ -18,10 +18,6 @@ function main() {
 		/etc/mpv/mpv.conf \
 		"${XDG_CONFIG_HOME}/Phonon/mpv.conf"
 
-	install -vDm600 \
-		/usr/share/moeOS-Docs/shell-pri.conf \
-		"${XDG_CONFIG_HOME}/systemd/user/org.gnome.Shell@user.service.d/moeOS.conf"
-
 	declare uid
 	uid="$(id -u)"
 	echo "Ensuring mutter always get max CPU time"
@@ -30,13 +26,14 @@ function main() {
 	echo 1 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/background.slice/cpu.idle"
 	#echo 5 > \
-		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/app.slice/cpu.uclamp.min"
+	#	"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/app.slice/cpu.uclamp.min"
 	echo 10000 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.weight"
 	#echo 50 > \
-		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.uclamp.min"
+	#	"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.uclamp.min"
 	echo 100 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
+
 	checkExist
 	_notify "Setting up moeOS"
 	checkExist set
