@@ -29,8 +29,10 @@ function main() {
 	#	"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/app.slice/cpu.uclamp.min"
 	echo 10000 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.weight"
-	#echo 50 > \
-	#	"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/cpu.uclamp.min"
+	echo 10000 > \
+		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.weight"
+	echo 100 > \
+		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
 	echo 100 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
 
