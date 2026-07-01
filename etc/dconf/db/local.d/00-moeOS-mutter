@@ -4,6 +4,7 @@ remember-mount-password=true
 [org/gnome/desktop/wm/preferences]
 resize-with-right-button=true
 titlebar-font='Sans, Regular 12'
+focus-new-windows='strict'
 
 [org/gnome/mutter]
 experimental-features=['kms-modifiers', 'autoclose-xwayland']
