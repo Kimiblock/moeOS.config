@@ -21,7 +21,7 @@ Target = usr/lib/dracut/*/*/*
 Target = usr/lib/kernel/*
 Target = usr/lib/kernel/*/*
 Target = boot/*-ucode.img
-Target = usr/lib/modules/*/
+Target = usr/lib/modules/*
 
 [Action]
 Description = Installing kernel and initrd using kernel-install...

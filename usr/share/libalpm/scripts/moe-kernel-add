@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+depmod -A
+
 while read -r kver; do
 	if [[ "${kver}" =~ "vmlinuz" ]] && [[ "${kver}" =~ "usr/lib/modules" ]]; then
 		kpath="$(dirname "${kver}")"
