@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-depmod --all
+depmod --all || true
 
 while read -r kver; do
 	if [[ "${kver}" =~ "vmlinuz" ]] && [[ "${kver}" =~ "usr/lib/modules" ]]; then
