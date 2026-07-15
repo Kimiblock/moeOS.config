@@ -32,6 +32,8 @@ function main() {
 	echo 10000 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.weight"
 	echo 1000 > \
+		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/io.weight"
+	echo 10000 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/io.weight"
 	echo 100 > \
 		"/sys/fs/cgroup/user.slice/user-${uid}.slice/user@${uid}.service/session.slice/org.gnome.Shell@user.service/cpu.uclamp.min"
