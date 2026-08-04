@@ -8,3 +8,7 @@ focus-new-windows='strict'
 
 [org/gnome/mutter]
 experimental-features=['kms-modifiers', 'autoclose-xwayland']
+
+[org/gnome/mutter/experimental]
+autoclose-xwayland=true
+kms-modifiers=true
