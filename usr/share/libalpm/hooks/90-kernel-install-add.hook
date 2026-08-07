@@ -8,7 +8,6 @@ Target = usr/lib/modules/*/vmlinuz
 Type = Path
 Operation = Install
 Operation = Upgrade
-Operation = Remove
 Target = usr/lib/initcpio/*
 Target = usr/lib/initcpio/*/*
 Target = usr/lib/firmware/*
