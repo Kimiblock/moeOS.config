@@ -6,6 +6,8 @@ systemctl set-property moeOS.slice CPUWeight=50
 
 systemctl set-property user.slice CPUWeight=10000
 
+systemctl set-property user.slice MemoryZSwapWriteback=false
+
 systemctl set-property user.slice IOWeight=10000
 
 echo 100 > /sys/fs/cgroup/user.slice/cpu.uclamp.min
