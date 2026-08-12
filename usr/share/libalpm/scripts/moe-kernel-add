@@ -6,6 +6,10 @@ while read -r kver; do
 	if [[ "${kver}" =~ "vmlinuz" ]] && [[ "${kver}" =~ "usr/lib/modules" ]]; then
 		kpath="$(dirname "${kver}")"
 		kver="$(basename "${kpath}")"
+		if [[ ! -e "${kpath}" ]]; then
+			echo "Skipping non-existent kernel ${kver}"
+			continue
+		fi
 		echo "Installing kernel ${kver} using kernel-install..."
 		kernel-install add "${kver}" /usr/lib/modules/"${kver}"/vmlinuz || true
 	fi
