@@ -1,10 +1,10 @@
 [Unit]
-Description=moeOS Throttle Stopper (NVIDIA)
-After=multi-user.target
-ConditionPathExists=/etc/environment.d/moeOS-nvidiaOnly.conf
+Description=moeOS Throttle Stopper (NVIDIA, performance mode)
+ConditionPathExists=/usr/bin/nvidia-smi
 
 [Service]
-Type=simple
+Type=oneshot
+RemainAfterExit=yes
 User=root
 CPUWeight=idle
 IOWeight=1
@@ -29,8 +29,6 @@ ProtectClock=yes
 
 OOMPolicy=continue
 WorkingDirectory=/tmp
-ExecStart=/usr/lib/moeOS/nvboost
+ExecStart=bash -c "nvidia-smi -lgc 4000,400000 && nvidia-smi -lmc 4000,400000"
+ExecStop=bash -c "nvidia-smi -rgc && nvidia-smi -rmc"
 RemainAfterExit=yes
-
-[Install]
-WantedBy=graphical.target
