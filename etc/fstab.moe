@@ -3,4 +3,4 @@
 
 # <file system> <dir> <type> <options> <dump> <pass>
 
-/dev/mapper/root	/home	btrfs	rw,relatime,compress=zstd:-7,discard=async,subvol=@home,commit=120	0 0
+/dev/mapper/root	/home	btrfs	rw,relatime,compress=zstd:-8,subvol=@home,commit=120	0 0
