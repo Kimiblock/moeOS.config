@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.gnome.Shell.PortalHelper
+Exec=env PORTABLE_CONF=org.gnome.Shell.PortalHelper /usr/bin/portable --
