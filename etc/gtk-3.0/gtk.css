@@ -1,6 +1,2 @@
 @define-color accent_color #ed65e2;
 @define-color accent_bg_color #ed65e2;
-
-window {
-	border-radius: 12px;
-}
