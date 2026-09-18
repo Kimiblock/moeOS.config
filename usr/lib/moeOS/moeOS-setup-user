@@ -1,4 +1,4 @@
-/home/kimiblock/Projects/moeOS.config/usr/lib/moeOS/nvboost#!/bin/bash
+#!/bin/bash
 
 function _notify() {
 	notify-send -i moeos -u normal -t 5 "moeOS Setup" "$1"
