@@ -13,5 +13,5 @@ dark = "Adwaita"
 [gtk]
 enable = true
 [gtk.theme]
-light = "Adw"
-dark = "Adw-dark"
+light = "Adwaita"
+dark = "Adwaita"
