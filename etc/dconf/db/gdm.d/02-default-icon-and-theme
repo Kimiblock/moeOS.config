@@ -1,7 +1,6 @@
 [org/gnome/desktop/interface]
 icon-theme='Adwaita'
 color-scheme='prefer-light'
-gtk-theme='Adw'
 font-name='Sans 12'
 document-font-name='Sans 12'
 font-hinting='slight'
@@ -13,7 +12,7 @@ clock-format='12h'
 clock-show-weekday=true
 
 [org/gnome/shell]
-favorite-apps=['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.github.neithern.g4music.desktop', 'io.github.mrvladus.List.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Console.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
+favorite-apps=['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.github.neithern.g4music.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Fractal.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Console.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
 
 [org/gnome/Console]
 theme='auto'

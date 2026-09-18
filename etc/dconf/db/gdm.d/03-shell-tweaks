@@ -6,3 +6,6 @@ automatic-location=true
 
 [org/gnome/desktop/datetime]
 automatic-timezone=true
+
+[org/gnome/nautilus/icon-view]
+captions=['size', 'type', 'none']
