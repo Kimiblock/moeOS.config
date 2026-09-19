@@ -1,6 +1,7 @@
 [org/gnome/desktop/interface]
 icon-theme='Adwaita'
 color-scheme='prefer-light'
+gtk-theme='Adw'
 font-name='Sans 12'
 document-font-name='Sans 12'
 font-hinting='slight'
