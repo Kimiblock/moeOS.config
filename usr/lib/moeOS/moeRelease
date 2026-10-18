@@ -22,9 +22,7 @@ function main() {
 		"/usr/share/moeOS-Docs/mkinitcpio.conf" \
 		"/etc/mkinitcpio.conf"
 
-	if [[ $(cat /etc/nsswitch.conf | grep 'hosts:') =~ mdns ]]; then
-		replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
-	fi
+	replace "/usr/share/moeOS-Docs/nsswitch-bak.conf" "/etc/nsswitch.conf"
 
 	if [ ! -f /var/lib/sbctl/keys/db/db.key ]; then
 		echo "Generating secure boot credentials..."
