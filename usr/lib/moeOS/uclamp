@@ -1,13 +1,9 @@
 #!/usr/bin/bash
 
-echo 10 > /sys/fs/cgroup/system.slice/cpu.uclamp.max
+echo 50 > /sys/fs/cgroup/system.slice/cpu.uclamp.max
 
-systemctl set-property moeOS.slice CPUWeight=50
-
-systemctl set-property user.slice CPUWeight=10000
+systemctl set-property user.slice CPUWeight=1000
 
 systemctl set-property user.slice MemoryZSwapWriteback=false
-
-systemctl set-property user.slice IOWeight=10000
 
 echo 100 > /sys/fs/cgroup/user.slice/cpu.uclamp.min
