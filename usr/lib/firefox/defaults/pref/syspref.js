@@ -283,4 +283,4 @@ pref("browser.display.use_document_fonts.icon_font_allowlist", "Material Icons, 
 
 
 // autosave once every minute
-perf("browser.sessionstore.interval", 60000);
+pref("browser.sessionstore.interval", 60000);
