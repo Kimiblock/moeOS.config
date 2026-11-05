@@ -1,7 +1,7 @@
 # Further configuration documentation can be found at
 # https://godoc.org/github.com/black-desk/cgtproxy/pkg/cgtproxy/config
 
-version: 1
+version: 2
 cgroup-root: AUTO # path to cgroupfs v2 mount point or "AUTO"
 route-table: 300
 
