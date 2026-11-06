@@ -36,6 +36,8 @@ rules:
     direct: true
   - match: /system.slice/moeOS-sing.service
     direct: true
+  - match: /user.slice/user-*.slice/user@*.service/app.slice/app-portable-com.github.chenx_dust.EZ4Connect*
+    direct: true
 #  - match: /system.slice/system-cups.slice
 #    direct: true
 
