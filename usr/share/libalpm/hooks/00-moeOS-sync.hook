@@ -1,6 +1,6 @@
 [Action]
 When = PostTransaction
-Exec = /usr/bin/sync
+Exec = /usr/bin/sync -f /
 Depends = moeOS-git
 Description = Saving contents to disk...
 
