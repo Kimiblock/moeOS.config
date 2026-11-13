@@ -1,1 +1,3 @@
-splash rd.luks.options=tries=4,discard,no-read-workqueue,no-write-workqueue quiet bgrt_disable nmi_watchdog=0 loglevel=1 systemd.show_status=auto rd.udev.log_level=3 rootflags=subvol=@,compress=zstd:-8,commit=120,noatime nowatchdog pcie_aspm.policy=powersupersave intel_iommu=on zswap.enabled=1 zswap.max_pool_percent=30 intel_pstate=hwp_only
+splash rd.luks.options=tries=4,discard,no-read-workqueue,no-write-workqueue quiet bgrt_disable nmi_watchdog=0 loglevel=1 systemd.show_status=auto rd.udev.log_level=3 rootflags=subvol=@,compress=zstd:-8,commit=120,noatime nowatchdog pcie_aspm.policy=powersupersave intel_iommu=on zswap.enabled=1 zswap.max_pool_percent=30 intel_pstate=hwp_only acpi_osi='Windows 2022'
+
+# ACPI OSI from: https://learn.microsoft.com/en-us/windows-hardware/drivers/acpi/winacpi-osi
