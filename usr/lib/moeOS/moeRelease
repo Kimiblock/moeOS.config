@@ -75,6 +75,7 @@ function main() {
 		kmsconvt@.service \
 		moeOS-startup-chime.service \
 		snapper-timeline.timer \
+		moeOS-nvidia-rebind.service \
 		snapper-cleanup.timer
 
 	systemctl mask \

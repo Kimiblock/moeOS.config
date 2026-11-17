@@ -1,0 +1,27 @@
+#!/bin/bash
+# Re-probe NVIDIA GPUs from process context so runtime D3 works on Linux 7.3+
+# (NVIDIA open-gpu-kernel-modules issue #1507). Remove once the driver is fixed.
+
+modprobe nvidia || exit 0
+
+gpus=()
+for p in /proc/driver/nvidia/gpus/*/power; do
+	grep -qE 'Runtime D3 status: *(Not supported|Disabled by default)' "$p" &&
+		gpus+=("$(basename "$(dirname "$p")")")
+done
+[ ${#gpus[@]} -eq 0 ] && { echo "Runtime D3 already enabled, nothing to do"; exit 0; }
+
+mods=()
+for m in nvidia_drm nvidia_modeset nvidia_uvm; do
+	[ -d "/sys/module/$m" ] && mods+=("$m")
+done
+[ ${#mods[@]} -gt 0 ] && { rmmod "${mods[@]}" || exit 1; }
+
+for bdf in "${gpus[@]}"; do
+	echo "$bdf" > /sys/bus/pci/drivers/nvidia/unbind
+	echo "$bdf" > /sys/bus/pci/drivers/nvidia/bind
+	echo "$bdf: $(grep 'Runtime D3' "/proc/driver/nvidia/gpus/$bdf/power")"
+done
+
+[ ${#mods[@]} -gt 0 ] && modprobe -a "${mods[@]}"
+exit 0

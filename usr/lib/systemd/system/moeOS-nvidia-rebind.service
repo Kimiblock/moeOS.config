@@ -1,0 +1,29 @@
+[Unit]
+Description=Re-probe NVIDIA GPU to fix RTD3
+Documentation=https://github.com/NVIDIA/open-gpu-kernel-modules/issues/1507
+After=systemd-modules-load.service systemd-udev-trigger.service
+Before=display-manager.service nvidia-powerd.service nvidia-persistenced.service
+ConditionPathExists=/usr/bin/nvidia-smi
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=bash /usr/lib/moeOS/nvidia-reprobe
+CPUWeight=idle
+
+ProtectHome=yes
+SocketBindDeny=ipv4:tcp
+SocketBindDeny=ipv4:udp
+SocketBindDeny=ipv6:tcp
+SocketBindDeny=ipv6:udp
+LockPersonality=yes
+RestrictRealtime=yes
+ProtectClock=yes
+OOMPolicy=continue
+WorkingDirectory=/tmp
+PrivateTmp=disconnected
+ProtectControlGroups=private
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target
